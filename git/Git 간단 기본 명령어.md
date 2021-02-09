@@ -32,7 +32,7 @@ $ git logs
 $ git reset --hard [로그에찍힌버전]
 ```
 
-reset을 하면 복원이 된다.
+reset을 하면 복원이 된다. reset hard, revert
 
 
 
