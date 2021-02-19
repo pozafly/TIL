@@ -2,6 +2,8 @@
 
 <br/>
 
+> 출처 : https://asfirstalways.tistory.com/362
+
 ## Javascript 작동 원리에 대해서
 
 > 싱글 스레드 기반드로 동작하는 Javascript, 
@@ -118,7 +120,5 @@ test1();
 5. 바로 이 시점에 queue의 **heap**에서 하나의 event를 가져와 Call Stack으로 넣는다. 이 이벤트는 setTimeout 함수 내부에 있던 익명함수이다. 이제서야 이 함수가 실행된다.
 
 즉, test3()이 끝나고, (Call Stack에서 pop되고) test2()가 끝나고, test1()이 마저 끝나고 나서 이벤트 루프에 의해 하나의 event가 dequeue 된 다음 콜스택으로 들어가서 실행됨. **그러므로 이벤트에 걸려있는 핸들러는 절대 먼저 실행될 수 없다!!**
-
-출처 : https://asfirstalways.tistory.com/362
 
 <br/>
