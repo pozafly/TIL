@@ -31,6 +31,7 @@ var 함수명 = function() {
 함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다. 
 
 ```javascript
+// 실행 전
 logMessage();
 sumNumbers();
 
@@ -71,7 +72,7 @@ sumNumbers = function() {
 
 ## 함수 표현식의 장점
 
-**함수 표현식이 호이스팅에 영향을 받지 않는다**는 특징 이외에도 함수 선언식보다 유용하게 쓰이는 경우는 다음과 같음.
+**함수 표현식이 호이스팅에 영향을 받지 않는다**(호이스팅이 적용되어 오류를 뱉지 않는다)는 특징 이외에도 함수 선언식보다 유용하게 쓰이는 경우는 다음과 같음.
 
 - 클로저로 사용
 - 콜백으로 사용(다른 함수의 인자로 넘길 수 있음)
@@ -80,3 +81,75 @@ sumNumbers = function() {
 
 ## 함수 표현식으로 클로저 생성하기
 
+클로저는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
+
+```javascript
+function tabsHandler(index) {
+  return function tabClickEvent(event) {
+    // 바깥 함수인 tabsHandler() 의 index 인자를 여기서 접근할 수 있다.
+    console.log(index);   // 탭을 클릭할 때 마다 해당 탭의 index 값을 표시
+  };
+}
+
+var tabs = document.querySelectorAll('.tab');
+var i;
+
+for (i = 0; i < tabs.length; i += 1) {
+  tabs[i].onclick = tabsHandler(i);
+}
+```
+
+위 예제는 모든 .tab 요소에 클릭 이벤트를 추가하는 예제. 주목할 점은 클로저를 사용해 tabClickEvent() 에서 바깥 함수 tabsHandler() 의 인자 값 index를 접근했다는 점.
+
+for 반복문의 실행이 끝난 후, 사용자가 tab을 클릭했을 때 tabClickEvent() 가 실행된다. 만약 클로저를 쓰지 않았다면 모든 tab의 index 값이 for 반복문의 마지막 값인 tab.length 와 같다. 
+
+> 이 말인 즉슨 for문이 돌다가 마지막 index 값이 10이라고 가정한다면 서로 다른 tab을 클릭했을 때마다 10이 그냥 찍힘. 왜냐면 마지막 녀석이 등록되었을테니까. for문을 돌면서 재할당 되었을테니까. Object화 되지 않는다.
+
+클로저를 쓰지 않은 예제를 보자.
+
+```javascript
+var tabs = document.querySelectorAll('.tab');
+var i;
+
+for (i = 0; i < tabs.length; i += 1) {
+  tabs[i].onclick = function(event) {
+    console.log(i);   // 어느 탭을 클릭해도 항상 tab.length(i의 최종 값)이 출력
+  };
+}
+```
+
+문제점을 더 파악하기 쉽게 for 문 안의 function() 을 밖으로 꺼내서 선언해보면,
+
+```javascript
+var tabs = document.querySelectorAll('.tab');
+var i;
+var logIndex = function(event) {
+  console.log(i);   // 3
+};
+
+for(i = 0; i < tabs.length; i += 1) {
+  tabs[i].onclick = logIndex;
+}
+```
+
+logIndex가 실행되는 시점은 이미 for 문의 실행이 모두 끝난 시점이다. 따라서, 어느 탭을 눌러도 for 문의 최종 값인 3이 찍힌다.
+
+이 문제점을 해결하기 위해 클로저를 적용하면 맨 처음과 같은 소스코드가 나옴.
+
+```javascript
+function tabsHandler(index) {
+  return function tabClickEvent(event) {
+    // 바깥 함수인 tabsHandler() 의 index 인자를 여기서 접근할 수 있다.
+    console.log(index);   // 탭을 클릭할 때 마다 해당 탭의 index 값을 표시
+  };
+}
+
+var tabs = document.querySelectorAll('.tab');
+var i;
+
+for (i = 0; i < tabs.length; i += 1) {
+  tabs[i].onclick = tabsHandler(i);
+}
+```
+
+for 반복문이 수행될 때 각 i 값을 tabsHandler() 에 넘기고, 클로저인 tabClickEvent() 에서 tabsHandler() 의 인자 값 index를 접근할 수 있게 된다. 따라서, 우리가 원하는 각 탭의 index를 접근할 수 있다.
