@@ -72,14 +72,14 @@ sumNumbers = function() {
 
 ## 함수 표현식의 장점
 
-**함수 표현식이 호이스팅에 영향을 받지 않는다**(호이스팅이 적용되어 오류를 뱉지 않는다)는 특징 이외에도 함수 선언식보다 유용하게 쓰이는 경우는 다음과 같음.
+**함수 표현식이 호이스팅에 영향을 받지 않는다**는 특징 이외에도 함수 선언식보다 유용하게 쓰이는 경우는 다음과 같음.
 
 - 클로저로 사용
 - 콜백으로 사용(다른 함수의 인자로 넘길 수 있음)
 
 <br/>
 
-## 함수 표현식으로 클로저 생성하기
+### 함수 표현식으로 클로저 생성하기
 
 클로저는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
 
@@ -112,7 +112,7 @@ var tabs = document.querySelectorAll('.tab');
 var i;
 
 for (i = 0; i < tabs.length; i += 1) {
-  tabs[i].onclick = function(event) {
+  tabs[i].onclick = function(event) {  // 봐바라. 여기 함수 선언식이다.
     console.log(i);   // 어느 탭을 클릭해도 항상 tab.length(i의 최종 값)이 출력
   };
 }
@@ -153,3 +153,53 @@ for (i = 0; i < tabs.length; i += 1) {
 ```
 
 for 반복문이 수행될 때 각 i 값을 tabsHandler() 에 넘기고, 클로저인 tabClickEvent() 에서 tabsHandler() 의 인자 값 index를 접근할 수 있게 된다. 따라서, 우리가 원하는 각 탭의 index를 접근할 수 있다.
+
+### 함수 표현식을 다른 함수의 인자 값으로 넘기기
+
+함수 표현식은 일반적으로 임시 변수에 저장하여 사용함.
+
+```javascript
+// doSth 이라는 임시 변수를 사용
+var doSth = function() {
+  // ...
+};
+```
+
+함수 표현식을 임시 변수에 넣지 않고도 아래와 같이 콜백함수로 사용할 수 있다.
+
+```javascript
+$(document).ready(function() {
+  console.log('An anonymous function');   // 'An anonymous function'
+});
+```
+
+JQuery를 사용할 때 많이 보던 문법으로 위와 아래의 코드 결과는 같다.
+
+```javascript
+var logMessage = function() {
+  console.log('An anonymous function');   // 'An anonymous function'
+};
+
+$(document).ready(logMessage);   // 'An anonymous function'
+```
+
+자바스크립트 내장 API인 forEach() 를 사용할 때도 콜백함수를 사용할 수 있다.
+
+```javascript
+var arr = ['a', 'b', 'c'];
+arr.forEach(function() {
+  // ...
+});
+```
+
+※ 콜백 함수란 다른 함수의 인자로 전달된 함수를 의미함. 자바스크립트가 일급 객체로서 가지는 특징중 하나. 
+
+## 결론
+
+함수 표현식이 선언식에 비해 가지는 장점이 많지만, 결국엔 이러한 차이점을 인지한 상태에서 일관된 코딩 컨벤션으로 코드를 작성하는게 중요하다. [AirBnb 의 JS Style 가이드](https://github.com/airbnb/javascript) 에서도 함수 선언식 보다는 함수 표현식을 지향하고 있음.
+
+<br/>
+
+>`정리`
+>
+>함수선언식은 function [이름] 으로 선언, 함수표현식은 var [이름] = function... 이렇게. 호이스팅이 되고 안되고 차이가 있고 장단이 있다. 표현식은 클로저를 만들 수 있고, 다른 함수의 인자값으로 넘겨 콜백으로 사용할 수 있다.
