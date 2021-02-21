@@ -2,6 +2,8 @@
 
 > 출처 : https://tutorialpost.apptilus.com/code/posts/js/js19-scope/
 
+**밖에서는 안이 보이지 않고 안에서만 밖이 보인다.**
+
 ## 실행 컨텍스트(Execution context)
 
 자바스크립트 해석기는 실행 컨텍스트라는 개념을 사용하여 구문을 해석함. 
