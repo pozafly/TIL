@@ -59,6 +59,7 @@ Container에 적용할 수 있는 속성 값이 있고, 각 Item들에 적용할
 
     - align-items : justify-content와 반대로 교차 축의 정렬 방법 설정
     - align-content : Container의 Item들이 두줄 이상으로 배치되어 있을 경우 각 줄을 어떻게 배치할 것인지 설정. item이 한 줄로 배치되어 있을 경우 동작하지 않음. 출처 : [CSS flex 정리](https://13akstjq.github.io/css/2020/07/01/CSS-flex-%EC%A0%95%EB%A6%AC.html)
+      - align-content는 `줄`을 생각하면 됨. 여러 줄들 사이의 간격을 지정하고, align-items는 컨테이너 안에서 어떻게 모든 요소들이 정렬하는지를 지정함.
 
 - Item
 
