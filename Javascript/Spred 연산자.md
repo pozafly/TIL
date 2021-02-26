@@ -1,6 +1,10 @@
 # Spread 연산자
 
-> 출처 : https://velog.io/@chlwlsdn0828/Js-Spread-%EC%97%B0%EC%82%B0%EC%9E%90-Rest-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0
+※ react를 배우면서 알게된 [Spread Operator](https://github.com/pozafly/TIL/blob/main/react/99.0%20Object%20%EA%B0%80%EB%B3%80%EC%84%B1(Spread%20Operator).md) 여기에 더 깊은 내용이 있다. 얕은 복사가 뭔지, 껍데기만 새로 만드는 개념. Spread Opertor를 다시 익히려고 들어왔으면 이걸 꼭 봐야한다.
+
+>출처 : https://velog.io/@chlwlsdn0828/Js-Spread-%EC%97%B0%EC%82%B0%EC%9E%90-Rest-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0
+
+<br/>
 
 ES6 에서부터 사용할 수 있다.
 
