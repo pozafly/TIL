@@ -68,6 +68,8 @@ Container에 적용할 수 있는 속성 값이 있고, 각 Item들에 적용할
   - flex-shrink : 창이 줄어들 때 비율.
   - flex-basis : 기본값은 auto, %로 flex-grow, flex-shrink와 상관 없이 늘었다 줄었다 할 수 있다.
   - align-self : 아이템 별로 center 등 justify-content 같이 지정해줄 수 있다.
+  - flex : 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성. flex는 [`flex-grow`](https://developer.mozilla.org/ko/docs/Web/CSS/flex-grow), [`flex-shrink`](https://developer.mozilla.org/ko/docs/Web/CSS/flex-shrink), [`flex-basis`](https://developer.mozilla.org/ko/docs/Web/CSS/flex-basis)의 단축 속성임. 📌 **item이 하나 밖에 없다면 flex 1을 줘서 모든 공간(여백)을 다 차지하게 할 수 있다.**
+    - ex) flex: 1; flex: 2; flex: 1 1 100px;
 
 
 
