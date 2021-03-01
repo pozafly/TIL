@@ -1,0 +1,37 @@
+# Firebase
+
+2011년도에 개발됨. Google이 인수했다.
+
+대표적 기능
+
+- Build better apps
+  - Authentication(로그인기능) - backend의 security 등의 기능을 제공
+  - Cloud Firestore, Cloud Storage, Realtime Batabase(데이터베이스)
+  - Hosting(배포, 호스팅)
+- Improve app quality
+  - Crashlytics(크러시 로깅) - 에러 발생해서 프로그램이 죽었을 때, 발생 경로와 에러메세지를 개발자에게 보여주는 crash reporting 시스템.
+  - Performance Monitoring - 성능 모니터링
+  - Test Lab - 다양한 디바이스를 통해 테스팅 할 수 있게 도와줌
+  - App Distribution - 어플리케이션 버전대로 배포할 수 있게 도와줌.
+- Grow your business
+  - In-App Messaging - 광고, 마케팅을 할 때 사용자에게 메세지를 보냄.
+  - Google Analytics - 사용자가 나의 웹 페이지에서 어떤 기능을 쓰는지, 추적할 수 있는 기능. 시장에 내놓는 어플리케이션이라면 이것은 `필수` 다.
+  - A/B Testing - 새로운 기능이 나왔을 때 사용자에게 50% 비율로 새로운 기능을 배포하고 새로운 기능을 넣지 않고 사용자가 어플을 이용할 때 어떤 차이가 있는지 분석함.
+
+등등....
+
+
+
+## SDK?
+
+프로젝트를 추가하고, web으로 들어가서 앱 등록을 시작하면 
+
+<img width="769" alt="스크린샷 2021-03-01 오후 2 04 21" src="https://user-images.githubusercontent.com/59427983/109454249-21c2d880-7a97-11eb-83dc-0b3a605ea802.png">
+
+이런게 뜬다. 여기서 `SDK`란?
+
+- Software Development Kit
+- 프레임워크와 비슷하게 우리가 개발에 필요한 모든 것이 들어있다.
+- public API : 유튜브 API같은 경우 API 하나하나 땡겨와서 서버로부터 데이터를 받아온 것.
+- SDK : 어떻게 통신을 해야하는지, 어떤 것을 어떻게 가져와야하는지 걱정하지 않아도 됨. 어플리케이션에 라이브러리처럼 포함만 해놓으면 통신, update 등 걱정하지 않고 단순히 SDK 에서 제공하는 API 함수들만 이용하게 되면 SDK가 알아서 파이어베이스와 통신하게 됨.
+- 단, SDK를 프로젝트에 import 해두면 해당 SDK를 의존하므로 사이즈가 커지겠지.
