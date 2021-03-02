@@ -31,7 +31,7 @@ function App() {
     };
 
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyAt8c2PYwx485f9FMJmgxfrHRIOA_IOTB4`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=...`,
       requestOptions
     )
       .then((response) => response.json())
@@ -48,7 +48,7 @@ function App() {
     };
 
     fetch(
-      'https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAt8c2PYwx485f9FMJmgxfrHRIOA_IOTB4',
+      'https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=...',
       requestOptions
     )
       .then((response) => response.json())
@@ -82,7 +82,7 @@ class Youtube {
 
   mostPopular() {
     return fetch(
-      'https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyAt8c2PYwx485f9FMJmgxfrHRIOA_IOTB4',
+      'https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=...',
       this.getRequestOptions
     )
       .then((response) => response.json())
@@ -91,7 +91,7 @@ class Youtube {
 
   search(query) {
     return fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyAt8c2PYwx485f9FMJmgxfrHRIOA_IOTB4`,
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=...`,
       this.getRequestOptions
     )
       .then((response) => response.json())

@@ -58,5 +58,5 @@ const updateCard = (card) => {
 
 이런 식으로 map으로 새 배열을 만들어서 리턴해주곤 했는데 성능상 문제가 생길 수 있다.
 
-이어지는 내용은 [여기] 를 보자.
+이어지는 내용은 [여기](https://github.com/pozafly/TIL/blob/main/react/2.5%20%E2%AD%90%EF%B8%8F%20Array%20%EB%8C%80%EC%8B%A0%20Object%20%EC%9D%B4%EC%9A%A9.md) 를 보자.
 
