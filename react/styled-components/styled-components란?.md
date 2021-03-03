@@ -1,0 +1,83 @@
+# Styled-components
+
+스타일드 컴포넌트는 Javascript 파일 안에 스타일을 선언하는 방식이다. 이 방식을 'CSS-in-JS' 라고 부른다. emotion이 대표적으로 Styled-components를 대체한다고 한다.
+
+styled-components를 사용하면 자바스크립트 파일 하나에 스타일까지 작성할 수 있기 때문에 .css 또는 .scss 확장자를 가진 스타일 파일을 따로 만들지 않아도 되는 이점이 있음.
+
+<br/>
+
+## 설치
+
+```sh
+$ yarn add styled-components
+```
+
+<br/>
+
+## 사용
+
+```jsx
+import React from 'react';
+import styled, { css } from 'styled-components';
+
+const Box = styled.div`
+  /* props로 넣어준 값을 직접 전달해줄 수 있다. */
+  background: ${(props) => props.color || 'blue'};
+  padding: 1rem;
+  display: flex;
+`;
+
+const Button = styled.button`
+  background: white;
+  color: black;
+  border-radius: 4px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 600;
+
+  /* & 문자를 사용하여 Sass처럼 자기 자신 선택 가능 */
+  &:hover {
+    background-color: rgba(255, 2555, 255, 0.9);
+  }
+
+  /* 다음 코드는 inverted 값이 true 일 때, 특정 스타일을 부여해 줌. */
+  ${(props) =>
+    props.inverted &&
+    css`
+      background: none;
+      border: 2px solid white;
+      color: white;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    `};
+  & + button {
+    margin-left: 1rem;
+  }
+`;
+
+const StyledComponent = () => {
+  return (
+    <Box color='black'>
+      <Button>안녕하세요</Button>
+      <Button inverted={true}>테두리만</Button>
+    </Box>
+  );
+};
+
+export default StyledComponent;
+```
+
+<img width="217" alt="스크린샷 2021-03-03 오후 10 28 00" src="https://user-images.githubusercontent.com/59427983/109812720-c0a22d00-7c6f-11eb-9a47-58a9f5ac4b1a.png">
+
+요롷개 나온다. `<Box color=''>` 으로 주면 디폴트 값으로 blue 백그라운드 색상이 나옴. 이렇게 styled-components와 일반 classNames를 사용하는 css/sass를 비교했을 때, 가장 큰 장점은 props 값으로 전달해주는 값을 쉽게 스타일에 적용할 수 있다는 것임.
+
+styled-components 를 사용하면 이렇게 스타일을 입력함과 동시에 해당 스타일을 가진 컴포넌트를 만들 수 있다. 만약에 `div` 를 스타일링 하고 싶으면 `styled.div`, `input` 을 스타일링 하고 싶으면 `styled.input` 이런식으로 사용하면 됨.
+
+📌 vscode에서 백틱을 사용하면 스타일이 그저 문자열로 간주되어 코드 신택스 하이라이팅이 입혀지지 않음. 마켓에서 `vscode-styled-components` 를 검색해 설치하셈.
+
