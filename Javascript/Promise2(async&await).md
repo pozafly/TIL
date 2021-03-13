@@ -1,4 +1,4 @@
-# Async & Await
+# async & await
 
 > 출처  : https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#asyncawait
 
@@ -110,6 +110,45 @@ makeRequest();
 3. `await getJSON()` 은 `console.log` 의 호출이 `getJSON()` promise가 resolve된 후에 일어나고, 그 후에 값을 출력할 것이라는 것을 의미함.
 
 > 즉, 스코프 문제라는 것인데, async 스코프 내, await를 사용해야 하고, 그 상위 스코프에서는 안먹는다는 말인듯.
+
+<br/>
+
+## 비동기 함수를 병렬로 실행하기
+
+async await 함수에서 여러 비동기 함수를 병렬로 처리하는 방법을 알아보자. 다음과 같이 여러 비동기 함수에 각각 await 키워드를 사용해서 호출하면 순차적으로 실행된다.
+
+```js
+// 순차적으로 실행되는 비동기 코드
+async function getData() {
+  const data1 = await asyncFunc1();
+  const data2 = await asyncFunc2();
+  // ...
+}
+```
+
+위 코드에서 두 함수 사이에 의존성이 없다면 동시에 실행하는게 더 좋다. 프로미스는 생성과 동시에 비동기 코드가 실행된다. 따라서 두 개의 프로미스를 먼저 생성하고 await 키워드를 나중에 사용하면 병렬로 실행하는 코드가 된다.
+
+```js
+// await 키워드를 나중에 사용해서 병렬로 실행되는 비동기 코드
+async function getData() {
+  const p1 = asyncFunc1();  // 👻 
+  const p2 = asyncFunc2();  // 👻
+  const data1 = await p1;  // 📌
+  const data2 = await p2;  // 📌
+}
+```
+
+- 👻 : 두개의 프로미스가 생성되고 각자의 비동기 코드가 실행된다.
+- 📌 : 두 프로미스가 생성된 후 기다리기 때문에 두 개의 비동기 함수가 병렬로 처리 된다.
+
+Promise.all을 사용하면 다음과 같이 더 간단해진다.
+
+```js
+async function getData() {
+  const [data1, data2] = await Promise.all([asyncFunc1(), asyncFunc2()]);
+  // ...
+}
+```
 
 <br/>
 

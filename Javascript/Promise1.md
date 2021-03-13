@@ -115,16 +115,44 @@ _promise(true)
 
 ## Promise.all
 
-여러 개의 비동기 작업들이 존재하고 이들 모두 완료되었을 때 작업을 진행하고 싶다면, all 사용. 
+Promise.all은 여러 개의 프로미스를 병렬로 처리하고 싶을 때 사용하는 함수다. `then` 메서드를 체인으로 연결하면 각각의 비동기 처리가 병렬로 처리되지 않는다는 단점이 있다.
 
-여기서 눈여겨 봐야할 것은 promise1,2에 할당된 녀석들은 return 이 붙지 않았다. 바로 new를 통해 객체를 생성해줌. 그렇다면 각자가 .thne을 이어 사용할 수 없다는 말임.
+```js
+// 순차적으로 실행되는 비동기 코드
+requestData1()
+  .then(data => {
+    console.log(data);
+    return requestData2();
+  })
+  .then(data => {
+    console.log(data);
+  })
+```
+
+비동기 함수 간 서로 의존성이 없다면 **병렬로 처리하는게** 더 `빠르다`. then 메서드를 체인으로 연결하지 않고 다음과 같이 비동기 함수를 각각 호출하면 병렬로 처리된다.
+
+```js
+// 병렬로 실행되는 코드
+requestData1().then(data => console.log(data));
+requestData2().then(data => console.log(data));
+```
+
+위 코드에서 requestData1, requestData2 는 동시에 실행된다. 이를 묶으면, 
+
+```js
+Promise.all([requestData1(), requestData2()]).then(([data1, data2]) => {
+  console.log(data1, data2)
+});
+```
+
+또한, 여러 개의 비동기 작업들이 존재하고 이들 모두 완료되었을 때 작업을 진행하고 싶다면, all 사용. 
+
+여기서 눈여겨 봐야할 것은 promise1,2에 할당된 녀석들은 return 이 붙지 않았다. 바로 new를 통해 객체를 생성해줌. 그렇다면 각자가 .then을 이어 사용할 수 없다는 말임.
 
 ```javascript
 var promise1 = new Promise(function (resolve, reject) {
-  
   // 비동기를 표현하기 위해 setTimeout 함수 사용
   setTimeout(function() {
-    
     // 해결 됨
     console.log('첫번째 Promise 완료');
     resolve('1111');
@@ -132,10 +160,7 @@ var promise1 = new Promise(function (resolve, reject) {
 });
 
 var promise2 = new Promise(function (resolve, reject) {
-  
-  // 비동기를 표현하기 위해 setTimeout 함수 사용
   setTimeout(function() {
-    
     // 해결 됨
     console.log('두번째 Promise 완료');
     resolve('2222');
@@ -159,7 +184,6 @@ Promise.all([promise1, promise2]).then(function (values) {
 
 ```javascript
 var _promise = new Promise(function(resolve, reject) {
-  
   // 여기서 무언가 수행
   
   // 50% 확률로 resolve
@@ -173,7 +197,7 @@ var _promise = new Promise(function(resolve, reject) {
 
 위와 같이 선언한다면 Promise 객체에 파라미터로 넘겨준 익명함수는 즉시 실행된다. 즉각 실행되므로 _promise.then(alert) 등의 형태로 사용할 수 없다.
 
-이후 여러 차례 _promise.then(alert)을 호출해도 이미 한번 수행 되었기 때문에 계속해서 resolve혹은 reject가수행 될 것이다. _promise.then(alert).catch(alert)을 여러 차례 수행해보면, "Stuff wored!" 가 나왔다면, 몇 번을 반복해서 수행해도 계속 "Stuff worked!"가 나오게 됨.
+이후 여러 차례 _promise.then(alert)을 호출해도 이미 한번 수행 되었기 때문에 계속해서 resolve혹은 reject가 수행 될 것이다. _promise.then(alert).catch(alert)을 여러 차례 수행해보면, "Stuff wored!" 가 나왔다면, 몇 번을 반복해서 수행해도 계속 "Stuff worked!"가 나오게 됨.
 
 Promise 객체를 new 로 바로 생성할 경우 아래와 같은 형태로 사용 가능하다.
 
@@ -227,7 +251,105 @@ Promise.all([promise1(), promise2()]).then(function (values) {   // 괄호 붙�
 });
 ```
 
+또 Promise.all은 프로미스를 이행할 때 동시에 같은 매개변수를 사용할 수 있다. 예를들어,
+
+```js
+requestData1()
+  .then(result1 => {
+    return requestData2(result1);
+  })
+  .then(result2 => {
+    // ... 📌
+  });
+```
+
+만약 📌 이곳에서 `result1` 변수를 참조해야 한다면 어떻게 해야할까?
+
+```js
+requestData1()
+  .then(result1 => {
+    return Promise.all([result1, requestData2(result1)]);   // 📌
+  })
+  .then(([result1, result2]) => {
+    // ...
+  });
+```
+
+📌 Promise.all 함수로 입력하는 배열에 프로미스가 아닌 값을 넣으면, 그 값 그대로 이행됨 상태인 프로미스처럼 처리된다.
+
 <br/>
+
+## 프로미스를 이용한 데이터 캐싱
+
+처리됨 상태가 되면 그 상태를 유지하는 프로미스의 성질을 이용해서 데이터를 캐싱할 수 있다.
+
+```js
+let cachedPromise;
+function getData() {
+  cachedPromise = cachedPromise || requestData();   // 📌 1
+  return cachedPromise;
+}
+getData().then(v => console.log(v));
+getData().then(v => console.log(v));
+```
+
+📌 1 : getData 함수를 처음에 호출 할 때만 requestData가 호출된다. 데이터를 가져오는 작업이 끝나면 그 결과는 `cachedPromise` 에 저장된다.
+
+<br/>
+
+## 프로미스 사용시 주의점
+
+### 1. return  키워드 깜빡하지 않기
+
+then 메서드 내부 함수에서 return 을 깜빡하기 쉬움. then 메서드가 반환하는 프로미스 객체의 데이터는 내부 함수가 반환한 값이 됨. return 을 사용하지 않으면 프로미스 객체의 데이터는 `undefined` 가 된다.
+
+```js
+Promise.resolve(10)
+  .then(data => {
+    console.log(data);
+    Promise.resolve(20);   // 📌 1
+  })
+  .then(data => {
+    console.log(data);   // 📌 2
+  })
+```
+
+📌 2 의도와 다르게 undefined가 출력됨. 📌 1 코드에서 return 키워드를 입력해주면 의도한대로 20이 출력된다.
+
+### 2. 프로미스는 불밴 객체라는 사실 명심하기
+
+프로미스는 불변 객체다. 이를 인지하지 않고 코드를 작성하면 다음과 같은 실수를 한다.
+
+```js
+function requestData() {
+  const p = Promise.resolve(10);
+  p.then(() => {   // 📌 1
+    return 20;
+  });
+  return p;
+}
+requestData().then(v => {
+  console.log(v);   // 📌 2
+});
+```
+
+- 📌 1 : then 메서드는 기존 객체를 수정하지 않고 새로운 프로미스를 반환한다. 
+
+- 📌 2 : 20이 출력되길 원한다면 requestData 함수를 다음과 같이 수정해야 함.
+
+  ```js
+  function reqeustData() {
+    return Promise.resolve(10).then(v => {
+      return 20;
+    });
+  }
+  ```
+
+  
+
+<br/>
+
+
 
 > `정리`
 >
@@ -238,3 +360,5 @@ Promise.all([promise1(), promise2()]).then(function (values) {   // 괄호 붙�
 > [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 에 보면 Promise.all에 대한 설명이 조금 더 나와있는데,
 >
 > Promise.all(iterable) 이라고 함. `iterable` 내의 모든 프로미스가 이행한 뒤, 어떤 프로미스가 거부하면 즉시 거부하는 프로미스를 반환함. 반환된 프로미스가 이행하는 경우 `iterable` 내의 프로미스가 결정한 값을 모은 배열이 이행 값이다. 반환된 프로미스가 거부하는 경우 `iterable` 내의 거부한 프로미스의 이유를 그대로 사용함. 이 메서드는 여러 프로미스의 결과를 모을 때 유용.
+
+## 
