@@ -66,3 +66,76 @@ portal이 DOM 트리의 어디에도 존재할 수 있다 하더라도 모든 �
 ```
 
 `#app-root` 안에 있는 `Parent` 컴포넌트는 형제 노드인 `#modal-root` 안의 컴포넌트에서 전파된 이벤트가 포착되지 않았을 경우 그것을 포착할 수 있다.
+
+<br/>
+
+## 예제
+
+> 출처 : https://m.blog.naver.com/psj9102/222141597022
+
+public 폴더에 있는 index.html 파일 수정하자.
+
+```html
+// index.html
+<html>
+  <head>...</head>
+  <body>
+    <div id="root"/>
+    <div id="global-portal"/> <!-- 추가 -->
+  </body>
+</html> 
+```
+
+이곳이 이제 portal의 도착점이다.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const Portal = ({ children }) => {
+  const globalPortal = document.getElementById('global-portal');
+  return ReactDOM.createPortal(children, globalPortal);
+};
+
+const App = () => {
+  return (
+    <div>
+      <Portal>
+        <div>#global portal로 이동한다</div>
+      </Portal>
+    </div>
+  );
+};
+
+export default App;
+```
+
+![portal](https://user-images.githubusercontent.com/59427983/112404647-10968000-8d54-11eb-917e-440072fc7571.png)
+
+이렇게 됨. useState를 사용해서 정말 잘 되는가 알아보자.
+
+```jsx
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+const Portal = ({ children }) => {
+  const globalPortal = document.getElementById('global-portal');
+  return ReactDOM.createPortal(children, globalPortal);
+};
+
+const App = () => {
+  const [number, setNumber] = useState(0);
+  return (
+    <div>
+      <div>{number}</div>
+      <Portal>
+        <button onClick={() => setNumber((pre) => pre + 1)}>증가</button>
+      </Portal>
+    </div>
+  );
+};
+
+export default App;
+```
+
+이런식으로 잘 동작한다.
