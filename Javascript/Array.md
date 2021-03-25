@@ -130,9 +130,3 @@ console.log(fruits.lastIndexOf('풋사과'));  // 5
 
 
 
-<br/>
-
->`정리`
->
->좋네. array. 뭐라고 정리해야할지.. 익숙하여서...
-
