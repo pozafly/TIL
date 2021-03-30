@@ -18,12 +18,13 @@ p 태그 안에 p 태그를 사용하면서 나타나는 오류. p 태그는 블
 
 ## 해결
 
-p 태그 안의 p 태그를 span 태그로 바꿔주자.
+p 태그 안의 p 태그를 div 태그로 바꿔주자. span으로 바꾸지 않는 이유는 text-align이 먹히지 않기 때문인데, block 요소만 text-align 가능. 그리고 p 안에서 div를 사용하면 아까와 같은 오류가 나기 때문에 밖으로 빼주었다.
 
 ```jsx
 <p>
-  <span style={{ textAlign: 'right' }}><strong>2021/3/30</strong></span>
+  ...
 </p>
+<div style={{ textAlign: 'right' }}><strong>2021/3/30</strong></div>
 ```
 
 워닝이 싸악 가신다.
