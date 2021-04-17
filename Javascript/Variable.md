@@ -1,7 +1,5 @@
 # Variable
 
-> 출처 : https://academy.dream-coding.com/courses/take/browser101/texts/14138807-1-3
-
 - 변수(let) : rw(read / write) 가능함.
 
 - 상수(const) : r(read)만 가능.
