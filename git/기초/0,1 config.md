@@ -41,3 +41,52 @@ $ git config --global core.autocrlf true  // 윈도우 사용자
 ```
 
 줄바꿈 문자열 때문에 문제가 생길 수 있는데 반드시 설정해주자.
+
+<br/>
+
+## 단축어 설정
+
+자주 사용하는 명령어를 단축어를 사용해 설정할 수 있음.
+
+예를 들어 `git status` 명령어를 단축어 설정해보자.
+
+```shell
+$ git config --global alias.st status
+```
+
+이렇게 해주면, `git status` 대신, `git st` 로 바꿔 사용할 수 있다.
+
+<br/>
+
+## git config 도움말
+
+명령어 확인.
+
+```shell
+$ git config --h
+```
+
+<br/>
+
+## 초기화 & 삭제
+
+## 초기화
+
+폴더를 만든 후 안에 들어가서
+
+```shell
+$ git init
+```
+
+하면 `.git` 이라는 숨김 폴더가 생김. 이 폴더는 깃에 관련된 모든 정보들이 안에 들어있다.
+
+ `ls -al` 로 확인해볼 수 있고, `open .git` 으로 파인더로 열어볼 수 있다.
+
+<br/>
+
+## 삭제
+
+```shell
+$ rm -rf .git
+```
+
