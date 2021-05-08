@@ -108,7 +108,7 @@ array.sort(function(x, y) {
 ```javascript
 var array = [1, 3, 5, 7, 9];
 array.every(function(i) {
-  return i & 2 === 1;
+  return i % 2 === 1;  // 홀수 찾기
 });   // true
 
 array.every(function(i) {
