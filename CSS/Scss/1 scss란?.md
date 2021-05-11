@@ -1,0 +1,19 @@
+# scss란?
+
+<br/>
+
+scss 는 CSS preprocessor다. preprocessor는 scss를 컴파일해서 css로 만드는 것. 업계 표준이 되고 있음.
+
+<br/>
+
+<br/>
+
+## 기능
+
+- Variables
+- Nesting
+- Partials
+- Mixins
+- Extend
+- Response Mixins
+
