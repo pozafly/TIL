@@ -1,0 +1,227 @@
+# Semantic Web
+
+> [출처1](https://velog.io/@iamhayoung/Semantic-Web%EC%9D%B4%EB%9E%80-Semantic-Tag%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
+
+<br/>
+
+![semantic](https://user-images.githubusercontent.com/59427983/119760187-84840e80-bee4-11eb-8444-de3f69be4601.jpeg)
+
+Google이나 Naver와 같은 검색 웹 사이트에서 무언가 검색했을 때 출력되는 검색 결과의 검색 순위는 `Semantic Web` 과 `Semantic Tag` 와 관련있다.
+
+<br/>
+
+<br/>
+
+## Semantic Web의 목적
+
+웹 사이트는 `HTML` 이라고 하는 `Markup` 언어로 작성되어 있다. 사람이 웹 사이트를 읽으면 웹 사이트 내의 단어나 문장이 대략 무엇을 의미하는지, 어떤 목적으로 사용되고 있는지 파악할 수 있지만, 컴퓨터가 스스로 이해하는 것은 어렵다.
+
+따라서 **컴퓨터가 웹 사이트 내의 각 태그가 어떤 기능을 하는지 분별**할 수 있도록 하여, 효율적으로 데이터를 추출할 수 있도록 하는 것을 목적으로 한다.
+
+<br/>
+
+<br/>
+
+## Semantic Web이란?
+
+`Semantic` 은 사전적으로 '**의미의**' 라는 뜻을 가진 단어.
+
+`Semantic Web` 이란, Semantic한 요소, 즉 **컨텐츠에 의미를 부여한 요소를 사용**하여 구축한 웹 사이트로, 컴퓨터(웹 크롤러)가 웹 사이트의 의미와 컨텐츠의 내용을 이해하도록 하여 **더 고품질의 정보를 수집하고 처리할 수 있도록 하는 것**에 도움을 준다.
+
+> 웹 크롤러(web crawler) : 조직적, 자동화된 방법으로 월드 와이드 웹을 탐색하는 컴퓨터 프로그램.
+
+즉, 의미 없는 단순한 요소(Non-Semantic Element)로 구성된 웹 사이트와는 달리, Semantic Web은 **Semantic Element**로 작성되어 있기 때문에 검색 엔진의 웹 클롤러가 웹 사이트에 대한 정보를 비교적 정확히 수집, 분석할 수 있게 되어, 최적의 검색 결과를 도출하는데 도움을 줌.
+
+또한 시멘틱 웹은 시각 장애가 있는 유저가 사용하는 **Screen reader**에게 정보를 제공하는 것에도 사용될 수 있다.
+
+> Screen reader : 컴퓨터 화면 내 문자를 음성으로 읽어주는 SW
+
+<br/>
+
+<br/>
+
+## Semantic Web과 SEO(검색엔진 최적화)
+
+시멘틱 웹의 장점은 SEO에 유리하다.
+
+### SEO란?
+
+Search Engine Optimization. 검색 유저에게 양질의 컨텐츠와 경험을 제공하는 것으로, 포털 사이트 검색 엔진에 웹 사이트를 상위에 노출시키기 위해 기술적으로 웹 사이트를 최적화하는 대책을 말한다.
+
+상위에 노출되는 조건은 유저가 검색한 검색 키워드, 웹 사이트의 컨텐츠가 연관성이 있다는 것을 웹 크롤러에게 인지시켜줄 필요가 있음.
+
+이 때 Semantic Element를 사용해 구축한 사이트는 컨텐츠를 인식할 수 있기 때문에 검색 키워드와 Semantic Web의 컨텐츠가 서로 부합하는지 검토할 수 있도록 한다.
+
+웹 크롤러로부터 높은 평가를 받은 웹 사이트는 검색 순위의 상위권에 노출될 확률이 높아지게 된다.
+
+<br/>
+
+<br/>
+
+## Semantic Web을 구성하는 Semantic Tag
+
+### Semantic Tag란?
+
+시멘틱 웹을 구축할 때 사용하는 `HTML` 태그가 바로 `Semantic Tag`.
+
+즉, 특정한 의미를 가지고 있는 HTML 요소. 예를 들면 페이지 상단의 로고나 검색 바, 네비게이션을 포함하는 정보를 담고 있는 `<header>` 태그가 대표적인 시멘틱 태그라고 할 수 있다. 웹 크롤러가 이해함.
+
+반면, **단순한** 구역을 나누는 `<div>` 태그가 대표적 `Non-Semantic Tag` 다. div 태그는 단순 구역을 나누는 역할 그 자체만 수행하기 때문에 어떠한 용도로 사용되는지, 어떤 역할을 행하는지 정보를 제공하지 못한다.
+
+<br/>
+
+### Semantic Tag, Non-Semantic Tag 비교
+
+시멘틱 태그를 사용했을 때 코드의 가독성을 향상시킬 수 있다는 메리트가 있다.
+
+- Non-Semantic Tag
+
+```html
+<!-- Non-Semantic Tag -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav">
+        <ul>
+          <li>menu1</li>
+          <li>menu2</li>
+          <li>menu3</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="section">
+        <p>Title</p>
+        <p>Contents</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Ⓒ 2021.</p>
+    </div>
+  </body>
+</html>
+```
+
+- Semantic tag
+
+```html
+<!-- Semantic Tag -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>menu1</li>
+          <li>menu2</li>
+          <li>menu3</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1>Title</h1>
+        <p>Contents</p>
+      </section>
+    </main>
+    <footer>
+      <p>Ⓒ 2021.</p>
+    </footer>
+  </body>
+</html>
+```
+
+<br/>
+
+<br/>
+
+## 대표적인 Semantic Tag
+
+- `<header>` : 웹 페이지 도입부. 주로 페이지 상단에 웹 사이트 로고와 네비게이션 링크를 감싸는 것에 사용.
+- `<nav>` : 사이트 내 링크를 모아둔 네비게이션을 만드는 태그. 웹 사이트의 동선을 생성해준다. 또한 상위 페이지에서 하위 페이지로 유도하는 역할.
+- `<main>` : 웹 사이트의 본문을 뜻함. 메인 컨텐츠를 크게 감싸주는 역할로, 한 HTML 내에서 1개만 존재해야 함.
+- `<section>` : 페이지 내에서 각 영역의 제목을 나타내는 `header` 와 컨텐츠를 감싸줌. 각 컨텐츠의 영역을 구획하는 것에 주로 사용.
+- `<article>` : 뉴스나 블로그 글과 같이 돌립적으로 컨텐츠 그 자체가 될 수 있는 컨텐츠.
+- `<aside>` : 사이드 메뉴 등 main 이외의 컨텐츠. 메인 컨텐츠가 아닌 부가 정보, 해설을 담고 있기도 함.
+- `<footer>` : 웹 페이지의 가장 하단에 있다. 웹 사이트 하단에 회사 정보나 약관 정보, 사이트 맵, 소셜 미디어 링크 등의 컨텐츠를 표시하는 것에 사용.
+
+![img_sem_elements](https://user-images.githubusercontent.com/59427983/119769393-5955eb00-bef5-11eb-9b0f-5c45b4fa066c.gif)
+
+<br/>
+
+<br/>
+
+## HTML에서 이미지를 표시하는 방법
+
+대표적으로 2가지가 있음.
+
+1. Semantic Tag인 `<img>` 태그 사용
+   - 이미지가 해당 페이지의 메인 컨텐츠로써 사용될 때 사용. 본문, 내용과 직접적으로 관계 있는 이미지를 표시할 때 사용.
+
+2. `<div>` 태그 등에 CSS의 background-image 속성 사용
+   - 컨텐츠 외 디자인적인 요소로 사용될 때 사용. 본문, 내용과 직접적으로 관계없는 장식, 디자인, 배경을 구현할 때 사용.
+
+<br/>
+
+### Semantic Tag인 `<img>` 태그 사용
+
+img 태그는 해당 페이지의 **메인 컨텐츠인 이미지를 표현**할 때 사용한다. 해당 페이지에서 정보를 표현하는 것에 있어 없어서는 안될 이미지를 출력할 때 사용.
+
+예를 들면 상품 사진, 썸네일 등. (상품을 판매하는 쇼핑몰인데 상품 사진이 없어서는 안된다. 이렇게 이미지 그 자체가 정보를 표현하는데 중요한 역할을 할 때 img 태그를 사용)
+
+```html
+<img src="apple.png" alt="사과" />
+```
+
+- src : 표시할 이미지 경로
+- alt : 이미지가 특정 이유로 출력되지 않을 때 이미지 대신 표시될, 이미지를 부가적으로 설명해 줄 텍스트 정보
+
+img 태그는 `alt` 속성을 가질 수 있기 때문에 시멘틱 태그의 성격을 가진다.
+
+> `<img>` 태그를 사용하기 적합한 상황
+>
+> 1. 웹 페이지의 메인 컨텐츠로써 이미지를 표시해야할 때 사용.
+> 2. 이미지이지만 웹 페이지의 디자인적인 부분을 구현하는 요소가 아닐 때.
+> 3. (SEO 등의 이유로) 검색 엔진에 이미지를 인식시켜야할 경우.
+
+하지만 img 태그는 CSS인 background-image보다 웹 페이지를 렌더링할 때 부하가 크기(무겁기) 때문에 주로 웹 사이트의 큰 배경 이미지를 표현해야할 때는 CSS인 background-image를 사용한다. (이미지 용량이 크면 클 수록 더더욱 무거워진다.)
+
+<br/>
+
+### `<div>` 태그 등에 CSS의 background-image 속성 사용
+
+background-image는 HTML이 아닌, CSS 속성 그 자체이기 때문에 SEO 적으로 활용될 수 없다. 주로 컨텐트 외적인 **웹 페이지의 디자인적 요소를 표현할 때 사용**된다.
+
+예를 들면 배경, 아이콘처럼 해당 컨텐츠가 존재하지 않아도 페이지의 정보를 표현하는 것에 지장을 주지 않는 정보.
+
+```css
+.bg {
+  background-image: url("apple.png")
+}
+```
+
+CSS로 이미지를 구현할 때는 위의 코드처럼 background-image라는 속성을 사용하는데 CSS이기 때문에 background-image 뿐 아니라 다양한 속성을 추가해 이미지를 더욱 풍부하게 표현할 수 있다.
+
+```css
+.bg {
+  background-image: url("apple.png");
+  background-repeat: repeat;
+}
+```
+
+위와 같이 배경 이미지를 일정하게 반복시켜 도트 무늬나 스트라이프 무늬를 가진 배경을 표현할 수도 있음.
+
+>CSS의 background-image를 사용하기 적합한 상황
+>
+>1. 웹 페이지의 메인 컨텐츠가 아닌 장식적인, 디자인적인 목적으로 이미지를 표시해야할 때 사용
+>2. 아이콘 배경 등을 표현할 때
+>3. `transition`, `filter`, `background-repeat` 등 CSS로 이미지를 다양하게 편집할 필요가 있을 때
