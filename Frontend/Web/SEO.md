@@ -93,3 +93,72 @@ Moz의 테스트 및 경험에 따르면 키워드 앞쪽의 키워드가 검색
 
 ## 대체 텍스트(alt text)
 
+[이미지 SEO](https://github.com/pozafly/TIL/blob/main/Frontend/Web/%EC%9D%B4%EB%AF%B8%EC%A7%80%20SEO.md) 에 정리해둠.
+
+<br/>
+
+<br/>
+
+## 중복방지
+
+다음과 같은 이유로 페이지의 중복이 발생할 수 있다.
+
+- 다양한 URL
+
+  URL 매개 변수를 중복 콘텐츠 문제를 일으킬 수 있다.
+  
+  ![5](https://user-images.githubusercontent.com/59427983/120090375-e76fe280-c13c-11eb-9184-91285c6830ad.png)
+  
+  - **해결법** : 301 리디렉션
+  
+    대부분의 경우 중복 콘텐츠를 방지하는 가장 좋은 방법은 '중복' 페이지에서 원본 콘텐츠 페이지로 301 리디렉션을 설정하는 것이다.
+
+- www와 https
+
+  사이트의 주소가 "www.site.com" 및 "site.com", 혹은 'http://' 및 "https://" 처럼 다른 버전이 있다면 복제본이 생성되게 된다.
+  
+  - `Rel="canonical"`
+    중복 콘텐츠를 처리하는 또 다른 옵션은 rel = canonical 속성 을 사용하는 것임. 검색엔진이 페이지가 특정 URL의 사본으로 처리됨을 알려줍니다. 또한 이 페이지에 부여된 링크, 콘텐츠, "ranking power" 은 특정 URL에 부여된다.
+  
+- 복제된 콘텐츠
+
+  여러 웹 사이트에서 동일한 항목을 판매하고 모두 해당 항목에 대한 제조업체의 설명을 사용하는 경우 동일한 콘텐츠가 웹의 여러 위치에 표시된다.
+
+  - Google Search Console 이용 https://moz.com/learn/seo/duplicate-content
+
+<br/>
+
+<br/>
+
+## robots.txt
+
+robots.txt 파일은 웹 크롤러(user-agents)가 웹 사이트를 크롤링 할 수 있는지 여부를 나타내게 된다.
+
+ex) /robots.txt
+
+```
+User-agent: *
+Allow: /
+Sitemap: https://site.com/sitemap.xml
+
+User-agent: AdsBot-Google
+Disallow:
+```
+
+예시와 같이 User-agent, Allow, Disallow, Crawl-delay, Sitemap의 구문을 사용하며 user-agent를 지정하여 특정 페이지를 'allow'혹은 'disallow'할 수 있다.
+
+사이트맵(sitemap)은 URL과 관련된 XML 사이트맵의 위치를 호출하는데 사용된다. 이 명령은 Google, Ask, Bing 및 Yahoo 에서만 지원된다.
+
+### robots.txt의 장점
+
+- SERP에 중복 콘텐츠가 표시되지 않도록 방지
+- 웹 사이트의 전체 섹션을 비공개로 유지 (예 : 개발 dev 사이트)
+- 내부 검색 결과 페이지가 공개 SERP에 표시되도록 유지
+- 사이트 맵 위치 지정
+- 검색 엔진이 웹 사이트의 특정 파일(이미지, PDF 등)을 인덱싱하지 못하도록 방지
+- 크롤러가 한 번에 여러 콘텐츠를 로드할 때 서버에 과부하가 걸리지 않도록 크롤링 지연(Crawl-delay) 지정
+
+사이트에 사용자 에이전트 액세스를 제어하려는 영역이 없는 경우 robots.txt 파일이 전혀 필요하지 않을 수 있다.
+
+
+
