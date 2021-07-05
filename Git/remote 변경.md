@@ -28,7 +28,7 @@ $ git remote remove origin
 ### 새 레파지토리 remote 추가
 
 ```sh
-$ git remote add orgin [레파지토리 주소]
+$ git remote add origin [레파지토리 주소]
 ```
 
 <br/>
