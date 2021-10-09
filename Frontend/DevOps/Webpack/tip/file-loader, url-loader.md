@@ -1,6 +1,6 @@
 # file-loader, url-loader
 
-> [출처1](https://jeonghwan-kim.github.io/js/2017/05/22/webpack-file-loader.html), [출처2](https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html), [웹팩 공홈](https://webpack.kr/guides/asset-modules/)
+> [출처](https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html#43-file-loader), [웹팩 공홈](https://webpack.kr/guides/asset-modules/)
 
 webpack 5 이전에는 아래의 로더를 사용하는게 일반적이었음.
 
@@ -129,3 +129,54 @@ module.exports = {
 file-loader와 옵션 설정이 비슷한데 `limit` 속성만 추가 됨. 모듈로 사용한 파일 중 크기가 5kb 미만인 파일만 url-loader를 적용하는 설정. 만약 이보다 크면 file-loader가 처리하는데 옵션 중 fallback 기본 값이 file-loader 가 된다. 반면 5kb 이상인 bg.png는 옂쩐히 파일로 존재 함.
 
 아이콘 처럼 용량이 작거나 사용 빈도가 높은 이미지는 파일을 그대로 사용하기 보다 Data URI Scheme을 적용하기 위해 url-loader를 사용하자.
+
+<br/>
+
+<br/>
+
+## 두개 동시 사용
+
+```js
+module: {
+  rules: [
+    // file-loader로 파일로 만들어줌.
+    {
+      test: /\.(png|jpe?g|gif)$/i,
+      loader: 'file-loader',
+      options: {
+        publicPath: './dist/src/assets',
+        name: '[name].[ext]?[hash]',
+      },
+    },
+    // 용량 limit 미만인 녀석을 base64로 인코딩해서 인라인으로 넣어줌.
+    {
+      test: /\.(png|jpe?g|gif)$/i,
+      loader: 'url-loader',
+      options: {
+        name: '[path][name].[ext]',
+        limit: 50000,
+      },
+    },
+  ],
+},
+```
+
+이렇게 file-loader와 url-loader를 둥시에 사용할 경우, build 시 하나의 이미지 파일에 두개의 빌드된 이미지가 나타나서 브라우저가 이를 제대로 처리하지 못한다. 이럴 때 사용하는게 `fallback` 이다. fallback은 url-loader에 지정해줄 수 있다.
+
+```js
+module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'url-loader',
+        options: {
+          name: '[path][name].[ext]',
+          limit: 50000,
+          fallback: require.resolve('file-loader'),  // 요기
+        },
+      },
+    ],
+  },
+```
+
+이렇게 해주었을 경우 `limit` 가 넘는 녀석들은 file-loader로 넘겨줘서 그녀석이 처리하게 함. 즉, 모두 명시를 해주는게 아니라 url-loader 만 명시해주고 fallback을 적어주면 되겠다.
