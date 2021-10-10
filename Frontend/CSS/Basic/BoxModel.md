@@ -84,7 +84,7 @@ content 영역에만 width 값이 적용되었기 때문이다. border를 10px�
 
 세로도 마찬가지로 **content** 영역의 높이를 지정하는 것임. default 값은 auto. 컨텐츠 내용만큼 늘어나게 된다. 
 
-⭐️ 단, % 값은 약간 다르다.
+📌 단, % 값은 약간 다르다.
 
 ```css
 .parent {
@@ -100,7 +100,7 @@ content 영역에만 width 값이 적용되었기 때문이다. border를 10px�
 
 ```css
 .parent {
-  height: 100px;  // 추가
+  height: 100px;  // ⚡️추가
   border: 10px solid blue;
 }
 .child {
@@ -111,4 +111,4 @@ content 영역에만 width 값이 적용되었기 때문이다. border를 10px�
 
 이렇게 상위 요소에 100px이라는 고정 값을 주게 되면 child에서 %값이 먹히는 모습을 볼 수 있다.
 
-즉, height에서 %를 사용하려면 **상위 요소에 고정 값**이 필요하다.
+즉, height에서 %를 사용하려면 ⭐️ **상위 요소에 고정 값**이 필요하다.
