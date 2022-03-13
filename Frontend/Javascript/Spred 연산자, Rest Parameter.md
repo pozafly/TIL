@@ -166,7 +166,9 @@ console.log(firstElement) // "a"
 console.log(rest) // ["b", "c", "d"]
 ```
 
-답은 rest parameter임. destructing과 함께 쓰였다. 그리고 객체에서도 똑같이 적용된다. 한 객체에서 특정 property를 뺀 새로운 객체를 만들 때 유용하다.
+답은 rest parameter임. destructuring과 함께 쓰였다. 잘 보면, [,,,]`= arr` 구문에서 구조분해 할당(풀어줌-spread)이 일어남. 후에 `...rest` 로 묶어줌. 즉 풀고 묶는 행위가 한번에 일어났다. 
+
+또한 객체에서도 똑같이 적용된다. 한 객체에서 특정 property를 뺀 새로운 객체를 만들 때 유용하다.
 
 ```js
 const obj = { a: 1, b: 2, c: 3 };
