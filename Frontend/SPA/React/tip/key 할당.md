@@ -25,7 +25,7 @@ fetch(
 
 이런식으로 `setVideos` 로 state를 업뎃 해주고, video_list에서 props로 video의 id를 key로 설정하고 있었다.
 
-이 때, 여기서 key가 Object로 표현되고 있었는데 items 안에는 id가 Object 형태였다. 바꿔줘야 할 것은 items 안에 있는 id..
+이 때, 여기서 key가 Object로 표현되고 있었는데 items 안에는 id가 Object 형태였다. 바꿔줘야 할 것은 items 안에 있는 id.
 
 ```jsx
 .then((result) =>

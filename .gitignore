@@ -34,3 +34,5 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
 면접대비/Lecture/
+.obsidian/plugins/recent-files-obsidian/data.json
+.obsidian/workspace
