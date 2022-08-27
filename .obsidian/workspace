@@ -9,7 +9,7 @@
         "state": {
           "type": "diff-view",
           "state": {
-            "file": "Frontend/SPA/React/기본/2.3 useState비동기 & 함수형 업데이트.md",
+            "file": ".obsidian/plugins/recent-files-obsidian/data.json",
             "staged": false
           }
         }
@@ -65,7 +65,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -85,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Frontend/SPA/React/tip/key 할당.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Frontend/SPA/React/tip/key 할당.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Frontend/SPA/React/tip/key 할당.md"
+              }
             }
           }
         ],
@@ -162,7 +166,7 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "c8be75baa04b02e4",
+  "active": "ab02f0f18cd0fe13",
   "lastOpenFiles": [
     "Frontend/Javascript/Scope.md",
     "Frontend/SPA/React/tip/JS 지원범위(폴리필).md",

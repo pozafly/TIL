@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "key 할당",
+      "path": "Frontend/SPA/React/tip/key 할당.md"
+    },
+    {
       "basename": "Scope",
       "path": "Frontend/Javascript/Scope.md"
     },
@@ -51,10 +55,6 @@
     {
       "basename": "key의 id는 useRef, props 함수는 useCallback",
       "path": "Frontend/SPA/React/tip/key의 id는 useRef, props 함수는 useCallback.md"
-    },
-    {
-      "basename": "key 할당",
-      "path": "Frontend/SPA/React/tip/key 할당.md"
     },
     {
       "basename": "Dependency Injection2. (컴포넌트 외부로 빼기)",
