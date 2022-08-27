@@ -1,0 +1,106 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Scope",
+      "path": "Frontend/Javascript/Scope.md"
+    },
+    {
+      "basename": "JS 지원범위(폴리필)",
+      "path": "Frontend/SPA/React/tip/JS 지원범위(폴리필).md"
+    },
+    {
+      "basename": "import & require",
+      "path": "Frontend/Javascript/tip/import & require.md"
+    },
+    {
+      "basename": "Hoisting",
+      "path": "Frontend/Javascript/Hoisting.md"
+    },
+    {
+      "basename": "1.6 이벤트 처리",
+      "path": "Frontend/SPA/React/기본/1.6 이벤트 처리.md"
+    },
+    {
+      "basename": "1.5 컴포넌트 만들기",
+      "path": "Frontend/SPA/React/기본/1.5 컴포넌트 만들기.md"
+    },
+    {
+      "basename": "1.4 state, props",
+      "path": "Frontend/SPA/React/기본/1.4 state, props.md"
+    },
+    {
+      "basename": "1.3.2 컴포넌트 실행 원리",
+      "path": "Frontend/SPA/React/기본/1.3.2 컴포넌트 실행 원리.md"
+    },
+    {
+      "basename": "스타일태그",
+      "path": "Frontend/SPA/React/tip/스타일태그.md"
+    },
+    {
+      "basename": "코드 분할(code splitting)",
+      "path": "Frontend/SPA/React/tip/코드 분할(code splitting).md"
+    },
+    {
+      "basename": "state 수정금지",
+      "path": "Frontend/SPA/React/tip/state 수정금지.md"
+    },
+    {
+      "basename": "loading spinner",
+      "path": "Frontend/SPA/React/tip/loading spinner.md"
+    },
+    {
+      "basename": "key의 id는 useRef, props 함수는 useCallback",
+      "path": "Frontend/SPA/React/tip/key의 id는 useRef, props 함수는 useCallback.md"
+    },
+    {
+      "basename": "key 할당",
+      "path": "Frontend/SPA/React/tip/key 할당.md"
+    },
+    {
+      "basename": "Dependency Injection2. (컴포넌트 외부로 빼기)",
+      "path": "Frontend/SPA/React/tip/Dependency Injection2. (컴포넌트 외부로 빼기).md"
+    },
+    {
+      "basename": "더미데이터 libs",
+      "path": "Frontend/SPA/React/tip/더미데이터 libs.md"
+    },
+    {
+      "basename": "⭐️ useEffect 완벽 가이드",
+      "path": "Frontend/SPA/React/tip/⭐️ useEffect 완벽 가이드.md"
+    },
+    {
+      "basename": "⭐️ Object 가변성(Spread Operator)",
+      "path": "Frontend/SPA/React/tip/⭐️ Object 가변성(Spread Operator).md"
+    },
+    {
+      "basename": "⭐️ Array 대신 Object 이용",
+      "path": "Frontend/SPA/React/tip/⭐️ Array 대신 Object 이용.md"
+    },
+    {
+      "basename": "0.1 변수",
+      "path": "Frontend/Javascript/모던 자바스크립트 Deep Dive/0.1 변수.md"
+    },
+    {
+      "basename": "0.0 JS 동작원리",
+      "path": "Preparation/Javascript/0.0 JS 동작원리.md"
+    },
+    {
+      "basename": "특정 브랜치 clone",
+      "path": "Git/특정 브랜치 clone.md"
+    },
+    {
+      "basename": "0.1 애자일",
+      "path": "DevOps/개발방법론/0.1 애자일.md"
+    },
+    {
+      "basename": "ㅇㄴㅁㅁㄴㅇㄹ",
+      "path": "새폴더/ㅇㄴㅁㅁㄴㅇㄹ.md"
+    },
+    {
+      "basename": "2022-08-08",
+      "path": "2022-08-08.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null
+}
