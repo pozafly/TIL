@@ -11,7 +11,8 @@
   "app:toggle-right-sidebar": [
     {
       "modifiers": [
-        "Mod"
+        "Mod",
+        "Shift"
       ],
       "key": "."
     }
@@ -32,6 +33,14 @@
         "Shift"
       ],
       "key": "K"
+    }
+  ],
+  "app:toggle-left-sidebar": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "."
     }
   ]
 }
