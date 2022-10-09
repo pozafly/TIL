@@ -1,5 +1,6 @@
 {
   "newFileLocation": "current",
   "showLineNumber": false,
-  "foldIndent": false
+  "foldIndent": false,
+  "promptDelete": false
 }
