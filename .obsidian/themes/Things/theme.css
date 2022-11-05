@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.0.0
+Version 2.0.1
 Created by @colineckert
 
 Readme:
@@ -241,6 +241,14 @@ body {
   --atom-blue: #61afef;
   --atom-yellow: #e5c07b;
 }
+/* Make exported PDFs render correctly */ 
+@media print {
+  .theme-dark {
+    --highlight-mix-blend-mode: darken;
+    --color-base-30: #ebedf0;
+    --h1-color: var(--color-base-00);
+  }
+}
 
 /* H2 styling */
 h2,
@@ -329,7 +337,6 @@ code[class*='language-'],
 .cm-qualifier {
   color: var(--atom-red);
 }
-.token.property,
 .token.boolean,
 .token.number,
 .token.constant,
@@ -367,6 +374,7 @@ code[class*='language-'],
   color: var(--atom-blue);
 }
 .token.class-name,
+.token.property,
 .cm-atom,
 code .cm-tag,
 .theme-dark .cm-variable-2,
@@ -640,7 +648,7 @@ settings:
         format: hex
         default: '#3EB4BF' 
     -
-        id: code-color-l
+        id: code-normal
         title: Inline code blocks font color (Light mode)
         type: variable-color
         format: hex
