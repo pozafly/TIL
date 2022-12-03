@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md",
+                "file": "Web/Tip/쿠키&세션.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md",
+                "file": "Web/Tip/쿠키&세션.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md",
+                "file": "Web/Tip/쿠키&세션.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md"
+                "file": "Web/Tip/쿠키&세션.md"
               }
             }
           }
@@ -165,17 +165,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "191db58ed4253109",
+  "active": "6b868606838f56f7",
   "lastOpenFiles": [
+    "Web/Tip/무제파일.md",
+    "Web/Tip/쿠키&세션.md",
+    "README.md",
     "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md",
     "Frontend/DevOps/Environment/VSCode/jsx 사용시 태그 자동완성.md",
     "Lecture/Testing/유닛 테스트와 TDD/0.3 Jest 환경설정.md",
     "Lecture/Testing/유닛 테스트와 TDD/0.5 Jest 기본 함수.md",
     "Lecture/Testing/유닛 테스트와 TDD/0.1 테스트란?.md",
     "Lecture/Testing/유닛 테스트와 TDD/1.0 테스팅의 원칙.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.9 Stub.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.8 Mock 기초.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.8.1 Mock 예제.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.7 비동기 테스트.md"
+    "Lecture/Testing/유닛 테스트와 TDD/0.9 Stub.md"
   ]
 }
