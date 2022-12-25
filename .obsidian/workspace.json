@@ -8,43 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "191db58ed4253109",
+            "id": "d35acc1c9225996f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Web/Tip/쿠키&세션.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f480bbcf510a87e6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Book/모던 자바스크립트 Deep Dive/0.6장 데이터 타입.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e97d6fe8c3e009cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md",
+                "file": "Book/Core Javascript/0.1 데이터 타입.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md",
+                "file": "Book/Core Javascript/0.1 데이터 타입.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md",
+                "file": "Book/Core Javascript/0.1 데이터 타입.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md"
+                "file": "Book/Core Javascript/0.1 데이터 타입.md"
               }
             }
           }
@@ -190,17 +165,28 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "e97d6fe8c3e009cd",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "46708e64d2d62ac7",
   "lastOpenFiles": [
     "Book/모던 자바스크립트 Deep Dive/0.6장 데이터 타입.md",
-    "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md",
     "Web/Tip/쿠키&세션.md",
+    "Book/Core Javascript/0.1 데이터 타입.md",
+    "Book/모던 자바스크립트 Deep Dive/0.8장 제어문.md",
     "Web/Tip/무제파일.md",
     "README.md",
     "Lecture/Testing/유닛 테스트와 TDD/1.1 리액트 테스트.md",
     "Frontend/DevOps/Environment/VSCode/jsx 사용시 태그 자동완성.md",
     "Lecture/Testing/유닛 테스트와 TDD/0.3 Jest 환경설정.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.5 Jest 기본 함수.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.1 테스트란?.md"
+    "Lecture/Testing/유닛 테스트와 TDD/0.5 Jest 기본 함수.md"
   ]
 }
