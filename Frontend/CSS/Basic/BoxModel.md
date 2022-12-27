@@ -1,5 +1,3 @@
-# BoxModel
-
 ![image](https://user-images.githubusercontent.com/59427983/136687634-04be9df1-d00d-4800-917a-05901ef99662.png)
 
 이렇게 생긴 녀석이 박스 모델이다. content, padding, border, margin 4가지 영역으로 나누어져 있음.
@@ -20,7 +18,7 @@
 
 ## margin
 
-margin 값은 padding 값과 다르게 **auto** 값이 존재한다. auto 값은 해당 요소에 📌 반드시 **width** 값이 있어야 적용된다.
+margin 값은 padding 값과 다르게 **auto** 값이 존재한다. auto 값은 해당 요소에 반드시 ⭐️**width** 값이 있어야 적용된다.
 
 ```css
 div {
@@ -35,7 +33,7 @@ div {
 
 <br/>
 
-## margin collapse(마진 병함)
+## margin collapse(마진 병합)
 
 마진 병합은 인접한 두 개 이상의 수직 방향 박스의 마진이 하나로 합쳐지는 것을 의미함. 큰 값이 작은 값을 잡아먹어버림.
 
@@ -112,3 +110,12 @@ content 영역에만 width 값이 적용되었기 때문이다. border를 10px�
 이렇게 상위 요소에 100px이라는 고정 값을 주게 되면 child에서 %값이 먹히는 모습을 볼 수 있다.
 
 즉, height에서 %를 사용하려면 ⭐️ **상위 요소에 고정 값**이 필요하다.
+
+<br/>
+
+## box-sizing 속성
+width, height는 글자를 감싸는 영역의 크기를 자정하는 스타일 속성. box-sizing 속성은 이러한 공식을 변경할 수 있는 CSS3 속성.
+- content-box
+	- width, height가 글자가 들어가는 영역의 크기를 지정한다.
+- border-box
+	- width, hieght가 테두리를 포함한 영역의 크기를 지정하게 만든다.(border, padding)을 함께 계산함.

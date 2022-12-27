@@ -30,9 +30,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f9f0b0c36244baa1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Frontend/CSS/tip/전체 선택자.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ae317d73ee12015f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Frontend/CSS/Basic/BoxModel.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -106,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Frontend/CSS/tip/요소 겹침 방지.md",
+                "file": "Frontend/CSS/Basic/BoxModel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Frontend/CSS/tip/요소 겹침 방지.md",
+                "file": "Frontend/CSS/Basic/BoxModel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Frontend/CSS/tip/요소 겹침 방지.md"
+                "file": "Frontend/CSS/Basic/BoxModel.md"
               }
             }
           }
@@ -190,17 +214,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "78bb68ee867f9d70",
+  "active": "ae317d73ee12015f",
   "lastOpenFiles": [
-    "Frontend/CSS/tip/오버레이(모달).md",
-    "Frontend/CSS/Flex.md",
-    "Frontend/CSS/Position.md",
-    "Frontend/CSS/div 중앙 배치.md",
-    "Frontend/HTML/0.2 HTML5  태그 기본.md",
-    "Frontend/HTML/0.1 Semantic Web.md",
-    "Frontend/CSS/Basic/inline 중앙 정렬.md",
-    "Frontend/CSS/Basic/Font.md",
-    "Frontend/CSS/Basic/BoxModel.md",
-    "Frontend/HTML/0.0 기본구조.md"
+    "Frontend/CSS/Basic/속성 선택자.md",
+    "Frontend/CSS/tip/전체 선택자.md",
+    "Frontend/CSS/Basic/선택자.md",
+    "Frontend/CSS/반응형 웹디자인.md",
+    "Frontend/CSS/tip/text-align.md",
+    "Frontend/CSS/tip/Mouse Event.md",
+    "Frontend/CSS/tip/focus-within.md",
+    "Frontend/CSS/tip/정사각형 반응형 만들기.md",
+    "Frontend/CSS/tip/이미지 반응형.md",
+    "Frontend/CSS/tip/요소 겹침 방지.md"
   ]
 }
