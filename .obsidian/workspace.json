@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frontend/CSS/Basic/BoxModel.md",
+                "file": "Frontend/CSS/Basic/Font.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Frontend/CSS/Basic/BoxModel.md",
+                "file": "Frontend/CSS/Basic/Font.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Frontend/CSS/Basic/BoxModel.md",
+                "file": "Frontend/CSS/Basic/Font.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Frontend/CSS/Basic/BoxModel.md"
+                "file": "Frontend/CSS/Basic/Font.md"
               }
             }
           }
@@ -216,15 +216,15 @@
   },
   "active": "ae317d73ee12015f",
   "lastOpenFiles": [
+    "Frontend/CSS/Basic/inline 중앙 정렬.md",
+    "Frontend/CSS/Basic/Font.md",
+    "Frontend/CSS/Basic/BoxModel.md",
     "Frontend/CSS/Basic/속성 선택자.md",
     "Frontend/CSS/tip/전체 선택자.md",
     "Frontend/CSS/Basic/선택자.md",
     "Frontend/CSS/반응형 웹디자인.md",
     "Frontend/CSS/tip/text-align.md",
     "Frontend/CSS/tip/Mouse Event.md",
-    "Frontend/CSS/tip/focus-within.md",
-    "Frontend/CSS/tip/정사각형 반응형 만들기.md",
-    "Frontend/CSS/tip/이미지 반응형.md",
-    "Frontend/CSS/tip/요소 겹침 방지.md"
+    "Frontend/CSS/tip/focus-within.md"
   ]
 }
