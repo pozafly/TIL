@@ -96,5 +96,25 @@ font-family 속성에는 사용자 컴퓨터에 설치된 폰트를 사용한다
 
 > 모서리에 돌기가 있는 글자를 Serif 폰트(명조체)라고 부르고 모서리에 돌기가 없는 글자를 Sans-serif 폰트(고딕체) 라고 부름.
 
+<br/>
+<br/>
+
 ## 웹폰트
-사용자가 웹 페이지에 접속하는 순간 폰트를 자동으로 내려받고 해당 웹 페이지에서 사용할 수 있게 만들어주는 기능.
+사용자가 웹 페이지에 접속하는 순간 폰트를 자동으로 내려받고 해당 웹 페이지에서 사용할 수 있게 만들어주는 기능. `@font-face` 을 사용한다. 구글 웹 폰트를 사용해도되지만, 직접 만든 폰트를 사용자의 브라우저에서 사용하게 하려면 다음과 같이 사용하면 된다. @font-face를 통해 폰트를 만들어보자.
+
+```html
+<style>
+	@font-face {
+	  font-family: 'font name';
+	  src: url('/content/file.eot');
+	  src: local('😁'), url('/content/file.woff') format('woff'),
+		  url('/content/file.ttf') format('truetype');
+	}
+</style>
+```
+
+- @font-face 규칙에는 반드시 font-family 속성이 포함되어야 함. 
+	- font-family의 value는 앞으로 페이지에서 사용할 폰트 이름을 지정한다.
+- src 속성도 반드시 입력. 폰트를 지정한다.
+	- local() : 사용자의 컴퓨터 내부에 있는 폰트를 선택하는 함수
+	- url() : 컴퓨터에 존재하지 않는 폰트를 지정한다.
