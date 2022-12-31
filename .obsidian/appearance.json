@@ -2,5 +2,8 @@
   "theme": "obsidian",
   "cssTheme": "Things",
   "translucency": true,
-  "accentColor": ""
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "opacity"
+  ]
 }

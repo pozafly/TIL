@@ -8,55 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d35acc1c9225996f",
+            "id": "65a0a9881e33885a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frontend/HTML/tip/창이동(target blank).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "78bb68ee867f9d70",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Frontend/CSS/tip/요소 겹침 방지.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f9f0b0c36244baa1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Frontend/CSS/tip/전체 선택자.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ae317d73ee12015f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Frontend/CSS/뷰포트.md",
+                "file": "Frontend/CSS/Animation/Transition.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Frontend/CSS/뷰포트.md",
+                "file": "Frontend/CSS/Animation/Transition.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Frontend/CSS/뷰포트.md",
+                "file": "Frontend/CSS/Animation/Transition.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Frontend/CSS/뷰포트.md"
+                "file": "Frontend/CSS/Animation/Transition.md"
               }
             }
           }
@@ -196,12 +159,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 249.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -214,17 +176,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ae317d73ee12015f",
+  "active": "65a0a9881e33885a",
   "lastOpenFiles": [
+    "Frontend/CSS/Grid/0.2 컨셉.md",
+    "Frontend/CSS/Grid/0.1 Grid란?.md",
+    "Frontend/CSS/Animation/Transition.md",
     "Frontend/CSS/뷰포트.md",
     "Frontend/CSS/Basic/속성 선택자.md",
     "Frontend/CSS/Basic/BoxModel.md",
     "Frontend/CSS/Basic/Font.md",
     "Frontend/CSS/Basic/inline 중앙 정렬.md",
     "Frontend/CSS/tip/Mouse Event.md",
-    "Frontend/CSS/tip/focus-within.md",
-    "Frontend/CSS/tip/정사각형 반응형 만들기.md",
-    "Frontend/CSS/tip/전체 선택자.md",
-    "Frontend/CSS/tip/이미지 반응형.md"
+    "Frontend/CSS/tip/focus-within.md"
   ]
 }
