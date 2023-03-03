@@ -59,7 +59,7 @@
 
 ## DNS 구성 요소 : 도메인 네임 스페이스
 
-![도메인-네임-스페이스-Domain-Name-Space](../../images/도메인-네임-스페이스-Domain-Name-Space.webp)
+![도메인-네임-스페이스-Domain-Name-Space](../../images/도메인-네임-스페이스-Domain-Name-Space.png)
 
 - DNS는 전세계적인 거대한 분산 시스템이다.
 - 도메인 네임 스페이스는 이런 DNS가 저장 관리하는 계층적 구조를 말함.
