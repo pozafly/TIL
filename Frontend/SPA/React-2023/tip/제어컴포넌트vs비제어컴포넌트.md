@@ -33,7 +33,6 @@ export default function App() {
     </>
   );
 }
-
 ```
 
 - 입력한 내용을 기억한다.
