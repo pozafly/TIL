@@ -44,6 +44,8 @@ Provider의 value를 useMemo로  감싸고, `{children}`을 사용하면 하위 
 
 [원리](https://kentcdodds.com/blog/optimize-react-re-renders)는 이곳에 있다. 상위의 props가 바뀌면 상위 컴포넌트는 리랜더링이 일어나지만, {children}으로 전달 된 컴포넌트는 Provider 컴포넌트 내부에 선언 된 것이 아니라 `{children}` 으로 전달 되기만 했고,  동일 위치에 동일 props로 렌더링 되었기 때문에 상위 상태 값이 변경 되어도 리랜더링 되지 않는다.
 
-https://yrnana.dev/post/2021-08-21-context-api-redux/ 요기에도 잘 나와 있다.
+https://yrnana.dev/post/2021-08-21-context-api-redux/ 요기에도 잘 나와 있다. https://medium.com/@bhavyasaggi/how-did-i-re-render-sharing-state-through-react-context-f271d5890a7b 이곳에도.
 
 어쨌든, 위와 같이 react-redux에서는 저런 방식으로 하위 컴포넌트들의 리랜더링을 방지하고 있다.
+
+[재조정 VDOM](https://www.youtube.com/watch?v=BYbgopx44vo)과 같은 곳도 잘 표현해두었음.
