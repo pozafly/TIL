@@ -2,6 +2,24 @@
 
 > [출처](https://kimyouknow.github.io/fe/React%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0%20(with%20useState))
 
+## 요약
+
+아래는 렌더링 과정임.
+
+- setState가 리렌더링을 트리거 한다.
+- setState에서 업데이터 함수를 사용했다면 큐에 등록 된다.
+- Render Phase가 실행된다.
+  - React가 컴포넌트를 호출해 react element를 반환한다.
+  - 가상돔 재조정(Reconciliation) 작업이 진행된다.
+    - 가상돔을 새로 만든다.
+    - Diffing 알고리즘으로 이전 가상돔과 새 가상돔을 비교한다.
+    - 변화가 있으면 새로운 가상 DOM을 만든다.
+- Commit Pahse가 실행된다.
+  - renderer가 컴포넌트 정보를 실제 DOM에 삽입한다. (mount)
+  - 브라우저가 DOM을 paint한다.
+
+<br />
+
 ```jsx
 import { useState } from 'react';
 
