@@ -32,11 +32,11 @@
 	"React Function Components": {
 		"prefix": "rfc",
 		"body": [
-			"export default function ${TM_FILENAME_BASE/(.*)/${1:pascalcase}/}() {",
+			"export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}() {",
 			"  ",
 			"  return (",
 			"    <>",
-			"      <div>${1:${TM_FILENAME_BASE}}</div>",
+			"      <div>${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}</div>",
 			"    </>",
 			"  )",
 			"}"
