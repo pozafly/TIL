@@ -2,7 +2,7 @@
 
 https://react-ko.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
 
-ErrorBoundary는 React 16부터 적용된 클래스 컴포넌트다.
+ErrorBoundary는 React 16부터 적용된 클래스 컴포넌트다. ErrorBoundary는 에러가 발생한 부분 대신 에러 메시지와 같은 폴백 UI를 표시할 수 있는 특수한 컴포넌트입니다.
 
 class 컴포넌트로밖에 지원을 하지 않는다.
 
