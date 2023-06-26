@@ -1,6 +1,6 @@
 # staleTime, cacheTime 차이
 
-> [출처](https://yrnana.dev/post/2021-04-10-react-query-staletime-cachetime/)
+> [출처](https://yrnana.dev/post/2021-04-10-react-query-staletime-cachetime/), https://ttaerrim.tistory.com/53
 
 ## React Query의 라이프 사이클
 
