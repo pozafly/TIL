@@ -24,6 +24,8 @@ const title = [...file.name].join('');
 
 이처럼, 몇몇 이모지는 length가 2로 잡힌다. 이모지는 유니코드로 표현될 수 있고, UTF-16을 사용한다면, 16진수로 되어 있다. 따라서 length가 무척 헷갈릴 수 있는 상황이기 때문에 문자열을 spread 혹은, for of 와 같은 iterator로 풀려고 하면 경로를 내뱉는 것이다.
 
+[이곳](https://blog.jonnew.com/posts/poo-dot-length-equals-two)에서 자세한 내용을 참고할 수 있다.
+
 for of 구문이나, 배열에 대한 spread opertator 사용시 downlevelIteration 플래그를 사용하라는 메시지가 출력 된다.
 
 tsconfig의 target을 확인해보면 es6 이전 버전일 것이다. 이 문법들은 es6 부터 지원되기 때문이다.
