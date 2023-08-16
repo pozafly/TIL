@@ -22,6 +22,8 @@ Husky와 lint-staged는 둘 다 Git 훅을 사용하여 코드 품질을 유지�
 
 이렇게 함으로써 코드 품질을 일관되게 유지하고, 개발자가 커밋하기 전에 코드 검사와 포매팅을 수행할 수 있게 됨.
 
+즉, husky와 lint-staged를 동시에 사용하는 이유는 husky는 pre-commit을 촉발 시키는 역할 만 하며, 명령어로 `eslint` 와 같은 것을 실행시킬 수 있지만, 모든 파일을 검사한다. 하지만, lint-staged는 stage에 올라온 파일만 검사하므로 훨씬 효율적으로 lint 검사를 할 수 있는 것임.
+
 <br/>
 
 ## LINT-STAGED
@@ -92,46 +94,3 @@ $ npx husky add .husky/pre-commit "npm test"
 2. `main`에 대한 Diff: `eslint --no-error-on-unmatched-pattern $(git diff main... --name-only --- '*.js')` 
 
 이것은 diff 명령의 한 예이며 프로젝트에 따라 고려해야 할 사항이 많다는 점에 유의하세요.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
