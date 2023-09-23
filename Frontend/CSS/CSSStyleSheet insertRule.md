@@ -35,3 +35,4 @@ sheet.insertRule(
 
 이는 **stitches.js** 와 같은 zero-runtime라이브러리에서 동적으로 스타일 규칙을 삽입할 때 사용하는 방법이다. ([링크](https://so-so.dev/web/css-in-js-whats-the-defference/))
 
+transition이 걸려있다면 rule이 추가되는 것이므로 CSS-in-JS에서도 자연스럽게 잘 동작한다.
