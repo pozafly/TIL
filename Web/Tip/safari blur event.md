@@ -53,3 +53,5 @@ Safari에서는 `button` Element에서 Focus 이벤트 및 Blur 이벤트가 일
 하지만 반면 `div` Element는 Focus 이벤트가 일어난다. [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#clicking_and_focus)에 따르면 `<button>`, `<input>` 요소는 클릭했을 때 기본적으로 초점이 맞춰지지 않기 때문이다.
 
 📌 따라서, 이는 button에도 `tabIndex`를 주면 해결이 된다. 단, Wrapper에도 focus 이벤트가 걸려있을 경우 relatedTarget 및 target이 변할 가능성이 생긴다.
+
+[추가 링크](https://bugs.webkit.org/show_bug.cgi?id=22261)
