@@ -111,6 +111,16 @@ proxy.color = 'abcdef'; // key: color, value: abcdef
 
 <br/>
 
+## Object.defineProperty와 차이점
+
+[링크](https://javascript.plainenglish.io/how-is-proxy-better-than-object-defineproperty-why-vue3-started-using-proxy-5353ee54aceb), [링크2](https://borstch.com/blog/proxies-vs-objectdefineproperty-when-to-use-which/)
+
+Vue 2.0에 사용된 `Object.defineProperty`도 객체를 추적할 수 있다. JavaScript 의 오래된 기능으로 개발자가 객체에 대한 새로운 속성을 정의하거나 기존 속성을 수정할 수 있다. getter / setter 함수를 추가할 수 있음.
+
+하지만 한계가 있다. 객체의 **최상위 속성**에서만 작동한다는 점이다. 중첩 객체에 새 속성을 추가하면 Vue에서 추척하지 않는다. 이 제한은 `Vue.set` 하니면 `Vue.delete`를 사용해야 한다는 점이다. 중복된 속성을 추가하거나 제거하는 메소드다.
+
+<br/>
+
 ## immer
 
 [도움](https://hmos.dev/deep-dive-to-immer#deep-dive-to-immer)
