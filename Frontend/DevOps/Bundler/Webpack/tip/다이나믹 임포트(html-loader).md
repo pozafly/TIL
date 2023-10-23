@@ -54,7 +54,7 @@ import(`./book/${liurl}`).then((result) => {
 });
 ```
 
-이런 식으로 사용한다. 즉 내가 필요한 것은 book 폴더 안에 있는 `책이름.html` 이다. 이 때, 동적 import는 Promise를 사용하고, Promise가 끝나면, then으로 받아 해당 html 파일 내용을 Javascript로 가져올 수 있게 된다.\
+이런 식으로 사용한다. 즉 내가 필요한 것은 book 폴더 안에 있는 `책이름.html` 이다. 이 때, 동적 import는 Promise를 사용하고, Promise가 끝나면, then으로 받아 해당 html 파일 내용을 Javascript로 가져올 수 있게 된다.
 
 ---
 
