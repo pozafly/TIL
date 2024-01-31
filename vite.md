@@ -233,24 +233,157 @@ cra -> https://github.com/facebook/create-react-app/blob/main/packages/react-scr
 
 ## Vite의 환경변수 접근
 
-Vite는 환경 변수가 정의된 파일(`.env`)에서 여타 번들러와 마찬가지로 어플리케이션에 필요한 변수를 가져와 사용할 수 있다. Vite의 경우 ESM 환경에서 코드 조각을 들고오는데, `import.meta` 라는 것을 사용해 `.env` 파일에 접근한다.
+Vite는 환경 변수가 정의된 파일(`.env`)에서 여타 번들러와 마찬가지로 어플리케이션에 필요한 변수를 가져와 사용할 수 있다. Vite의 경우 [공식 문서에서 환경 변수 접근법](https://ko.vitejs.dev/guide/env-and-mode.html)에 대해 `import.meta` 라는 JavaScript 문법으로 접근할 것을 알려주고 있다. `.env` 파일에 환경과 관련된 변수를 `VITE_` prefix를 주고, 코드 상에서 `import.meta.env` 로 선언한 값을 들고올 수 있다.
 
- `import.meta` 로 node.js와 browser 모두 meta 정보에 접근할 수 있다. 근데 vite에서는 왜 dotevn 를 쓰는걸까? env를 단순히 읽어들이기 위해서일까?
+### import.meta
 
-vite로 플젝을 실행해서 source 탭에 트랜스파일링 된 파일 자체를 보면
+[`import.meta`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/import.meta) 라는 JavaScript 문법을 공부하며 MDN 문서에 아직 아무도 번역하지 않아 이번 기회에 함께 번역해보았다. `import.meta` 는 ES Module이 탄생하면서 모듈에 대한 메타 데이터(부수 데이터)를 저장하기 위한 객체다.
 
-```javascript
-import.meta.env = {
-    "VITE_TEST": "test!",
-    "BASE_URL": "/",
-    "MODE": "development",
-    "DEV": true,
-    "PROD": false,
-    "SSR": false
-};
+여기서 말하는 메타 데이터란, 이미지 파일을 생각하면 조금 더 이해하기 쉽다. 휴대폰으로 사진을 찍으면 사진의 메타 데이터에 '날짜', '사진 용량', '디바이스 정보', '위치 데이터' 등의 메타 데이터가 담기게 된다. `import.meta` 는 '모듈' 자체에 대한 메타 데이터를 담고 있다. 
+
+import.meta는 대표적으로 모듈 메타 데이터인 경로(URL)를 담고 있는데, 이는 호스트 환경(브라우저 혹은 Node.js)에 따라 저장되는 내용이 달라진다. 먼저 Node.js를 통해 import.meta가 가지고 있는 정보를 열어보자.
+
+```js
+// src/main.js
+console.log(import.meta);
 ```
 
-이렇게 되어 있다. 즉, 브라우저 외부로 노출되어 있다. 따라서 어떤 변환 없이 브라우저 ESM으로 접근할 수 있다. 하지만, 서로 모듈이 다를 경우도 그렇게 되는가? 서로 어떻게 접근하게 되는가?
+node 명령어로 main.js를 실행시키면 SyntaxError가 발생한다. 이유는, node.js는 기본적으로 CommonJS 환경에서 동작하기 때문이다. import.meta는 ESM 환경에서 동작하기 때문에 이런 에러가 발생하는 것이다.
+
+Node.js에서 import.meta를 사용하는 방법은 2가지인데, 하나는 main.js 파일을 `main.mjs` 로 ESM에서 동작하는 JavaScript 확장자를 붙여주어 node 명령어로 다시 실행시키는 방법이고, 다른 하나는 `dotevn` 라이브러리에서 ESM 환경으로 동작시킬 때 알아본 package.json 파일에 `"type": "module"` 을 명시해주는 방법이다.
+
+```js
+// src/main.js
+console.log(import.meta);
+
+/**
+ * [Object: null prototype] {
+ *   dirname: '/Users/hwangsuntae/Documents/dev/play-ground/html-exam/src',
+ *   filename: '/Users/hwangsuntae/Documents/dev/play-ground/html-exam/src/main.js',
+ *   resolve: [Function: resolve],
+ *   url: 'file:///Users/hwangsuntae/Documents/dev/play-ground/html-exam/src/main.js'
+ * }
+*/
+```
+
+위와 같은 결과를 얻었다. dirname, filename, resolve, url 등의 정보가 들어있다. 절대 경로로 내 파일(모듈)의 위치를 가리키고 있다. 그렇다면 브라우저에서는 어떻게 동작하는가?
+
+간단하게 [http-server](https://github.com/http-party/http-server) 를 설치하고 index.html 파일을 브라우저로 서빙해보자.
+
+```sh
+$ npm i -D http-server
+```
+
+```json
+// package.json
+{
+  // ...
+  "type": "module",
+  "scripts": {
+    "dev": "http-server ./"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+
+```
+
+이렇게 dev 명령어를 입력해주고, index.html 파일을 만들어 `npm run dev` 명령어를 실행한다.
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body></body>
+</html>
+```
+
+[browser-import.meta]
+
+resolve와, url 정보가 들어있다. Node.js 환경과는 조금 다르다. dirname, filename이 없다. 그리고 Node.js 환경에서의 `url` 은 모듈(파일)의 절대 경로가 들어가 있고, 브라우저 환경에서의 `url` 은 http server가 서빙하고 있는 주소 자체를 담고 있다.
+
+여기서 재미있는 것을 하나 더 해볼 수 있는데, 바로 쿼리 파라미터로 원하는 값을 넣어줄 수 있다는 것이다.
+
+```html
+<script type="module" src="./src/main.js?info=5"></script>
+```
+
+이렇게, 쿼리 파라미터 `info` 라는 key에 value를 5를 넣었다. 다시 실행해보면, main.js가 모듈로서 여전히 호출되고 
+
+[import.meta.info]
+
+이렇게 url의 모습이 변경된 것을 볼 수 있다. 그러면 이 url 변수를 가공해 info 값을 얻을 수가 있는데,
+
+```js
+// src/main.js
+const info = new URL(import.meta.url).searchParams.get("info");
+console.log(info); // 5
+```
+
+이런 식으로 모듈 끼리의 정보도 주고 받을 수 있다. 이는 Node.js 환경에서도 마찬가지이다.
+
+```js
+// some.js
+export function callImportMeta() {
+  return new URL(import.meta.url).searchParams.get("id");
+}
+```
+
+```js
+// main.js
+import { callImportMeta } from "./some.js?id=pozafly";
+console.log(callImportMeta()); // pozafly
+```
+
+메타 정보를 쿼리 파라미터로 주고 받았다.
+
+
+
+
+
+HMR에 대해 알아보자.
+
+결국 hmr.ts의 fetchUpdate(update) {} 메서드로 들어오는건데, 235줄의 importUpdatedModule(update)를 까보면, 사진 2개있는데, `await import()` 문법으로 그냥 script를 불러와 교체하는 것이다. 즉, 새로 실행하는 것이다. time stamp와 함께.!
+
+
+
+
+
+
+
+node.js와 browser 모두 meta 정보에 접근할 수 있다. 근데 vite에서는 왜 dotevn 를 쓰는걸까? env를 단순히 읽어들이기 위해서일까?
+
+vite로 프로젝트를 실행하고 Chrome devTools의 source 탭에 App.tsx가 트랜스파일링 된 파일을 보면
+
+[source-tab]
+
+이렇게 되어 있다. env 파일에 정의한 `VITE_xxx` 변수 및 다른 변수가 브라우저 외부로 노출되어 있다. 
+
+
+
+
+
+
+
+
+
+하지만, 서로 모듈이 다를 경우도 그렇게 되는가? 서로 어떻게 접근하게 되는가?
+
+
+
+
+
+
+
+
+
+
+
+
 
 아래를 참조하자.
 
