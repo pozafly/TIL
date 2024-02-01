@@ -1,4 +1,4 @@
-# Vite
+# Vite에서 import.meta는 왜 사용하는걸까? (feat. HMR)
 
 회사에서 vue-cli로 만들어진 프로젝트를 Vite로 마이그레이션을 진행 중이다. [vue-cli](https://github.com/vuejs/vue-cli)는 2년 전부터 maintenance mode에 들어갔고, webpack을 기반으로 만들어졌기 때문에 번들링 및 빌드할 때 무척 느리다. vue-cli 내부에 묶여있는 eslint, prettier 등의 도구도 latest 버전과 호환이 되지 않았다.
 
@@ -225,10 +225,6 @@ class Dotenv {
 
 즉, dotenv-webpack은 단순히 `.env` 값을 path로 받아 파싱한다.
 
-
-
-cra -> https://github.com/facebook/create-react-app/blob/main/packages/react-scripts/config/env.js
-
 <br/>
 
 ## Vite의 환경변수 접근
@@ -341,41 +337,169 @@ console.log(callImportMeta()); // pozafly
 
 메타 정보를 쿼리 파라미터로 주고 받았다.
 
-
-
-
-
-HMR에 대해 알아보자.
-
-결국 hmr.ts의 fetchUpdate(update) {} 메서드로 들어오는건데, 235줄의 importUpdatedModule(update)를 까보면, 사진 2개있는데, `await import()` 문법으로 그냥 script를 불러와 교체하는 것이다. 즉, 새로 실행하는 것이다. time stamp와 함께.!
-
-
-
-
-
-
-
 node.js와 browser 모두 meta 정보에 접근할 수 있다. 근데 vite에서는 왜 dotevn 를 쓰는걸까? env를 단순히 읽어들이기 위해서일까?
 
 vite로 프로젝트를 실행하고 Chrome devTools의 source 탭에 App.tsx가 트랜스파일링 된 파일을 보면
 
 [source-tab]
 
-이렇게 되어 있다. env 파일에 정의한 `VITE_xxx` 변수 및 다른 변수가 브라우저 외부로 노출되어 있다. 
+이렇게 되어 있다. env 파일에 정의한 `VITE_xxx` 변수 및 다른 변수가 브라우저 외부로 노출되어 있다. Vite는 우선 devServer(Node.js 환경)에서 환경 변수를 설정 할 뿐 아니라, 위의 쿼리 파라미터를 이용해 다른 기능에도 응용하고 있다. 이 쿼리 파라미터를 어떻게 사용하고 있을까?
 
+<br/>
 
+## HMR
 
+HMR(Hot Module Replacement)는 번들러 환경에서 개발할 때 주로 사용하는데, IDE의 소스코드를 변경하면 devServer를 새로 껐다키지 않고 브라우저를 새로고침 하지 않아도 모듈을 교체해 변경된 부분을 즉시 볼 수 있게 만들어주는 기능이다.
 
+Vite에서는 HMR 기능에 `import.meta` 를 사용하고 있다. 브라우저에 로드 된 Sources 탭의 소스맵에 breakpoint를 찍어 보면서 따라가보자.
 
+[dev-tools-break-point]
 
+HTML head 태그에 `/@vite/client` 를 불러오도록 명시하고 있다. 따라서 진입점은 `client.ts` 파일이다.
 
+```js
+// @vite/client.ts (간추린 버전)
+const importMetaUrl = new URL(import.meta.url);
+const socketProtocol = importMetaUrl.protocol === "https:" ? "wss" : "ws";
+const socketHost = `${importMetaUrl.hostname}:${importMetaUrl.port}`;
 
+let socket = setupWebSocket(socketProtocol, socketHost);
 
-하지만, 서로 모듈이 다를 경우도 그렇게 되는가? 서로 어떻게 접근하게 되는가?
+function setupWebSocket(protocol, hostAndPath) {
+  const socket = new WebSocket(`${protocol}://${hostAndPath}`, "vite-hmr");
+  let isOpened = false;
 
+  // Listen for messages
+  socket.addEventListener("message", async ({ data }) => {
+    handleMessage(JSON.parse(data));
+  });
 
+  return socket;
+}
+```
 
+`importMetaUrl` 은 import.meta.url을 URL 객체화 한 정보를 가지고 있다.
 
+```
+importMetaUrl: URL
+  hash: ""
+  host: "localhost:5173"
+  hostname: "localhost"
+  href: "http://localhost:5173/@vite/client"
+  origin: "http://localhost:5173"
+  password: ""
+  pathname: "/@vite/client"
+  port: "5173"
+  protocol: "http:"
+  search: ""
+  searchParams: URLSearchParams
+    size: 0
+  username: ""
+```
+
+위에서 살펴봤던 브라우저에 로드 된 `@vite/client` 모듈의 정보가 담겨있다. 쿼리 스트링에 담겨있을 `searchParams` 는 아직은 존재하지 않는다. 다시 소스를 보면, socket 연결을 위한 작업들을 하고 있다. 이 정보를 봤을 때, Vite의 devServer와 브라우저가 소켓 통신을 통해 어떤 정보를 주고 받을 준비를 하는 것을 볼 수 있다.
+
+그리고 socket으로 `message` 이벤트를 감지하고 있는데, 브라우저의 소켓에서 메세지 이벤트를 devServer로 부터 전달 받으로 `handleMessage` 함수를 실행하도록 되어있다. 이를 기억하자.
+
+이제 HTML의 body 하단의 `<script type="module" src="/src/main.tsx"></script>` 코드가 실행되고, 어플리케이션이 실행된다. 렌더링이 종료되어 브라우저에 코드가 실행되고난 후, IDE의 소스코드를 수정하면 재미있는 현상을 볼 수 있다.
+
+[t-query-params]
+
+바로, 소스코드를 수정한 모듈에 쿼리 파라미터 `t` 가 새롭게 붙은 파일이 브라우저로 로드되어 새롭게 대체되는 현상이다.
+
+```js
+// @vite/client.ts (간추린 버전)
+async function handleMessage(payload) {
+  switch (payload.type) {
+    // ...
+    case "update":
+      if (isFirstUpdate) {
+        window.location.reload();
+        return;
+      }
+      await Promise.all(
+        payload.updates.map(async (update) => {
+          if (update.type === "js-update") {
+            return hmrClient.fetchUpdate(update);
+          }
+          // CSS 관련 HMR 소스코드 더 있음.
+        })
+      );
+  }
+}
+```
+
+socket을 브라우저에 등록하는 과정에서 message 이벤트가 일어나면 실행할 handleMessage 함수를 등록했다. 바로 그 함수가 실행되는데 JavaScript 함수 이므로 `hmrClient.fetchUpdate()` 함수가 실행된다.
+
+hmrClient는 마찬가지로 Vite가 처음 브라우저로 넘어왔을 때 만들어진 인스턴스인데, 이는 아래와 같다.
+
+```js
+// @vite/client.ts (간추린 버전)
+const hmrClient = new HMRClient(async function importUpdatedModule({
+  acceptedPath,
+  timestamp,
+  explicitImportRequired,
+}) {
+  const [acceptedPathWithoutQuery, query] = acceptedPath.split(`?`);
+  return await import(
+    base +
+      acceptedPathWithoutQuery.slice(1) +
+      `?${explicitImportRequired ? "import&" : ""}t=${timestamp}${query ? `&${query}` : ""}`
+  );
+});
+```
+
+이곳이 핵심이다. `await import()` 를 사용해 어떤 다른 모듈을 동적으로 불러오는 것을 볼 수 있다. `t=` 로 시작하는 쿼리 파라미터가 있으며, t에는 timestamp가 존재한다. dev-tools에서 봤던, `App.tsx?t=xxx` 는 이것이다.
+
+HMRClient class를 보자.
+
+```js
+// @vite/hmr.ts (간추린 버전)
+export class HMRClient {
+  constructor(importUpdatedModule) {
+    this.importUpdatedModule = importUpdatedModule
+  }
+
+  public async fetchUpdate(update) {
+    const { path, acceptedPath } = update;
+    const isSelfUpdate = path === acceptedPath;
+
+    if (isSelfUpdate) {
+      await this.importUpdatedModule(update);
+    }
+
+    return () => {
+      for (const { deps, fn } of qualifiedCallbacks) {
+        fn(deps.map((dep) => (dep === acceptedPath ? fetchedModule : undefined)));
+      }
+    };
+  }
+}
+```
+
+`importUpdatedModule` 을 받는다. 이는 HMRClinet class를 생성할 때 받는 함수 자체를 말하는데, 결국 이게 실행되는 것은, `await imort()` 동적 모듈을 가져오는 과정이다.
+
+결국 `@vite/client.ts` 에 있던 socket의 addEventListener에 등록된 `handleMessage` 에서 넘겨 받은 payload 안에 `update` 객체가 들어있고, update 객체에서는 이것이 js인지, css인지 구분하는 값과, timestamp 값, query 등의 값이 들어있다. 즉, 이 정보는 모두 devServer에서 만들어주어 socket으로 브라우저로 전송되어 입력되며 동적 import를 통해 다시 IDE로부터 수정된 파일을 devServer에서 다시 브라우저로 전송하는 것이다.
+
+이를 도식화 해보면 아래와 같다.
+
+[hmr-process]
+
+Vite는 import.meta를 통해 모듈의 정보를 이용해 HMR를 구현했다. url을 통해 모듈의 경로와 메타 데이터를 활용해 socket를 세팅하고, IDE에서 소스코드 변경이 일어나면 모든 모듈을 교체하는 것이 아니라 변경된 코드가 담긴 모듈만 동적 import를 통해 교체하는 것이다.
+
+`import.meta.hot` 을 콘솔에 찍어보면
+
+[import.meta.hot]
+
+이런 정보를 가지고 있고, 그 중 `hotModulesMap` 도 들어있다.
+
+[hotModulesMap]
+
+hotModulesMap은, 현재 소스코드를 Vite가 code splitting을 통해 모듈로 나눠놓은 것을 담고 있다. 이 모듈에서 socket으로 부터 받은 payload의 정보를 통해 모듈을 교체하기 때문에 훨씬 효율적으로 모듈을 교체할 수 있는 것이다.
+
+그래서, 소스코드를 수정할 때마다 새로운 timestamp가 쿼리 파라미터가 브라우저에 넘어오고, 쿼리 파라미터 정보를 import.meta로 읽어 새로운 모듈을 가져와야 한다는 정보를 얻어 devServer에 요청 후 갈아끼울 수 있는 매커니즘을 가질 수 있었다.
+
+<br/>
 
 
 
