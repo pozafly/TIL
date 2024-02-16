@@ -22,9 +22,11 @@
 - [@openapitools/openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)
 - [swagger-typescript-api](https://www.npmjs.com/package/swagger-typescript-api)
 
+<img width="1317" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/676bbd31-7995-41bf-a7e1-7d95b9184a30">
+
 타입 추출 옵션, 그리고 단순히 API 메서드들만 정의되는 것이 아니라, 가능하면 API 호출을 수행할 HTTP 클라이언트 인스턴스도 자동 생성 조건이다. 그리고 fetch 대신 axios를 주로 사용하기에 axios 인스턴스와의 호환성도 좋아야 함.
 
-이 지점에서 swagger-typescript-api가 좋다. ts에 최적화 되어있는 이 제너레이터는 모든 기능을 갖고 있다. 옵션을 조함해 작성한 스크립트는 아래와 같음.
+이 지점에서 swagger-typescript-api가 좋다. ts에 최적화 되어있는 이 제너레이터는 모든 기능을 갖고 있다. 옵션을 조함해 작성한 스크립트는 아래와 같음.swagger-typescript-api
 
 ```js
 // api generator using swagger-typescript-api
@@ -53,4 +55,20 @@ generateApi();
 ```
 
 <br/>
+
+## swagger-typescript-api가 편한 이유
+
+매우 친절함. 사용할 수 있는 옵션과 설명, 사용 예시까지 자세하게 안내하고 있음. 여러 언어가 아닌 타입스크립트만을 위한 라이브러리로, 사용자 니즈를 잘 반영한 것 같다. 명시적인 타입 추출이 매우 잘된다. 인풋이 되는 json, YAML 파일에 정의되어 있는 타입들을 API 제너레이팅 시점에 원하는 타입으로, 직접 정의해 새로 매핑할 수 있는 기능도 있음. 확장성 면에서 만족스럽고, 이 기능 역시 설명 및 예시가 자세하다.
+
+Axios 와의 호환도 매우 좋다. Axios 옵션을 이용한 경우, Axios 클래스를 상속받은 HTTP 클라이언트가 만들어지고, 사용자 관점에서 Axios 인스턴스를 생성하는 것과 별반 다르지 않게 쓸 수 있다. 하지만, 관점에 따라 필수적인 기능이라 보긴 어렵다.
+
+[openapi-typescript](https://www.npmjs.com/package/openapi-typescript) 는 자체적 HTTP 클라이언트를 제공하고 인터페이스도 매우 직관적이다. API 를 호출할 때 꼭 fetch API나, Axios 클라이언트를 고집할 필요는 없으므로, 라이브러리에서 자체적으로 제공하는 클라이언트를 사용하는 것도 나쁘지 않다.
+
+swagger-typescipt-api 라이브러리를 통해 만들어지는 결과물은 매우 단순하고 직관적이다. 사실상 단 하나의 파일이 만들어진다. 규모가 작은 프로젝트에서 API 정의를 위해 많은 양의 파일을 만들고 싶지 않기 때문. 다른 라이브러리중 데이터 모델 인터페이스나 BaseAPI에 대한 파일이 별도로 만들어지는 경우도 있어 이쪽을 선호할 수도 있다.
+
+<br/>
+
+## 나에게 맞는 API 제너레이터
+
+단순함을 선호한다면 swagger-typescript-api다.
 
