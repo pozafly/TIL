@@ -19,8 +19,8 @@
 ### 후보
 
 - [openapi-typescript](https://www.npmjs.com/package/openapi-typescript)
-- [@openapitools/openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)
 - [swagger-typescript-api](https://www.npmjs.com/package/swagger-typescript-api)
+- [@openapitools/openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)
 
 <img width="1317" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/676bbd31-7995-41bf-a7e1-7d95b9184a30">
 
@@ -72,3 +72,14 @@ swagger-typescipt-api 라이브러리를 통해 만들어지는 결과물은 매
 
 단순함을 선호한다면 swagger-typescript-api다.
 
+- [openapi-typescript](https://www.npmjs.com/package/openapi-typescript)
+- [swagger-typescript-api](https://www.npmjs.com/package/swagger-typescript-api)
+- [@openapitools/openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)
+
+중에, `@openapitools/openapi-generator-cli` 같은 경우 java runtime에서 동작하기 때문에 JVM을 mac에 또 따로 설치해주어야 한다. 그래서 무척 번거로움. 그렇기 때문에 그냥 openapi-typescript, swagger-typescript-api 둘 중 하나를 선택하는 것이 좋다. 이유는 node.js 기반으로 동작하는 것이기 때문이다.
+
+다만, openapi-typescript 같은 경우는 옵션이 swagger-typescript-api에 비해 많지 않고, 단순히 type 정의만 해주는 목적으로 사용하는 것이 좋을 듯 하다. 물론, fetch api에 관련된 client도 따로 패키지로 제공하고 있다.
+
+swagger-typescript-api는 fetch-api에 대한 client도 제공하고, axios 모듈에 관련한 client도 제공하고 있다. 그리고 다양한 옵션을 가지고 있다. 그래서 우선 swagger-typescript-api를 쓰는 것이 좋다고 생각할 수 있는데, 문제는 최근 라이브러리 업데이트가 없다는 점이 꽤나 아쉽다.
+
+디스커션 또한 없으며, issue및 pr도 굉장히 많은 상태로 관리가 안되고 있다.
