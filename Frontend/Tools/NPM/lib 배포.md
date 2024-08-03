@@ -292,6 +292,5 @@ console.log(add(1, 2));
 
 잘 실행되는걸 볼 수 있음.
 
-웹 사이트는 [docusaurus](https://docusaurus.io/ko/), [vitepress](https://vitepress.dev/) 같은 것으로 만들어서, 배포할 수도 있음.
-
+웹 사이트는 [docusaurus](https://docusaurus.io/ko/), [vitepress](https://vitepress.dev/), [nextra](https://nextra.site/) 같은 것으로 만들어서, 배포할 수도 있음.
 
