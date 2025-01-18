@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "edbf8eb3c2c2bffd",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c89a5e3eb8872e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f47a42025edd3be9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0.2 구동 방식"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "15905caa4f9078d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5e58cda89fc43da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02f0938fc7aa3687",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "c2146cf0037ab45b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#foo",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "b20ee86d99c80cbb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f71d00c2d1563dbb",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed07c282a58bed0e",
+        "type": "tabs",
+        "dimension": 71.72859450726979,
+        "children": [
+          {
+            "id": "f2088c1ab31dee8e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "0.2 구동 방식의 백링크"
+            }
+          },
+          {
+            "id": "168c418f6b021f9b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "0.2 구동 방식의 나가는 링크"
+            }
+          },
+          {
+            "id": "6d4c015a6924168f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9eeaa124e404be29",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md"
+              },
+              "icon": "lucide-list",
+              "title": "0.2 구동 방식 개요"
+            }
+          },
+          {
+            "id": "18ecda01c24c16ce",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ]
+      },
+      {
+        "id": "e12b3158c0c63943",
+        "type": "tabs",
+        "dimension": 28.27140549273021,
+        "children": [
+          {
+            "id": "292924b37c810f12",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "f47a42025edd3be9",
+  "lastOpenFiles": [
+    "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
+    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+    "Backend/Spring/tip/템플릿(단축어) 사용.md",
+    "Clean Code/JS 클린코드/0.6 배열 다루기.md",
+    "Clean Code/JS 클린코드/0.1 고민하기.md",
+    "Clean Code/JS 클린코드/0.0 start.md",
+    "Web/Analytics/GA4 api 가져오기(node-auth).md",
+    "2025-01-18.md",
+    "무제 파일.canvas",
+    "Tags",
+    "daliy-note/2025-01-18.md",
+    "daliy-note",
+    "Frontend/Javascript/고급/두 개의 queue로 동시성 제어.md",
+    "Backend/Spring/jpa/기본/0.1 정의.md",
+    "Frontend/Javascript/기본개념/다시쓰는 Event Loop.md",
+    "Frontend/SPA/React/styled-components/0.4 실습(Button).md",
+    "Preparation/Web/0.6 CORS.md",
+    "Lecture/Testing/유닛 테스트와 TDD/0.9 Stub.md",
+    "Lecture/Testing/유닛 테스트와 TDD/0.1 테스트란?.md",
+    "Lecture/Testing/유닛 테스트와 TDD/0.2 Jest 알아보기.md",
+    "Backend/Spring/simple-basic/0.5 AOP.md",
+    "README.md",
+    "Frontend/SPA/React/고급 안내서-공식/코드 분할.md",
+    "Frontend/SPA/React/고급 안내서-공식/Fragments.md",
+    "Frontend/SPA/React/고급 안내서-공식/제어 입력과 비제어 입력에 대한 글(번역본).md",
+    "Frontend/SPA/React/고급 안내서-공식/비제어 컴포넌트.md",
+    "Frontend/SPA/React/고급 안내서-공식/고차 컴포넌트(HOC).md",
+    "Frontend/Testing/RTL/0.4 테스트 주도 개발 TDD.md",
+    "Frontend/Testing/RTL/0.3 Jest의 watch 모드와 테스트 동작 방식.md"
+  ]
+}
