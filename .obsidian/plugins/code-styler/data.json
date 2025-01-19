@@ -383,12 +383,12 @@
         },
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
-          "activeEditorLineColour": "--color-base-20",
+          "activeEditorLineColour": "#00000054",
           "defaultColour": "--text-highlight-bg",
           "alternativeHighlights": {}
         },
         "inline": {
-          "backgroundColour": "#000000",
+          "backgroundColour": "#000000AD",
           "textColour": "--code-normal",
           "activeTextColour": "--code-normal",
           "titleTextColour": "--code-comment"
@@ -426,12 +426,12 @@
         },
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
-          "activeEditorLineColour": "--color-base-20",
+          "activeEditorLineColour": "#00000054",
           "defaultColour": "--text-highlight-bg",
           "alternativeHighlights": {}
         },
         "inline": {
-          "backgroundColour": "#000000",
+          "backgroundColour": "#000000AD",
           "textColour": "--code-normal",
           "activeTextColour": "--code-normal",
           "titleTextColour": "--code-comment"
