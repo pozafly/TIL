@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "0.2 구동 방식의 나가는 링크"
+              "title": "0.4 영속성 컨텍스트의 나가는 링크"
             }
           },
           {
@@ -140,10 +140,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.2 구동 방식.md"
+                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md"
               },
               "icon": "lucide-list",
-              "title": "0.2 구동 방식 개요"
+              "title": "0.4 영속성 컨텍스트 개요"
             }
           },
           {
@@ -156,7 +156,8 @@
               "title": "Advanced Tables"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       },
       {
         "id": "e12b3158c0c63943",
@@ -177,8 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,10 +191,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f47a42025edd3be9",
+  "active": "9eeaa124e404be29",
   "lastOpenFiles": [
-    "Backend/Spring/jpa/기본/0.3 JPQL.md",
+    "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
     "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
+    "Backend/Spring/jpa/기본/0.3 JPQL.md",
+    "README.md",
     "Backend/Spring/simple-basic/0.2 api.md",
     "Backend/Spring/simple-basic/0.4 컴포넌트 스캔과 자동 의존관계 설정.md",
     "Book/자바스크립트+리액트 디자인패턴/0.2 어플리케이션 분리.md",
@@ -215,10 +217,8 @@
     "Backend/Spring/simple-basic/0.3 비즈니스 구현.md",
     "Backend/Spring/simple-basic/0.5 AOP.md",
     "Backend/Spring/tip/템플릿(단축어) 사용.md",
-    "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
     "Backend/Spring/핵심원리/0.1 SOLID 원칙.md",
     "Backend/Spring/핵심원리/0.2 객체 지향 설계와 스프링.md",
-    "Backend/Spring/핵심원리/0.3 비즈니스 요구사항과 설계.md",
     "무제 파일.canvas",
     "Tags",
     "daliy-note"

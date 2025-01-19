@@ -334,7 +334,7 @@
       },
       "highlights": {
         "activeCodeblockLine": false,
-        "activeEditorLine": false
+        "activeEditorLine": true
       },
       "inline": {
         "syntaxHighlight": true,
@@ -388,7 +388,7 @@
           "alternativeHighlights": {}
         },
         "inline": {
-          "backgroundColour": "--code-background",
+          "backgroundColour": "#000000",
           "textColour": "--code-normal",
           "activeTextColour": "--code-normal",
           "titleTextColour": "--code-comment"
@@ -427,11 +427,11 @@
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
-          "defaultColour": "#00000040",
+          "defaultColour": "--text-highlight-bg",
           "alternativeHighlights": {}
         },
         "inline": {
-          "backgroundColour": "--code-background",
+          "backgroundColour": "#000000",
           "textColour": "--code-normal",
           "activeTextColour": "--code-normal",
           "titleTextColour": "--code-comment"

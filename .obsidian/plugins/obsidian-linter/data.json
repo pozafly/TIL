@@ -100,7 +100,7 @@
     },
     "remove-trailing-punctuation-in-heading": {
       "enabled": true,
-      "punctuation-to-remove": ".,;:!。，；："
+      "punctuation-to-remove": ".,;:。，；："
     },
     "footnote-after-punctuation": {
       "enabled": false
@@ -273,9 +273,9 @@
   },
   "lintOnSave": true,
   "recordLintOnSaveLogs": false,
-  "displayChanged": true,
+  "displayChanged": false,
   "lintOnFileChange": true,
-  "displayLintOnFileChangeNotice": true,
+  "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
   "foldersToIgnore": [],
   "filesToIgnore": [],
