@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
+                "file": "Backend/Spring/simple-basic/0.5 AOP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.4 영속성 컨텍스트"
+              "title": "0.5 AOP"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
+                "file": "Backend/Spring/simple-basic/0.5 AOP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "0.4 영속성 컨텍스트의 백링크"
+              "title": "0.5 AOP의 백링크"
             }
           },
           {
@@ -193,15 +193,23 @@
   },
   "active": "f47a42025edd3be9",
   "lastOpenFiles": [
-    "Backend/Spring/jpa/기본/0.3 JPQL.md",
-    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
-    "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
+    "Backend/Spring/simple-basic/0.4 컴포넌트 스캔과 자동 의존관계 설정.md",
+    "Backend/Spring/simple-basic/0.3 비즈니스 구현.md",
+    "Backend/Spring/simple-basic/0.2 api.md",
+    "Backend/Spring/simple-basic/0.1 build.md",
+    "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
+    "Backend/Spring/핵심원리/0.1 SOLID 원칙.md",
+    "Backend/Spring/핵심원리/0.2 객체 지향 설계와 스프링.md",
+    "Backend/Spring/핵심원리/0.3 비즈니스 요구사항과 설계.md",
+    "Backend/Spring/핵심원리/0.4 객체지향 원리 적용.md",
+    "Backend/Spring/핵심원리/0.5 IoC, DI, 그리고 컨테이너.md",
+    "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
     "Backend/Spring/핵심원리/0.7 BeanFactory와 ApplicationContext.md",
     "Backend/Spring/핵심원리/0.8 싱글톤 컨테이너.md",
-    "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
-    "Backend/Spring/핵심원리/0.1 SOLID 원칙.md",
-    "Backend/Spring/핵심원리/0.4 객체지향 원리 적용.md",
-    "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
+    "Backend/Spring/jpa/기본/0.1 정의.md",
+    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+    "Backend/Spring/jpa/기본/0.3 JPQL.md",
+    "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
     "Backend/Spring/tip/템플릿(단축어) 사용.md",
     "Clean Code/JS 클린코드/0.6 배열 다루기.md",
     "Clean Code/JS 클린코드/0.1 고민하기.md",
@@ -213,14 +221,6 @@
     "daliy-note/2025-01-18.md",
     "daliy-note",
     "Frontend/Javascript/고급/두 개의 queue로 동시성 제어.md",
-    "Backend/Spring/jpa/기본/0.1 정의.md",
-    "Frontend/Javascript/기본개념/다시쓰는 Event Loop.md",
-    "Frontend/SPA/React/styled-components/0.4 실습(Button).md",
-    "Preparation/Web/0.6 CORS.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.9 Stub.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.1 테스트란?.md",
-    "Lecture/Testing/유닛 테스트와 TDD/0.2 Jest 알아보기.md",
-    "Backend/Spring/simple-basic/0.5 AOP.md",
-    "README.md"
+    "Frontend/Javascript/기본개념/다시쓰는 Event Loop.md"
   ]
 }
