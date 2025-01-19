@@ -1,4 +1,4 @@
-# openapi generator
+# Openapi generator
 
 > [출처](https://yozm.wishket.com/magazine/detail/2387/)
 
@@ -56,7 +56,7 @@ generateApi();
 
 <br/>
 
-## swagger-typescript-api가 편한 이유
+## Swagger-typescript-api가 편한 이유
 
 매우 친절함. 사용할 수 있는 옵션과 설명, 사용 예시까지 자세하게 안내하고 있음. 여러 언어가 아닌 타입스크립트만을 위한 라이브러리로, 사용자 니즈를 잘 반영한 것 같다. 명시적인 타입 추출이 매우 잘된다. 인풋이 되는 json, YAML 파일에 정의되어 있는 타입들을 API 제너레이팅 시점에 원하는 타입으로, 직접 정의해 새로 매핑할 수 있는 기능도 있음. 확장성 면에서 만족스럽고, 이 기능 역시 설명 및 예시가 자세하다.
 

@@ -33,4 +33,3 @@ JavaScript 엔진은 사용자의 화면에 아무것도 나오지 않는 시점
 크기가 큰 번들을 `main.bundle.js`, `emoji-picker.bundle.js` 두 개의 작은 번들로 나누었다. 이로써 최초 로딩 시점에 더 작은 데이터만 받아도 되도록 하여 성능을 향상시켰다.
 
 <img width="669" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/08bca7d0-d92b-4453-8d0a-b2b03d3c3c2e">
-

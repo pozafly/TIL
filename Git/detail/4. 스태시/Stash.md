@@ -8,7 +8,7 @@
 
 <br/>
 
-사용 예시 )
+사용 예시)
 
 - Working Directory에서 작업중인데 브랜치를 전환하여 다른 사람의 commit을 테스트 해야할 때, (브랜치 전환이 필요할 때)
 - 버그를 고치고 있는데 잘 되지 않아 다른 시도를 해야할 때. 즉, 각각의 다른 시도를 해야할 때.
@@ -19,7 +19,7 @@
 
 ## 데모
 
-### stash  생성
+### Stash 생성
 
 ```sh
 $ git stash
@@ -57,7 +57,7 @@ $ git stash -u
 
 <br/>
 
-### stash list
+### Stash list
 
 stash 한 내용을 보고 싶다면,
 
@@ -79,7 +79,7 @@ $ git stash show [stash ID]
 
 <br/>
 
-### apply
+### Apply
 
 이제 다시 나의 업무를 하러 Stash 내용을 내 Working Directory로 불러오고 싶다면,
 
@@ -87,7 +87,7 @@ $ git stash show [stash ID]
 $ git stash apply
 ```
 
-명령어로 돌아올 수 있다. 여기서 apply만 입력하고 뒤에 내용을 입력하지 않으면 가장 최근에 stash에 저장된 녀석을 가져오게 된다. 즉, stack의 pop 과 같은 개념이다. 특정 stash를 가져오고 싶다면 `git stash list` 로 ID를 확인 후 
+명령어로 돌아올 수 있다. 여기서 apply만 입력하고 뒤에 내용을 입력하지 않으면 가장 최근에 stash에 저장된 녀석을 가져오게 된다. 즉, stack의 pop 과 같은 개념이다. 특정 stash를 가져오고 싶다면 `git stash list` 로 ID를 확인 후
 
 ```sh
 $ git stash apply [stash ID]
@@ -109,7 +109,7 @@ $ git stash pop
 
 명령어를 사용하면 가장 상위의 stash에 저장되었던 내용이 적용되는 동시에 사라진다. stack에서 사라지듯.
 
-이제 그냥 하나만  삭제만 해보자.
+이제 그냥 하나만 삭제만 해보자.
 
 ```sh
 $ git stash drop [stash ID]
@@ -125,11 +125,10 @@ $ git stash clear
 
 <br/>
 
-### stash에 있는 내용을 적용한 브랜치 만들기
+### Stash에 있는 내용을 적용한 브랜치 만들기
 
 stash에 저장해둔 녀석을 새로운 브랜치를 만들면서 동시에 적용하고 싶다면?
 
 ```sh
 $ git stash branch [새로운 브랜치명]
 ```
-

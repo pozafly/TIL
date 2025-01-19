@@ -1,4 +1,4 @@
-# v5 useQuery 변경점
+# V5 useQuery 변경점
 
 > [출처](https://velog.io/@cnsrn1874/breaking-react-querys-api-on-purpose)
 
@@ -68,7 +68,7 @@ const queryClient = new QueryClient({
 
 <br/>
 
-## on-demand 메시지 정의
+## On-demand 메시지 정의
 
 `error` 내부 자체적인 메시지가 아니라 Query 마다 다른 메시지를 보여주고 싶을 수 있다는 것도 이해한다. 그러기 위해 `queryFn` 의 Promise를 reject 할 때 커스텀 Error를 사용할 수도 있지만, 간단한 해결책은 Query의 `meta` 필드를 사용하는 것이다.
 
@@ -97,5 +97,3 @@ export function useTodos() {
 ```
 
 이렇게 하면 `meta.errorMessage` 가 정의된 모든 Query는 토스트 알림을 받게 된다. 알림을 보여줘야 하는 useQuery 인스턴스에서 onError를 설정하는 것과 아주 비슷하지만, 그와 달리 안전장치가 되어있는 방법이다.
-
-

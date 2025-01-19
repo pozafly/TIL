@@ -1,4 +1,4 @@
-# bitbucket ssh connect refuse
+# Bitbucket ssh connect refuse
 
 git 계정 2개를 로컬 컴퓨터에 등록시키는 과정에서 ssh key 관련 에러가 났다.
 
@@ -44,4 +44,3 @@ $ ssh -T bitbucket
 ```
 
 이걸로 테스트 해보면 된다.
-

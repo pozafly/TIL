@@ -8,7 +8,7 @@ react 18 핵심은 동시성(Concurrency)이다.
 
 ## Concurrency?
 
-> *Concurrency is not a feature, per se. It’s a new behind-the-scenes mechanism that enables React to prepare multiple versions of your UI at the same time.*
+> *Concurrency is not a feature, per se. It's a new behind-the-scenes mechanism that enables React to prepare multiple versions of your UI at the same time.*
 
 동시성 그 자체로는 기능이 아니고, React에서 여러 버전의 UI를 동시에 준비할 수 있도록 하는 매커니즘이라는 것이다. 그렇다면 Parallelism(병렬성)과 무슨 차이가 있나?
 
@@ -149,47 +149,10 @@ const List = ({ items }) => {
 
 <br/>
 
-## debounce, throttle
+## Debounce, throttle
 
 debounce, throttle과 비슷하다. 다만 두 방법 모두 Blocking Rendering을 해결하기는 아쉬운 점이 있다. 여러 번 발생하는 이벤트에서 가장 마지막 또는 제일 처음 이벤트만을 실행하도록 하는 debounce와, 여러 번 발생하는 이벤트를 일정 시간 동안 한 번만 실행되도록 만드는 throttle 모두 개발자가 timeout을 지정해주어야 한다.
 
 즉, 만약 사용자 기기 성능은 뛰어난데 timeout이 길게 설정되어 오래 기다리게 되거나, 반대로 오래된 기기를 사용하는데 너무 자주 이벤트가 실행되어 화면이 버벅대면, 사용자는 불쾌한 경험을 하게 된다는 것이다.
 
 그러므로 concurrent features를 잘 활용하면, debounce, throttle을 대체하거나, 함께 사용해 좋은 사용자 경험을 제공할 수 있다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

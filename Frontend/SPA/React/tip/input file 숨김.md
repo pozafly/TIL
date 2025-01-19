@@ -1,4 +1,4 @@
-# input File 숨김
+# Input File 숨김
 
 <img width="168" alt="스크린샷 2021-03-02 오후 3 32 30" src="https://user-images.githubusercontent.com/59427983/109608022-89972300-7b6c-11eb-84b1-142aa70a9644.png">
 

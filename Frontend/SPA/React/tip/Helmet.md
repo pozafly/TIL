@@ -1,4 +1,4 @@
-# react-helmet-async
+# React-helmet-async
 
 react-helmet-async는 meta 태그를 설정해준다.
 
@@ -58,7 +58,6 @@ function App() {
 export default App;
 ```
 
-이제 title이 바뀌었다. 
+이제 title이 바뀌었다.
 
 react-helmet-async 에서는 더 깊숙한 곳에 위치한 Helmet이 우선권을 차지한다. 예를 들어 App과 WritePage에서 Helmet을 사용할 경우, WritePage는 App 내부에 들어 있기 때문에 WritePage에서 설정하는 title 값이 나타난다.
-

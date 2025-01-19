@@ -1,6 +1,6 @@
-# div에 event 걸기
+# Div에 event 걸기
 
-react의 on... 이벤트는 일반적으로 input 태그에 걸리는 경우가 많다. 아마도 react에서 사용하는 event 객체는 일반 객체가 아니라 react에서 따로 만든 합성 이벤트(SyntheticEvent)를 사용한다고 한다. 이것 때문에 걸리지 않는건지 onKeyPress 종류의 keyboard 종류 이벤트만 걸리지 않는지는 잘 모르겠다.
+react의 on… 이벤트는 일반적으로 input 태그에 걸리는 경우가 많다. 아마도 react에서 사용하는 event 객체는 일반 객체가 아니라 react에서 따로 만든 합성 이벤트(SyntheticEvent)를 사용한다고 한다. 이것 때문에 걸리지 않는건지 onKeyPress 종류의 keyboard 종류 이벤트만 걸리지 않는지는 잘 모르겠다.
 
 어쨌든, div 태그에 key 관련 이벤트를 먹여보자.
 

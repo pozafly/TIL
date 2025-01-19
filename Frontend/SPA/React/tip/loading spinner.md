@@ -1,8 +1,8 @@
-# loading spinner
+# Loading spinner
 
 이미지가 업로드 되거나 다른 비동기 작업 중 기다려야 할 때, loading spinner를 추가할 수 있다.
 
-## 1. state 만들기
+## 1. State 만들기
 
 ```jsx
 const [loading, setLoding] = useState(false);

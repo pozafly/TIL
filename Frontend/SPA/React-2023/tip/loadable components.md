@@ -1,4 +1,4 @@
-# loadable components
+# Loadable components
 
 > [출처](https://medium.com/greendatakr/loadable-components-881e936aa8fa)
 
@@ -113,4 +113,3 @@ function MyComponent() {
    )
 }
 ```
-

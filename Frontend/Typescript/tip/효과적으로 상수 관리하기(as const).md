@@ -4,7 +4,7 @@
 
 ## 리터럴 타입
 
-TypeScript에서는 포괄적인 타입(string, number, ...) 외에도 정확한 값을 설정하는 것이 가능하다.
+TypeScript에서는 포괄적인 타입(string, number, …) 외에도 정확한 값을 설정하는 것이 가능하다.
 
 ```ts
 let title: "typescript";
@@ -51,7 +51,7 @@ title 변수에 literal type으로 'typescript'가 추론 된 것을 알 수 있
 
 <br/>
 
-## const assertion을 활용한 상수 관리하기
+## Const assertion을 활용한 상수 관리하기
 
 ```js
 const Colors = {
@@ -79,7 +79,7 @@ Colors 내부의 속성들의 타입이 러터럴 타입으로 추론 된 것을
 
 <br/>
 
-## enum을 통한 상수 관리
+## Enum을 통한 상수 관리
 
 ```ts
 export enum Colors {

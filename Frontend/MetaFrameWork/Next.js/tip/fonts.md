@@ -1,4 +1,4 @@
-# fonts
+# Fonts
 
 > [출처](https://blog.mathpresso.com/how-next-font-works-8bb72c2bae39)
 
@@ -71,7 +71,7 @@ font-size를 동일하게 맞춰도, 각각의 폰트가 기본적으로 가지�
 
 <br>
 
-## pre-download google font
+## Pre-download google font
 
 두 번재로는 google font를 다운로드 하는 시점에 대한 것이다. next12를 보면 html을 다운로드 한 후, 이 파일이 link 하고 있는 font.googleapis.com에서 폰트를 다운로드 하고 있음을 확인할 수 있다.
 
@@ -189,7 +189,7 @@ downloadGoogleFonts라는 함수는 230줄에 해당하는 굉장히 긴 함수�
 
 https://github.com/vercel/next.js/blob/canary/packages/font/src/google/loader.ts
 
-#### size-adjust
+#### Size-adjust
 
 첫 번째로 거치는 단계는 adjustFontFallbackMetrics를 계산하는 부분. google-font-metrics.json이라는 Map을 불러와 fontFamily를 key로 준 값을 읽어온 후, 이 값을 calculateSizeAdjustValues에 넣어 size-adjust, line-gap 등의 fallback font를 조정하기 위한 값을 계산하고 있음을 알 수 있다.
 
@@ -312,7 +312,7 @@ export function calculateSizeAdjustValues(fontMetrics: any) {
 ...
 ```
 
-### download fonts
+### Download fonts
 
 Homemade Apple 폰트에 대한 fallback 폰트를 정하고, 이 폰트에 대해 zero-layout-shift를 구현하기 위한 size-adjust 과정이 마무리 된 후 Homemade Apple 폰트를 빌드 타임에 다운 받아 `.next/static/media` 하위에 저장해야 한다. 폰트를 다운로드 하기 위해서는 우선 `@font-face`로 구성된 css 파일을 먼저 다운로드한 뒤, 이 파일에 명시된 font 들을 다운로드해야 한다.
 
@@ -351,7 +351,7 @@ export async function fetchCSSFromGoogleFonts(url: string, fontFamily: string) {
 
 다음으로는 받아온 @font-face css 파일을 바탕으로 실제 폰트 파일(대개 woff2 format)을 다운받아 온다. 이 폰트 파일 또한 @font-face css 파일과 마찬가지로 cache에 값이 있는지를 확인하는 단계를 거친다.
 
-폰트 파일을 받아온 이후에는 이 파일을 로컬 디렉토리인 .next/static/media 하위에 저장하고, fontFaceDeclarations(@font-face css 파일)에 google 도베인을 바라보고 있는 스트링 들을 전부 방금 폰트 파일을 저장한 로컬 디렉터리를 바라보도록 수정해준다.
+폰트 파일을 받아온 이후에는 이 파일을 로컬 디렉토리인.next/static/media 하위에 저장하고, fontFaceDeclarations(@font-face css 파일)에 google 도베인을 바라보고 있는 스트링 들을 전부 방금 폰트 파일을 저장한 로컬 디렉터리를 바라보도록 수정해준다.
 
 ```js
 // CSS Variables may be set on a body tag, ignore them to keep the CSS module pure
@@ -428,7 +428,7 @@ return {
 }
 ```
 
-### wrap-up
+### Wrap-up
 
 downloadGoogleFonts 함수의 역할을 봤다. 정리해보자 (아래의 모든 과정은 빌드 타임에 일어난다는 사실을 기억하라)
 
@@ -441,9 +441,9 @@ downloadGoogleFonts 함수의 역할을 봤다. 정리해보자 (아래의 모�
 
 <br/>
 
-## postcss-next-font
+## Postcss-next-font
 
-postcssNextFontPlugin함수가 하는 일은 결국 아래의  css파일을 생성하는 것이다. 위의 Next13 예제에서 생성된. next/static/css 디렉터리 안에 들어있는 파일을 의미하며 이 파일은 아래와 같이 html의 head에 link 형태로 들어가게 된다. 즉, html 파일에 link로 들어가 있는 @font-face css 파일은 postcssNextFontPlugin에 의해 생성된 것이며, 이 css 파일 안에는 미리 계산된 size-adjust 와 같은 값들이 들어 있어  zero-layout-shift를 가능하게 만드는 것이다.
+postcssNextFontPlugin함수가 하는 일은 결국 아래의 css파일을 생성하는 것이다. 위의 Next13 예제에서 생성된. next/static/css 디렉터리 안에 들어있는 파일을 의미하며 이 파일은 아래와 같이 html의 head에 link 형태로 들어가게 된다. 즉, html 파일에 link로 들어가 있는 @font-face css 파일은 postcssNextFontPlugin에 의해 생성된 것이며, 이 css 파일 안에는 미리 계산된 size-adjust 와 같은 값들이 들어 있어 zero-layout-shift를 가능하게 만드는 것이다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/7f85346a-1a08-48aa-8f55-ffaa61f15fa0)
 
@@ -587,4 +587,3 @@ const formatFamily = (family: string) => {
 - 이 map을 사용해서 fallback 폰트와 사용자가 사용하려는 폰트 사이의 size-adjust를 수행해서 zero-layout-shift를 구현하고, 빌드 타임에 구글 폰트를 다운로드하여 로컬 디렉터리(. next/static/media)에 저장한다.
 - 이제 @font-face가 포함된 css 파일을 생성해야 하는데, 이는 postcssNextFontPlugin에서 수행하며, fontFamily의 hash 값과 이전 단계에서 계산한 adjustFallbackFont의 여러 값을 css파일에 매핑한다.
 - 이 css파일은 HTML의 head tag안에 존재하며, @font-face를 가리키는 css파일과, css파일이 가리키는 font 파일이 모두 local directory에 있기 때문에 Same-origin이며, 기존에 연결되어 있던 connection을 그대로 사용할 수 있다.
-

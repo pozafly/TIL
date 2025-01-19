@@ -1,12 +1,12 @@
-# file-loader, url-loader
+# File-loader, url-loader
 
 > [출처](https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html#43-file-loader), [웹팩 공홈](https://webpack.kr/guides/asset-modules/)
 
 webpack 5 이전에는 아래의 로더를 사용하는게 일반적이었음.
 
-- `raw-loader` : 파일을 문자열로 가져올 때
-- `url-loader` : 파일을 data URI 형식으로 번들에 인라인으로 추가할 때
-- `file-loader` : 파일을 output 디렉토리로 내보낼 때
+- `raw-loader`: 파일을 문자열로 가져올 때
+- `url-loader`: 파일을 data URI 형식으로 번들에 인라인으로 추가할 때
+- `file-loader`: 파일을 output 디렉토리로 내보낼 때
 
 <br/>
 
@@ -25,7 +25,7 @@ webpack 5 이전에는 아래의 로더를 사용하는게 일반적이었음.
 
 <br/>
 
-## file-loader
+## File-loader
 
 모든 파일을 모듈로 사용하게끔 할 수 있다. 웹팩 아웃풋에 파일을 옮겨준다. 가령 CSS에서, `url()` 함수에 이미지 파일 경로를 지정할 수 있는데, 웹팩은 file-loader를 사용함.
 
@@ -94,17 +94,17 @@ module.exports = {
   },
 ```
 
-이렇게 해줘도 된다. 그러면 
+이렇게 해줘도 된다. 그러면
 
 <img width="292" alt="스크린샷 2021-10-09 오후 6 39 31" src="https://user-images.githubusercontent.com/59427983/136653013-8a80ac05-6bc6-4126-a50e-bf54d50dbf8a.png">
 
-이런 식으로 빌드 전 src -> assets -> .png 파일이 있는 것처럼, 빌드 하면 dist 폴더에 알아서 assets 폴더 밑 png 파일이 생성된다. css, html 등에서 알아서 잘 가져오는 모습을 볼 수 있음.
+이런 식으로 빌드 전 src -> assets ->.png 파일이 있는 것처럼, 빌드 하면 dist 폴더에 알아서 assets 폴더 밑 png 파일이 생성된다. css, html 등에서 알아서 잘 가져오는 모습을 볼 수 있음.
 
 <br/>
 
 <br/>
 
-## url-loader
+## Url-loader
 
 사용하는 이미지 갯수가 많다면, 리소스를 사용하는 부담 + 사이트 성능에 영향을 줄 수 있다. 만약 한 페이지에서 작은 이미지를 여러 개 사용하면 Data URI Scheme를 넣는 방법이 나을 수도 있다. 이미지를 Base64로 인코딩 해 **문자열 형태**로 소스코드에 넣는 형식임.
 

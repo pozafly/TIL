@@ -9,7 +9,7 @@ webpack은 기본적으로 `index.html` 파일 하나만 허용함. 물론 multi
 
 <br/>
 
-## html-loader
+## Html-loader
 
 webpack dev server를 사용하고 있다면 `import` 구문을 사용해 html 파일을 가져올 수 있다. 그러려면 `html-loader` 설정을 해줘야 함.
 
@@ -111,4 +111,3 @@ module.exports = {
   ],
 };
 ```
-

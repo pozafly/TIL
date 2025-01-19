@@ -1,6 +1,4 @@
-# gltf webpack load
-
-
+# Gltf webpack load
 
 ## 문제점
 
@@ -49,7 +47,7 @@ module: {
 }
 ```
 
-문제 해결되지 않음. build 시 dist 폴더 내부에 .gltf 파일 하나만 덩그러니 빌드되는 상황.
+문제 해결되지 않음. build 시 dist 폴더 내부에.gltf 파일 하나만 덩그러니 빌드되는 상황.
 
 <br/>
 

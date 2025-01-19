@@ -7,9 +7,10 @@ useEffect(async () => {
   const datae = await fetchApi();
 }, []);
 ```
+
 <img width="872" alt="스크린샷 2023-05-25 오후 2 41 29" src="https://github.com/pozafly/TIL/assets/59427983/896f8349-6770-4bbc-bdf8-ed1d57131666">
 
-번역해보면, useEffect 콜백은 경합 상태를 방지하기 위해 동기적으로 실행되어야 하며, 내부에 비동기 함수를 넣어야 한다. 따라서, 
+번역해보면, useEffect 콜백은 경합 상태를 방지하기 위해 동기적으로 실행되어야 하며, 내부에 비동기 함수를 넣어야 한다. 따라서,
 
 ```js
 async function fetchApi() {

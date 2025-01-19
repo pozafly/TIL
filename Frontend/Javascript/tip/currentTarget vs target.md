@@ -1,11 +1,11 @@
 # curretTarget vs target
 
-> 출처 : https://velog.io/@edie_ko/JavaScript-event-target%EA%B3%BC-currentTarget%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90
+> 출처: https://velog.io/@edie_ko/JavaScript-event-target%EA%B3%BC-currentTarget%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90
 
 event.target과 event.currentTarget의 차이점에 대해 알아보자.
 
-- currentTarget : 이벤트 핸들러가 부착된 것을 가리킨다. 이벤트가 부착된 `부모` 의 위치를 반환.
-- target : 부모로부터 이벤트가 위임되어 발생하는 자식의 위치, 내가 클릭한 `자식 요소` 를 반환한다.
+- currentTarget: 이벤트 핸들러가 부착된 것을 가리킨다. 이벤트가 부착된 `부모` 의 위치를 반환.
+- target: 부모로부터 이벤트가 위임되어 발생하는 자식의 위치, 내가 클릭한 `자식 요소` 를 반환한다.
 
 ```jsx
 const App = () => {

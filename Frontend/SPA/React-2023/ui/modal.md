@@ -1,8 +1,8 @@
-# modal
+# Modal
 
 ## ReactDOM.createPortal()
 
-> **“Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.”**
+> **"Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component."**
 
 포탈은 부모 컴포넌트의 DOM 계층 구조 바깥에 있는 DOM 노드로 자식을 렌더링하는 최고의 방법을 제공한다.
 
@@ -20,8 +20,8 @@ React는 트리 구조로 이루어져 있는데, 원하지 않은 경우에도 
 ReactDOM.createPortal(children, container);
 ```
 
-- `children` : 렌더링할 자식 컴포넌트
-- `container` : DOM element
+- `children`: 렌더링할 자식 컴포넌트
+- `container`: DOM element
 
 root가 아닌 곳에 포탈을 열어주어야 하는데, `createProtal` 을 통해 넣어주자.
 
@@ -177,70 +177,3 @@ export default function ModalRoot({ children }: PropsWithChildren) {
 `ModalRoot` 상위 컴포넌트에서는 Modal을 구성하는 컴포넌트를 아직 사용하지 않는다면 이를 열어줄 방법이 없다. 버튼을 눌러 모달을 여는 경우가 아니라 서버와의 네트워크 통신 이후 자동으로 열리는 등의 케이스는 사용하기 힘들다.
 
 관련해서 다른 상태 관리 라이브러리나 `useImperativeHandle` 을 사용하면
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

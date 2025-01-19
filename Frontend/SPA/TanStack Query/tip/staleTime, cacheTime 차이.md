@@ -44,8 +44,8 @@
 
 ## 그 외
 
-- `isLoading` : 캐싱된 데이터가 없을 때 fetch 중에 `true`
-- `isFetching` : 데이터가 fetch될 때 `true`, 캐싱 데이터가 있어서 백그라운드에서 fetch 되더라도 `true`
+- `isLoading`: 캐싱된 데이터가 없을 때 fetch 중에 `true`
+- `isFetching`: 데이터가 fetch될 때 `true`, 캐싱 데이터가 있어서 백그라운드에서 fetch 되더라도 `true`
 
 ---
 

@@ -1,4 +1,4 @@
-# code-splitting
+# Code-splitting
 
 > [출처](https://ui.toast.com/weekly-pick/ko_20200128)
 
@@ -27,7 +27,7 @@ $ npm i -D @babel/plugin-syntax-dynamic-import
 
 이것은 웹펙이 동적 import를 이해하고 이에 맞게 번들링 하는데, 서버 측에서 바벨이 import 구문을 해석하고 트랜스파일하기 위해서이다.
 
-> `syntax-dynamic-import`는 바빌론(*babylon*)에서 구문 사용만 가능하게 해준다. 즉, 바빌론이 구문 오류 없이 코드를 구문 분석할 수 있다는 말이다. 여전히 이해할 수 없는 `import(...)`코드가 남아있으며, 트랜스 파일 해야 한다. `dynamic-import-node`가 `import(...)`를 이해할 수 있는 `require`로 트랜스파일한다. 클라이언트 측에서, 웹팩이 구문을 이해하고 번들링 하므로 트랜스파일 단계가 필요 없다.  **Satyajit Sahoo**
+> `syntax-dynamic-import`는 바빌론(*babylon*)에서 구문 사용만 가능하게 해준다. 즉, 바빌론이 구문 오류 없이 코드를 구문 분석할 수 있다는 말이다. 여전히 이해할 수 없는 `import(…)`코드가 남아있으며, 트랜스 파일 해야 한다. `dynamic-import-node`가 `import(…)`를 이해할 수 있는 `require`로 트랜스파일한다. 클라이언트 측에서, 웹팩이 구문을 이해하고 번들링 하므로 트랜스파일 단계가 필요 없다. **Satyajit Sahoo**
 
 ```json
 // .babelrc.json
@@ -102,4 +102,3 @@ import 구문을 반환하는 함수를 작성해주면 끝이다. 이것이 동
 ```
 
 웹팩은 주석에 있는 문자 그대로 청크 이름으로 해석한다. 숫자는 문자열로 바뀌었다.
-

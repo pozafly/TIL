@@ -65,7 +65,7 @@ yarn을 실행해보자.
 
 resolution의 뜻은 '문제를 해결하다' 다.
 
-첫 번째 문제는 라이브러리를 정확한 버전으로 고정하는 문제. Resolution 단계에서는 `package.json` 파일에 명시된 버전 범위에 따라 정확한 버전을 결정한다. `react: ^18.2.0` 이라면  [^이 나타내는 규칙](https://semver.org/lang/ko/)에 따라 ≥ 18.2.0, <19 사이의 어떤 버전이든 사용할 수 있음. 패키지 매니저는 저 범위를 만족하는 선에서 가능한 최신 버전을 사용하려 함. 즉, 최신 버전인 18.3.1을 선택할 수 있음.
+첫 번째 문제는 라이브러리를 정확한 버전으로 고정하는 문제. Resolution 단계에서는 `package.json` 파일에 명시된 버전 범위에 따라 정확한 버전을 결정한다. `react: ^18.2.0` 이라면 [^이 나타내는 규칙](https://semver.org/lang/ko/)에 따라 ≥ 18.2.0, <19 사이의 어떤 버전이든 사용할 수 있음. 패키지 매니저는 저 범위를 만족하는 선에서 가능한 최신 버전을 사용하려 함. 즉, 최신 버전인 18.3.1을 선택할 수 있음.
 
 두 번째 문제는 라이브러리가 사용하는 다른 라이브러리, 즉 의존성 문제. 예를 들어 `@toss/use-overlay` 는 `react` 를 사용하는데 `react` 도 의존성을 갖고 있다. 그래서 의존성이 또 어떤 의존성을 가지는지 확인하는 작업이 필요함.
 
@@ -87,7 +87,7 @@ Resolution의 결과로 결정된 버전을 실제 다운로드 하는 과정. `
 
 가장 까다롭다. npm, pnpm, PnP(Plug'n'Play) 사례를 각각 살펴보려고 함.
 
-#### [1] npm Linker
+#### [1] Npm Linker
 
 `node_modules` 기반 Linker를 살펴보자. 모든 의존성을 그냥 `node_modules` 디렉토리 밑에 하나하나씩 쓰는게 npm Linker의 역할이다.
 
@@ -108,9 +108,9 @@ my-service/
 
 이 방식은 단점이 꽤 많다. 패키지를 찾으려고 하면 `node_modules` 를 계속 타고 올라가며 파일을 여러 번 읽는다. `import`, `require` 속도가 느려진다. 그리고 디렉토리 크기가 너무 커진다. 실제로 파일 시스템에 디렉토리와 파일을 하나하나 만들고 쓰기 때문이다.
 
-100개 프로젝트에서 React 18.2.0을 쓴다면 정말로 100번씩 React 18.2.0이 추가되는 것이다. 그래서 ‘[호이스팅(Hoisting)](https://toss.tech/article/node-modules-and-yarn-berry)’이라는 특이한 방법을 사용하기도 하는데, 최적화가 완전히 되는 것도 아니고 불안정하기도 해서 좋은 방법은 아니다.
+100개 프로젝트에서 React 18.2.0을 쓴다면 정말로 100번씩 React 18.2.0이 추가되는 것이다. 그래서 '[호이스팅(Hoisting)](https://toss.tech/article/node-modules-and-yarn-berry)'이라는 특이한 방법을 사용하기도 하는데, 최적화가 완전히 되는 것도 아니고 불안정하기도 해서 좋은 방법은 아니다.
 
-#### [2] pnpm Linker
+#### [2] Pnpm Linker
 
 이런 단점 때문에 pnpm이 만들어짐. pnpm 문서에 'fast, disk space efficient' 한 패키지 매니저라고 써있다. 즉, 퍼포먼스가 향상된(performant) npm 이라고 함.
 
@@ -126,57 +126,8 @@ pnpm Linker는 기존 `node_modules` 디렉토리를 그대로 사용하지만 �
 
 #### [3] PnP Linker
 
-`node_modules` 디렉토리에서 벗어나고 싶다는 생각으로  래디컬하게 접근한게 PnP다. 결국 `node_modules` 없이 의존성을 처리하는 방법을 찾아냄.
+`node_modules` 디렉토리에서 벗어나고 싶다는 생각으로 래디컬하게 접근한게 PnP다. 결국 `node_modules` 없이 의존성을 처리하는 방법을 찾아냄.
 
 PnP는 '패키지를 `import` 할 때 중요한 것은 단 두가지' 라는 관점에서 접근한다. 먼저, '어떤 파일'에서 `import` 하는가, 그리고 '무엇'을 `import` 하는가이다. 즉, 앞의 npm과 pnpm 처럼 node_modules 를 순회하는게 중요하지 않다고 생각한 것이다. 그래서 `node_modules` 디렉토리가 아니라 JavaScript 객체로 똑똑하게 처리한다.
 
-
-
-
-
-
-
-
-
-
-
-
-
 ㄴ
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -64,5 +64,3 @@ img {
 <!-- set a 640:360 i.e a 16:9 aspect ratio -->
 <img src="puppy.jpg" width="640" height="360" alt="Puppy with balloons">
 ```
-
-

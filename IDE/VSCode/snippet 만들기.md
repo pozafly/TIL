@@ -1,4 +1,4 @@
-# snippet 만들기
+# Snippet 만들기
 
 > [출처](https://www.youtube.com/watch?v=umeqCopb96w)
 
@@ -44,4 +44,3 @@
 		"description": "React Function Components"
 	}
 ```
-

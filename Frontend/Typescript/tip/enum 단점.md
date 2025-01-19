@@ -1,7 +1,7 @@
-# enum 단점
+# Enum 단점
 
-> - 출처1 : https://engineering.linecorp.com/ko/blog/typescript-enum-tree-shaking
-> - 출처2 : https://techblog.woowahan.com/9804/
+> - 출처1: https://engineering.linecorp.com/ko/blog/typescript-enum-tree-shaking
+> - 출처2: https://techblog.woowahan.com/9804/
 
 ## TypeScript에서 enum을 사용하면 Tree-shaking이 되지 않는다
 
@@ -41,9 +41,9 @@ JavaScript에 존재하지 않는 것을 구현하기 위해 TypeScript 컴파�
 
 <br/>
 
-## enum 대체제
+## Enum 대체제
 
-### const enum
+### Const enum
 
 ```ts
 const enum MOBILE_OS = {
@@ -56,7 +56,7 @@ type MOBILE_OS = typeof MOBILE_OS[keyof typeof MOBILE_OS]; // 'iOS' | 'Android'
 
 트랜스 파일링 했을 경우 코드가 아예 나오지 않음.
 
-### const assertion
+### Const assertion
 
 ```ts
 const MOBILE_OS = {
@@ -139,22 +139,3 @@ const country53: CountryCode5 = 10    // no error
 ```
 
 number 형태로 enum을 사용하더라도 예전엔 없는 number를 넣어도 에러가 나지 않았지만 TypeScript 5버전인 지금은 에러가 발생한다. 즉, 올바르게 잡힌 것이다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

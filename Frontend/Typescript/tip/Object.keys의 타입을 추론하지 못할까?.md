@@ -1,4 +1,3 @@
-
 # Object.keys의 타입을 추론하지 못할까?
 
 > [출처](https://medium.com/@yujso66/%EB%B2%88%EC%97%AD-%EC%99%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-object-keys%EC%9D%98-%ED%83%80%EC%9E%85%EC%9D%84-%EC%A0%81%EC%A0%88%ED%95%98%EA%B2%8C-%EC%B6%94%EB%A1%A0%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%A0%EA%B9%8C%EC%9A%94-477253b1aafa)
@@ -41,10 +40,6 @@ class Object {
 
 `Object.keys`를 이렇게 정의하는 것은 당연한 것처럼 보이지만 타입스크립트에서 그렇게 하지 않은 데에는 그럴만한 이유가 있다. 타입스크립트 [구조적 타입 시스템](https://en.wikipedia.org/wiki/Structural_type_system)과 관련이 있다.
 
-
-
-
-
 <br/>
 
 ## TypeScript 구조적 타이핑
@@ -69,7 +64,7 @@ saveUser(user); // 타입 에러가 아님
 - `A`는 `B`에 할당 가능하지만
 - `B`는 `A`에 할당할 수 없다.
 
-> 참고 : 프로퍼티 측면에서 슈퍼셋이어야 하는 것 외에도 프로퍼티의 타입도 중요하다.
+> 참고: 프로퍼티 측면에서 슈퍼셋이어야 하는 것 외에도 프로퍼티의 타입도 중요하다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/bcd328ae-0b04-44c2-a28d-e052391e6dd6)
 
@@ -227,4 +222,3 @@ window.addEventListener('keydown', (e: KeyboardEvent) => {
 이 아이디어는 Evan Martin의 글인 [인터페이스는 일반적으로 사용자에게 속합니다](https://neugierig.org/software/blog/2019/11/interface-pattern.html)에서 살펴볼 수 있다. 꼭 읽어보시기를! 이 글은 타입스크립트 코드를 작성하고 생각하는 방식을 바꾸어 놓았다.
 
 이 게시물은 [해커 뉴스에서 많은 흥미로운 토론](https://news.ycombinator.com/item?id=36457557)을 불러 일으켰다.
-

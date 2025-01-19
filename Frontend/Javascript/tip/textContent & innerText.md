@@ -18,7 +18,7 @@ element.textContent = '내용';
 
 ## 공통점과 차이점
 
-### 공통점 
+### 공통점
 
 - 텍스트 노드를 추가함.
   - 둘 모두 텍스트를 추가한다는 공통점이 있다. 결과 역시 동일함.
@@ -32,7 +32,7 @@ element.textContent = '내용';
   - innerText는 불필요한 공백을 제거하고 텍스트로 반환.
   - textContent는 모든 텍스트를 그대도 가져옴.
 
-즉, 
+즉,
 
 ```html
 <p>   Hi   Webisfree.com   Web   Development   </p>

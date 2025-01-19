@@ -91,7 +91,7 @@ const Columns = () => {
 
 <br/>
 
-## key가 있는 Fragments
+## Key가 있는 Fragments
 
 key가 있다면 `<React.Fragments>` 문법으로 명시적으로 선언해줘야 함.
 
@@ -108,4 +108,3 @@ return (
   </dl>
 );
 ```
-

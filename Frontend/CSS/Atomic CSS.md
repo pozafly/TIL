@@ -14,7 +14,7 @@ Bootstrap, Sass, BEM 혹은 CSS-in-JS 와는 달리 비주류이고, TailwindCSS
 
 문서를 공유하기 위해 만들어짐. 콘텐츠에 의미를 부여하는 태그를 붙여주어 서식을 꾸미는 방식으로 만들어짐.
 
-### inline-style
+### Inline-style
 
 조금 더 다른 형태의 서식으로 꾸미기를 원했고 이를 위해 style이라는 것이 추가 되었다. 태그에 직접 style을 지정하는 방식을 line-style이라고 한다.
 
@@ -116,11 +116,11 @@ HTML, CSS를 동시에 편집할 수 있게 되면서 복잡하게 Selector를 �
 
 CSS는 웹 문서를 잘 꾸미기 위해 설계되었다. 그래서 초기에 문서를 만들기 위해 설계된 CSS는 웹 어플리케이션 개발 패러다임에서 과도기를 맞이하게 된다.
 
-### CSS가 문제가 생기기 시작했다.
+### CSS가 문제가 생기기 시작했다
 
 1. HTML을 복 붙 했는데 CSS가 제대로 적용안됨.
 2. CSS를 수정했더니 엉뚱한 곳이 틀어짐.
-3. Selector가 안먹어 !important로 덮어써야 하는 문제.
+3. Selector가 안먹어!important로 덮어써야 하는 문제.
 4. 안 쓰이는 코드 찾기가 진짜 어려운 문제 (특히 JS와 결합된 class)
 5. 도움지 CSS가 재사용되지 않는 문제
 
@@ -128,8 +128,8 @@ CSS는 웹 문서를 잘 꾸미기 위해 설계되었다. 그래서 초기에 �
 
 JS는 Component와 Frammework 기반 개발방식으로 변해가고 있었음. 당시 flexbox와 같은 어플리케이션을 위한 레이아웃 스펙은 존재하지 않았기에 float 등을 억지로 사용하고 문서 간격을 만들기 위한 margin을 통해 레이아웃을 하는 스펙의 부재도 있었지만, 결정적으로 큰 2가지 설계상 문제 존재.
 
-1. Global Scope : 전역 변수
-2. Specificity : 작성된 순서대로 적용되지 않음.
+1. Global Scope: 전역 변수
+2. Specificity: 작성된 순서대로 적용되지 않음.
    - HTML에 지정된 class 순서가 아니라, CSS의 순서에 의해 서식 우선순위가 결정된다.
    - Selector가 복잡할 수록 서식이 나중에 적용된다.
    - 다른 서식을 덮어쓰기 위해서는 Selector를 더 복잡하게 작성해야 한다.
@@ -192,12 +192,12 @@ Styled-Components 탄생.
 
 ## TailwindCSS 2017
 
-> *“Best practices” don’t actually work.*
+> *"Best practices" don't actually work.*
 > ***Utility-First CSS Framework***
 
 지금까지의 Best practices는 사실 **제대로 동작하지 않는다**며 만들어진 새로운 시각의 CSS Framework가 Tailwind CSS다.
 
-하지만, 많은 Hater를 가지고 있음. 
+하지만, 많은 Hater를 가지고 있음.
 
 > Utility-First, Atomic CSS, Function CSS는 같은 것을 의미함. TailwindCSS는 Utility-First를 밀고 있지만, Atomic CSS라고 하자.
 
@@ -279,4 +279,3 @@ AtomicCSS는 Tailwind CSS가 시초가 아님. TailwindCSS가 유명해진 것�
 WebFramework를 사용한 Component 기반 시대인 지금, Web Framework의 컴포넌트가 시멘틱과 중복 방지 역할을 대신 해주고 있음.
 
 하나의 콘텐츠에 여러 가지 디자인을 할 필요성이 줄어들었다. 디자인이 곧 아이덴티티인 시대이기 때문에 더 이상 콘텐츠와 서식을 분리할 필요 없음. 시멘틱 하지 않아도 된다.
-

@@ -1,6 +1,6 @@
 # Computed set & get
 
-> 출처 : https://tofusand-dev.tistory.com/44
+> 출처: https://tofusand-dev.tistory.com/44
 
 computed 프로퍼티는 methods와 비슷하지만, 강력한 힘을 가지고 있다. **Computed는 캐싱(cache)**을 가지고 있다.
 

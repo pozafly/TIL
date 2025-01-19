@@ -1,4 +1,4 @@
-# lint
+# Lint
 
 > ESLint
 >
@@ -15,7 +15,7 @@
 
 ## 1. 배경
 
-오래된 스웨터의 보푸라기 같은 것을 린트(Lint)라고 부른다. 보푸라기가 많으면 옷이 보기 좋지 않은데 코드에서도 이런 보프라기가 있다. 들여쓰기를 맞추지 않은 경우, 선언한 변수를 사용하지 않은 경우......
+오래된 스웨터의 보푸라기 같은 것을 린트(Lint)라고 부른다. 보푸라기가 많으면 옷이 보기 좋지 않은데 코드에서도 이런 보프라기가 있다. 들여쓰기를 맞추지 않은 경우, 선언한 변수를 사용하지 않은 경우……
 
 보프라기 있는 옷을 입을 수는 있듯이 이러한 코드로 만든 어플리케이션도 동작은 한다. 그러나 코드의 가독성이 떨어지고 점점 유지보수하기 어려운 애물단지가 되어버리기 일쑤다.
 
@@ -195,7 +195,7 @@ npx eslint --init
 ? What format do you want your config file to be in?
 ```
 
-대화식 명령어로 진행되는데 모듈 시스템을 사용하는지, 어떤 프레임웍을 사용하는지, 어플리케이션이 어떤 환경에서 동작하는지 등에 답하면 된다. 답변에 따라 .eslintrc 파일을 자동으로 만들 수 있다.
+대화식 명령어로 진행되는데 모듈 시스템을 사용하는지, 어떤 프레임웍을 사용하는지, 어플리케이션이 어떤 환경에서 동작하는지 등에 답하면 된다. 답변에 따라.eslintrc 파일을 자동으로 만들 수 있다.
 
 ## 3. Prettier
 
@@ -438,7 +438,7 @@ package.json:
 }
 ```
 
-내용이 변경된 파일 중에 .js 확장자로 끝나는 파일만 린트로 코드 검사를 한다.
+내용이 변경된 파일 중에.js 확장자로 끝나는 파일만 린트로 코드 검사를 한다.
 
 pre-commit 훅도 아래처럼 변경한다.
 
@@ -462,11 +462,7 @@ package.json:
 
 먼저 [ESLint 익스텐션](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 부터 설치해 보자.
 
-
-
 [![eslint 익스텐션 설치](https://jeonghwan-kim.github.io/static/a3c1eb59d1ab4df5020111f7c7347017/41099/eslint-extention.jpg)](https://jeonghwan-kim.github.io/static/a3c1eb59d1ab4df5020111f7c7347017/41099/eslint-extention.jpg)eslint 익스텐션 설치
-
-
 
 설치를 마친 뒤 eslint를 활성화 설정을 추가한다.
 
@@ -480,11 +476,7 @@ package.json:
 
 설치하면 자동으로 ESLint 설정파일을 읽고 파일을 검사한다.
 
-
-
 [![eslint 익스텐션 동작](https://jeonghwan-kim.github.io/static/85d33795b92ff1840fc8456ef184d2d4/b4294/eslint-extention-result.jpg)](https://jeonghwan-kim.github.io/static/85d33795b92ff1840fc8456ef184d2d4/b4294/eslint-extention-result.jpg)eslint 익스텐션 동작
-
-
 
 툴팁 메뉴를 클릭해서 문제를 수정한다.
 

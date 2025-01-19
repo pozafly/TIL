@@ -49,7 +49,7 @@ express server를 `nodemon` 에 연결한다. 그리고 localhost:port 로 접�
 
 그리고 요청하면 정상적으로 html 파일을 서빙하게 된다. 하지만, network tab에 docs를 보면 여전히 `<div id="app"><div>` 밖에 없을 것이다.
 
-이 때 dist로 빌드된 html 파일에 
+이 때 dist로 빌드된 html 파일에
 
 ```html
 <body>
@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-이런식으로 파일을 읽어와 replace로 교체하면 
+이런식으로 파일을 읽어와 replace로 교체하면
 
 <img width="552" alt="스크린샷 2024-08-03 오후 6 44 44" src="https://github.com/user-attachments/assets/bb57659e-88f1-4dc2-aa40-41a25c102f1c">
 
@@ -126,7 +126,7 @@ export function renderIndex() {
 
 그러면 `./src/pages/index.js` 와 같은 경로로 import 하기에는 함수 수가 너무 많을 것이기 때문에 어렵다. 프로매틱하지 않고 사람 손으로 계속 직접 해주어야 하기 때문이다.
 
-또한, export const ... 한 함수는 트리 쉐이킹으로 client 쪽 빌드를 실행할 경우 코드 자체가 사라져버린다.
+또한, export const … 한 함수는 트리 쉐이킹으로 client 쪽 빌드를 실행할 경우 코드 자체가 사라져버린다.
 
 정리하면
 
@@ -175,7 +175,7 @@ export const getInitialHTML = {
 };
 ```
 
-이제, 이렇게 만들어줄 수 있다. 이 때 search 같은 경우는 
+이제, 이렇게 만들어줄 수 있다. 이 때 search 같은 경우는
 
 ```js
 export async function renderSearch({ searchParams }) {
@@ -187,7 +187,7 @@ export async function renderSearch({ searchParams }) {
 }
 ```
 
-이런 형태였지만, 
+이런 형태였지만,
 
 ```js
 export const getInitialHTML = () => {
@@ -233,7 +233,7 @@ app.get('/', (req, res) => {
 
 <br/>
 
-## data fetch for SSR
+## Data fetch for SSR
 
 ```js
 app.get('/api/search', (req, res) => {
@@ -250,7 +250,7 @@ app.get('/search', (req, res) => {
 });
 ```
 
-기존 /search를 /api/search 로 바꾸어주고, getInitialHTML을 넣어주면 
+기존 /search를 /api/search 로 바꾸어주고, getInitialHTML을 넣어주면
 
 ```html
 <body>
@@ -418,7 +418,7 @@ goto(location.pathname + location.search, {
 });
 ```
 
-goto 함수에서 받아, routes로 넘겨주고, search.js로 넘겨주면, 
+goto 함수에서 받아, routes로 넘겨주고, search.js로 넘겨주면,
 
 ```js
 export async function renderSearch({ searchParams, initialData }) {
@@ -457,4 +457,3 @@ initialData가 없을 경우는 fetch 해서 rendering 하도록 하고, `addEve
 여기까지가 Hydration 과정이다.
 
 우리는 innerHTML을 건너 뛰었지만, react에서는 건너뛰지 않는다. React는 가상 DOM을 이용하기 때문에 렌더링을 하는데, 바뀐게 없으면 깜빡 거리지 않고 화면을 painting 하지 않기 때문이다. Next.js 같은 경우는 만약 서버에서 그린 HTML과 클라이언트에서 그린 HTML에 차이가 있으면 missmatch error를 나타내주는 기능도 포함되어 있다.
-

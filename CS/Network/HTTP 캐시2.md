@@ -70,15 +70,15 @@
 
 ## 캐시 제어 헤더
 
-- Cache-Control : 캐시 제어
-- Pragma : 캐시 제어(하위 호환)
-- Expires : 캐시 유효 기간(하위 호환)
+- Cache-Control: 캐시 제어
+- Pragma: 캐시 제어(하위 호환)
+- Expires: 캐시 유효 기간(하위 호환)
 
 ## Cache-Control
 
 캐시 지시어(directives)다.
 
-- Cache-Control: max-age : 캐시 유효 기간, 초 단위
+- Cache-Control: max-age: 캐시 유효 기간, 초 단위
 - Cache-Control: no-cache
   - 데이터는 캐시해도 되지만, 항상 원(origin) 서버에 검증하고 사용.
   - 이 말은, ETag나 Last-Modified 헤더를 IF-None-Match, If-Modified-Since헤더 가지고 값을 넣어 서버에 검증해라 라는 뜻이다.
@@ -117,4 +117,3 @@ must-revalidate는,
 - 캐시 만료 후 최초 조회시 **원 서버에 검증** 해야함
 - 원 서버 접근 실패시 반드시 오류가 발생해야 함 - 504(Gateway Timeout)
 - must-revalidate는 캐시 유효 시간이라면 캐시를 사용함.
-

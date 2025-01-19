@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
+                "file": "Book/자바스크립트+리액트 디자인패턴/0.2 어플리케이션 분리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.6 스프링 컨테이너와 스프링 빈"
+              "title": "0.2 어플리케이션 분리"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
+                "file": "Book/자바스크립트+리액트 디자인패턴/0.2 어플리케이션 분리.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "0.6 스프링 컨테이너와 스프링 빈의 백링크"
+              "title": "0.2 어플리케이션 분리의 백링크"
             }
           },
           {
@@ -193,6 +193,16 @@
   },
   "active": "f47a42025edd3be9",
   "lastOpenFiles": [
+    "Book/자바스크립트+리액트 디자인패턴/0.1 디자인패턴.md",
+    "Book/자바스크립트+리액트 디자인패턴/0.4 생성 패턴 - JS 디자인 패턴/0.2 모듈 패턴.md",
+    "Book/자바스크립트+리액트 디자인패턴/0.4 생성 패턴 - JS 디자인 패턴/0.1 생성자 패턴.md",
+    "Book/이펙티브 타입스크립트/0.7. 타입이 값들의 집합이라고 생각하기.md",
+    "Book/이펙티브 타입스크립트/5.4 객체를 순회하는 노하우.md",
+    "Book/육각형 개발자/9~11장.md",
+    "Book/육각형 개발자/7~8장.md",
+    "Book/육각형 개발자/1~3장.md",
+    "Book/그림으로 배우는 알고리즘/0.1 자료구조.md",
+    "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
     "Backend/Spring/핵심원리/0.7 BeanFactory와 ApplicationContext.md",
     "Backend/Spring/핵심원리/0.8 싱글톤 컨테이너.md",
     "Backend/Spring/jpa/기본/0.1 정의.md",
@@ -209,18 +219,8 @@
     "Backend/Spring/핵심원리/0.2 객체 지향 설계와 스프링.md",
     "Backend/Spring/핵심원리/0.3 비즈니스 요구사항과 설계.md",
     "Backend/Spring/핵심원리/0.4 객체지향 원리 적용.md",
-    "Backend/Spring/핵심원리/0.5 IoC, DI, 그리고 컨테이너.md",
-    "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
-    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
-    "Clean Code/JS 클린코드/0.6 배열 다루기.md",
-    "Clean Code/JS 클린코드/0.1 고민하기.md",
-    "Clean Code/JS 클린코드/0.0 start.md",
-    "Web/Analytics/GA4 api 가져오기(node-auth).md",
-    "2025-01-18.md",
     "무제 파일.canvas",
     "Tags",
-    "daliy-note/2025-01-18.md",
-    "daliy-note",
-    "Frontend/Javascript/고급/두 개의 queue로 동시성 제어.md"
+    "daliy-note"
   ]
 }

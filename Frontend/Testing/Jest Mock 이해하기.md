@@ -109,9 +109,9 @@ it('calls callback with arguments added', () => {
 
 3가지의 주 모듈 / 함수 mocking 방식이 존재함
 
-- `jest.fn` : 함수를 mock 한다.
-- `jest.mock` : 모듈을 mock 한다.
-- `jest.spyOn` : 함수를 spy 하거나 mock 한다.
+- `jest.fn`: 함수를 mock 한다.
+- `jest.mock`: 모듈을 mock 한다.
+- `jest.spyOn`: 함수를 spy 하거나 mock 한다.
 
 위 방법들은 각각의 방법으로 mock function을 생성함.
 
@@ -291,4 +291,3 @@ test('calls math.add', () => {
 ## 결론
 
 이 글에서, 우리는 함수 호출 추적, 구현 내용 변경, 그리고 반환 값 설정을 위해 모듈과 함수를 재지정하는 Mock function과 다양한 전략들을 알아보았다.
-

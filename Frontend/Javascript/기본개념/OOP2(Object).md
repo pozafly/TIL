@@ -1,6 +1,6 @@
 # Object(OOP)
 
-> 출처 : https://youtu.be/1Lbr29tzAA8
+> 출처: https://youtu.be/1Lbr29tzAA8
 
 <br/>
 
@@ -47,8 +47,8 @@ console.log(hst.hasJob);  // true
 - Object.properties로 오브젝트의 값에 접근 가능하며
 - Object['키 이름'] 으로도 값에 접근이 가능함. 단, 키 이름은 string 타입으로 커테이션을 주어 표현해야함.
 - 여기서 `Computed properties`는 배열 형태를 말한다. 그럼 어떨 때 쓰는가?
-  - hst.name : 코딩하는 그 순간 그냥 값을 가져오고 싶을 때,
-  - hst['name'] : 어떤 key가 필요한지 모를 때, 즉 runtime시 결정될 때 사용.
+  - hst.name: 코딩하는 그 순간 그냥 값을 가져오고 싶을 때,
+  - hst['name']: 어떤 key가 필요한지 모를 때, 즉 runtime시 결정될 때 사용.
 
 ```javascript
 function printValue(obj, key) {
@@ -98,7 +98,7 @@ function Person(name, age) {
 
 <br/>
 
-## 5. in operator
+## 5. In operator
 
 간단하게 키가 있는지 없는지 판단함.
 
@@ -111,7 +111,7 @@ console.log(hst.random);   // undefined
 
 <br/>
 
-## 6. for .. in vs for .. of
+## 6. For.. in vs for.. of
 
 ```javascript
 for (key in hst) {
@@ -132,7 +132,7 @@ for (value of array) {
 
 <br/>
 
-## 7. cloning
+## 7. Cloning
 
 ```javascript
 const user = { name: 'hst', age: '20' };
@@ -180,6 +180,6 @@ console.log(mixed.size);    // big
 
 > `정리`
 >
-> Computed properties는 Vue의 watch가 생각난다. 동적으로 변하는 key의 형태를 string으로 넘기는데, 이 때 내부적으로 vue에서 Computed properties를 사용하지 않을까? 
+> Computed properties는 Vue의 watch가 생각난다. 동적으로 변하는 key의 형태를 string으로 넘기는데, 이 때 내부적으로 vue에서 Computed properties를 사용하지 않을까?
 >
 > 아직 javascript에서는 class 보다 Object 형태를 많이 쓰는데, 나중에 typeScript에서 class 형태가 많다고 한다. 자바스크립트에서 주로 Object만 다루었지 class 를 보니 신기하긴 하네.

@@ -8,7 +8,7 @@
 
 더 빠른 응답과 상호작용하려면? 사용자가 어떤 행동을 취할 때마다 쿠키를 서버로 다시 전송하고 서버가 완전히 새로운 페이지를 생성하도록 해야 하나? 대신 클라이언트가 그 작업을 수행하도록 모든 렌더링 코드를 JavaScript 클라이언트에 전송하면 된다.
 
-이를 CSR(Client Side Rendering) 또는 SPA(Single Page Application)이라 하는데, [이전엔 나쁜 방법으로 생각](https://begin.com/blog/posts/2023-02-21-why-does-everyone-suddenly-hate-single-page-apps)했음. 
+이를 CSR(Client Side Rendering) 또는 SPA(Single Page Application)이라 하는데, [이전엔 나쁜 방법으로 생각](https://begin.com/blog/posts/2023-02-21-why-does-everyone-suddenly-hate-single-page-apps)했음.
 
 대시보드와 같이 자주 바뀌고 상호작용이 많은 페이지의 경우 SPA가 적합함. 하지만 검색 엔진이 페이지를 읽도록 하고 싶은데 검색엔진이 JavaScript를 읽지 않으면? 서버에서 보안을 유지해야 하는 경우라면? 사용자 디바이스의 전력이 낮거나 연결 상태가 좋지 않은 경우라면?
 
@@ -69,4 +69,3 @@ RSC는 코드가 실행되는 위치와 데이터 가져오기 방식에 대해 
 React 서버 컴포넌트를 어떻게 사용할지, 점진적 마이그레이션은 어떻게 할지, 읽기 어려운 스파게티 코드 덩어리를 만들지 않고, 까다로운 작업을 수행햐려면 어떻게 해야 할지에 대해 이야기해보자.
 
 ---
-

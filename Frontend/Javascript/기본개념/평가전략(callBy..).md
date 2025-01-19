@@ -1,6 +1,6 @@
 # 평가전략(callBy..)
 
-> 출처 : https://velog.io/@jimmyjoo/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8F%89%EA%B0%80%EC%A0%84%EB%9E%B5-Call-By-Value-vs-Call-By-Reference-vs-Call-By-Sharing
+> 출처: https://velog.io/@jimmyjoo/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8F%89%EA%B0%80%EC%A0%84%EB%9E%B5-Call-By-Value-vs-Call-By-Reference-vs-Call-By-Sharing
 
 <br/>
 
@@ -62,7 +62,7 @@ changeName(me);  // caller
 console.log(me);  // ???
 ```
 
-함수에 참조 타입을 인수로 넘겨줬고, 함수 내에서 새로운 객체를 할당했으니까 함수 외부에 있는 객체(`me`)도 변했을 것임. 참조 타입은 Call By Reference니까. 정답은 `{ name: 'foo' }` . 라고 생각할 수 있음.
+함수에 참조 타입을 인수로 넘겨줬고, 함수 내에서 새로운 객체를 할당했으니까 함수 외부에 있는 객체(`me`)도 변했을 것임. 참조 타입은 Call By Reference니까. 정답은 `{ name: 'foo' }`. 라고 생각할 수 있음.
 
 정답은 `{ name: 'hst' }` 이다. 아무 변화가 없다. 왜?
 
@@ -116,6 +116,3 @@ person = { name: 'foo' };
 - 참조 타입은 **Call By Value of Reference(Call By Sharing)**
 
 라고 불러줘야함. 결국 변수가 가리키는 메모리 공간에 저장되어 있는 값을 복사하여 전달한다는 관점에서는, `자바스크립트는 항상 값에 의한 전달(Call By Value)만 존재한다고 말할 수 있다.`
-
-
-

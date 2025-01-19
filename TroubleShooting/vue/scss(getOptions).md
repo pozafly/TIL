@@ -1,4 +1,4 @@
-# scss
+# Scss
 
 vue에 scss를 입힐 때 필요한 모듈은, `node-sass`, `sass-loader` 다.
 

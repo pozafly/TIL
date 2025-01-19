@@ -85,8 +85,8 @@ Caller에서는 `uses` 키워드를 이용해 지정하는데 위처럼 `jobs.<j
 
 `uses` 키워드에서는 다음 두 가지 문법으로 워프클로우를 지정한다.
 
-- `{owner}/{repo}/{path}/{filename}@{ref}` : public/internal 저장소의 재사용할 수 있는 워크플로우
-- `./{path}/{filename}` : 같은 저장소의 재사용할 수 있는 워크플로우
+- `{owner}/{repo}/{path}/{filename}@{ref}`: public/internal 저장소의 재사용할 수 있는 워크플로우
+- `./{path}/{filename}`: 같은 저장소의 재사용할 수 있는 워크플로우
 
 위 예시에서는 데모용이라 두 가지 방법을 다 사용함. 위에서 `{ref}` 는 Git 커밋 SHA, 브랜치명, 태그명이 될 수 있는데 SHA는 전체 SHA를 지정해야만 한다. private 저장소의 경우에는 같은 저장소 내에서만 재사용할 수 있는 워크플로우를 호출할 수 있다. internal 저장소는 GitHub Enterprise를 사용할 때 org 밑에서만 public 처럼 쓸 수 있는 내부 저장소를 의미한다.
 

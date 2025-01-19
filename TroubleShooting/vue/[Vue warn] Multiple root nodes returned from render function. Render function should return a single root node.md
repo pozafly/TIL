@@ -1,6 +1,6 @@
-# [Vue warn]: Multiple root nodes returned from render function. Render function should return a single root node.
+# [Vue warn]: Multiple root nodes returned from render function. Render function should return a single root node
 
-> 출처 : https://www.inflearn.com/questions/32168
+> 출처: https://www.inflearn.com/questions/32168
 
 풀이하면, 렌더링 기능에서 여러 루트 노드가 반환되었다는 뜻. 렌더링 함수는 단일 루트 노드를 반환해야 한다는 뜻이다. 즉, 코드로 보면,
 
@@ -22,11 +22,11 @@
 </template>
 ```
 
-요렇게 가장 상위 태그를 사용해주면 위 warning이 깔끔하게 해결된다. 다만, 문제는 지금처럼 .vue 파일을 직접 쓰는게 아니라 `renderless` 컴포넌트를 만들 때 발생했다는 것이다.
+요렇게 가장 상위 태그를 사용해주면 위 warning이 깔끔하게 해결된다. 다만, 문제는 지금처럼.vue 파일을 직접 쓰는게 아니라 `renderless` 컴포넌트를 만들 때 발생했다는 것이다.
 
 <br/>
 
-📌 renderless 컴포넌트란, [출처](https://velog.io/@jtwjs/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4) 
+📌 renderless 컴포넌트란, [출처](https://velog.io/@jtwjs/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4)
 
 `templete` 표현식이 없고 `script` 단에서 비즈니스 로직만 처리해 상위 컴포넌트로 데이터를 노출시키주는 컴포넌트.
 

@@ -1,4 +1,4 @@
-# node modules splitting
+# Node modules splitting
 
 > [출처](https://so-so.dev/tool/webpack/node-modules-splitting/)
 
@@ -14,7 +14,7 @@ webpack의 splitChunk 옵션을 수정해 node_modules를 여러 개의 bundle f
 
 <br/>
 
-## framework, lib, commons 3가지 규칙
+## Framework, lib, commons 3가지 규칙
 
 cacheGroups의 default 설정은 모두 false로 '사용하지 않음'으로 명시해주고, 커스텀 한 규칙을 3가지 정의한다.
 
@@ -83,7 +83,7 @@ cacheGroups: {
 
 cacheGroups의 `test` 규칙에 따라 여러 cacheGroups에 속할 수 있다. 모듈이 두 가지 이상의 그룹에 속할 수 있을 때, priority를 보고 높은 규칙에 속하게 된다.
 
-### chunks: all
+### Chunks: all
 
 chunks에 줄 수 있는 옵션은 `initial`, `async`, `all`.
 
@@ -117,39 +117,4 @@ splitChunks: {
 
 웹팩 node_modules splitting의 전체 자체가 browser에서 리소스를 병렬적으로 로드할 수 있으니, 번들을 작게 쪼개 전체 로딩 타임을 감소시킨다는 컨셉이다.
 
-### enforce: true?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Enforce: true?

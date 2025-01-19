@@ -1,8 +1,8 @@
 # Class(OOP)
 
-> 출처 : https://youtu.be/_DLhUBWsRtw
+> 출처: https://youtu.be/_DLhUBWsRtw
 
-- class : 연관있는 Data를 한데 묶어놓음. (붕어빵 틀)
+- class: 연관있는 Data를 한데 묶어놓음. (붕어빵 틀)
 
   ```javascript
   class person {
@@ -12,11 +12,10 @@
   }
   ```
 
-  - name, age : 속성(field)
-  - speak() : 행동(method)
+  - name, age: 속성(field)
+  - speak(): 행동(method)
   - class는 ES6에서 새롭게 추가된 것임. prototype-based 임.
-
-- object : 실제 Data를 넣어 만드는 것. (붕어빵)
+- object: 실제 Data를 넣어 만드는 것. (붕어빵)
 
 <br/>
 
@@ -69,9 +68,9 @@ const user1 = new User('Steve', 'Job', -1);
 console.log(user1.age);
 ```
 
-- this.age : 메모리에 올라가 있는 age를 가져오는 것이 아니라, (1)get 함수를 불러옴
-- = age; : (2)set 함수를 불러옴. = value; 도 마찬가지로 setter를 호출함.
-- 따라서 `Uncaught RangeError : Maxinum call stack size exceeded` 라는 오류를 뱉음
+- this.age: 메모리에 올라가 있는 age를 가져오는 것이 아니라, (1)get 함수를 불러옴
+- = age;: (2)set 함수를 불러옴. = value; 도 마찬가지로 setter를 호출함.
+- 따라서 `Uncaught RangeError: Maxinum call stack size exceeded` 라는 오류를 뱉음
 
 ```javascript
 get age() {
@@ -126,7 +125,7 @@ console.log(experiment.privateField);  // undefined
 ```
 
 - 최근에 추가된 스펙임. 사파리에서도 아직 지원하지 않음.
--  `#` 을 붙여주면 외부에서 변경할 수도, 읽어올 수도 없음. 오직 class 내부에서만 사용가능한 private 변수.
+- `#` 을 붙여주면 외부에서 변경할 수도, 읽어올 수도 없음. 오직 class 내부에서만 사용가능한 private 변수.
 
 <br/>
 
@@ -154,7 +153,7 @@ const article2 = new Article(2);
 console.log(article1.publisher);  // undefined
 ```
 
-즉 여기서 봤을 때는 값이 지정되지 않았다는 것인데, 
+즉 여기서 봤을 때는 값이 지정되지 않았다는 것인데,
 
 ```javascript
 console.log(Article.publisher);   // Dream Coding
@@ -224,8 +223,8 @@ console.log(triangle instanceof Object);     // true
 
 > `정리`
 >
-> OOP의 개념은 Java를 공부하면서 많이 배웠던 내용이다. Javascript 버전으로 보니 개념적인 부분은 같아서 재미있게 봤음. 
+> OOP의 개념은 Java를 공부하면서 많이 배웠던 내용이다. Javascript 버전으로 보니 개념적인 부분은 같아서 재미있게 봤음.
 >
-> 이동욱 님께서 유튜브에서 RxJava? 가 Javascript를 따라하는 부분이 생기고, Javascript가 Java를 따라하는 부분이 생긴다고 했다. 서로 좋은 부분은 가져다 쓰면서 언어 자체가 진화하는. 그런 느낌이 아닐까? public, private & static. 새로 생기는 개념들. 
+> 이동욱 님께서 유튜브에서 RxJava? 가 Javascript를 따라하는 부분이 생기고, Javascript가 Java를 따라하는 부분이 생긴다고 했다. 서로 좋은 부분은 가져다 쓰면서 언어 자체가 진화하는. 그런 느낌이 아닐까? public, private & static. 새로 생기는 개념들.
 >
 > 신기.

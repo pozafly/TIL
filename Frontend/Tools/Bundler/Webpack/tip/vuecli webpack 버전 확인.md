@@ -1,4 +1,4 @@
-# vue/cli webpack 버전 확인
+# vue/cli Webpack 버전 확인
 
 vue 프로젝트에서 웹팩 버전을 확인하고 싶었다. 하지만 vue/cli 공식홈페이지에도 webpack에 대한 버전이 명시되어 있지 않았다.
 

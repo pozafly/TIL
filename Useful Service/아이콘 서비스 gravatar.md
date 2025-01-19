@@ -17,4 +17,3 @@ $ npm install md5 --save
 ```
 
 로 깔아서 사용할 수 있다. gravatar에서는 공식적으로 md5를 통해서 생성하라고 나와 있다.
-

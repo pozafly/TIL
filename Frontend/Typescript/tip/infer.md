@@ -1,4 +1,4 @@
-# infer
+# Infer
 
 ```ts
 function zip(

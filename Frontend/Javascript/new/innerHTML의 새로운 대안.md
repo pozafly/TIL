@@ -4,7 +4,7 @@
 
 `setHTMLUnsafe` 는 [모든 브라우저](https://caniuse.com/?search=sethtmlunsafe)에서 지원된다. `setHTML` 은 아직 표준화 작업이 진행 중이며, 현재는 파이어폭스에서 플래그를 활성화해야만 사용할 수 있다. [getHTML](https://caniuse.com/mdn-api_element_gethtml)은 버전 125부터 크롬과 엣지에서 지원된다.
 
-최근 브라우저에 `setHTMLUnsafe` 메서드가 새롭게 추가되었음. 안전하지 않다(unsafe)는 것은 `innerHTML` 과 마찬가지로 입력 값 검증(sanitization)을 수행하지 않음을 의미한다. 이 명칭은 기존 브라우저 API의 네이밍 방식과 차이가 있음. 예를 들어, `innerHTML`  을 굳이 `innerHTMLUnsafe` 라고 하지 않았고, `eval` 을 `evalUnsafe()` 라고 하지 않았다. 그렇다고 해서 `setHTMLUnafe` 라고 하지 않았고, `eval` 을 `evalUnsafe()` 라고 하지 않았다. 그렇다고 해서 `setHTMLUnsafe` 는 기존 메서드들보다 더 위험한 건 아니다. 오래된 메서드들과 다르게 안전한 메서드(`setHTML`) 과 안전하지 않은 메서드(`setHTMLUnsafe`) 가 있기 때문에 메서드 이름에 'unsafe'를 명시하는 방식을 사용한 것이다.
+최근 브라우저에 `setHTMLUnsafe` 메서드가 새롭게 추가되었음. 안전하지 않다(unsafe)는 것은 `innerHTML` 과 마찬가지로 입력 값 검증(sanitization)을 수행하지 않음을 의미한다. 이 명칭은 기존 브라우저 API의 네이밍 방식과 차이가 있음. 예를 들어, `innerHTML` 을 굳이 `innerHTMLUnsafe` 라고 하지 않았고, `eval` 을 `evalUnsafe()` 라고 하지 않았다. 그렇다고 해서 `setHTMLUnafe` 라고 하지 않았고, `eval` 을 `evalUnsafe()` 라고 하지 않았다. 그렇다고 해서 `setHTMLUnsafe` 는 기존 메서드들보다 더 위험한 건 아니다. 오래된 메서드들과 다르게 안전한 메서드(`setHTML`) 과 안전하지 않은 메서드(`setHTMLUnsafe`) 가 있기 때문에 메서드 이름에 'unsafe'를 명시하는 방식을 사용한 것이다.
 
 [Sanitizer API 명세](https://wicg.github.io/sanitizer-api/)에는 다음과 같은 구절이 있다.
 
@@ -127,4 +127,3 @@ const markup= main.getHTML({
 ```
 
 배열의 모든 쉐도우 루트는 직렬화가 가능하다고 명시적으로 표시되어 있지 않더라도 직렬화된다.
-

@@ -19,4 +19,3 @@ const dayName = today.toLocaleDateString('ko-KR', {
 console.log(dateString); // 2021년 3월 5일
 console.log(dayName);    // 금요일
 ```
-

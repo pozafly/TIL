@@ -1,6 +1,6 @@
 # 합성(composition)
 
-> 출처 : [유데미](https://www.udemy.com/course/best-react/learn/lecture/28517205#overview)
+> 출처: [유데미](https://www.udemy.com/course/best-react/learn/lecture/28517205#overview)
 
 <img width="831" alt="image" src="https://user-images.githubusercontent.com/59427983/179384632-c95a6011-4ec2-4a68-90d0-1ac1db06d3fa.png">
 
@@ -15,7 +15,7 @@ box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 
 <br/>
 
-### Composition(합성)이란, 
+## Composition(합성)이란
 
 작은 빌딩 블러으로부터 사용자 인터페이스를 구축하는 접근 방법이다.
 
@@ -84,6 +84,6 @@ export default function Card(props) {
 }
 ```
 
-props로 받은 className을 `card` string과 함께  div 요소에 바인딩 시켜주었다. 그러면, card ... 이렇게 두 개의 className을 가진 채 서로 다른 컴포넌트에서 서로 다른 요구사항을 만족하는 className을 쓸 수 있게 되었다. 합성의 개념이다.
+props로 받은 className을 `card` string과 함께 div 요소에 바인딩 시켜주었다. 그러면, card … 이렇게 두 개의 className을 가진 채 서로 다른 컴포넌트에서 서로 다른 요구사항을 만족하는 className을 쓸 수 있게 되었다. 합성의 개념이다.
 
 합성은, 작은 코드 조각으로 다른 여러 곳에서 사용될 수 있도록 유연하게 설계된 하나의 모듈이라고 생각하면 된다.

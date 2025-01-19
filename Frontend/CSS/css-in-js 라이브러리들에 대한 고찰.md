@@ -1,4 +1,4 @@
-# css-in-js 라이브러리들에 대한 고찰
+# Css-in-js 라이브러리들에 대한 고찰
 
 > [출처](https://bepyan.github.io/blog/2022/css-in-js)
 
@@ -27,29 +27,29 @@ css-in-js 동작 방식은 크게 **runtime**, **zero-runtime** 으로 나뉜다
 
 <br/>
 
-## runtime
+## Runtime
 
-### JavaScript runtime에서 필요한 CSS를 동적으로 만들어 적용한다.
+### JavaScript runtime에서 필요한 CSS를 동적으로 만들어 적용한다
 
-대표적으로 알려진 styled-component, emotion이 있다. 
+대표적으로 알려진 styled-component, emotion이 있다.
 
 - 개발 모드에서는 `<style>` 태그에 style을 추가하는 방식을 사용한다.
   - 디버깅에 이점이 있다고 한다.
 - 배포 모드에서는 styleSheet를 [CSSStylesSheet.insertRule](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule) 통해 바로[CSSOM](https://dkmqflx.github.io/frontend/2020/09/14/jscssom/)에 주입한다.
   - 성능상의 이점이 있다고 한다.
 
-### css-loader가 필요 없다.
+### Css-loader가 필요 없다
 
 css 파일을 생성하지 않기에 webpack에서 css-loader가 필요 없다.
 
-### 런타임 오버헤드가 발생할 수 있다.
+### 런타임 오버헤드가 발생할 수 있다
 
 - 런타임에서 동적으로 스타일을 생성하기에 스타일이 수시로 변경된다면 오버헤드 발생.
   - ex) 스크롤, 드래그 앤 드랍 관련 복잡한 에니메이션
 
 <br/>
 
-## zero-runtime
+## Zero-runtime
 
 런타임에 css를 생성하지 않으면서 **페이지를 더 빨리 로드할 수 있다**. JS 번들에서 styles 코드를 모두 실행 되어야 페이지가 로드된다.
 
@@ -62,7 +62,7 @@ runtime에서 스타일이 생성되지 않는다. props 변화에 따른 동적
 - React CRA를 사용한다면 eject 해서 webpack 설정해야하는데 굉장히 번거롭다.
 - runtime에서 css polyfill을 사용할 수 없어 브라우저 버전 이슈가 있을 수 있다.
 
-### 첫 load는 빠르지만, 첫 paint는 느릴 수 있다.
+### 첫 load는 빠르지만, 첫 paint는 느릴 수 있다
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/abfe3a5c-34c1-44e6-8397-5265955163ee)
 
@@ -74,5 +74,3 @@ css styles까지 모두 로드 되어야 첫 paint를 시작한다. 반면 runti
   - styled-component 문법 그대로 사용해 러닝커브가 없을 것 같다.
   - [styled-components와 속도 비교](https://pustelto.com/blog/css-vs-css-in-js-perf/)
   - mini-css-extract-plugin에 의해 critical css를 판단할 수 없는 경우 linaria의 collect를 사용가능하다.
-
-

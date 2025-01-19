@@ -10,8 +10,8 @@
 npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier
 ```
 
-4. 프로젝트 폴더 바로 아래에 ESLint 설정 파일 추가
-   
+1. 프로젝트 폴더 바로 아래에 ESLint 설정 파일 추가
+
 ```js
 // .eslintrc.js
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
 };
 ```
 
-5. ESLint 이그노어 파일 추가
+1. ESLint 이그노어 파일 추가
 
 ```
 // .eslintignore
@@ -61,7 +61,7 @@ node_modules
 
 ![command-palette](https://user-images.githubusercontent.com/59427983/233016612-5ed38e11-e6a0-4827-be03-0687d2041095.png)
 
-4. VSCode 사용자 정의 파일인 `settings.json` 파일의 내용에 아래와 같이 ESLint 플러그인 관련 설정 추가.
+1. VSCode 사용자 정의 파일인 `settings.json` 파일의 내용에 아래와 같이 ESLint 플러그인 관련 설정 추가.
 
 ```js
 {
@@ -80,6 +80,6 @@ node_modules
 }
 ```
 
-5. `ctrl` + `,` 또는 `cmd` + `,` 눌러서 VSCode 설정 파일(Settings)에 들어간 후 `format on save` 검색. 아래와 같이 체크가 안되어 있는지 확인.
+1. `ctrl` + `,` 또는 `cmd` + `,` 눌러서 VSCode 설정 파일(Settings)에 들어간 후 `format on save` 검색. 아래와 같이 체크가 안되어 있는지 확인.
 
 ![format-on-save-off](https://user-images.githubusercontent.com/59427983/233016540-0e36e377-7272-42d1-84ab-ec2a97e8ee40.png)

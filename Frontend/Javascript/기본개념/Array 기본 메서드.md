@@ -1,6 +1,6 @@
 # Array 기본 메서드
 
-> 출처 : https://www.zerocho.com/category/JavaScript/post/57387a9f715202c8679b3af0
+> 출처: https://www.zerocho.com/category/JavaScript/post/57387a9f715202c8679b3af0
 
 - length
 - join
@@ -132,4 +132,3 @@ Array 객체 자체의 static 메서드임. 배열인지 아닌지 확인해주�
 Array.isArray('array?');    // false
 Array.isArray(['array?']);  // true
 ```
-

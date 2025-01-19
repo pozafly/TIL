@@ -4,7 +4,7 @@
 
 ## 용법
 
-### inline CSS
+### Inline CSS
 
 `style` attribute를 태그에 직접 사용해 CSS 규칙 지정. 별도의 CSS 파일을 만들지 않고 요소에 빠르고 간단한 스타일 입힘.
 
@@ -59,9 +59,9 @@ Critical CSS는, 주로 Internal CSS로 작성한다. 스크롤을 내리지 않
 
 HTML에서 `<style>` 을 만나면, HTML은 파싱을 멈추고, CSSOM을 먼저 만들기 때문이다.
 
-inline으로 할 수도 있지만, CSS는 렌더링 차단 리소스이므로, 개별 DOM을 inlineCSS가 적용되어 있다면, 모든 CSS 구문을 분석하고 이해하는데 시간이 오래 걸릴 수 있기 때문이다. 
+inline으로 할 수도 있지만, CSS는 렌더링 차단 리소스이므로, 개별 DOM을 inlineCSS가 적용되어 있다면, 모든 CSS 구문을 분석하고 이해하는데 시간이 오래 걸릴 수 있기 때문이다.
 
-inline은 CSS를 한땀한땀 넣어주어야 한다. 따라서 코드 중복이 생길 수 있다. inline CSS는 코드 중복 때문에 CSS 량이 늘어나고, 그러면 오히려 시간이 더 걸릴 수 있다. (HTML은 점진적으로 파싱되지만, CSS는 선택자 중복이 있을 수 있으므로 브라우저에서 한번에 모든 CSS를 읽어들여 한번에 파싱한다. [링크](https://nitropack.io/blog/post/critical-rendering-path-optimization)) 
+inline은 CSS를 한땀한땀 넣어주어야 한다. 따라서 코드 중복이 생길 수 있다. inline CSS는 코드 중복 때문에 CSS 량이 늘어나고, 그러면 오히려 시간이 더 걸릴 수 있다. (HTML은 점진적으로 파싱되지만, CSS는 선택자 중복이 있을 수 있으므로 브라우저에서 한번에 모든 CSS를 읽어들여 한번에 파싱한다. [링크](https://nitropack.io/blog/post/critical-rendering-path-optimization))
 
 오히려 First Paint 시간이 오래 걸리기 때문에 inline CSS는 일반적으로 Critical CSS 를 설정하는데 사용하지 않는다. [링크](https://blog.logrocket.com/improve-site-performance-inlining-css/)
 

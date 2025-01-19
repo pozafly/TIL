@@ -1,19 +1,19 @@
 # DOMContentLoaded, load, beforeunload, unload
 
->[출처](https://ko.javascript.info/onload-ondomcontentloaded)
+> [출처](https://ko.javascript.info/onload-ondomcontentloaded)
 
 HTML 문서의 생명주기엔 3가지 주요 이벤트가 관여한다.
 
-- `DOMContentLoaded` : 브라우저가 HTML을 전부 읽고 DOM 트리를 완성하는 즉시 발생한다. 이미지 파일(`<img>`)이나, 스타일 시트 등의 기타 자원은 기다리지 않는다.
-- `load` : HTML로 DOM 트리를 만드는게 완성되었을 뿐 아니라 이미지, 스타일 시트 같은 외부 자원도 모두 불러오는 것이 끝났을 때 발생.
-- `beforeunload` / `unload` : 사용자가 페이지를 떠날 때 발생
+- `DOMContentLoaded`: 브라우저가 HTML을 전부 읽고 DOM 트리를 완성하는 즉시 발생한다. 이미지 파일(`<img>`)이나, 스타일 시트 등의 기타 자원은 기다리지 않는다.
+- `load`: HTML로 DOM 트리를 만드는게 완성되었을 뿐 아니라 이미지, 스타일 시트 같은 외부 자원도 모두 불러오는 것이 끝났을 때 발생.
+- `beforeunload` / `unload`: 사용자가 페이지를 떠날 때 발생
 
 활용처
 
-- `DOMContentLoaded` : DOM이 준비된 것을 확인한 후 원하는 DOM 노드를 찾아 핸들러를 등록해 인터페이스를 초기화 할 때.
-- `load` : 이미지 사이즈 등을 확인할 때 등. 외부 자원이 로드된 후이기 때문에 스타일이 적용된 상태이므로 화면에 뿌려지는 요소의 실제 크기를 확인할 수 있음.
-- `beforeunload` : 사용자가 사이트를 떠나려할 때, 변경되지 않은 사항들을 저장했는지 확인시켜줄 때
-- `unload` : 사용자가 진짜 떠나기 전 사용자 분석 정보를 담은 통계 자료를 전송하고자 할 때
+- `DOMContentLoaded`: DOM이 준비된 것을 확인한 후 원하는 DOM 노드를 찾아 핸들러를 등록해 인터페이스를 초기화 할 때.
+- `load`: 이미지 사이즈 등을 확인할 때 등. 외부 자원이 로드된 후이기 때문에 스타일이 적용된 상태이므로 화면에 뿌려지는 요소의 실제 크기를 확인할 수 있음.
+- `beforeunload`: 사용자가 사이트를 떠나려할 때, 변경되지 않은 사항들을 저장했는지 확인시켜줄 때
+- `unload`: 사용자가 진짜 떠나기 전 사용자 분석 정보를 담은 통계 자료를 전송하고자 할 때
 
 자세히 보자.
 
@@ -67,7 +67,7 @@ document.addEventListener.('DOMContentLoaded', ready);
 </script>
 ```
 
-예시를 실행하면 '라이브러리 로딩이 끝나고...' 가 먼저 보인 후 DOM이 준비 됌이 출력된다. 스크립트가 모두 실행되고 난 후에야 `DOMContentLoaded`가 실행된다.
+예시를 실행하면 '라이브러리 로딩이 끝나고…' 가 먼저 보인 후 DOM이 준비 됌이 출력된다. 스크립트가 모두 실행되고 난 후에야 `DOMContentLoaded`가 실행된다.
 
 > DOMContentLoaded를 막지 않는 스크립트
 >
@@ -90,7 +90,7 @@ document.addEventListener.('DOMContentLoaded', ready);
 </script>
 ```
 
-이런 예외는 스크립트에서 스타일에 영향을 받는 요소의 프로퍼티를 사용할 가능성이 있기 때문에 만들어졌다. 위 예시에선 스크립트에서 요소의 좌표 정보를 사용하고 있다. 스타일이 로드되고, 적용되고 난 다음에야 좌표  정보가 확정되기 때문에 자연스레 이런 제약이 생겼다.
+이런 예외는 스크립트에서 스타일에 영향을 받는 요소의 프로퍼티를 사용할 가능성이 있기 때문에 만들어졌다. 위 예시에선 스크립트에서 요소의 좌표 정보를 사용하고 있다. 스타일이 로드되고, 적용되고 난 다음에야 좌표 정보가 확정되기 때문에 자연스레 이런 제약이 생겼다.
 
 `DOMContentLoaded` 는 스크립트가 로드되길 기다린다. 위의 경우라면 당연히 스타일시트 역시 기다리게 된다.
 
@@ -143,7 +143,7 @@ window.addEventListener('unload', () => {
 
 `sendBeacon` 요청이 종료된 시점엔 브라우저가 다른 페이지로 전환을 마친 상태일 확률이 높다. 따라서 서버 응답을 받을 수 있는 방법이 없음. 사용자 분석 정보에 관한 응답은 대개 빈 상태.
 
-[fetch](https://ko.javascript.info/fetch) 메서드는 '페이지를 떠난 후’에도 요청이 가능하도록 해주는 플래그 `keepalive`를 지원한다.
+[fetch](https://ko.javascript.info/fetch) 메서드는 '페이지를 떠난 후'에도 요청이 가능하도록 해주는 플래그 `keepalive`를 지원한다.
 
 <br/>
 
@@ -159,9 +159,9 @@ window.addEventListener('unload', () => {
 
 절대 실행되지 않는다. 그런데 가끔 문서가 로드되었는지 아닌지를 판단할 수 없는 경우가 있다. DOM이 완전히 구성된 후 특정 함수를 실행해야 할 때는 DOM 트리 완성여부를 알 수 없어 난감하다. 이 때는 `document.readyState`로 판단할 수 있다.
 
-- `loading` : 문서를 불러오는 중
-- `interactive` : 문서가 완전히 불러와졌을 때
-- `complete` : 문서를 비롯한 이미지등의 리소스들도 모두 불러와졌을 때
+- `loading`: 문서를 불러오는 중
+- `interactive`: 문서가 완전히 불러와졌을 때
+- `complete`: 문서를 비롯한 이미지등의 리소스들도 모두 불러와졌을 때
 
 이외에도 상태가 변경되었을 때 실행되는 이벤트 `readystatechange`를 사용하면 상태에 맞게 원하는 작업을 할 수 있다.
 
@@ -202,4 +202,3 @@ document.addEventListener('readystatechange', () => console.log(document.readySt
 5. [4] img onload
 6. [4] readyState:complete
 7. [4] window onload
-

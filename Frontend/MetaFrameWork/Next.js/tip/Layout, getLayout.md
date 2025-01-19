@@ -83,7 +83,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
 해석해보면, getLayout이란 고차 함수를 만들어 Component에서 `getLayout` 함수가 존재하면, page를 리턴하는 함수를 `getLayout` 변수에 담는다는 뜻이다. 그러면, `PageLayout`은 무조건 존재하게 되고, 각 페이지 별 `getLayout` 함수가 존재하면 그 컴포넌트가 렌더링 되도록 하는 것이다.
 
-이제, 어떤 Page에서만 제공할  `SubLayout.tsx` 를 만들자.
+이제, 어떤 Page에서만 제공할 `SubLayout.tsx` 를 만들자.
 
 ```tsx
 // SubLayout.tsx
@@ -151,7 +151,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 }
 ```
 
-`const getLayout = Component.getLayout ?? (page => <PageLayout>{page}</PageLayout>);` 이 부분이 변경 되었다. page만 렌더링 되던 기존 소스에서, getLayout이 존재하지 않으면 공통 레이아웃인 `PageLayout`이 렌더링 되도록 하고, getLayout 함수가 있는 페이지에서는 PageLayout 대신 페이지에서 정의한 다른 Layout이 나타나도록 처리한 것이다. 
+`const getLayout = Component.getLayout?? (page => <PageLayout>{page}</PageLayout>);` 이 부분이 변경 되었다. page만 렌더링 되던 기존 소스에서, getLayout이 존재하지 않으면 공통 레이아웃인 `PageLayout`이 렌더링 되도록 하고, getLayout 함수가 있는 페이지에서는 PageLayout 대신 페이지에서 정의한 다른 Layout이 나타나도록 처리한 것이다.
 
 이를 적용한 SomePage를 렌더링 해보면 아래와 같다.
 

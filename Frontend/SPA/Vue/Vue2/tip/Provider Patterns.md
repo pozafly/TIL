@@ -22,22 +22,22 @@
 
 <br/>
 
-## props drilling 예방
+## Props drilling 예방
 
-### 1) vuex, pinia와 같은 전역 데이터 사용?
+### 1) Vuex, pinia와 같은 전역 데이터 사용?
 
 - pinia, vuex는 데이터를 중앙에서 관리하기에 데이터 변경을 추적하기 쉬움.
 - 데이터를 '**중앙**'에서 관리하는 것이 목적이기에 남용시 성능이 저하될 수 있다.
 - 데이털르 중앙 관리하면 어떤 도메인에서든 데이터를 변경할 수 있게 되는데, 이 경우 데이터의 범위가 의도와 달리 넓어진다.
 
-### 2) provider pattern
+### 2) Provider pattern
 
 - vue에서 제공하는 `provide`, `inject` 를 사용하는 방법
 - 이 패턴의 핵심은 바로 상위 컴포넌트에서 `provide`로 값을 전달하고, 이 값을 필요로 하는 하위 컴포넌트에서 `inject` 를 사용해 값에 접근하는 것이다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/9528a892-f801-488e-a665-07103a9aa272)
 
-#### provide: 값을 전달한다
+#### Provide: 값을 전달한다
 
 - provide는 데이터를 컴포넌트 트리 전체에서 사용할 수 있다.
 - 중간 컴포넌트를 거치지 않고 데이터를 전달할 수 있다.
@@ -58,7 +58,7 @@ provide('message', 'hello!');
 </script>
 ```
 
-#### inject: 전달한 값에 접근한다.
+#### Inject: 전달한 값에 접근한다
 
 - 하위 컴포넌트에서 inject에 사용하면 provide한 값에 접근할 수 있다.
 
@@ -76,7 +76,7 @@ console.log(message); // hello!
 
 ## Provider pattern 더 잘쓰는 법
 
-### 1) provide 키를 심볼로 관리
+### 1) Provide 키를 심볼로 관리
 
 - string 타입으로 키를 지정해도 되는데, 큰 프로젝트에서는 어떤 키가 있는지 여부와 키가 중복되어 값이 수정되지 않았는지 파악이 어렵다.
 - 하지만, 심볼을 쓰면 실수로 값을 덮어쓰는 경우를 막을 수 있음.
@@ -192,9 +192,9 @@ export const symbols = Object.freeze({
 })
 ```
 
-### 2) provide 로직을 composable로 분리
+### 2) Provide 로직을 composable로 분리
 
-#### composable이 필요한 순간?
+#### Composable이 필요한 순간?
 
 ```vue
 <script lang="ts" setup>
@@ -233,7 +233,7 @@ export function useLocalStorage(key, initialValue, options: = {}) {
 - useLocalStorage 내부는 컴포저블 함수 명을 `useXXX` 형태로 명함. 특정 데이터에 대한 로직을 함수로 묶어두었다.
 - 그럼 컴포저블을 `provide`와 어떻게 함께 사용하나?
 
-#### provide, composable 예시
+#### Provide, composable 예시
 
 - 우선 provide로 넘기는 로직을 별도 파일로 분리해야 함.
 
@@ -324,8 +324,6 @@ function requireInjection(key, value) {
   return resolved ? resolved : provide(key, value);
 }
 ```
-
-
 
 ---
 

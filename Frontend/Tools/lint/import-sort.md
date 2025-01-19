@@ -1,4 +1,4 @@
-# import-sort
+# Import-sort
 
 하나의 파일에 import 구문이 많고 지저분해보인다. 어떤 파일이 import 되었는지 파악하기가 쉽지 않다. 만약, 개발자가 알아서 import 구문을 사용한다면 협업 하는 환경에서는 직접 이를 맞춰주어야 하고, 순서를 맞추는 과정에 큰 스트레스를 받을 것이다.
 
@@ -12,7 +12,7 @@ Next.js 프로젝트의 `_app.tsx` 파일의 import 구문이다. 어떤 부분�
 
 <br/>
 
-## eslint-plugin-import
+## Eslint-plugin-import
 
 `eslint-plugin-import`는 JavaScript 프로젝트에서 모듈과 `import` 문에 관련된 다양한 규칙을 검사하는 ESLint 플러그인이다. 주로 모듈 시스템과 `import/export` 문을 사용하는 환경에서 코드 품질과 가독성을 향상시키기 위해 사용된다.
 
@@ -71,9 +71,9 @@ IDE 상의 프로젝트에서는 확장자를 사용하지 않아도 webpack으�
 
 `severity`에는 `error`, `warn` 등의 엄격도가 들어간다.
 
-- never : 확장자 사용을 금지한다. 확장자가 붙어 **있다면** 에러.
-- always : 모든 구문에 확장자를 사용해야 한다. 확장자가 붙어있지 **않다면** 에러.
-- ignorePackages : **라이브러리 패키지 구문을 제외하고** 확장자를 사용해야 한다.
+- never: 확장자 사용을 금지한다. 확장자가 붙어 **있다면** 에러.
+- always: 모든 구문에 확장자를 사용해야 한다. 확장자가 붙어있지 **않다면** 에러.
+- ignorePackages: **라이브러리 패키지 구문을 제외하고** 확장자를 사용해야 한다.
 
 우리의 목적은 확장자를 반드시 명시하기 위해 플러그인을 사용할 것이기 때문에, `ignorePackages` 를 사용하도록 한다.
 
@@ -95,7 +95,7 @@ VSCode를 사용하는 경우, import 대상에서 자동완성을 해주고 있
 
 [vscode-extension-setting]
 
-Import Module Specifier Ending 옵션에서 `.js / .ts`를 선택하면 자동완성으로 import 할 경우 자동으로 확장자를 붙여준다. JavaScript, TypeScript 설정 모두 있으니 잘 보고 설정하자.
+Import Module Specifier Ending 옵션에서 `.js /.ts`를 선택하면 자동완성으로 import 할 경우 자동으로 확장자를 붙여준다. JavaScript, TypeScript 설정 모두 있으니 잘 보고 설정하자.
 
 <br/>
 
@@ -136,7 +136,7 @@ no-restricted-imports을 patterns를 통해 사용하고 싶지 않다면, [esli
 
 사진과 같이 상대 경로를 사용한 곳에서 error가 발생했다. 이제 고쳐보자.
 
-마찬가지로 VSCode를 사용하는 경우, import 대상에서 자동완성을 해주고 있는데, 자동완성에서 상대 경로로 경로가 잡히는 경우가 있다. 
+마찬가지로 VSCode를 사용하는 경우, import 대상에서 자동완성을 해주고 있는데, 자동완성에서 상대 경로로 경로가 잡히는 경우가 있다.
 
 [relative-path]
 
@@ -166,7 +166,7 @@ no-restricted-imports을 patterns를 통해 사용하고 싶지 않다면, [esli
 
 <br/>
 
-## order
+## Order
 
 가장 중요한 import 구문의 순서(order)에 대해서 알아보자. ESLint에서 공식적으로 사용하는 `sort-imports`로 순서 규칙을 걸 수 있고, `eslint-plugin-import` 플러그인에서 제공하는 `import/order` 규칙을 사용해 순서 규칙을 걸 수 있다. 즉, 2가지 방법 모두 순서 규칙을 사용할 수 있다. 또한, 두 규칙 모두 fix를 지원하기 때문에 자동 저장 혹은 cli를 통해 코드를 자동으로 변경할 수 있다.
 
@@ -255,20 +255,15 @@ ESLint 공식 규칙인 [sort-imports](https://eslint.org/docs/latest/rules/sort
 }
 ```
 
-- groups : 그룹을 정의하는 방법 및 순서.
-
-- pathGroups : 주로 필요한 경로별로 그룹화하려면 별칭 pathGroups를 정의할 수 있음.
-
-  - pattern : 이 그룹에 포함될 경로에 대한 최소 일치 패턴.
-  - group : `groups` 중 하나를 선택하면 해당 그룹을 기준으로 배치됨.
+- groups: 그룹을 정의하는 방법 및 순서.
+- pathGroups: 주로 필요한 경로별로 그룹화하려면 별칭 pathGroups를 정의할 수 있음.
+  - pattern: 이 그룹에 포함될 경로에 대한 최소 일치 패턴.
+  - group: `groups` 중 하나를 선택하면 해당 그룹을 기준으로 배치됨.
   - position: 그룹 주위에 위치할 위치를 정의하며, `after` 또는 `before`를 선택할 수 있음.
-
-- newlines-between : 가져오기 그룹 간에 새 줄을 적용하거나 금지함.
-
-- alphabetize : 각 그룹 내 순서를 알파벳 순으로 정렬함.
-  - order(asc | desc) : 정렬 차순
-  - caseInsensitive : 대소문자 정렬 여부
-
+- newlines-between: 가져오기 그룹 간에 새 줄을 적용하거나 금지함.
+- alphabetize: 각 그룹 내 순서를 알파벳 순으로 정렬함.
+  - order(asc | desc): 정렬 차순
+  - caseInsensitive: 대소문자 정렬 여부
 
 이처럼 가독성이 좋게, 또 코드 리뷰에서 Diff가 생기지 않도록 잘 수정 되었다.
 
@@ -348,11 +343,7 @@ eslintrc.json 전체 파일은 아래와 같다.
 }
 ```
 
-
-
 <br/>
-
-
 
 > 참고
 >
@@ -360,12 +351,3 @@ eslintrc.json 전체 파일은 아래와 같다.
 > - https://www.kimcoder.io/blog/eslint-import-order
 > - https://yceffort.kr/2022/06/how-to-write-my-own-eslint-rules
 > - https://dev.to/otamnitram/sorting-your-imports-correctly-in-react-213m
-
-
-
-
-
-
-
-
-

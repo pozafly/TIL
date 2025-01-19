@@ -1,8 +1,8 @@
-# eslint jest 제외
+# Eslint jest 제외
 
-> 출처 : http://grouchy78er.cafe24.com/?p=949
+> 출처: http://grouchy78er.cafe24.com/?p=949
 
-jest 관련 함수를 eslint에서 에러를 보내줄 때가 있다. `.eslintrc.js` 파일에  아래와 같이 
+jest 관련 함수를 eslint에서 에러를 보내줄 때가 있다. `.eslintrc.js` 파일에 아래와 같이
 
 env 부분에 `'jest/globals': true,` 이렇게 넣어주면 된다.
 
@@ -25,4 +25,3 @@ module.exports = {
   },
 };
 ```
-

@@ -1,7 +1,5 @@
 # HTTPS로 실행
 
-
-
 때에 따라 API 호출을 위해서 https로 실행해야 할 수도 있다. https 환경을 직접 구축하는 것은 어려운데, create-react-app에서 자체적으로 https로 실행하는 옵션을 제공한다.
 
 - 맥
@@ -35,7 +33,7 @@ Chrome 버전 M88은 같은 도메인의 http와 https 사이트를 cross-site�
 
 <br/>
 
-### 1. `/etc/hosts` 에서 현재 ip와 가짜 url을 매핑해준다.
+### 1. `/etc/hosts` 에서 현재 ip와 가짜 url을 매핑해준다
 
 터미널에서 아래의 명령어로 ip를 찾자
 
@@ -68,7 +66,7 @@ password를 물어보면 컴퓨터 비번을 적어준다. (/etc/hosts 수정은
 
 <br/>
 
-### 2.  `mkcert` 로 가짜 url SSL 인증서를 생성한다.
+### 2. `mkcert` 로 가짜 url SSL 인증서를 생성한다
 
 `mkcert`는 개발환경에 SSL 인증서를 만들어주는 라이브러리다. 터미널에서 brew로 간단하게 다운받을 수 있다.
 

@@ -1,6 +1,6 @@
 # PUT, PATCH(HTTP METHOD)
 
-> 출처 : https://programmer93.tistory.com/39
+> 출처: https://programmer93.tistory.com/39
 
 HTTP 메소드 중, PUT과 PATCH가 있다. 리소스의 업데이트를 의미한다. 리소스를 업데이트 한다는 점에서 같은 역할을 하는 메소드처럼 보이지만 두 개의 요청에는 약간의 차이가 있다.
 
@@ -56,8 +56,6 @@ PUT /members/1
 }
 ```
 
-
-
 | 회원(member) | 1      |
 | ------------ | ------ |
 | 이름(name)   | 김길순 |
@@ -88,4 +86,3 @@ PATCH /members/1
 요청에 포함되어 있는 부분만 변경 된다는 차이점이 있다.
 
 물론 모두의 경우는 개발자가 구현하기 나름이지만 이런 식으로 구현하는 것을 권장.
-

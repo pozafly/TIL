@@ -4,7 +4,7 @@
 
 - isLoading: 초기 데이터 가져오기 중에만 true로 설정된다.
 - isFetching: 수동으로 데이터를 가져왔는지 여부에 관계 없이 API 호출이 수행될 때마다 true.
-- isRefetching : `refetch()` 함수를 사용해 의도적으로 다시 가져올 때만 true.
+- isRefetching: `refetch()` 함수를 사용해 의도적으로 다시 가져올 때만 true.
 
 ```jsx
 import {

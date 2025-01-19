@@ -1,12 +1,12 @@
-# add, commit, push 취소
+# Add, commit, push 취소
 
-> 출처 : https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html
+> 출처: https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html
 
 <br/>
 
-## git add 취소하기(파일 상태를 Unstage로 변경하기)
+## Git add 취소하기(파일 상태를 Unstage로 변경하기)
 
-`git add .` 명령어로 모든 파일을 Staging Area에 넣은 경우, Staging Area(git add 를 수행한 상태)에 넣은 파일을 빼고 싶을 때가 있음.
+`git add.` 명령어로 모든 파일을 Staging Area에 넣은 경우, Staging Area(git add 를 수행한 상태)에 넣은 파일을 빼고 싶을 때가 있음.
 
 ```shell
 // 모든 파일이 Staged 상태로 바뀜
@@ -27,9 +27,9 @@ $ git reset HEAD a.vue
 
 <br/>
 
-## git commit 취소하기
+## Git commit 취소하기
 
-### 1. commit 취소
+### 1. Commit 취소
 
 완료한 commit을 취소해야할 때가 있음.
 
@@ -49,7 +49,7 @@ $ git log
 $ git reset --soft HEAD^
 ```
 
-2. reset --mixed
+1. reset --mixed
    - commit을 취소하고 해당 파일들을 `unstaged` 상태로 워킹 디렉토리에 보존
 
 ```shell
@@ -58,7 +58,7 @@ $ git reset HEAD^ // 위와 동일
 $ git reset HEAD~2 // 마지막 2개의 commit을 취소
 ```
 
-3. reset --hard
+1. reset --hard
    - commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉토리에서 삭제
 
 ```shell
@@ -67,7 +67,7 @@ $ git reset --hard HEAD^
 
 ---
 
-### 2. commit message 변경
+### 2. Commit message 변경
 
 commit message를 잘못 적은 경우, `git commit -amend` 명령어를 통해 git commit message를 변경할 수 있다.
 
@@ -80,9 +80,9 @@ $ git commit --amend
 1. git reset 명령은 아래의 옵션과 관련해 주의해서 사용해야 함.
 
    - reset 옵션
-     - -soft : index 보존(add 한 상태, staged 상태), 워킹 디렉토리의 파일 보존. 즉, 모두 보존.
-     - -mixed : index 취소(add 하기 전 상태, unstaged 상태), 워킹 디렉토리 파일 보존(기본 옵션).
-     - -hard : index 취소(add 하기 전 상태, unstaged 상태), 워킹 디렉토리의 파일 삭제. 즉, 모두 취소
+     - -soft: index 보존(add 한 상태, staged 상태), 워킹 디렉토리의 파일 보존. 즉, 모두 보존.
+     - -mixed: index 취소(add 하기 전 상태, unstaged 상태), 워킹 디렉토리 파일 보존(기본 옵션).
+     - -hard: index 취소(add 하기 전 상태, unstaged 상태), 워킹 디렉토리의 파일 삭제. 즉, 모두 취소
 
 2. 만약 워킹 디렉토리를 원격 저장소의 마지막 commit 상태로 되돌리고 싶다면 아래 명령어 사용.
 
@@ -95,7 +95,7 @@ $ git commit --amend
 
 <br/>
 
-## git push 취소
+## Git push 취소
 
 이 명령을 사용하면 지신의 local 내용을 remote에 강제로 덮어쓰기를 하는 것이기 때문에 주의해야 함.
 
@@ -126,7 +126,7 @@ $ git commit --amend
 $ git commit -m "....."
 ```
 
-3. 원격 저장소에 강제로 push 한다.
+1. 원격 저장소에 강제로 push 한다.
 
 ```shell
 $ git push origin [branch name] -f
@@ -136,7 +136,7 @@ $ git push origin +[branch name]
 
 <br/>
 
-## untracked 파일 삭제하기
+## Untracked 파일 삭제하기
 
 git clean 명령은 추적 중이지 않은 파일만 지우는게 기본 동작이다. 즉, .gitignore 에 명시하여 무시되는 파일은 지우지 않는다.
 
@@ -146,6 +146,6 @@ $ git clean -f -d   // 디렉토리까지 삭제
 $ git clean -f -d -x  // 무시된 파일까지 삭제
 ```
 
-- -d 옵션 : 디렉토리까지 지우는 것
-- -x 옵션 : 무시된 파일(.DS_Store나, .gitignore에 등록한 확장자 파일들) 까지 모두 지우는 것
-- -n 옵션 : 가상으로 실행해보고 어떤 파일들이 지워질지 알려줌.
+- -d 옵션: 디렉토리까지 지우는 것
+- -x 옵션: 무시된 파일(.DS_Store나,.gitignore에 등록한 확장자 파일들) 까지 모두 지우는 것
+- -n 옵션: 가상으로 실행해보고 어떤 파일들이 지워질지 알려줌.

@@ -50,7 +50,7 @@ component: () => import('@/views/AuthPage.vue'),
     (...)
 ```
 
-- 🌈 : 이 부분이 필요한 것이다. 그러면 제대로 params이 도착한다.
+- 🌈: 이 부분이 필요한 것이다. 그러면 제대로 params이 도착한다.
 
 ```js
 mounted() {

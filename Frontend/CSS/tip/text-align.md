@@ -1,4 +1,4 @@
-# text-align
+# Text-align
 
 정렬 css 속성이다. 주로 가운데 맞출 때 적용하는데,
 

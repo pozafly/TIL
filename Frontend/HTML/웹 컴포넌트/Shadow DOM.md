@@ -224,7 +224,7 @@ class MyElement extends HTMLElement {
 
 <br/>
 
-## 쉐도우 돔 자세한 내용들.
+## 쉐도우 돔 자세한 내용들
 
 - `textarea`, `input`, `image` 와 같은 엘리먼트들은 쉐도우 돔을 가질 수 없다. (가질 수 있는게 이상함)
 - 쉐도우 돔은 여러 번 중첩될 수 있다. `slot` 도 마찬가지다.
@@ -235,4 +235,3 @@ class MyElement extends HTMLElement {
 - 슬롯 스타일은 `::sloted(h1)` 방식으로 한다.
 - `attachShadow({mode: 'closed'})`로 쉐도우 루트를 생성하면, 쉐도우 돔에 접근이 불가능해진다.
 - 쉐도우 돔 내부에서 발생한 이벤트의 `target`은 외부에서 쉐도우 호스트로 변경된다.
-

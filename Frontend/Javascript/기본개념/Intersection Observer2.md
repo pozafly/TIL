@@ -47,7 +47,7 @@ observer.observe(target);
 
 ## Options
 
-### root
+### Root
 
 타겟 요소의 가시성을 확인할 때 사용되는 루트 요소. 이것은 타겟 요소보다 상위 요소, 즉 요소의 조상 요소여야 한다. 설정하지 않거나 `root` 값을 `null`로 주었을 때 기본 값으로 브라우저 뷰포트가 설정된다.
 
@@ -55,7 +55,7 @@ observer.observe(target);
 
 `margin`을 주어 **루트 요소의 범위를 확장할 수 있다**. 즉 확장된 영역 안에 타겟 요소가 들어가면 가시성에 변화가 생긴다. `CSS`의 `margin` 값과 유사하게 `top`, `right`, `bottom`, `left` 의 `margin` 정도를 각각 설정할 수 있다. 기본값은 0이며 설정시 **단위를 꼭 입력해야 한다**.
 
-### threshold
+### Threshold
 
 콜백이 실행될 타겟 요소의 가시성 퍼센티지를 나타내는 단일 숫자 및 숫자 배열이 들어갈 수 있다. 즉, 요소의 `top`, `bottom`이 노출된 순간만 콜백을 실행할 수 있는 것이 아니라 어느 정도 **타겟 요소가 보여졌는지에 따라서도 콜백을 호출할 수 있다**. 예를 들어 요소가 50% 만큼 보여졌을 때 탐지하고 싶다면 단일 숫자 값 `0.5`를 설정하면 된다. 혹은 25% 단위로 가시성이 변경될 때마다 콜백이 실행되기 하고 싶다면 `[0, 0.25, 0.5, 0.75, 1]`을 설정하면 된다.
 
@@ -101,9 +101,9 @@ let callback = (entries, observer) => {
 
 IntersectionObserverEntry는 루트 요소와 타겟 요소의 교차(threshold와 만났을 때)의 상황을 묘사한다. 포함된 프로퍼티들은 모두 **읽기 전용**(read only)ek.
 
-- `IntersectionObserverEntry.boundingClientRect` : 타겟 요소의 사각형 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))를 반환한다. `getBoudingRect()` 호출과는 다르게 `reflow`를 발생시키지 않는다.
+- `IntersectionObserverEntry.boundingClientRect`: 타겟 요소의 사각형 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))를 반환한다. `getBoudingRect()` 호출과는 다르게 `reflow`를 발생시키지 않는다.
 - `IntersectionObserverEntry.intersectionRect`: 타겟 요소의 가시성이 감지된 부분의 정보([DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))를 반환한다.
-- `IntersectionObserverEntry.intersectionRatio` : 타겟 요소의 `intersectionRect` 이 `boundingClientRect` 와 어느정도로 교차(겹치는 지) 비율(0.0 ~ 1.0)을 반환. 바꿔 말하면 타겟 요소가 루트 요소와 얼마나 교차하는지의 정도.
+- `IntersectionObserverEntry.intersectionRatio`: 타겟 요소의 `intersectionRect` 이 `boundingClientRect` 와 어느정도로 교차(겹치는 지) 비율(0.0 ~ 1.0)을 반환. 바꿔 말하면 타겟 요소가 루트 요소와 얼마나 교차하는지의 정도.
 
 타겟 요소의 관찰이 시작되면 콜백 또한 바로 호출된다. 타겟 요소와 루트 요소가 젼혀 교차하지 않았음에도 불구하고 말이다. 이는 **`Intersection Observer` 의 기본동작이다.** 이를 예외처리 하기 위해서 `intersectionRatio` 가 사용된다.
 
@@ -120,19 +120,19 @@ let callback = (entries, observer) => {
 }
 ```
 
-- `IntersectionObserverEntry.isIntersecting` : 해당 `entry` 에 타겟 요소가 루트 요소와 교차하는 지 여부를 `Boolean` 값으로 반환.
-- `IntersectionObserverEntry.rootBounds` : 루트 요소의 사각형 정보([`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))를 반환합니다. 이 정보는 `rootMargin` 옵션 설정에 영향 받음.
-- `IntersectionObserverEntry.target` : 타겟 요소를 반환.
-- `IntersectionObserverEntry.time` : 문서([`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document))가 만들어진 표준 시간([`time origin`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp#the_time_origin))을 기준으로 타겟 요소와 루트 요소의 교차가 발생한 시간([`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp))을 반환.
+- `IntersectionObserverEntry.isIntersecting`: 해당 `entry` 에 타겟 요소가 루트 요소와 교차하는 지 여부를 `Boolean` 값으로 반환.
+- `IntersectionObserverEntry.rootBounds`: 루트 요소의 사각형 정보([`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly))를 반환합니다. 이 정보는 `rootMargin` 옵션 설정에 영향 받음.
+- `IntersectionObserverEntry.target`: 타겟 요소를 반환.
+- `IntersectionObserverEntry.time`: 문서([`Document`](https://developer.mozilla.org/en-US/docs/Web/API/Document))가 만들어진 표준 시간([`time origin`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp#the_time_origin))을 기준으로 타겟 요소와 루트 요소의 교차가 발생한 시간([`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp))을 반환.
 
 <br/>
 
 ## Methods
 
-- `IntersectionObserver.observe(targetElement)` : 타겟 요소에 대한 관찰 시작.
-- `IntersectionObserver.unobserve(targetElement)` : 타겟 요소에 대한 관찰을 중지. 관찰의 목적이 이루어져 굳이 계속 관찰을 할 필요가 없는 경우 사용.
-- `IntersectionObserver.disconnect()` : 인스턴스의 타겟 요소들에 대한 모든 관찰을 중지.
-- `IntersectionObserver.takerecords(targetElement)` : `IntersectionObserverEntry` 인스턴스들의 배열을 리턴.
+- `IntersectionObserver.observe(targetElement)`: 타겟 요소에 대한 관찰 시작.
+- `IntersectionObserver.unobserve(targetElement)`: 타겟 요소에 대한 관찰을 중지. 관찰의 목적이 이루어져 굳이 계속 관찰을 할 필요가 없는 경우 사용.
+- `IntersectionObserver.disconnect()`: 인스턴스의 타겟 요소들에 대한 모든 관찰을 중지.
+- `IntersectionObserver.takerecords(targetElement)`: `IntersectionObserverEntry` 인스턴스들의 배열을 리턴.
 
 <br/>
 

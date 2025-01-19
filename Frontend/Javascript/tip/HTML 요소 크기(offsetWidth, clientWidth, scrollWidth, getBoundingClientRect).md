@@ -1,6 +1,6 @@
 # HTML 요소 크기(offsetWidth, clientWidth, scrollWidth, getBoundingClientRect)
 
-> 출처 : https://so4869.tistory.com/26
+> 출처: https://so4869.tistory.com/26
 
 <br/>
 
@@ -45,7 +45,7 @@ margin을 제외한, padding값, border값까지 계산한 값을 가져옴.(일
 
 <br/>
 
-2. `clientWidth` (Height)
+1. `clientWidth` (Height)
 
 margin값과 border 값이 제외 된, padding 값까지만 적용된 내부의 실제 크기를 가져옴. border는 외부에 속한다.
 
@@ -83,7 +83,7 @@ margin값과 border 값이 제외 된, padding 값까지만 적용된 내부의 
 
 <br/>
 
-3. `scrollWidth` (Height)
+1. `scrollWidth` (Height)
 
 스크롤 영역일 때, 스크롤로 감싸여진 내용을 전체 크기를 가져옴.
 
@@ -122,7 +122,7 @@ margin값과 border 값이 제외 된, padding 값까지만 적용된 내부의 
 
 <br/>
 
-4. `getBoundingClientRect()` 
+1. `getBoundingClientRect()`
 
 실제 랜더린 크기임.
 
@@ -176,7 +176,7 @@ margin값과 border 값이 제외 된, padding 값까지만 적용된 내부의 
 
 결과는 아래와 같다.
 
-`160 X 160` 이 찍혔고, 
+`160 X 160` 이 찍혔고,
 
 <img width="446" alt="스크린샷 2021-08-17 오후 5 48 11" src="https://user-images.githubusercontent.com/59427983/129694634-201b58e6-15c4-4b9a-bd9c-0ac896395725.png">
 

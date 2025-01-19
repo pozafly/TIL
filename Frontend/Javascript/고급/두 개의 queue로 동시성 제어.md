@@ -155,7 +155,7 @@ setTimeout(() => console.log('또 다른 비동기 코드'));
 
 또 다른 비동기 코드를 찍는 `setTimeout`이 먼저 호출되었음에도 불구하고, `지연없이 실행` 이 먼저 찍히게 된다.
 
-`queueMicrotask()` 함수는, 
+`queueMicrotask()` 함수는,
 
 - 비동기를 제어하는 코드에서도 비동기의 순서를 정해주고 싶을 경우 사용한다.
 - 하지만, 동기적인 코드보다는 먼저 실행되지는 않는다.
@@ -169,4 +169,3 @@ setTimeout(() => console.log('또 다른 비동기 코드'));
 > https://pozafly.github.io/javascript/event-loop-and-async/
 >
 > 따라서 `.then`, `.then` `.then` 으로 연결된 녀석들이 먼저 실행되는 이유다.
-

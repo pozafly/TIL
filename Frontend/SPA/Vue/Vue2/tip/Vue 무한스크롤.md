@@ -220,7 +220,7 @@ public ResponseEntity<Message> readBoardList(
 
 <br/>
 
-### 좋아요 클릭 시 반영되지 않는 문제.
+## 좋아요 클릭 시 반영되지 않는 문제
 
 이런 구조로 바꾸게 되면서 문제점이 생겼는데, 좋아요를 클릭 시 데이터베이스에는 등록 되지만 화면에 바로 반영되지 않는 문제점이 생기게 되었다. 이유는 action 함수인, `READ_PERSONAL_BOARD_LIST` 이녀석. 좋아요 버튼을 클릭 한 뒤, 이 녀석을 action에서 이어서 dispatch 하게 되는데 이 때 들어갈 매개변수의 종류가 바뀌게 되었기 때문이다.
 

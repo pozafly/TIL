@@ -65,8 +65,8 @@ String result2 = a + b;  // hello java
 
 항상 `==` 비교가 아니라 `equals()` 비교를 해야 함.
 
-- 동일성 (Identity) : `==` 연산자를 사용해 두 객체의 참조가 동일한 객체를 가리키고 있는지 확인.
-- 동등성 (Equality) : `equals()` 메서드 사용해 두 객체가 논리적으로 같은지 확인.
+- 동일성 (Identity): `==` 연산자를 사용해 두 객체의 참조가 동일한 객체를 가리키고 있는지 확인.
+- 동등성 (Equality): `equals()` 메서드 사용해 두 객체가 논리적으로 같은지 확인.
 
 ```java
 String str1 = new String("hello");
@@ -267,4 +267,3 @@ public static void main(String[] args) {
 >
 > - `StringBuilder` 와 StringBuffer는 같은 기능을 수행. Buffer는 내부에 동가화가 되어 있어, 멀티 스레드 상황에 안전하지만 동기화 오버헤드로 인해 성능이 느리다.
 > - Buffer는 멀티 쓰레드 상황에 안전하지 않지만 동기화 오버헤드가 없으므로 속도가 빠르다,
-

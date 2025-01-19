@@ -1,6 +1,6 @@
-# gitignore 특정 파일 또는 폴더
+# Gitignore 특정 파일 또는 폴더
 
-> 출처 : https://kcmschool.com/194
+> 출처: https://kcmschool.com/194
 
 프로젝트에서 특정 파일이나 폴더 push를 하지 말아야 할 경우가 생긴다. 예를 들면 노출되면 안되는 설정 파일이라든지, secret key라든지.
 
@@ -33,7 +33,7 @@ test/
 
 ## 주의사항
 
-기존에 git으로부터 관리받고 있던(commit 된 것들) 파일이나 폴더를 다시 추가로 .gitignore 파일에 작성하고 add, commit, push 해도 ignore 되지 않는다.
+기존에 git으로부터 관리받고 있던(commit 된 것들) 파일이나 폴더를 다시 추가로.gitignore 파일에 작성하고 add, commit, push 해도 ignore 되지 않는다.
 
  이럴 때는 기존에 가지고 있던 cached 를 치워야 함.
 

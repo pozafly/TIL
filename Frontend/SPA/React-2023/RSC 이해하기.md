@@ -196,15 +196,15 @@ export default Homepage;
 - 표준 React 컴포넌트가 Client Components로 이름이 변경되었음.
 - Server Components는 서버에서만 렌더링된다. JavaScript 번들에 포함되지 않으므로 절대 수화되거나 다시 렌더링 되지 않음.
 
->`React Server Components와 SSR`
+> `React Server Components와 SSR`
 >
->또 다른 혼란을 정리해보자. RSC는 SRR을 대체하지 않는다. RSC를 SSR 2.0으로 생각하면 안된다.
+> 또 다른 혼란을 정리해보자. RSC는 SRR을 대체하지 않는다. RSC를 SSR 2.0으로 생각하면 안된다.
 >
->대신, 완벽하게 결합되는 두 개의 별도 퍼즐 조각, 서로를 보완하는 두 가지 맛으로 생각하자.
+> 대신, 완벽하게 결합되는 두 개의 별도 퍼즐 조각, 서로를 보완하는 두 가지 맛으로 생각하자.
 >
->우리는 초기 HTML을 생성하기 위해 여전히 SSR 의존하고 있다. RSC는 그 위에 구축되어 client 측 JavaScript 번들에서 특정 component를 생략해 서버에서만 실행되도록 할 수 있다.
+> 우리는 초기 HTML을 생성하기 위해 여전히 SSR 의존하고 있다. RSC는 그 위에 구축되어 client 측 JavaScript 번들에서 특정 component를 생략해 서버에서만 실행되도록 할 수 있다.
 >
->실제로 SSR 없이 RSC를 사용하는 것도 가능하지만, 실제로는 함께 사용하면 더 나은 결과를 얻을 수 있다. 예시 React 팀이 SSR 없이 [최소한의 RSC 데모를 구축했다.](https://github.com/reactjs/server-components-demo)
+> 실제로 SSR 없이 RSC를 사용하는 것도 가능하지만, 실제로는 함께 사용하면 더 나은 결과를 얻을 수 있다. 예시 React 팀이 SSR 없이 [최소한의 RSC 데모를 구축했다.](https://github.com/reactjs/server-components-demo)
 
 <br/>
 
@@ -375,13 +375,13 @@ function Homepage() {
 
 더 정확히 말하면 `'use client'` 는 파일/모듈 수준에서 작동한다. 클라 컴포넌트 파일에서 가져온 모든 모듈도 클라 컴포넌트여야 한다. 번들러가 코드를 번들로 묶을 때 결국 이런 임포트된 모듈을 따르게 된다!
 
->테마를 변경하면 어떻게 되나?
+> 테마를 변경하면 어떻게 되나?
 >
->예제에서는 변경할 수 있는 방법이 없다. `setColorTheme` 함수를 사용하는 곳이 없다. 생략된 것이다. 전체 예제 에서는 Context를 사용해 모든 자손이 setter 함수를 사용할 수 있다. context를 소비하는 컴포넌트가 클라 컴포넌트인 한 모든것이 잘 작동한다.
+> 예제에서는 변경할 수 있는 방법이 없다. `setColorTheme` 함수를 사용하는 곳이 없다. 생략된 것이다. 전체 예제 에서는 Context를 사용해 모든 자손이 setter 함수를 사용할 수 있다. context를 소비하는 컴포넌트가 클라 컴포넌트인 한 모든것이 잘 작동한다.
 
 <br/>
 
-## hood 아래 엿보기
+## Hood 아래 엿보기
 
 낮은 수준에서 보자. 서버 컴포넌트는 어떤 모습인가? 실제로 무엇이 생성되나?
 
@@ -449,8 +449,8 @@ self.__next['$Homepage-1'] = {
 >
 > SSR은 렌더링 전략을 포괄하는 다양한 전략이라 말했다.
 >
-> - static : 어플이 빌드 시 HTML이 생성됨
-> - dynamic : 사용자가 페이지 요청시 '온디맨드'로 html이 생성됨.
+> - static: 어플이 빌드 시 HTML이 생성됨
+> - dynamic: 사용자가 페이지 요청시 '온디맨드'로 html이 생성됨.
 >
 > React Server 컴포넌트는 이런 렌더링 전략 중 어떤 것과도 호환된다.
 >
@@ -503,4 +503,3 @@ RSC와 suspense 및 새로운 스트리밍 SSR 아키텍쳐를 결합하면 상�
 <img width="715" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/a65b0b63-8c39-42c2-b401-229e0a9b0cdd">
 
 [Github](https://github.com/reactwg/react-18/discussions/37) 에서 확인할 수 있음.
-

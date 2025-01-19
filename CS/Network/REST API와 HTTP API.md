@@ -1,14 +1,16 @@
+# REST API와 HTTP API
+
 REST API와 HTTP API
 
-> 출처  : https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
+> 출처: https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
 
 ## REST API
 
 REpresentational State Transfer이다.
 
-- Representatinal : 표현
-- State : 상태
-- Transfer : 전송
+- Representatinal: 표현
+- State: 상태
+- Transfer: 전송
 
 즉, 자원을 이름(표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다.
 
@@ -78,7 +80,7 @@ Uniform Interface는 URI로 지정된 리소스에 대한 조작을 통일하고
 
 <br/>
 
-### self-descriptive messages
+### Self-descriptive messages
 
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F9EbhF%2FbtqvfkAVGAL%2FoskaONyGuZi8rhM0kUscsK%2Fimg.png)
 
@@ -94,7 +96,7 @@ Uniform Interface는 URI로 지정된 리소스에 대한 조작을 통일하고
 
 ---
 
-### hypermedia as the engine of application state(HATEOAS)
+### Hypermedia as the engine of application state(HATEOAS)
 
 - 클라이언트와 서버가 서로 소통하지 않고도 메시지를 해석함으로써 독립적인 진화를 할 수 있음.(서버에서 메시지가 바뀌어도 클라이언트의 메시지를 보고 해석이 가능)
 - 다시 말하면, 애플리케이션 상태는 Hyperlink를 통해 전이 되어야 한다.
@@ -121,9 +123,4 @@ HATEOAS를 지켜야 하는 이유는, 서버에서 링크를 동적으로 변�
 
 [출처](https://dingue.tistory.com/11)
 
-
-
 [링크](https://wonit.tistory.com/454) -> 여기 꼭 읽어보삼.
-
-
-

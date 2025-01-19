@@ -1,4 +1,4 @@
-# snippet 제작
+# Snippet 제작
 
 vscode에서 스니펫을 만들어서 사용할 수 있음. snippet으로 사용하고 싶은 코드를 복사하자.
 
@@ -21,9 +21,9 @@ function ${TM_FILENAME_BASE}() {
 export default ${TM_FILENAME_BASE};
 ```
 
-이제 확장자를 제외한 파일 이름을 재워줄텐데, `AuthTemplate` 이라는 말을 모두 `${TM_FILENAME_BASE}` 로 대체하자. 그리고 https://snippet-generator.app/ 여기 왼쪽에 적어주자. 
+이제 확장자를 제외한 파일 이름을 재워줄텐데, `AuthTemplate` 이라는 말을 모두 `${TM_FILENAME_BASE}` 로 대체하자. 그리고 https://snippet-generator.app/ 여기 왼쪽에 적어주자.
 
-이제 상단에 Snippet의 설명(Description...) 과 줄임 단어 (Tab trigger...)를 입력하자. 설명 부분엔 `Styled React Functional Component` 라고 적고, 줄임 단어는 `srf` 라고 할거임.
+이제 상단에 Snippet의 설명(Description…) 과 줄임 단어 (Tab trigger…)를 입력하자. 설명 부분엔 `Styled React Functional Component` 라고 적고, 줄임 단어는 `srf` 라고 할거임.
 
 이제 다 되었으면 우측 하단에 Copy snippet을 눌러 카피하자.
 

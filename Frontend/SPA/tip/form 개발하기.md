@@ -1,4 +1,4 @@
-# form 개발하기
+# Form 개발하기
 
 > [출처](https://oliveyoung.tech/blog/2023-09-18/address-modal/)
 
@@ -71,7 +71,7 @@ form의 onSubmit에서는 데이터 유효성 체크 로직도 추가해보고 �
 >{...}</form>
 ```
 
-이렇게 해도 form 제출가지 별 문제는 없지만, React Dev Tools를 활용해 성능을 보면 문제가 있다. 
+이렇게 해도 form 제출가지 별 문제는 없지만, React Dev Tools를 활용해 성능을 보면 문제가 있다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/2e1f6fa4-79d5-494b-aeee-157765828579)
 
@@ -274,4 +274,3 @@ const FormTextFieldHookForm = forwardRef(({ label, ...rest }, ref) => {
   }
 }
 ```
-

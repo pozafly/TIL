@@ -12,7 +12,7 @@ react-dom.production.min.js:148 Uncaught Error: Minified React error #418; visit
 react-dom.production.min.js:293 Uncaught Error: Minified React error #423; visit <https://reactjs.org/docs/error-decoder.html?invariant=423> for the full message or use the non-minified dev environment for full errors and additional helpful warnings. at _ (react-dom.production.min.js:293:137) at h5 (react-dom.production.min.js:280:375) at h3 (react-dom.production.min.js:280:315) at h2 (react-dom.production.min.js:280:172) at hU (react-dom.production.min.js:271:69) at hT (react-dom.production.min.js:268:409) at A (scheduler.production.min.js:14:181) at MessagePort.g (scheduler.production.min.js:15:101)
 ```
 
-이는 서버에서 렌더링한 것과 클라에서 렌더링 것  차이가 날 경우 발생함.
+이는 서버에서 렌더링한 것과 클라에서 렌더링 것 차이가 날 경우 발생함.
 
 링크에 보면, date-fns에서 빌드시 타임 존 기준으로 빌드되어 다르게 html 파일이 만들어짐.
 

@@ -1,8 +1,8 @@
-# server comonent vs client component
+# Server comonent vs client component
 
 Next.js 13 이상 부터는 app route가 있다. app route를 사용하면, 모든 컴포넌트는 기본적으로 server component 형태로 사용이 되며, client component로 사용하고 싶다면 파일 상단에 `'use client'` 를 명시해주어야 함.
 
-서버 컴포넌트는 
+서버 컴포넌트는
 
 - 서버에서 HTML로 만들어진다. 따라서, node.js api를 사용할 수 있다.
 - 서버에서 그려지기 때문에 hydration이 필요가 없다.
@@ -74,7 +74,7 @@ Client component를 쓰려면 컴포넌트 파일 가장 상단에 (import 문 �
 
 ## 패턴
 
-### client component는 리프노드에 둔다
+### Client component는 리프노드에 둔다
 
 client component를 사용하면 하위로 모두 client component가 되기 때문에 사용할 곳을 최소하 한다.
 
@@ -90,7 +90,7 @@ server, client 컴포넌트는 동일 컴포넌트 트리 상에서 결합될 �
 
 > next에서는 초기 페이지 로드 시 위 단계의 서버 컴포넌트와 클라 컴포넌트의 렌더링 결과가 모두 **서버에서 HTML로 미리 렌더링** 되어 초기 페이지 로딩 속도가 빨라짐.
 
-### server  컴포넌트를 client 컴포넌트안에 중첩 시키기
+### Server 컴포넌트를 client 컴포넌트안에 중첩 시키기
 
 ```jsx
 'use client';
@@ -171,7 +171,6 @@ export default function Page() {
 > - 가져온 중첩된 자식 컴포넌트를 다시 렌더링하는 부모 컴포넌트의 상태 변화를 피하기 위해 '콘텐츠 리프팅'이라는 동일 전략이 사용되었음.
 > - children 프로퍼티에만 국한되지 않음. 모든 프로퍼티를 사용해 JSX를 전달할 수 있음.
 
-### server에서 client 컴포넌트로 props 전달하기
+### Server에서 client 컴포넌트로 props 전달하기
 
 server에서 client 컴포넌트로 전달하는 props는 `serilization` 을 해야 한다. Date, 함수, 등의 값들은 직접적으로 전달할 수 없다. 따라서, JSON.stringify로 직렬화 해야 함.
-

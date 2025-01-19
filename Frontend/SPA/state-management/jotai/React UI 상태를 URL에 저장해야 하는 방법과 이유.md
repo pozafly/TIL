@@ -32,7 +32,7 @@ React 앱 [Rowy](https://rowy.io/?utm_source=medium.com&utm_medium=blog&utm_camp
 
 ## 코드
 
-`Jotai`에는 상태 원자를 URL 해시와 동기화하는 [atomWithHash](https://jotai.org/docs/api/utils#atom-with-hash)라는 `atom` 타입이 있다. URL에 모달의 열린 상태를 저장하는 것을 원한다고 가정한다. `atom`을 생성하여 시작하겠다. ->  📌 현재는 없어짐. 지금은 jotai의 [location](https://jotai.org/docs/extensions/location)이 되었다.
+`Jotai`에는 상태 원자를 URL 해시와 동기화하는 [atomWithHash](https://jotai.org/docs/api/utils#atom-with-hash)라는 `atom` 타입이 있다. URL에 모달의 열린 상태를 저장하는 것을 원한다고 가정한다. `atom`을 생성하여 시작하겠다. -> 📌 현재는 없어짐. 지금은 jotai의 [location](https://jotai.org/docs/extensions/location)이 되었다.
 
 ```js
 import { atomWithHash } from "jotai/utils";
@@ -67,4 +67,3 @@ const modalOpenAtom = atomWithHash("modalOpen", false, {
   replaceState: true,
 });
 ```
-

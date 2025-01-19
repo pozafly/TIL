@@ -1,4 +1,4 @@
-# keyof, typeof
+# Keyof, typeof
 
 ```ts
 const obj = {

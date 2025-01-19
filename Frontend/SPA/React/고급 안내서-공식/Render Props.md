@@ -213,7 +213,7 @@ function withMouse(Component) {
 
 <br/>
 
-## render 이외의 Props 사용법
+## Render 이외의 Props 사용법
 
 여기서 중요하게 기억해야 할 것은, 'render props pattern'으로 불리는 이유로 꼭 prop name으로 render를 사용할 필요 없음.
 
@@ -225,7 +225,7 @@ function withMouse(Component) {
 )}/>
 ```
 
-실제로 JSX element의 “어트리뷰트” 목록에 하위 어트리뷰트 이름(예를들면 render)을 지정할 필요는 없다. 대신에, element *안에* 직접 꽂아넣을 수 있음.
+실제로 JSX element의 "어트리뷰트" 목록에 하위 어트리뷰트 이름(예를들면 render)을 지정할 필요는 없다. 대신에, element *안에* 직접 꽂아넣을 수 있음.
 
 ```jsx
 <Mouse>
@@ -247,7 +247,7 @@ Mouse.propTypes = {
 
 ## 📌 주의 사항
 
-### React.PureComponent에서 render props pattern을 사용할 땐 주의
+### React.PureComponent에서 Render props pattern을 사용할 땐 주의
 
 render props 패턴을 사용하면 [`React.PureComponent`](https://ko.reactjs.org/docs/react-api.html#reactpurecomponent)를 사용할 때 발생하는 이점이 사라질 수 있다. 얕은 prop 비교는 새로운 prop에 대해 항상 `false`를 반환합니다. 이 경우 `render`마다 render prop으로 넘어온 값을 항상 새로 생성함.
 

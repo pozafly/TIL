@@ -1,8 +1,6 @@
 # className, htmlFor
 
-
-
-## 1. JSX에서 class가 아니라, className을 사용한다.
+## 1. JSX에서 class가 아니라, className을 사용한다
 
 **react에서는 jsx element에 class를 할당할 때 왜 className을 사용할까?**
 
@@ -66,7 +64,7 @@ React.createElement(
 
 <br/>
 
-## 2. label에서 for 어트리뷰트가 아니라, htmlFor을 사용해야 한다.
+## 2. Label에서 for 어트리뷰트가 아니라, htmlFor을 사용해야 한다
 
 마찬가지로, JavaScript의 `for` 예약어와 충돌하기 때문이다.
 
@@ -74,6 +72,6 @@ React.createElement(
 
 이걸 봤을 때, react는 최대한 JavaScript 예약어를 헤치지 않도록 방향성을 잡은 것 같다. 이유는, vue에서도 마찬가지로 코드를 파싱후 class or for 구문을 사용하는데 예약어와 관계없이 자유롭게 사용할 수 있다. 왜냐면 실행될 코드가 아니라 string 형태로 object에 박히기 때문에.
 
-react도 마찬가지로 파싱된 후  `staticClass` 라는 것으로 변환되는데, 이는 객체의 key 값으로 들어가기 때문에 JavaScript 예약어와 상관 없이 사용할 수 있기 때문에 충돌을 피할 수 있다.
+react도 마찬가지로 파싱된 후 `staticClass` 라는 것으로 변환되는데, 이는 객체의 key 값으로 들어가기 때문에 JavaScript 예약어와 상관 없이 사용할 수 있기 때문에 충돌을 피할 수 있다.
 
 그런 이유로 react는 의도적으로 예약어를 피하려고 다른 이름을 선택했다고 추론할 수 있다.

@@ -1,6 +1,6 @@
 # hasOwnProperty vs in
 
-### 1. in
+## 1. In
 
 ```js
 // JavaScript in operator.
@@ -9,7 +9,7 @@ if ('key' in myObj) {
 }
 ```
 
-### 2. hasOwnProperty
+## 2. hasOwnProperty
 
 ```js
 // hasOwnProperty

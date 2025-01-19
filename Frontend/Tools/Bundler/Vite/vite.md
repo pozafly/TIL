@@ -24,7 +24,7 @@ console.log(process.env.TEST); // test!
 
 위 코드를 Node.js의 `node` 명령어로 실행하면 주석과 같은 결과를 얻을 수 있다. 프레임워크에서는 `.env` 파일을 통해 process.env 변수에 개발자가 설정한 변수를 process.env에 주입시켜주는데, 주로 `dotenv` 라이브러리를 통해 주입한다.
 
-### dotenv
+### Dotenv
 
 모던 JavaScript 프레임워크에서 `dotenv` 라는 라이브러리를 내부적으로 래핑해서 사용하고 있다. [dotenv](https://github.com/motdotla/dotenv) 라이브러리는 node.js 환경 및 ESM 환경에서 `.env` 파일에 있는 환경 변수를 런타임 환경의 JavaScript로 들고올 수 있다.
 
@@ -90,14 +90,13 @@ function configDotenv (options) {
 
 1. dotenvPath 변수에 `.env` 파일의 경로를 저장한다.
 
-   - `process.cwd()` : node 명령을 호출한 디렉토리의 절대 경로다. /Users/pozafly/Documents/dev/play-ground/dotenv-exam
-   - `path.resolve()` : 경로를 묶어 새로운 경로를 반환한다. /Users/pozafly/Documents/dev/play-ground/dotenv-exam/.env
+   - `process.cwd()`: node 명령을 호출한 디렉토리의 절대 경로다. /Users/pozafly/Documents/dev/play-ground/dotenv-exam
+   - `path.resolve()`: 경로를 묶어 새로운 경로를 반환한다. /Users/pozafly/Documents/dev/play-ground/dotenv-exam/.env
 
 2. parsed 변수에 `.env` 파일을 파싱해 담는다.
 
-   - `fs.readFileSync()` : 인자로 들어오는 절대 경로로 파일 text 값을 읽어온다. 따라서, dotenvPath의 값을 읽어온다.
-   - `DotenvModule.parse()` : 파싱한 text 값을 JavaScript object로 만들어서 return 한다.
-
+   - `fs.readFileSync()`: 인자로 들어오는 절대 경로로 파일 text 값을 읽어온다. 따라서, dotenvPath의 값을 읽어온다.
+   - `DotenvModule.parse()`: 파싱한 text 값을 JavaScript object로 만들어서 return 한다.
    - `parsed: { TEST: 'ENV_TEST!' }` 값이 담겨있다.
 
 3. `populate(processEnv, parsed, options)` 실행한다. populate는 '덧붙이다' 라는 뜻을 가지고 있다.
@@ -121,7 +120,7 @@ console.log(process.env.TEST);  // ENV_TEST!
 
 정리하면, dotenv 라이브러리는 Node.js 환경에서 `.env` 를 파싱해 text 값을 통해 객체를 생성하고, process.evn에 값을 추가해 Node.js 환경의 전역에 노출된다. JavaScript 프레임워크에서는 보통 Node.js를 한 번만 실행하기 때문에 `.env` 파일의 환경 변수 값이 변경되면 devServer를 껐다 켜주어야 값을 변경된 값으로 반영할 수 있는 이유이다.
 
-Vite는 바로 반영이 되는데, devServer를 순간적으로 다시 시작시켜준다. .env 파일에서 변수를 변경하면 터미널 log에 `server restarted.`라고 알려준다. Vite는 webpack 처럼 모든 파일을 번들링 하지 않기 때문에 무척 빠르기에 가능하다.
+Vite는 바로 반영이 되는데, devServer를 순간적으로 다시 시작시켜준다..env 파일에서 변수를 변경하면 터미널 log에 `server restarted.`라고 알려준다. Vite는 webpack 처럼 모든 파일을 번들링 하지 않기 때문에 무척 빠르기에 가능하다.
 
 dotenv에서 ESM 환경 또한 지원한다.
 
@@ -215,13 +214,13 @@ class Dotenv {
 }
 ```
 
-간추린 코드만 들고 왔다. 
+간추린 코드만 들고 왔다.
 
 1. 인스턴스를 생성할 때, 넣어준 path를 생성자에서 설정한다.
 2. `getEnvs()` 메서드 실행.
 3. config에 담긴 path를 가져와 `.env*` 파일을 가져오고, `dotenv` 라이브러리에 parse 메서드를 사용해 env 객체로 만들어 return.
 4. `vars` 에 새로운 객체에다가 `process.evn` 값을 복사한다.
-5.  `vars[key] = value` 를 통해 파싱한 값을 집어넣어 return.
+5. `vars[key] = value` 를 통해 파싱한 값을 집어넣어 return.
 
 즉, dotenv-webpack은 단순히 `.env` 값을 path로 받아 파싱한다.
 
@@ -235,7 +234,7 @@ Vite는 환경 변수가 정의된 파일(`.env`)에서 여타 번들러와 마�
 
 [`import.meta`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/import.meta) 라는 JavaScript 문법을 공부하며 MDN 문서에 아직 아무도 번역하지 않아 이번 기회에 함께 번역해보았다. `import.meta` 는 ES Module이 탄생하면서 모듈에 대한 메타 데이터(부수 데이터)를 저장하기 위한 객체다.
 
-여기서 말하는 메타 데이터란, 이미지 파일을 생각하면 조금 더 이해하기 쉽다. 휴대폰으로 사진을 찍으면 사진의 메타 데이터에 '날짜', '사진 용량', '디바이스 정보', '위치 데이터' 등의 메타 데이터가 담기게 된다. `import.meta` 는 '모듈' 자체에 대한 메타 데이터를 담고 있다. 
+여기서 말하는 메타 데이터란, 이미지 파일을 생각하면 조금 더 이해하기 쉽다. 휴대폰으로 사진을 찍으면 사진의 메타 데이터에 '날짜', '사진 용량', '디바이스 정보', '위치 데이터' 등의 메타 데이터가 담기게 된다. `import.meta` 는 '모듈' 자체에 대한 메타 데이터를 담고 있다.
 
 import.meta는 대표적으로 모듈 메타 데이터인 경로(URL)를 담고 있는데, 이는 호스트 환경(브라우저 혹은 Node.js)에 따라 저장되는 내용이 달라진다. 먼저 Node.js를 통해 import.meta가 가지고 있는 정보를 열어보자.
 
@@ -308,7 +307,7 @@ resolve와, url 정보가 들어있다. Node.js 환경과는 조금 다르다. d
 <script type="module" src="./src/main.js?info=5"></script>
 ```
 
-이렇게, 쿼리 파라미터 `info` 라는 key에 value를 5를 넣었다. 다시 실행해보면, main.js가 모듈로서 여전히 호출되고 
+이렇게, 쿼리 파라미터 `info` 라는 key에 value를 5를 넣었다. 다시 실행해보면, main.js가 모듈로서 여전히 호출되고
 
 [import.meta.info]
 
@@ -501,18 +500,8 @@ hotModulesMap은, 현재 소스코드를 Vite가 code splitting을 통해 모듈
 
 <br/>
 
-
-
-
-
-
-
-
-
 아래를 참조하자.
 
-- import.meta가 proposal에 올라간 사유 : https://www.proposals.es/proposals/import.meta
-
-- How to Access ES Module Metadata using import.meta : https://dmitripavlutin.com/javascript-import-meta/
-
+- import.meta가 proposal에 올라간 사유: https://www.proposals.es/proposals/import.meta
+- How to Access ES Module Metadata using import.meta: https://dmitripavlutin.com/javascript-import-meta/
 - https://blog.bitsrc.io/understanding-import-meta-your-key-to-es-module-metadata-e2911b0d3c00

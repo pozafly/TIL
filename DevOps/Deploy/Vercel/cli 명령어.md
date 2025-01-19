@@ -1,4 +1,4 @@
-# cli 명령어
+# Cli 명령어
 
 > [출처](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)
 
@@ -20,7 +20,7 @@
 
 <br/>
 
-## vercel pull
+## Vercel pull
 
 환경 변수 및 프로젝트 설정을 로컬 캐시(`.vercel/.env.$target.local.`)에 저장하는데 사용한다.
 
@@ -36,9 +36,9 @@
 
 <br/>
 
-## vercel build
+## Vercel build
 
-빌드 아티팩트는 빌드 출력 API에 따라 `.vercel/output` 디렉토리에 배치된다. 
+빌드 아티팩트는 빌드 출력 API에 따라 `.vercel/output` 디렉토리에 배치된다.
 
 > 여기서 `Artifacts` 라는 용어가 등장하는데, 이는 `환경 변수` + `컴파일된 코드` 를 빌드 해 탄생하는 자료들을 뜻한다고 한다. 즉, Artifacts 라는 용어는 빌드 결과물인 것이다. `output` 아래 생성되는 모든 파일들을 뜻하는 단어임.
 
@@ -54,9 +54,8 @@
 
 <br/>
 
-## vercel deploy
+## Vercel deploy
 
 단순 배포 명령어임. `--prebuilt` 명령어를 붙여주고 있는데, 로컬에서 빌드된 파일을 **Vercel에 직접 업로드** 하는 옵션이다. Vercel 서버에서 다시 빌드하는 단계를 생략하는 옵션. 이로 인해 배포 시간을 단축시킬 수 있다.
 
 기본적으로 `vercel deploy` 명령어는 vercel 서버에서 프로젝트를 빌드한 후 배포하는데 `--prebuilt` 옵션을 사용하면 로컬에서 빌드된 파일을 업로드 하기 때문에 속도를 높여주는 옵션인 것임.
-

@@ -1,6 +1,6 @@
 # Function
 
-> 출처 : https://youtu.be/e_lU39U-5bQ
+> 출처: https://youtu.be/e_lU39U-5bQ
 
 <br/>
 
@@ -86,7 +86,7 @@ function upgradeUser(user) {
 ```
 
 - 블럭 안에서 로직을 작성하게 되면 길어질 수 있고 가독성이 좋지 않음.
--  점철된 if else 보다는 `조건이 맞지 않을 때` **빨리 함수를 종료**하고 조건이 맞을 때만 필요한 로직을 작성해 주면된다.
+- 점철된 if else 보다는 `조건이 맞지 않을 때` **빨리 함수를 종료**하고 조건이 맞을 때만 필요한 로직을 작성해 주면된다.
 
 <br/>
 
@@ -138,8 +138,6 @@ const simplePrint = () => console.log('simple');
 ```
 
 바로 실행됨.
-
-
 
 > `정리`
 >

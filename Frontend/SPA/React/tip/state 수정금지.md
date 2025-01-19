@@ -29,8 +29,6 @@ class App extends Component {
 
 클래스 컴포넌트이고, this.state에는 숫자를 담을 수 있는 count가 들어있는 오브젝트가 있다. 그리고 button이 클릭되면 onClick 콜백이 실행될 것이고, 우리가 State를 업데이트 시켜줄 수 있다.
 
-
-
 ## 1. State를 바로 수정하는 경우(좋지않음)
 
 ```jsx
@@ -78,12 +76,12 @@ WebAPIs 중에 setTimeout, setInterval과 같은 비동기 함수처럼, setStat
 
 ## 🔥 **정말 중요**
 
-그리고, `state를 업데이트 할때 이전 state 값에서 어떤 계산이 되어지는 경우`라면, 컴포넌트 내의 state 값에 의존해서 계산한 값은 setState(updated) 로 설정하기 보다는, `setState(prevState => newState)` 이렇게 이전 state 값을 받아 그걸로 업데이트 되는  state 값을 만드는 arrow 함수를 전달할 수 있는 함수를 호출 하는게 좋다.
+그리고, `state를 업데이트 할때 이전 state 값에서 어떤 계산이 되어지는 경우`라면, 컴포넌트 내의 state 값에 의존해서 계산한 값은 setState(updated) 로 설정하기 보다는, `setState(prevState => newState)` 이렇게 이전 state 값을 받아 그걸로 업데이트 되는 state 값을 만드는 arrow 함수를 전달할 수 있는 함수를 호출 하는게 좋다.
 
 리액트에서 제공하는 setSate 함수는 두가지 종류가 있다.
 
-- setState(newState) : 새로운 state **오브젝트를 인자**로 바로 받는 함수
-- setState(prevState => { return newState; }) : 이전 state를 받아서 그걸로 계산해 새로운 state를 리턴하는 **함수를 인자로 받는 함수**.
+- setState(newState): 새로운 state **오브젝트를 인자**로 바로 받는 함수
+- setState(prevState => { return newState; }): 이전 state를 받아서 그걸로 계산해 새로운 state를 리턴하는 **함수를 인자로 받는 함수**.
 
 ```jsx
 <button
@@ -101,7 +99,7 @@ WebAPIs 중에 setTimeout, setInterval과 같은 비동기 함수처럼, setStat
 
 <br/>
 
-## state를 수정하면 안되는 이유
+## State를 수정하면 안되는 이유
 
 리액트에서는 상태를 직접적으로 절대! 수정하면 좋지 않다.
 
@@ -137,4 +135,3 @@ this.state가 가리키고 있는 오브젝트의 count를 바로 직접적으�
 - 지금 경우는 this.state 오브젝트를 직접적으로 수정해서 setState 함수에 동일한 오브젝트를 전달하므로, 비교해야 하는 대상의 레퍼런스가 동일하므로 리액트는 업데이트 할 필요가 없다 판단해서 render 함수를 호출해주지 않는다.
 
 따라서 리액트의 state를 직접적으로 수정하는 것은 예상치 못한 문제가 발생할 수 있기 때문에, 반드시 불변성을 유지 하는게 좋다.
-

@@ -1,4 +1,4 @@
-# safari blur event
+# Safari blur event
 
 > [출처](https://itnext.io/fixing-focus-for-safari-b5916fef1064)
 

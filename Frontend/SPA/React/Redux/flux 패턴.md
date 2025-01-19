@@ -1,4 +1,4 @@
-# flux 패턴
+# Flux 패턴
 
 > [출처](https://www.tcpschool.com/react/react_redux_intro)
 
@@ -11,4 +11,3 @@ MVC 패턴이란, Model에 데이터를 저장하고, Controller를 사용해 Mo
 Flux 패턴은 사용자가 입력을 기반으로 Action을 생성하고, 이를 Dispatcher에 전달, Store의 데이터를 변경한 뒤 View에 반영하는 단방향 데이터 흐름을 가지는 아키텍처다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/c72cc204-1ade-481a-bb3c-8118971d0e5d)
-

@@ -143,14 +143,12 @@ npm으로 패키지를 설치한다. 빠른 시작 페이지의 가장 하단에
 
 ### Google Cloud Console에서 Analytics API 사용 설정
 
-1.  [google cloud console](https://console.cloud.google.com/welcome?project=analytics-api-422407)에서 새로운 프로젝트를 만든다. (나는 analytics-api)
-
+1. [google cloud console](https://console.cloud.google.com/welcome?project=analytics-api-422407)에서 새로운 프로젝트를 만든다. (나는 analytics-api)
 2. API 및 서비스 클릭
 
    <img width="1172" alt="스크린샷 2024-05-05 오후 7 08 43" src="https://github.com/pozafly/TIL/assets/59427983/614be949-bc05-445f-abf5-cc955b5546de">
 
 3. 우측 탭에서 `라이브러리` 클릭
-
 4. 검색에 'google analytics api' 검색
 
    <img width="595" alt="스크린샷 2024-05-05 오후 7 11 11" src="https://github.com/pozafly/TIL/assets/59427983/dade997c-bd18-4668-b1be-fe136b9b7837">
@@ -189,7 +187,7 @@ npm으로 패키지를 설치한다. 빠른 시작 페이지의 가장 하단에
 
 <img width="402" alt="스크린샷 2024-05-05 오후 7 37 49" src="https://github.com/pozafly/TIL/assets/59427983/e570dbe3-8414-42f8-8131-7408de9891b5">
 
-서비스 계정 만들기에 들어가서 계정 이름과 ID를 적어주면  iam.gserviceaccount.com 도메인으로 된 이메일 주소를 내어준다.
+서비스 계정 만들기에 들어가서 계정 이름과 ID를 적어주면 iam.gserviceaccount.com 도메인으로 된 이메일 주소를 내어준다.
 
 <img width="537" alt="스크린샷 2024-05-05 오후 7 40 27" src="https://github.com/pozafly/TIL/assets/59427983/6b9b45e9-a224-4dda-9878-64e489e11f8b">
 
@@ -278,5 +276,3 @@ runReport();
 이와 같은 형태로 잘 출력된 것을 볼 수 있다.
 
 그러면 이걸 활용해 블로그에 조회수 Top3의 정보를 매주, 매달마다 cron으로 GitHub Actions에서 돌려, ISR 형태로 사용자에게 제공할 수 있는 것이다. Good!
-
-

@@ -1,8 +1,8 @@
-# inline 중앙 정렬
+# Inline 중앙 정렬
 
 > 같이 보기: [centering](https://poiemaweb.com/css3-centering), [css-tricks](https://css-tricks.com/centering-css-complete-guide/)
 
-### 1. display: table-cell 사용하기
+## 1. Display: table-cell 사용하기
 
 ```css
 div {
@@ -24,7 +24,7 @@ span {
 
 그럼 딱 이런 모습이 된다. 여기서 만약, 수평 정렬도 하고 싶다고 한다면 할 수 없음. div 태그에 text-align을 넣어줘도 안된다. 왜냐면 이미 span 태그는 display: tabl-cell 이 되었기 때문임.
 
-### 2. line-height 이용
+## 2. Line-height 이용
 
 그러면 span태그의 display: inline으로 유지하면서 가운데 정렬하는 법을 알아보자.
 
@@ -49,4 +49,4 @@ span에 line-height를 줬다. 상위 태그의 height 값 만큼 준 것인데,
 
 또한, 두줄이 되면 틀어지게 된다.
 
-사실 display flex만 사용하면 해결되긴 함. 
+사실 display flex만 사용하면 해결되긴 함.

@@ -8,8 +8,8 @@ URL 생성자는 매개 변수로 제공한 URL을 나타내는 새로운 URL �
 const url = new URL(url [, base]);
 ```
 
-- `url` : 절대 또는 상대 URL을 나타내는 USVString. url이 상대 URL인 경우 `base` 매개변수를 기준 URL로 사용하므로 `base`도 필수로 지정해야 한다. 절대 URL인 경우 base는 무시한다.
-- `base` : `url` 매개변수가 상대 URL 인 경우 사용할 기준 URL을 나타내는 USVString. 기본값은, `''`
+- `url`: 절대 또는 상대 URL을 나타내는 USVString. url이 상대 URL인 경우 `base` 매개변수를 기준 URL로 사용하므로 `base`도 필수로 지정해야 한다. 절대 URL인 경우 base는 무시한다.
+- `base`: `url` 매개변수가 상대 URL 인 경우 사용할 기준 URL을 나타내는 USVString. 기본값은, `''`
 
 ## 속성
 
@@ -40,7 +40,7 @@ const url = new URL(url [, base]);
 
 ---
 
-만약 
+만약
 
 ## 사용법
 
@@ -65,7 +65,7 @@ const b = 'https://naver.com/';
 
 이렇게 url이 있다고 하자. 그러면, 이 url의 length를 구해야 한다고 하자.
 
-정확한 URL을 얻고 싶다면, 
+정확한 URL을 얻고 싶다면,
 
 ```js
 const a = 'https://naver.com';

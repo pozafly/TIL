@@ -16,7 +16,7 @@
 ## 특징
 
 - 객체 자체에는 접근이 불가능해야 함.
-- 객체에 대한 접근자(비공개 멤버 : 클로저)를 사용해 실제 객체를 제어할 수 있다.
+- 객체에 대한 접근자(비공개 멤버: 클로저)를 사용해 실제 객체를 제어할 수 있다.
 - 객체는 단 하나만 만들어지며, 해당 객체를 공유함.
 
 ## 구현
@@ -116,34 +116,3 @@ const secondSingleton = new Singleton();
 console.log(firstSingleton === secondSingleton); // true
 console.log(Singleton.instance === secondSingleton); // true
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-# callback refs
+# Callback refs
 
 > [출처](https://velog.io/@cnsrn1874/%EB%B2%88%EC%97%AD-callback-refs-%EC%82%AC%EC%9A%A9%EC%9C%BC%EB%A1%9C-useEffect-%EB%B0%A9%EC%A7%80%ED%95%98%EA%B8%B0)
 
@@ -10,13 +10,13 @@ const ref = React.useRef(null)
 return <input ref={ref} defaultValue="Hello world" />
 ```
 
-`ref`는  리액트 내장 기능의 예약된 속성으로, 렌더링 이후 해당 DOM 노드를 저장한다. 그리고 컴포넌트가 다시 언마운트 되면 다시 null로 설정된다.
+`ref`는 리액트 내장 기능의 예약된 속성으로, 렌더링 이후 해당 DOM 노드를 저장한다. 그리고 컴포넌트가 다시 언마운트 되면 다시 null로 설정된다.
 
-## refs와 상호작용
+## Refs와 상호작용
 
 상호작용하는 대부분의 경우, 리액트가 업데이트를 자동으로 처리하기 때문에 개발자가 DOM 노드에 접근할 필요가 없다. ref를 필요로 하는 좋은 예는 focus 관리다.
 
-## effect를 이용한 focus
+## Effect를 이용한 focus
 
 렌더링 이후에 input에 focus하려면 어떻게 해야하나?
 

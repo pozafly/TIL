@@ -1,6 +1,6 @@
 # 더미데이터 libs
 
-## shortid
+## Shortid
 
 [shortid](https://www.npmjs.com/package/shortid) key를 할당해줄 때, 순서가 바뀌거나 렌덤한 id로 할당을 해줘야 할 때 유용한 라이브러리다.
 
@@ -19,7 +19,7 @@ console.log(shortid.generate());
 
 <br/>
 
-## faker
+## Faker
 
 닉네임, 댓글 컨텐츠 등, 각종 더미데이터를 알아서 뿌려준다. [faker](https://www.npmjs.com/package/faker) 이곳의 API Methods 부분에 보면 사용할 수 있는 더미데이터들을 보고 그대로 사용하면 됨.
 
@@ -42,6 +42,3 @@ Array(20).fill().map((v, i) => ({
   }],
 }));
 ```
-
-
-

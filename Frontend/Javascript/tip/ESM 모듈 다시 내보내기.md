@@ -2,7 +2,7 @@
 
 > [출처](https://ko.javascript.info/import-export#ref-93)
 
-`export ... from ...` 문법을 사용하면 가져온 개체를 즉시 '다시 내보내기(re-export)' 할 수 있다. 이름을 바꿔서 다시 내보낼 수 있는 것이다.
+`export … from …` 문법을 사용하면 가져온 개체를 즉시 '다시 내보내기(re-export)' 할 수 있다. 이름을 바꿔서 다시 내보낼 수 있는 것이다.
 
 ```js
 export {sayHi} from './say.js'; // sayHi를 다시 내보내기 함
@@ -52,7 +52,7 @@ export {User};
 
 이제 외부 개발자들은 `import {login} from "auth/index.js"`로 우리가 만든 패키지를 이용할 수 있다.
 
-`export ... from ...`는 위와 같이 개체를 가지고 온 후 바로 내보낼 때 쓸 수 있는 문법이다. 아래 예시는 위 예시와 동일하게 동작합니다.
+`export … from …`는 위와 같이 개체를 가지고 온 후 바로 내보낼 때 쓸 수 있는 문법이다. 아래 예시는 위 예시와 동일하게 동작합니다.
 
 ```js
 // 📁 auth/index.js
@@ -66,7 +66,7 @@ export {default as User} from './user.js';
 
 <br/>
 
-## default export 다시 내보내기
+## Default export 다시 내보내기
 
 기본 내보내기를 다시 내보낼 때는 주의 점이 있다.
 
@@ -78,7 +78,6 @@ export default class User {
 ```
 
 1. `User`를 `export User from './user.js'` 로 다시 내보내기 할 때 문법 에러가 발생한다. export default를 다시 내보내려면 위 예시 처럼 `export {default as User}`를 사용해야 한다.
-
 2. `export * from './user.js'`를 사용해 모든 걸 한 번에 다시 내보내면 default export는 무시되고, named export만 다시 보내진다.
 
    두 가지를 동시에 다시 내보내고 싶다면 두 문을 동시에 사용해야 한다.

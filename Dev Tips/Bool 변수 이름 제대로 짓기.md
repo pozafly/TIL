@@ -1,6 +1,6 @@
 # Bool 변수 이름 제대로 짓기
 
-> 출처 : https://soojin.ro/blog/naming-boolean-variables
+> 출처: https://soojin.ro/blog/naming-boolean-variables
 
 Bool 변수 작명을 위해 알아야 하는 영문법
 
@@ -11,7 +11,7 @@ Bool 변수 작명을 위해 알아야 하는 영문법
 
 <br/>
 
-## is 용법
+## Is 용법
 
 is가 가장 흔하다. 뒤에 나오는 단어의 특징에 따라 세가지로 나눌 수 있다.
 
@@ -19,7 +19,7 @@ is가 가장 흔하다. 뒤에 나오는 단어의 특징에 따라 세가지로
 - is + 현재 진행형(~ing)
 - is + 형용사
 
-### is + 명사
+### Is + 명사
 
 "(무엇)인가?" 라는 뜻으로 쓰인다.
 
@@ -27,7 +27,7 @@ is가 가장 흔하다. 뒤에 나오는 단어의 특징에 따라 세가지로
 declare function isDescendant(...args: any[]): boolean; // 자식 판별 함수. 자식 인가?
 ```
 
-### is + 현재진행형(~ing)
+### Is + 현재진행형(~ing)
 
 "~하는 중인가?" 라는 뜻이 필요할 때 쓴다.
 
@@ -36,7 +36,7 @@ let isExecuting: boolean; // 작업이 실행 중인가?
 let isPending: boolean; // 작업이 대기 중인가?
 ```
 
-### is + 형용사
+### Is + 형용사
 
 이제 헷갈릴 수 있다. 형용사도 두 종류로 나뉜다.
 
@@ -76,7 +76,7 @@ let canEdit: boolean;
 
 조동사(modal verb)는 동사를 돕는 동사란 뜻인데, can, should, will 등이 있다. 주의 할 점은 **조동사 + 동사원형**으로 사용해야 한다는 것이다.
 
-- can : '~할 수 있는가?'
+- can: '~할 수 있는가?'
 - should, will: '~해야 하는가?' 혹은 '~할 것인가?'
 
 ```ts
@@ -86,14 +86,14 @@ let shouldRefreshRefetchedObjects: boolean; // 가져온 값을 refresh 할 것�
 
 <br/>
 
-## has 용법
+## Has 용법
 
 has로 시작하는 boolean 변수명은 상대적으로 빈도가 낮지만 뜻이 전혀 다르게 쓰이는 두가지가 있어 알아두면 유용하다.
 
 - has + 명사
 - has + 과거분사
 
-### has + 명사
+### Has + 명사
 
 has 다음 명사가 나오면 '~를 가지고 있는가?' 라는 뜻이다. has는 have의 3인칭 단수인데, 3인칭 단수에 대해서 다음 파트에서 알아보자.
 
@@ -102,7 +102,7 @@ let hasiCloudAccount: boolean; // iCloud 계정을 가지고 있는가?
 let hasVideo: boolean; // 비디오가 포함되어 있는가?
 ```
 
-### has + 과거분사
+### Has + 과거분사
 
 모든 케이스를 통틀어 가장 덜 쓰이는 케이스. 이해 안간다면 넘어가자. 게다가 is + 과거분사와 뜻이 거의 같기 때문에 꼭 알아야할 필요도 없음.
 
@@ -138,7 +138,7 @@ let acceptsFirstResponder: boolean;
 
 ### 3인칭 단수가 중요한 이유
 
-코드 한 줄을 하나의 문장으로 비유하면 주어 역할을 하는 인스턴스가 3인칭 단수이기 때문에 문법적으로 꼭 써야하는 이유도 있지만, 3인칭 단수로 쓰지 않을 경우  [스위프트 API 디자인 가이드](https://swift.org/documentation/api-design-guidelines/#strive-for-fluent-usage)와의 일관성이 깨져서 코드를 읽는 사람을 혼란에 빠뜨릴 수 있다고 한다.
+코드 한 줄을 하나의 문장으로 비유하면 주어 역할을 하는 인스턴스가 3인칭 단수이기 때문에 문법적으로 꼭 써야하는 이유도 있지만, 3인칭 단수로 쓰지 않을 경우 [스위프트 API 디자인 가이드](https://swift.org/documentation/api-design-guidelines/#strive-for-fluent-usage)와의 일관성이 깨져서 코드를 읽는 사람을 혼란에 빠뜨릴 수 있다고 한다.
 
 ---
 

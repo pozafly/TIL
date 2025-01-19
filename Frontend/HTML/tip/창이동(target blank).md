@@ -1,10 +1,10 @@
-# target black
+# Target black
 
-> 출처 : https://webruden.tistory.com/262
+> 출처: https://webruden.tistory.com/262
 
 새로운 창으로 이동할 때, `<a href="https://naver.com" target="_blank">새창열기</a>` 이런식으로 target="_black" 를 쓰는 경우가 많다. 이 속성을 같이 사용할 때 같이 사용해야 하는게 있음. noopener, noreferrer, nofollow 다.
 
-## noopener
+## Noopener
 
 target="_black" 만 사용했을때.
 
@@ -20,7 +20,7 @@ target="_black" 만 사용했을때.
 
 <br/>
 
-## noreferrer
+## Noreferrer
 
 ```html
 <a href="https://naver.com" target="_blank" rel="noreferrer">새창열기</a>
@@ -38,7 +38,7 @@ noopener 와 유사한 기능으로, noreferrer는 새로 열린 사이트가 wi
 
 <br/>
 
-## nofollow
+## Nofollow
 
 SEO(검색 엔진 최적화)에서는 페이지에 연결되는 가치있는 링크들을 얻는 것이 중요하다. 이를 `백링크` 라고 한다. 그러나 모든 링크가 동일하게 생성되는 것은 아님.
 

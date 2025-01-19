@@ -2,8 +2,6 @@
 
 > [출처1](https://moz.com/learn/seo/alt-text), [출처2](https://velog.io/@jerrynim_/SEO%EB%A5%BC%EC%9C%84%ED%95%9C-%EB%85%B8%EC%98%A4%EC%98%A4%EB%A0%A5)
 
-
-
 ## 대체 텍스트(alt text)
 
 대체 텍스트는 이미지의 모양과 기능을 설명하기 위해 HTML 코드 내에서 사용된다.

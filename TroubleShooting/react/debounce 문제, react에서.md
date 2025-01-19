@@ -1,6 +1,4 @@
-# debounce 문제, react에서
-
-
+# Debounce 문제, react에서
 
 > [출처](https://stackoverflow.com/questions/47809666/lodash-debounce-not-working-in-react)
 
@@ -31,11 +29,11 @@ debounce는 이렇게 생겼다. `timeoutId` 값이 초기화 된다.
 
 ## 해결법
 
-[링크](https://stackoverflow.com/questions/47809666/lodash-debounce-not-working-in-react)에 따르면, debounce 함수 자체를 `useRef`를 통해 리렌더링 되더라도 다시 만들지 않게끔 권하고 있다. [이 블로그](https://rajeshnaroth.medium.com/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3)를 권한다. 하지만, 블로그 내부 댓글 링크를 따라갑보면, 
+[링크](https://stackoverflow.com/questions/47809666/lodash-debounce-not-working-in-react)에 따르면, debounce 함수 자체를 `useRef`를 통해 리렌더링 되더라도 다시 만들지 않게끔 권하고 있다. [이 블로그](https://rajeshnaroth.medium.com/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3)를 권한다. 하지만, 블로그 내부 댓글 링크를 따라갑보면,
 
 > Instead of using **useRef** or moving function outside from component, a better approach is using **useCallback**
 
-useCallback을 권한다는 이야기가 있다. 
+useCallback을 권한다는 이야기가 있다.
 
 ```js
 const handleDebounceChange = debounce(saveData, 1000);

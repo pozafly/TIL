@@ -1,6 +1,6 @@
 # dangerouslySetInnerHTML
 
-> 출처 : https://ko.reactjs.org/docs/dom-elements.html
+> 출처: https://ko.reactjs.org/docs/dom-elements.html
 
 리액트에서는 `<div>{html}</div>` 과 같이 HTML을 그대로 렌더링 하는 형태로 JSX를 작성하면 HTML 태그가 적용되지 않고 일반 텍스트 형태로 나타나버린다. 따라서 HTML을 적용하고 싶다면 `dangerouslySetInnerHTML` 이라는 props를 설정해주어야 함.
 

@@ -1,4 +1,4 @@
-# key 할당시 map 사용
+# Key 할당시 map 사용
 
 <br/>
 
@@ -37,4 +37,3 @@ fetch(
 여기서 보면 map으로 새 배열을 만들면서, id(Object)를 새로 id.videoId를 할당하여 새롭게 만든 items를 state(videos)에 할당해서 내려주고 있는 것을 볼 수 있다.
 
 즉, map을 이용해서 id만 바꿔서 내려주는 형태로 작성 한 것이다.
-

@@ -18,4 +18,3 @@
     - getStaticProps를 사용하면 SSG, getServerSideProps를 사용하면 SSR.
   - App Route
     - 서버 컴포넌트, 클라이언트 컴포넌트가 나오면서 컴포넌트 단위로 렌더링 방식을 규정한다.
-

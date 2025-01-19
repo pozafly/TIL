@@ -2,15 +2,15 @@
 
 > [출처](https://seob.dev/posts/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%BF%A0%ED%82%A4%EC%99%80-SameSite-%EC%86%8D%EC%84%B1)
 
-쿠키는 아주 예전부터 쓰였지만, 요즘에는 보안이나 개인정보보호 문제 때문에 쿠키에 `samesite`  같은 속성이 추가되기도 하고 브라우저가 쿠키를 다루는 방식도 점차 바뀌어가고 있다.
+쿠키는 아주 예전부터 쓰였지만, 요즘에는 보안이나 개인정보보호 문제 때문에 쿠키에 `samesite` 같은 속성이 추가되기도 하고 브라우저가 쿠키를 다루는 방식도 점차 바뀌어가고 있다.
 
 ## 쿠키란 무엇? 왜 사용하나?
 
 쿠키는 브라우저에 데이터를 저장하기 위한 수단 중 하나다. 브라우저에서 서버로 요청을 전송할 때 그 요청에 대한 응답에 `Set-Cookie` 헤더가 포함되어 있는 경우, 브라우저는 `Set-Cookie`에 있는 데이터를 저장하고, 이 저장된 데이터를 쿠키라고 부른다.
 
->`Set-Cookie: normal=yes`
+> `Set-Cookie: normal=yes`
 >
->서버에서 전송하는 응답에 포함된 'Set-Cookie'
+> 서버에서 전송하는 응답에 포함된 'Set-Cookie'
 
 위처럼 서버의 응답에 `Set-Cookie` 헤더가 포함된 경우, `normal` 이라는 이름의 쿠키에 `yes` 라는 값이 저장된다.
 
@@ -131,10 +131,6 @@ Top Level Navigation에는 유저가 링크(`<a>`)를 클릭하거나, `window.l
 
 2021년 5월 현재 크롬만이 Lax를 기본으로 적용하고 있지만 [파이어폭스도 곧 변경될 예정.](https://hacks.mozilla.org/2020/08/changes-to-samesite-cookie-behavior/)
 
-
-
-
-
 ### `Secure` 필수 정책
 
 `SameSite` 속성으로 `None`을 사용하려면 반드시 해당 쿠키는 `Secure` 쿠키여야 한다. `Secure` 쿠키는 HTTPS가 적용된(암호화된) 요청에만 전송되는 쿠키다. 이 정책을 구현하는 브라우저도 현재로 크롬밖에 없음. 크롬에는 `SameSite=None`으로 `Set-Cookie`를 사용하면 다음과 같이 쿠키 자체가 제대로 설정되지 않는다.
@@ -147,7 +143,7 @@ Top Level Navigation에는 유저가 링크(`<a>`)를 클릭하거나, `window.l
 
 크로미엄 블로그의 [Building a more private web: A path towards making third party cookies obsolete](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)라는 글에는 다음과 같은 내용이 있다.
 
-> **... and we have developed the tools to mitigate workarounds,** **we plan to phase out support for third-party cookies in Chrome.**
+> **… and we have developed the tools to mitigate workarounds,** **we plan to phase out support for third-party cookies in Chrome.**
 
 크롬에는 장기적으로 서드 파티 쿠키에 대한 지원을 단계적으로 제거할 예정이라는 말. 미래에는 모든 쿠키가 `SameSite=Strict` 로 설정된 것처럼 동작하게 된다는 의미.
 
@@ -156,4 +152,3 @@ Top Level Navigation에는 유저가 링크(`<a>`)를 클릭하거나, `window.l
 구글은 이 문제를 해결하기 위해 [First-Party Sets](https://github.com/privacycg/first-party-sets)라는 표준을 제안함. 여러 개의 도메인을 동일한 사이트로 다룰 수 있도록 만드는 기술이다. `seob.dev` 에서 `seob.io`도 같은 서비스를 제공하고 있어! 라고 브라우저에게 알려주면 브라우저는 이후에는 그 도메인을 같은 사이트로 관리하는 것이다. 하지만 아직 표준으로 합의되지 않았고 [반대](https://github.com/w3ctag/design-reviews/issues/342)도 많은 만큼 어떻게 될지는 모름.
 
 확실한 것은 앞으로 점점 더 쿠키를 사용하기 까다로워질 것이라는 사실. 지금부터 서드파티 쿠키를 사용하지 못한다는 전제하에 서비스를 개발하는 것이 좋을 듯 하다.
-

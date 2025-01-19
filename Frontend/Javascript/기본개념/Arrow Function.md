@@ -1,10 +1,10 @@
 # Arrow Function
 
-> 출처 : https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#arrow-function
+> 출처: https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#arrow-function
 
 화살표 함수 표현식은 기존의 function 표현 방식보다 간결하게 함. 화살표 함수는 항상 익명이고, 자신의 this, arguments, super 그리고 new.target을 바인딩하지 않는다. 따라서 생성자로는 사용할 수 없음.
 
-- 화살표 함수 도입 영향 : 짧은 함수, 상위 스코프 this
+- 화살표 함수 도입 영향: 짧은 함수, 상위 스코프 this
 
 ## 짧은 함수
 
@@ -52,4 +52,3 @@ var p = new Person();
 > `정리`
 >
 > 화살표 함수는 가독성을 좋게, 그리고 this의 범위를 더 쉽게 늘려준다. 가끔 헷갈릴 때가 있지만 self = this; 이렇게 this를 변수화 해서 스코프 내에서 쓰는 것 보다 훨씬 가독성이 좋아진다. 물론 bind 함수를 사용할 수도 있지만 이게 훨씬 깔끔하게 보임.
-

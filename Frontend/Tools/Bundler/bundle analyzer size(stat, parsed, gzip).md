@@ -1,20 +1,20 @@
-# bundle analyzer size(stat, parsed, gzip)
+# Bundle analyzer size(stat, parsed, gzip)
 
 > [출처 issue](https://github.com/webpack-contrib/webpack-bundle-analyzer/issues/61#issuecomment-290634958)
 
 `stat size`, `parsed size`, `gzip size` 3개가 있다.
 
-## stat size
+## Stat size
 
 통계(stat) 크기는 webpack의 통계 객체에서 직접 가져온다. 모듈의 실제 소스코드를 그대로 사용하고, minification(축소)나 gzip으로 압축 전 크기를 말한다.
 
 이 크기는 소스 맵이나 추가적으로 처리되지 않은 기타 파일들을 제외한, 파일 시스템에 저장될 때의 크기입니다. 즉, 파일을 압축하지 않은 상태의 크기를 말합니다. 이 크기는 종종 개발 중에 빠른 참조로 사용되며, 최적화 전의 원시적인 크기를 이해하는 데 유용합니다.
 
-## parsed size
+## Parsed size
 
 파싱된 크기는 컴파일된 번들 파일을 읽고 웹팩 통계 파일에서 모듈에 대한 링크를 다시 만들어 계산한다. 따라서 UglifyJS와 같은 압축기를 사용하는 경우 구문 분석된 크기는 축소 후의 크기를 보여줌. (웹팩이 트리쉐이킹을 마친 결과물이다.)
 
-## gzip size
+## Gzip size
 
 컴파일된 번들 파일을 읽고 각 모듈 소스에 대해 개별적으로 gzip을 실행해 계산한다. gzip크기는 축소 및 압축 후 크기를 표시하지만, 각 모듈을 개별적으로 압축하면 개별 소스가 함께 압축될 기회가 적기 때문에 압축 측면에서 '이익'이 적기 때문에 실제 파일 크기와 1:1 매핑이 아니다.
 

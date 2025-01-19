@@ -1,8 +1,8 @@
-# fetch API vs Axios
+# Fetch API vs Axios
 
 ---
 
-## fetch API
+## Fetch API
 
 ```javascript
 class Youtube {
@@ -52,7 +52,6 @@ class Youtube {
   }
 ```
 
-- fetch API는 예전 브라우저(익스플로러)에서 동작하지 않지만, axios는 예전 브라우저에서도 잘 동작하게 만들어졌다. 
+- fetch API는 예전 브라우저(익스플로러)에서 동작하지 않지만, axios는 예전 브라우저에서도 잘 동작하게 만들어졌다.
 - 예전 브라우저에서는 XMLHttpsRequest를 사용해주고, 요즘 브라우저에서는 fetch API를 사용해준다.
 - 일일이 json으로 return값을 변경해주지 않아도 알아서 해줌.
-

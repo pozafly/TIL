@@ -1,6 +1,6 @@
-# html image 불러오기
+# Html image 불러오기
 
-웹팩 dev server를 사용하면서, html 에서 `<img src="...">`  파일을 사용해 이미지를 불러오고 싶었다. 하지만 이미지가 불러와지지 않음. 404.
+웹팩 dev server를 사용하면서, html 에서 `<img src="…">` 파일을 사용해 이미지를 불러오고 싶었다. 하지만 이미지가 불러와지지 않음. 404.
 
 현재 내 webpack.config.js 파일을 보면,
 

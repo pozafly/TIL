@@ -4,7 +4,7 @@
 
 CSR에서 Suspense를 통해 선언적 로딩 처리를 할 때 순차적 API 호출이 발생하고 있었는데, 이를 해결하면서 30% 정도 성능 개선 효과를 얻을 수 있다.
 
-## react-router-dom 기반 CSR 라우팅
+## React-router-dom 기반 CSR 라우팅
 
 react-router-dom v6 부터 `RouterProvider` 와 `createBrowserRouter` 를 이용해 객체 형태로 라우팅을 설정할 수 있음.
 
@@ -76,7 +76,7 @@ function Home() {
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/c3e90c13-cbdc-4d93-a7f9-e5652a8fe2b9)
 
-### suspnse 옵션을 사용하지 않는 컴포넌트
+### Suspnse 옵션을 사용하지 않는 컴포넌트
 
 useQuery를 사용하는 부분의 suspense 옵션을 제거하면 두 개의 쿼리가 병렬로 실행된다.
 
@@ -136,7 +136,7 @@ useQuery 훅에 전달하던 매개 변수들을 `queries` 인자에 배열 형�
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/d147d6f8-8f84-45ec-bc0a-e70eaa9ca924)
 
-### 2. react-router-dom의 loader
+### 2. React-router-dom의 loader
 
 > `loader` 는 데이터 라우터를 사용할 경우에만 사용할 수 있다. [링크](https://reactrouter.com/en/main/routers/picking-a-router)
 
@@ -254,4 +254,3 @@ function Home() {
 ```
 
 `Await` 컴포넌트와 `useLoaderData` 훅을 추가적으로 이용해야 하는 다소 번거로운 방법이지만, 기존의 코드 구조를 유지한 상태로 데이터를 빠르게 가져올 수 있게 되었음. 그렇다면 해당 기능을 적용한 서비스는 어느 정도의 성능 개선 효과를 얻을 수 있었을까?
-

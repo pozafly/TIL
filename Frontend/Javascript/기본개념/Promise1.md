@@ -4,13 +4,13 @@
 
 ## Promise 란?
 
-> 출처 : https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#promise
+> 출처: https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#promise
 
 자바스크립트에서는 대부분의 작업들이 비동기로 이루어진다. 콜백 함수로 처리되면 되는 문제였지만 요즘엔 프론트의 규모가 커지면서 코드의 복잡도가 높아지는 상황이 발생. 콜백이 중첩되는 경우가 발생. 이를 해결할 방안으로 등장한 것이 Promise 패턴이다. Promise 패턴을 사용하면 비동기 작업들을 순차적으로 진행하거나, 병렬로 진행하는 등의 컨트롤이 보다 수월해진다. 또한 예외처리에 대한 구조가 존재하기 때문에 오류 처리 등에 대해 보다 가시적으로 관리할 수 있음. 이 Promise 패턴은 ECMAScript6 스펙에 정식으로 포함되었다.
 
 <br/>
 
-> 출처 : https://programmingsummaries.tistory.com/325
+> 출처: https://programmingsummaries.tistory.com/325
 
 비동기로 이루어진 작업을 요청하면서 콜백 함수를 등록하면, 작업이 수행되고 나서 결과를 나중에 콜백 함수를 통해 알려줌. 복잡도가 높아지는 상황에서 어려워지는 케이스는 `콜백 중첩` 되는 경우임. 콜백 지옥이라고 함.
 
@@ -90,7 +90,7 @@ Promise 선언부를 보면, 나중에 Promise 객체를 생성하기 위해 Pro
 
 ## 실행부
 
-_promise()를 호출하면 Promise 객체가 리턴 됨. 정상적으로 비동기 작업이 완료되면 then을 호출. 위의 예제는 `하나의` then API를 호출해 비동기 작업이 완료되면 결과에 따라 성공 혹은 실패 메세지를 로그에 찍어줌. 선언부의 resolve 와 reject 파라미터를 받았는데 그 파라미터가 실행부의 함수와 동일하다. 
+_promise()를 호출하면 Promise 객체가 리턴 됨. 정상적으로 비동기 작업이 완료되면 then을 호출. 위의 예제는 `하나의` then API를 호출해 비동기 작업이 완료되면 결과에 따라 성공 혹은 실패 메세지를 로그에 찍어줌. 선언부의 resolve 와 reject 파라미터를 받았는데 그 파라미터가 실행부의 함수와 동일하다.
 
 <br/>
 
@@ -137,7 +137,7 @@ requestData1().then(data => console.log(data));
 requestData2().then(data => console.log(data));
 ```
 
-위 코드에서 requestData1, requestData2 는 동시에 실행된다. 이를 묶으면, 
+위 코드에서 requestData1, requestData2 는 동시에 실행된다. 이를 묶으면,
 
 ```js
 Promise.all([requestData1(), requestData2()]).then(([data1, data2]) => {
@@ -145,9 +145,9 @@ Promise.all([requestData1(), requestData2()]).then(([data1, data2]) => {
 });
 ```
 
-또한, 여러 개의 비동기 작업들이 존재하고 이들 모두 완료되었을 때 작업을 진행하고 싶다면, all 사용. 
+또한, 여러 개의 비동기 작업들이 존재하고 이들 모두 완료되었을 때 작업을 진행하고 싶다면, all 사용.
 
-여기서 눈여겨 봐야할 것은 promise1,2에 할당된 녀석들은 return 이 붙지 않았다. 바로 new를 통해 객체를 생성해줌. 그렇다면 각자가 .then을 이어 사용할 수 없다는 말임.
+여기서 눈여겨 봐야할 것은 promise1,2에 할당된 녀석들은 return 이 붙지 않았다. 바로 new를 통해 객체를 생성해줌. 그렇다면 각자가.then을 이어 사용할 수 없다는 말임.
 
 ```javascript
 var promise1 = new Promise(function (resolve, reject) {
@@ -176,9 +176,7 @@ Promise.all([promise1, promise2]).then(function (values) {
 
 <br/>
 
-
-
-## return 하지 않고 바로 new Promise로 생성하기
+## Return 하지 않고 바로 new Promise로 생성하기
 
 항상 new Promise를 return 하는 형태로 사용하다 바로 위의 Promise.all 에 대해 설명할 때는 return이 아닌 바로 new Promise를 할당하는 형태로 사용했다. 어떤 차이가 있나?
 
@@ -213,7 +211,7 @@ var _promise = new Promise(function(resolve, reject) {
 }).then(alert).catch(alert);  // 여기 바로 이어줘야 함.
 ```
 
-이번에는 Promise.all  에 대한 예제를 Promise를 return 하는 형태로 바꿀 경우 어떻게 변하는지 확인해보면,
+이번에는 Promise.all 에 대한 예제를 Promise를 return 하는 형태로 바꿀 경우 어떻게 변하는지 확인해보면,
 
 ```javascript
 var promise1 = function() {
@@ -293,13 +291,13 @@ getData().then(v => console.log(v));
 getData().then(v => console.log(v));
 ```
 
-📌 1 : getData 함수를 처음에 호출 할 때만 requestData가 호출된다. 데이터를 가져오는 작업이 끝나면 그 결과는 `cachedPromise` 에 저장된다.
+📌 1: getData 함수를 처음에 호출 할 때만 requestData가 호출된다. 데이터를 가져오는 작업이 끝나면 그 결과는 `cachedPromise` 에 저장된다.
 
 <br/>
 
 ## 프로미스 사용시 주의점
 
-### 1. return  키워드 깜빡하지 않기
+### 1. Return 키워드 깜빡하지 않기
 
 then 메서드 내부 함수에서 return 을 깜빡하기 쉬움. then 메서드가 반환하는 프로미스 객체의 데이터는 내부 함수가 반환한 값이 됨. return 을 사용하지 않으면 프로미스 객체의 데이터는 `undefined` 가 된다.
 
@@ -333,9 +331,8 @@ requestData().then(v => {
 });
 ```
 
-- 📌 1 : then 메서드는 기존 객체를 수정하지 않고 새로운 프로미스를 반환한다. 
-
-- 📌 2 : 20이 출력되길 원한다면 requestData 함수를 다음과 같이 수정해야 함.
+- 📌 1: then 메서드는 기존 객체를 수정하지 않고 새로운 프로미스를 반환한다.
+- 📌 2: 20이 출력되길 원한다면 requestData 함수를 다음과 같이 수정해야 함.
 
   ```js
   function reqeustData() {
@@ -345,20 +342,16 @@ requestData().then(v => {
   }
   ```
 
-  
-
 <br/>
-
-
 
 > `정리`
 >
 > 비동기 작업에 거의 필수적이라고 볼 수 있는 Promsie. 항상 return new Promise만 사용하다가 return이 붙은 Promise와 함수에 할당된 Promise 객체의 차이점을 알게 되었다.
 >
-> Promise.all을 사용하려면 all 안에는 promise 객체를 실행하는 함수 자체가 들어가야함을 배웠다. 
+> Promise.all을 사용하려면 all 안에는 promise 객체를 실행하는 함수 자체가 들어가야함을 배웠다.
 >
 > [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise) 에 보면 Promise.all에 대한 설명이 조금 더 나와있는데,
 >
 > Promise.all(iterable) 이라고 함. `iterable` 내의 모든 프로미스가 이행한 뒤, 어떤 프로미스가 거부하면 즉시 거부하는 프로미스를 반환함. 반환된 프로미스가 이행하는 경우 `iterable` 내의 프로미스가 결정한 값을 모은 배열이 이행 값이다. 반환된 프로미스가 거부하는 경우 `iterable` 내의 거부한 프로미스의 이유를 그대로 사용함. 이 메서드는 여러 프로미스의 결과를 모을 때 유용.
 
-## 
+##

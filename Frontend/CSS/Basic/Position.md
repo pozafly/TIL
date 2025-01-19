@@ -4,7 +4,7 @@
 
 <br/>
 
-## position
+## Position
 
 ```css
 .box {
@@ -28,7 +28,7 @@ position은 이름 그대로 위치를 결정하는 속성. 요소의 위치를 
 | fixed    | 윈도우(브라우저 창)를 기준으로 절대 위치를 지정해 요소를 그 위치에 고정(fix)시킴 |
 | sticky   | 지정된 위치에 뷰포트가 도달했을 때, 요소가 그 위치에 고정(fix)됨 |
 
-### relative
+### Relative
 
 현재 위치를 기준으로 상대 위치를 지정.
 
@@ -51,7 +51,7 @@ position은 이름 그대로 위치를 결정하는 속성. 요소의 위치를 
 
 <br/>
 
-### absolute
+### Absolute
 
 absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신의 위치를 지정할 수 있게 해준다.
 
@@ -77,7 +77,7 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 
 <br/>
 
-### fixed
+### Fixed
 
 브라우저 화면(윈도우)을 기준으로 요소를 정해진 위치에 고정할 수 있다.
 
@@ -104,7 +104,7 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 
 <br/>
 
-### sticky
+### Sticky
 
 지정된 기준점 top, left, left, right 등으로 설정해둔 위치)에 도달했을 때, 그 기준점에 요소를 고정(fix) 시켜줌.
 
@@ -134,4 +134,3 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 > - 기준점에 도달했을 때 요소가 그 위치(기준점)에 고정(fix)됨.
 > - top, bottom, right, left 지정 가능.
 > - z-index 지정 가능.
-

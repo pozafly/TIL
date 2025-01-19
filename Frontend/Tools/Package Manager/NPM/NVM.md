@@ -2,13 +2,13 @@
 
 <br/>
 
-node version manager : node.js 버전을 관리해줌.
+node version manager: node.js 버전을 관리해줌.
 
 # 설치
 
 https://github.com/nvm-sh/nvm
 
- 여기서 readme.md에 
+ 여기서 readme.md에
 
 ```shell
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
@@ -35,4 +35,4 @@ $ vi ~/.bashrc
 
 그리고 `nvm -v` 하면 nvm의 버전이 나오는데 나오면 성공.
 
-일반적으로 nvm install 버전... 이렇게하면 버전이 깔리기도 하고 그 버전으로 바꿔지기도 함.
+일반적으로 nvm install 버전… 이렇게하면 버전이 깔리기도 하고 그 버전으로 바꿔지기도 함.

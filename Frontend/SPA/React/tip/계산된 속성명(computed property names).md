@@ -33,4 +33,4 @@ class MyComponent extends React.Component {
 }
 ```
 
-📌  setState 호출 시, 계산된 속성명을 사용할 수 있다. 만약 계산된 속성명을 사용하지 않았다면 앞의 코드는 좀 더 복잡했을 것임.
+📌 setState 호출 시, 계산된 속성명을 사용할 수 있다. 만약 계산된 속성명을 사용하지 않았다면 앞의 코드는 좀 더 복잡했을 것임.

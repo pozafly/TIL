@@ -1,4 +1,4 @@
-# lib 배포2
+# Lib 배포2
 
 ## 배포 환경 잡기
 
@@ -76,7 +76,7 @@ export default defineConfig({
 
 rollupOptions는 필요 없으니 지워주자.
 
-라이브러리를 작성 (src/main.ts 파일 작성) 후 
+라이브러리를 작성 (src/main.ts 파일 작성) 후
 
 ```js
 // src/main.ts
@@ -132,7 +132,7 @@ export {
 
 <br/>
 
-## test
+## Test
 
 ```sh
 $ yarn workspace @pozafly/mini-query add vitest -D
@@ -185,7 +185,7 @@ export default defineConfig({
 
 <br/>
 
-## demo 만들기
+## Demo 만들기
 
 root에 apps 폴더를 만들고 yarn create vite로 example을 만들자. root의 package.json에 workspaces에 `apps/*` 를 넣어 워크스페이스를 잡아주자.
 
@@ -272,7 +272,7 @@ describe('click()', () => {
 
 <br/>
 
-## lib typescript 개발의 불편함
+## Lib typescript 개발의 불편함
 
 위의 경우를 생각해보면, 3가지 과정이 있다.
 
@@ -299,5 +299,3 @@ apps/docs 디렉토리를 만들고 터미널 경로 이동한다.
 ### 배포
 
 vercel에 docs를 배포하면 된다.
-
-

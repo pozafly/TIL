@@ -1,4 +1,4 @@
-# lib 배포
+# Lib 배포
 
 ```json
 // package.json
@@ -113,11 +113,11 @@ export const divide = (a, b) => a / b;
 
 이러면 2가지 cjs, mjs 모두를 지원하는 라이브러리가 되었다.
 
-- `main` : require 하거나 import 할 때 사용할 파일을 지정한다. CommonJS 형식인 index.cjs가 기본 진입점임
-- `module` : ESM 형식으로 패키지를 사용할 때 기본 진입점. import 할 때 이 파일이 로드된다.
-- `exports` : 모듈을 외부에서 사용할 때 진입점을 더 세밀하게 제어할 수 있다. ESM과 CJS 형식을 모두 지원할 때 유용하다.
-  - `requrie` : CJS 형식으로 불러올 때임.
-  - `import` : ESM 형식으로 불러올 때임.
+- `main`: require 하거나 import 할 때 사용할 파일을 지정한다. CommonJS 형식인 index.cjs가 기본 진입점임
+- `module`: ESM 형식으로 패키지를 사용할 때 기본 진입점. import 할 때 이 파일이 로드된다.
+- `exports`: 모듈을 외부에서 사용할 때 진입점을 더 세밀하게 제어할 수 있다. ESM과 CJS 형식을 모두 지원할 때 유용하다.
+  - `requrie`: CJS 형식으로 불러올 때임.
+  - `import`: ESM 형식으로 불러올 때임.
 
 <br/>
 
@@ -147,7 +147,7 @@ console.log(ver); // cjs
 
 <br/>
 
-## type 지원
+## Type 지원
 
 index.d.ts 파일을 만들어 타입을 지정해보자.
 
@@ -205,7 +205,7 @@ $ npx tsdx create mylib
 
 <br/>
 
-## monorepo
+## Monorepo
 
 라이브러리 조각 외 다른 필요한 파일이 많이 있다. 예를 들면 데모 앱 같은 것(npm 패키지를 설치해서 실제로 사용한 github에 올린 소스 등). 웹 사이트를 만들어야 하는 경우도 있음. 그리고 라이브러리를 소개하는 web site도 필요할 것임.
 
@@ -229,10 +229,10 @@ monorepo는 하나의 repository에 여러 개의 프로젝트를 모아두는 �
 }
 ```
 
-root에 생성한 곳에는 
+root에 생성한 곳에는
 
-- `private: true` : 이 전체 패키지는 npm에 배포되어서는 안된다는 의미다. 하나 하나 각각의 패키지는 배포될 수 있어도, 이건 root이기 때문에 private로 하는 것임.
-- workspaces : 워크스페이스 설정이다. library 코드와 demo 코드가 이 패키지를 묶는다.
+- `private: true`: 이 전체 패키지는 npm에 배포되어서는 안된다는 의미다. 하나 하나 각각의 패키지는 배포될 수 있어도, 이건 root이기 때문에 private로 하는 것임.
+- workspaces: 워크스페이스 설정이다. library 코드와 demo 코드가 이 패키지를 묶는다.
 
 이 구조에서 demo의 package.json에
 
@@ -293,4 +293,3 @@ console.log(add(1, 2));
 잘 실행되는걸 볼 수 있음.
 
 웹 사이트는 [docusaurus](https://docusaurus.io/ko/), [vitepress](https://vitepress.dev/), [nextra](https://nextra.site/) 같은 것으로 만들어서, 배포할 수도 있음.
-

@@ -160,11 +160,11 @@ const App = () => {
 
 ## 자잘 팁
 
-### throttle, debounce 와의 차이점
+### Throttle, debounce 와의 차이점
 
 이벤트 지연 및 제한은 가능하지만, UI 블로킹의 근원적 문제는 해결 불가능. 이벤트 실행 시점/횟수 줄인다 해도 한 번 실행이 되는 순간 블로킹이 되는 것은 여전하기 때문임. 근본적 원인을 해결하기 위해서는 이벤트 우선순위를 나누어 유저 인터렉션이 일어났을 때 해당 이벤트를 우선적으로 처리해 화면이 멈춘 것 처럼 보이지 않게 해야 한다.
 
-### startTransition에 전달된 함수는 즉시 실행된다.
+### startTransition에 전달된 함수는 즉시 실행된다
 
 ```js
 console.log(1);
@@ -216,5 +216,3 @@ useDeferredValue도 useTransition과 유사하게 낮은 우선순위를 지정�
 3. `transition` 표시된 setState는 다른 setState 업데이트시 중단된다.
 4. `transition` 표시된 상태 업데이트는 `Suspense`로 컨텐츠를 숨기지 않고 이전 컨텐츠를 계속 표시한다.
 5. fiber 엔진을 통해 `transition`된 상태와 다른 상태의 스케줄링이 가능해졌다.
-
-

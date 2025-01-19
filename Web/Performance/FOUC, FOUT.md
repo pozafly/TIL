@@ -2,12 +2,12 @@
 
 > [출처](https://tooo1.tistoryㅇ.com/608)
 
-## FOUC(Flash of Unstyled Content)와 FOUT(Flash of Unstyled Text)
+## FOUC(Flash Of Unstyled Content)와 FOUT(Flash of Unstyled Text)
 
 웹 페이지 로딩 과정에서 일시적으로 스타일이 적용되지 않은 콘텐츠와 텍스트를 사용자에게 보여주는 현상이다. 두 현상 모두 스타일 로드 및 적용 시점과 브라우저 렌더링 시점 간 차이 때문에 발생한다.
 
-- FOUS : 일반적인 콘텐츠
-- FOUT : 웹 폰트
+- FOUS: 일반적인 콘텐츠
+- FOUT: 웹 폰트
 
 에 대한 스타일 적용 지연 때문에 발생한다.
 
@@ -142,4 +142,3 @@ JavaScript 가 페이지 스타일 적용을 차단하거나 렌더링을 지연
 초기 로딩 시 콘텐츠를 숨기고, 페이지의 스타일과 스크립트가 완전히 로드된 후 콘텐츠를 표시하는 것이다. 예를 들어, 페이지 최상위 요소에 `opacity: 0` 또는 `display: none` 같은 스타일을 적용해 콘텐츠를 숨길 수 있음. 그런 다음 JavaScript를 사용해 페이지 로드가 완료되면 스타일을 제거 후 콘텐츠를 표시할 수 있음. 이 방법은 FOUC 현상을 완전히 제거할 수 있지만, 사용자가 빈 화면을 잠시 볼 수 있으므로 적절한 로딩 인디케이터를 제공하는게 좋다.
 
 ### SSR 사용
-

@@ -1,4 +1,4 @@
-# filter
+# Filter
 
 vue에서 filter는 텍스트 형식화를 적용할 수 있게 해준다.
 
@@ -82,7 +82,7 @@ new Vue({
 }).$mount('#app');
 ```
 
-### 사용할 .vue 파일
+### 사용할.vue 파일
 
 ```js
 // template 선언문에,

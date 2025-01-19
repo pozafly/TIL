@@ -1,4 +1,4 @@
-# object
+# Object
 
 ```ts
 const x: {} = 'hello';

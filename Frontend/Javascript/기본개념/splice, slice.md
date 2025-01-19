@@ -1,10 +1,10 @@
-# splice, slice
+# Splice, slice
 
 맨날 헷갈리는 splice와 slice
 
 > [출처](https://www.daleseo.com/js-array-slice-splice/)
 
-## slice
+## Slice
 
 배열로 부터 특정 범위를 복사한 값들을 담고 있는 **새로운 배열**을 만드는데 사용.
 
@@ -39,7 +39,7 @@ slice 함수는 `splice`와 달리 아무리 많이 호출해도 원본 배열�
 
 <br/>
 
-## splice
+## Splice
 
 다목적으로 사용될 수 있다. 이 함수로는 배열로부터 특정 범위를 삭제하거나 새로운 값을 추가 또는 기존 값을 대체할 수 있다.
 
@@ -74,6 +74,6 @@ splice 함수를 사용할 때 주의 점은 삭제된 값을 담고 있는 새�
 
 <br/>
 
-## slice vs splice
+## Slice vs splice
 
 이름이 비슷하기도 하고, 동일한 목적을 위해 아무거나 사용해도 무방한 경우가 있기 때문임. 항상 같은 배열을 반환하는 slice 함수와 달리 splice는 계속해서 배열을 깎아먹기 때문에 동일한 인자로 여러 번 함수를 호출 했을 때 매번 다른 배열이 반환되게 된다.

@@ -64,7 +64,7 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 
 ## 정적 CSS 추출
 
-정적 추출은, JS 파일에 정의된 모든 스타일을 추출하고 프로덕션용으로 빌드할 때 `.css`  일반 파일을 생성하는 것이다. 이 방법을 사용하면 문서에 일반 CSS 스타일 시트로 스타일을 포함할 수 있다.
+정적 추출은, JS 파일에 정의된 모든 스타일을 추출하고 프로덕션용으로 빌드할 때 `.css` 일반 파일을 생성하는 것이다. 이 방법을 사용하면 문서에 일반 CSS 스타일 시트로 스타일을 포함할 수 있다.
 
 ```html
 <!-- styles are extracted as static .css files -->
@@ -93,7 +93,7 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 
 이 질문에 답하려면 브라우저가 페이지 리소스를 가져오기 위해 서버에서 보내는 **HTTP 요청**을 살펴봐야 한다. 각 HTTP 요청은 여러 [단계를](https://developer.chrome.com/docs/devtools/network/reference/#timing-preview) 거쳐야 하지만, 그 중 두 단계는 페이지 로드 성능을 연구할 때 관련성이 있고 중요한 역할을 한다.
 
-1. 네트워킹 조건(DNS, TCP, SSL), 대기 시간 및 서버 응답에 따라 달라지는[ **TTFB(Time to First Byte)**](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte)
+1. 네트워킹 조건(DNS, TCP, SSL), 대기 시간 및 서버 응답에 따라 달라지는[**TTFB(Time to First Byte)**](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte)
 2. **콘텐츠 다운로드** 시간은 리소스 크기와 인터넷 연결 대역폭에 따라 달라진다.
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/859527b6-614c-4470-92d3-219f4dd903db)
@@ -123,7 +123,7 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 1. 브라우저는 HTML 파일을 다운로드 하고 구문분석한다.
 2. 그런다음, JavaScript 파일 즉, `bundle.js` 및 `library_runtime.js` 를 로드한다.
 
-body 문서의 끝에 .js 파일이 있고, `<head>` 섹션에 다른 리소스가 없다면 HTML이 구문 분석 되자마자 화면에 **페이지를 그리기 시작할 수 있다**.
+body 문서의 끝에.js 파일이 있고, `<head>` 섹션에 다른 리소스가 없다면 HTML이 구문 분석 되자마자 화면에 **페이지를 그리기 시작할 수 있다**.
 
 ---
 
@@ -167,4 +167,3 @@ body 문서의 끝에 .js 파일이 있고, `<head>` 섹션에 다른 리소스�
 - 새 빌드를 얼마나 자주 릴리즈 해 캐시를 무효화 하나?
 - 스타일이나 구성 요소/어플리케이션 코드 중 무엇을 더 자주 변경하는가?
 - (저사양) 모바일 장치에 맞게 최적화 해야 하나?
-

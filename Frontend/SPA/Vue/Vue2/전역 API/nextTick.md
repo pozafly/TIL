@@ -1,6 +1,6 @@
 # nextTick
 
-> 출처 : https://kr.vuejs.org/v2/api/index.html#Vue-nextTick
+> 출처: https://kr.vuejs.org/v2/api/index.html#Vue-nextTick
 
 - Vue.nextTick([callback, context])
 - 사용방법:
@@ -25,7 +25,7 @@ Vue.nextTick()
 
 ## 라이프 사이클과 nextTick
 
-> 출처 : https://iam-song.tistory.com/48
+> 출처: https://iam-song.tistory.com/48
 
 라이프 사이클은 다음과 같은 순서임.
 
@@ -85,6 +85,6 @@ vue component in nextTick > <div>...</div> true  // 🔥
 vue component 삭제 > <div>...</div> true
 ```
 
-- 🔥 : 이 부분. mounted 후에 찍힌다.
+- 🔥: 이 부분. mounted 후에 찍힌다.
 
 즉, nextTick은 DOM 업데이트가 된 후에 콜백으로 선언된 함수가 실행하도록 돕는 메서드임. 이 메서드를 통해 dom이 그려지기 전의 시점에서도 에러 없이 dom을 핸들링할 수 있다.

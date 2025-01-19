@@ -56,7 +56,7 @@ document.addEventListener("visibilitychange", () => {
 
 ### 2) 이벤트
 
-#### (1) visibilitychange event
+#### (1) Visibilitychange event
 
 페이지의 콘텐츠가 숨겨지거나 표시될 때 이벤트가 발생한다.
 

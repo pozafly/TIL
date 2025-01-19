@@ -1,4 +1,4 @@
-# mutate, mutateAsync
+# Mutate, mutateAsync
 
 > [출처](https://itchallenger.tistory.com/587)
 
@@ -38,4 +38,3 @@ const onSubmit = async () => {
 mutateAsync를 통해 오류처리하려면 다음과 같이 사용할 수 있다. `mutateAsync().catch(noop)`
 
 하지만, mutateAsync가 필요할 때도 있는데, Promise가 반드시 필요한 경우에만 사용해야 한다.
-

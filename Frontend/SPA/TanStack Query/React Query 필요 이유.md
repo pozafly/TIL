@@ -33,7 +33,7 @@ effect는 `category` 가 변경될 때마다 다시 fetch 하도록 한다. 하�
 
 ![image](https://github.com/user-attachments/assets/67350c0a-8f94-4d0c-bd3f-17650baff9f1)
 
-결국 `category` 의 상태는 `movies` 인데 실제 렌더링 하는 데이터는 `books` 인,  일관되지 않은 상태와 함께 하게 된다.
+결국 `category` 의 상태는 `movies` 인데 실제 렌더링 하는 데이터는 `books` 인, 일관되지 않은 상태와 함께 하게 된다.
 
 그럼 clean up 함수와 `ignore` 라는 변수로 해결할 수 있다고 한다.
 
@@ -154,7 +154,7 @@ function Bookmarks({ category }) {
 
 <br/>
 
-## 4. category가 변경될 때 Data와 Error가 재설정되지 않음
+## 4. Category가 변경될 때 Data와 Error가 재설정되지 않음
 
  상태 값이며 cetegory가 변경되어도 재설정되지 않는다. 즉, 카테고리 하나를 fetch 하다 실패하고, 다른 카테고리로 바꿔 성공하면 상태는 아래와 같은 것이다.
 
@@ -347,4 +347,3 @@ function Bookmarks({ category }) {
 ```
 
 `queryFn`에 들어가는 `signal`을 `fetch`에 넘기면 카테고리 변경 시 요청이 자동으로 중단된다.
-

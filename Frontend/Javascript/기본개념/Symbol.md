@@ -1,3 +1,5 @@
+# Symbol
+
 ## 요약
 
 - Symbol은 primitive type으로 ES6에서 추가되었다.
@@ -8,8 +10,6 @@
 - 라이브러리 등의 meta-level한 property로 사용할 수 있다.
 - Symbol 레지스트리가 있어 영역 간에 고유한 Symbol을 사용할 수 있다.
 - react에서는 Symbol이 JSON에 담기지 않는 특성을 이용해 xss 공격을 방어하고 있다.
-
-
 
 ## 1. 새로운 기본형 타입
 
@@ -72,7 +72,7 @@ console.log(obj[FOO]()); // bar
 - 프로퍼티 키는 String 또는 Symbol 타입이 될 수 있다.
 - 프로퍼티 이름은 String이다.
 
-하지만 Symbol은 열거(enumerating) 가능할까? 
+하지만 Symbol은 열거(enumerating) 가능할까?
 
 ```js
 let obj = {
@@ -85,7 +85,7 @@ Object.defineProperty(obj, 'nonEnum', { enumerable: false });
 
 nonEnum이란 값에 Object.defineProperty() 메서드를 사용해, enumerable을 false값을 주었다. 그러면 nonEnum은 열거 불가능하다. [유사 배열 객체와 배열의 차이점](https://pozafly.github.io/javascript/array-is-object/#%EC%9C%A0%EC%82%AC-%EB%B0%B0%EC%97%B4-%EA%B0%9D%EC%B2%B4%EC%99%80-%EB%B0%B0%EC%97%B4%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)에서 Object.getOwnPropertyDescriptors() 메서드를 사용해 프로퍼티의 설명자(descriptor 또는 flag라 불리움)를 알아본 적이 있다. 이때 return 되는 프로퍼티의 설명자 중 enumerable이 있었다. 열거 가능한지의 여부를 나타낸다.
 
-※ `enumerable`은, 후술할 `iterator`와는 다르다. enumerable은 `for ... in` 문법으로 객체를 순회할 경우와 관계가 있다. [참고](https://stackoverflow.com/questions/68647965/what-is-the-difference-between-iterable-and-enumerable-in-js-i-am-going-through)
+※ `enumerable`은, 후술할 `iterator`와는 다르다. enumerable은 `for … in` 문법으로 객체를 순회할 경우와 관계가 있다. [참고](https://stackoverflow.com/questions/68647965/what-is-the-difference-between-iterable-and-enumerable-in-js-i-am-going-through)
 
 어쨌든 nonEnum 프로퍼티를 열거 불가능하게 만들었으니 반복했을 때 어떤 결과가 나타나는지 보자.
 
@@ -146,7 +146,7 @@ function getComplement(color) {
 }
 ```
 
-`getComplement()` 함수는 color를 받아서 상수 값를 return한다. 하지만 이렇게 하더라도 여전히 상수로서의 역할을 하지 못하고 혼란을 줄 수 있다. 예를 들어, 코드에서 아래와 같이 선언했다고 하자. 
+`getComplement()` 함수는 color를 받아서 상수 값를 return한다. 하지만 이렇게 하더라도 여전히 상수로서의 역할을 하지 못하고 혼란을 줄 수 있다. 예를 들어, 코드에서 아래와 같이 선언했다고 하자.
 
 ```js
 var MOOD_BLUE = 'blue';
@@ -187,11 +187,11 @@ getComplement(MOOD_BLUE);
 
 ### 3.1 객체에 내재화 된 프로퍼티(private property)
 
-믹스인은 객체 또는 프로토타입의 기능을 보강하기 위해 구성할 수 있는 객체 조각(메서드 집합)이다. 메서드에 Symbol이 key로 있으면 더 이상 다른 메서드(다른 믹스인 또는 추가된 개체)와 충돌할 수 없다. 
+믹스인은 객체 또는 프로토타입의 기능을 보강하기 위해 구성할 수 있는 객체 조각(메서드 집합)이다. 메서드에 Symbol이 key로 있으면 더 이상 다른 메서드(다른 믹스인 또는 추가된 개체)와 충돌할 수 없다.
 
 public 메서드는 믹스인이 추가된 객체를 불러다 쓸 때 함께 사용할 수 있다. 사용 편의성을 위해 이러한 메서드에 String key가 있다. 내부(private) 메서드는 믹스인에게만 알려지거나, 믹스인과 통신하는 데만 필요하다. Symbol를 키로 사용하여 private한 key를 얻을 수 있다. 가령, class 내부에서 class의 변수를 조작하거나 하는 외부에서 사용하지 않는 private 메서드와 비슷한 개념이다.
 
-Symbol은 객체의 Symbol 값 프로퍼티 키를 쉽게 찾을 수 있기 때문에 진정한 프라이버시를 제공하지 않는다. 그러나 프로퍼티 키가 다른 프로퍼티 키와 충돌할 수 없다는 보장만으로도 충분한 경우가 많다. 외부에서 개인 데이터에 액세스하는 것을 진정으로 방지하려면 WeakMap 또는 클로저를 사용해야 한다. 
+Symbol은 객체의 Symbol 값 프로퍼티 키를 쉽게 찾을 수 있기 때문에 진정한 프라이버시를 제공하지 않는다. 그러나 프로퍼티 키가 다른 프로퍼티 키와 충돌할 수 없다는 보장만으로도 충분한 경우가 많다. 외부에서 개인 데이터에 액세스하는 것을 진정으로 방지하려면 WeakMap 또는 클로저를 사용해야 한다.
 
 예를 들어:
 
@@ -244,7 +244,7 @@ const user = new Login('a', 'b');
 
 ---
 
-### 3.2 meta-level 프로퍼티의 Symbol
+### 3.2 Meta-level 프로퍼티의 Symbol
 
 Symbol은 고유한 키이기 때문에 메타 수준(meta-level)의 키와 일반 키가 충돌되지 않는다. 따라서 '일반' 프로퍼티 키와 다른 수준의 공용 속성의 키로 적합하다. 메타 수준 프로퍼티의 한 가지 예시는, 객체가 라이브러리에서 처리하는 방식을 사용자가 커스텀 할 수 있도록 구현할 수 있는 메서드다. Symbol 키를 사용하면 라이브러리의 normal(일반) 메서드를 custom 메서드로 착각하지 않도록 방지할 수 있다.
 
@@ -285,9 +285,9 @@ for (let x of obj) {
 // world
 ```
 
-obj는 객체다. 따라서 원래는 iterable이 없기 때문에 `for ... of` 문법을 사용하지 못한다. 배열은 iterable이 존재한다. 따라서 `for ... of` 문법을 사용해 반복 가능하다. 위 코드는 obj 객체에 iterator를 강제로 주입한 사례다. 우리는 iterable과 `for ... of` 가 내부적으로 어떻게 구현되어있는지 알지 못한다. 하지만 obj 객체에서도 `for ... of` 를 통해 반복하고 싶다. iterable을 사용하고 싶다. 즉, 개발자(사용자)가 커스텀하게 iterator를 구현하도록 JavaScript에서 열어둔 것이다. `for ... of` 의 내부 구현을 몰라도 말이다.
+obj는 객체다. 따라서 원래는 iterable이 없기 때문에 `for … of` 문법을 사용하지 못한다. 배열은 iterable이 존재한다. 따라서 `for … of` 문법을 사용해 반복 가능하다. 위 코드는 obj 객체에 iterator를 강제로 주입한 사례다. 우리는 iterable과 `for … of` 가 내부적으로 어떻게 구현되어있는지 알지 못한다. 하지만 obj 객체에서도 `for … of` 를 통해 반복하고 싶다. iterable을 사용하고 싶다. 즉, 개발자(사용자)가 커스텀하게 iterator를 구현하도록 JavaScript에서 열어둔 것이다. `for … of` 의 내부 구현을 몰라도 말이다.
 
-여기서 사용된 `iterable, iterator, .next()` 는 다음 포스팅에서 더 상세하게 알아보자.
+여기서 사용된 `iterable, iterator,.next()` 는 다음 포스팅에서 더 상세하게 알아보자.
 
 <br/>
 
@@ -321,7 +321,7 @@ obj는 객체다. 따라서 원래는 iterable이 없기 때문에 `for ... of` 
 </body>
 ```
 
-HTML 상의 영역과, iframe 내부 영역은 다른 영역이다. 하지만, Symbol은 동일한 녀석이다. iframe 내부에서 지금 선언된 상위 `test()` 메서드의 인자로 `[]` 배열 리터럴을 넘겼다. 
+HTML 상의 영역과, iframe 내부 영역은 다른 영역이다. 하지만, Symbol은 동일한 녀석이다. iframe 내부에서 지금 선언된 상위 `test()` 메서드의 인자로 `[]` 배열 리터럴을 넘겼다.
 
 문제는 각 영역에 고유한 Array 복사본이 있고, 객체가 개별 ID를 가지고 있기 때문에 본질적으로 동일한 객체임에도 불구하고 이러한 로컬 복사본이 서로 다른 것으로 간주된다는 것이다. 마찬가지로 라이브러리 및 사용자 코드는 영역당 한 번 로드되며, 각 영역에는 동일한 개체의 다른 버전이 있다.
 
@@ -329,7 +329,7 @@ HTML 상의 영역과, iframe 내부 영역은 다른 영역이다. 하지만, S
 
 Symbol은 개별 ID를 가지므로 다른 primitive type의 값만큼 원활하게 영역을 가로질러 이동하지 **않는다**. 이는 영역 간에 작동해야 하는 `Symbol.iterator`와 같은 심볼의 문제다. 객체가 한 영역에서 반복 가능하면 다른 영역에서도 반복 가능해야 한다. 서로 다른 영역 Symbol이 JavaScript 엔진에서 제공되는 경우(Symbol.iterator와 같이 빌트인인 경우) 엔진은 각 영역에서 동일한 값이 사용되는지 확인할 수 있다.
 
-그러나, 라이브러리의 경우는 다르다. 이때 `심볼 레지스트리`를 활용할 수 있다.  심볼 레지스트리는 쉽게 말해서 다른 영역간의 전역 객체라고 생각하면 쉽다. 심볼 레지스트리에 심볼을 저장하고, 꺼내와서 쓸 수 있다.
+그러나, 라이브러리의 경우는 다르다. 이때 `심볼 레지스트리`를 활용할 수 있다. 심볼 레지스트리는 쉽게 말해서 다른 영역간의 전역 객체라고 생각하면 쉽다. 심볼 레지스트리에 심볼을 저장하고, 꺼내와서 쓸 수 있다.
 
 ``` js
 const s1 = Symbol.for('foo');
@@ -414,7 +414,7 @@ Well-Known 심볼의 가장 대표적인 예시가 바로 **Symbol.iterator**이
 
 <br/>
 
-## 7. react에서 Symbol을 활용하는 방법
+## 7. React에서 Symbol을 활용하는 방법
 
 react에서 jsx를 사용하면 컴포넌트를 호출할 때마다 `React.createElement()` 메서드를 사용하고 있는 것이다.
 
@@ -480,4 +480,3 @@ JSON에는 `Symbol`를 넣을 수 없다. **즉, 서버에 보안 구멍이 생�
 > - <https://meetup.nhncloud.com/posts/228>
 >
 > - <https://velog.io/@scamera/%EC%99%9C-React-Element%EC%97%90%EB%8A%94-typeof-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EA%B0%80-%EC%9E%88%EC%9D%84%EA%B9%8C>
-

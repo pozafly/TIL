@@ -1,4 +1,4 @@
-# provider pattern
+# Provider pattern
 
 > [출처](https://velog.io/@kdeun1/Vue-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C%EB%8A%94-Provider-Pattern%EC%9D%84-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%99%9C%EC%9A%A9%ED%95%A0%EA%B9%8C)
 
@@ -129,9 +129,8 @@ const mv = inject(
 
 <br/>
 
-Provider  패턴을 안좋은 시선으로 바라보는 것도 존재하고 실제로 공식 문서에서도 provide를 사용할 때 주의하라는 내용도 존재함.
+Provider 패턴을 안좋은 시선으로 바라보는 것도 존재하고 실제로 공식 문서에서도 provide를 사용할 때 주의하라는 내용도 존재함.
 
 중간 컴포넌트를 거치지 않는 부분에서는 장점으로 바라볼 수 있으나, 상태 관리 라이브러리를 사용하지 않는다는 부분 때문에 데이터 관리적 측면에서는 불편하다는 단점도 존재한다.
 
 개인적으로 **격리된 컨텍스트가 명확하다면** 비즈니스 로직이 없는 컴포넌트에서는 블랙박스처럼 사용하고 활용하는데 있어 매력적인 패턴이라 생각.
-

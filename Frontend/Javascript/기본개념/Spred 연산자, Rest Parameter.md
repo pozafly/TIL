@@ -2,7 +2,7 @@
 
 ※ react를 배우면서 알게된 [Spread Operator](https://github.com/pozafly/TIL/blob/main/react/99.0%20Object%20%EA%B0%80%EB%B3%80%EC%84%B1(Spread%20Operator).md) 여기에 더 깊은 내용이 있다. 얕은 복사가 뭔지, 껍데기만 새로 만드는 개념. Spread Opertor를 다시 익히려고 들어왔으면 이걸 꼭 봐야한다.
 
->[출처](https://velog.io/@chlwlsdn0828/Js-Spread-%EC%97%B0%EC%82%B0%EC%9E%90-Rest-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0), [출처2](https://soopdop.github.io/2020/12/02/rest-and-spread-in-javascript/)
+> [출처](https://velog.io/@chlwlsdn0828/Js-Spread-%EC%97%B0%EC%82%B0%EC%9E%90-Rest-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0), [출처2](https://soopdop.github.io/2020/12/02/rest-and-spread-in-javascript/)
 
 <br/>
 
@@ -16,7 +16,7 @@ ES6 에서부터 사용할 수 있다.
 
 ## Spred 연산자
 
-Spread 연산자는 `...` 을 통해 사용한다.
+Spread 연산자는 `…` 을 통해 사용한다.
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
@@ -110,7 +110,7 @@ const obj1 = {
 
 ## Rest 파라미터
 
-Rest 파라미터도 마찬가지로 `...`을 통해 나타낸다.
+Rest 파라미터도 마찬가지로 `…`을 통해 나타낸다.
 
 spred 연산의 반대다. spread 연산은 배열을 개별적으로 전개하지만 Rest 파라미터는 개별을 배열로 묶어준다. 나머지 인자들을 배열로 합쳐서 받을 수 있게 해주는 것.
 
@@ -166,7 +166,7 @@ console.log(firstElement) // "a"
 console.log(rest) // ["b", "c", "d"]
 ```
 
-답은 rest parameter임. destructuring과 함께 쓰였다. 잘 보면, [,,,]`= arr` 구문에서 구조분해 할당(풀어줌-spread)이 일어남. 후에 `...rest` 로 묶어줌. 즉 풀고 묶는 행위가 한번에 일어났다. 
+답은 rest parameter임. destructuring과 함께 쓰였다. 잘 보면, [,,,]`= arr` 구문에서 구조분해 할당(풀어줌-spread)이 일어남. 후에 `…rest` 로 묶어줌. 즉 풀고 묶는 행위가 한번에 일어났다.
 
 또한 객체에서도 똑같이 적용된다. 한 객체에서 특정 property를 뺀 새로운 객체를 만들 때 유용하다.
 
@@ -186,4 +186,3 @@ console.log(obj2);  // { a: 1, b: 2 }
 - spread operator는 기존의 변수를 사용하고, rest parameter는 새로운 변수를 만든다.
 
 > *spread operator는 기존의 변수를* **펼쳐서** **주는** *쪽이고, rest parameter는 여러개의 인자를* **받고** *그것들을* **합쳐서** *새로운 배열/객체를 만든다.*
-

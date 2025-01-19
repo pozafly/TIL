@@ -1,6 +1,6 @@
 # Observer 없애기(feat. 성능)
 
-> 출처 : [Vue 성능 관련 포스팅](https://kdydesign.github.io/2019/04/10/vuejs-performance/)
+> 출처: [Vue 성능 관련 포스팅](https://kdydesign.github.io/2019/04/10/vuejs-performance/)
 
 Vue.js를 사용한 프로젝트에서 성능 관련 이슈에 대해 설명하고 있다. 대용량 데이터를 다뤄야 할 때 성능을 위한 최적화가 필요하다는 것.
 
@@ -18,7 +18,7 @@ JSON.parse(JSON.stringify(this.items));
 
 <br/>
 
-Vue에서 관리하는 객체는 Observer라는 객체 감지 기능이 함께 따라붙는다. 이는 Vue의 반응형과 연관이 있다. Vue의 `data` 에 매핑된 객체는 data가 변할 때 버추어 돔을 사용해 화면을 다시 그려주기 때문에 반드시 필요한 녀석이라고 볼 수 있는데 
+Vue에서 관리하는 객체는 Observer라는 객체 감지 기능이 함께 따라붙는다. 이는 Vue의 반응형과 연관이 있다. Vue의 `data` 에 매핑된 객체는 data가 변할 때 버추어 돔을 사용해 화면을 다시 그려주기 때문에 반드시 필요한 녀석이라고 볼 수 있는데
 
 ![반응성 주기](https://vuejs.org/images/data.png)
 
@@ -34,25 +34,23 @@ Vue에서 관리하는 객체는 Observer라는 객체 감지 기능이 함께 �
 
 아래는 data를 3만건 넣고 돌린 결과이다.
 
-### Object.freeze() 사용하지 않음 - 1288ms
+## Object.freeze() 사용하지 않음 - 1288ms
 
 <img width="1330" alt="nofreeze2" src="https://user-images.githubusercontent.com/59427983/132081449-76af9dad-1044-4bbf-b0fb-e214b548967e.png">
 
-### Object.freeze() 사용 - 1186ms
+## Object.freeze() 사용 - 1186ms
 
 <img width="1374" alt="freeze2" src="https://user-images.githubusercontent.com/59427983/132081465-03e66c8d-6f90-46b5-9c1c-9bdc067608e6.png">
 
 어쨌든 이번 실험에서는 성능이 약간 좋아졌다는 것을 알 수 있다. console을 찍어 봤을 때도 freeze를 사용한 객체는 Observer가 붙어있지 않다.
 
-### Object.freeze() 사용하지 않음 - 1288ms
+## Object.freeze() 사용하지 않음 - 1288ms
 
 <img width="446" alt="스크린샷 2021-09-04 오후 1 02 55" src="https://user-images.githubusercontent.com/59427983/132081781-31576446-dc3e-46b9-aced-81338a7808b7.png">
 
-### Object.freeze() 사용 - 1186ms
+## Object.freeze() 사용 - 1186ms
 
 <img width="140" alt="스크린샷 2021-09-04 오후 1 02 47" src="https://user-images.githubusercontent.com/59427983/132081789-c32c8fa6-474a-4835-85f2-6ff51cdb6f65.png">
-
-
 
 <br/>
 
@@ -75,4 +73,3 @@ Object.assign([], this.items)
 위 이슈에서는 Observer가 붙지 않은 일반 객체를 만드는 이유가 `console.log()` 를 찍어볼 때, 직접 클릭해서 까보고 싶지 않을 때 사용했던 것 같다.
 
 어쨌든.. 쓸데없는 삽질. 중요한 것은 대용량 데이터를 다룰 때, 성능을 조금이라도 높게 가져가고 싶다면, data에 저장할 때 혹은 state에 저장하기 전에 `Object.freeze()` 를 사용해 가공하지 못하게 만들어둔 채 뿌려주기만 하면 될 것 같다. 반응형이라는 큰 장점은 버리고 오로지 성능 업을 위한 트릭이다.
-

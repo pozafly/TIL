@@ -1,6 +1,6 @@
 # 함수표현식 vs 함수선언식
 
-> 출처 : https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
+> 출처: https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/
 
 ## 함수 선언식 - Function Declarations
 
@@ -28,7 +28,7 @@ var 함수명 = function() {
 
 ## 함수 선언식과 표현식의 차이점
 
-함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다. 
+함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다.
 
 ```javascript
 // 실행 전
@@ -99,9 +99,9 @@ for (i = 0; i < tabs.length; i += 1) {
 }
 ```
 
-위 예제는 모든 .tab 요소에 클릭 이벤트를 추가하는 예제. 주목할 점은 클로저를 사용해 tabClickEvent() 에서 바깥 함수 tabsHandler() 의 인자 값 index를 접근했다는 점.
+위 예제는 모든.tab 요소에 클릭 이벤트를 추가하는 예제. 주목할 점은 클로저를 사용해 tabClickEvent() 에서 바깥 함수 tabsHandler() 의 인자 값 index를 접근했다는 점.
 
-for 반복문의 실행이 끝난 후, 사용자가 tab을 클릭했을 때 tabClickEvent() 가 실행된다. 만약 클로저를 쓰지 않았다면 모든 tab의 index 값이 for 반복문의 마지막 값인 tab.length 와 같다. 
+for 반복문의 실행이 끝난 후, 사용자가 tab을 클릭했을 때 tabClickEvent() 가 실행된다. 만약 클로저를 쓰지 않았다면 모든 tab의 index 값이 for 반복문의 마지막 값인 tab.length 와 같다.
 
 > 이 말인 즉슨 for문이 돌다가 마지막 index 값이 10이라고 가정한다면 서로 다른 tab을 클릭했을 때마다 10이 그냥 찍힘. 왜냐면 마지막 녀석이 등록되었을테니까. for문을 돌면서 재할당 되었을테니까. Object화 되지 않는다.
 
@@ -192,7 +192,7 @@ arr.forEach(function() {
 });
 ```
 
-※ 콜백 함수란 다른 함수의 인자로 전달된 함수를 의미함. 자바스크립트가 일급 객체로서 가지는 특징중 하나. 
+※ 콜백 함수란 다른 함수의 인자로 전달된 함수를 의미함. 자바스크립트가 일급 객체로서 가지는 특징중 하나.
 
 ## 결론
 
@@ -200,6 +200,6 @@ arr.forEach(function() {
 
 <br/>
 
->`정리`
+> `정리`
 >
->함수선언식은 function [이름] 으로 선언, 함수표현식은 var [이름] = function... 이렇게. 호이스팅이 되고 안되고 차이가 있고 장단이 있다. 표현식은 클로저를 만들 수 있고, 다른 함수의 인자값으로 넘겨 콜백으로 사용할 수 있다.
+> 함수선언식은 function [이름] 으로 선언, 함수표현식은 var [이름] = function… 이렇게. 호이스팅이 되고 안되고 차이가 있고 장단이 있다. 표현식은 클로저를 만들 수 있고, 다른 함수의 인자값으로 넘겨 콜백으로 사용할 수 있다.

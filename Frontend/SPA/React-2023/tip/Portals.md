@@ -45,7 +45,7 @@ portal의 전형적 유스케이스는 부모 컴포넌트에 `overflow: hidden`
 >
 > portal을 이용해 작업할 때 [키보드 포커스 관리](https://ko.legacy.reactjs.org/docs/accessibility.html#programmatically-managing-focus)가 매우 중요하다
 
-## portal을 통한 이벤트 버블링
+## Portal을 통한 이벤트 버블링
 
 portal이 DOM 트리의 어디에도 존재할 수 있다 하더라도 모든 다른 면에서 일반적인 React 자식처럼 동작한다. context와 같은 기능은 자식이 portal 이든지 아니든지 상관 없이 정확하게 같게 동작한다. -> 즉, React 하위 자식처럼 동작한다.
 

@@ -1,6 +1,6 @@
 # Closure
 
-> 출처 : https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#closure
+> 출처: https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/JavaScript#closure
 
 Closure(클로저)는 **두 개의 함수로 만들어진 환경**으로 이루어진 특별한 객체의 한 종류이다. 여기서 **환경**이라 함은 클로저가 생성될 때 그 **범위**에 있던 여러 지역 변수들이 포함된 `context` 를 말한다. 이 클로저를 통해 자바스크립트에는 없는 비공개(private) 속성/메소드, 공개 속성/메소드를 구현할 수 있는 방안을 마련할 수 있다.
 
@@ -45,8 +45,8 @@ callFunc();
 ```
 
 - 위 코드에서 `callFunc`를 클로저라고 함.
--  `callFunc` 호출에 의해 `name` 이라는 값이 console에 찍히는데, 찍히는 값은 `Warning` 이 아니라 `closure` 라는 값이다. 
-- 즉, `outer` 함수의 context 에 속해있는 변수를 참조하는 것이다. 
+- `callFunc` 호출에 의해 `name` 이라는 값이 console에 찍히는데, 찍히는 값은 `Warning` 이 아니라 `closure` 라는 값이다.
+- 즉, `outer` 함수의 context 에 속해있는 변수를 참조하는 것이다.
 - 여기서 `outer` 함수의 지역변수로 존재하는 `name` 변수를 `free variable(자유변수)` 라고 함.
 
 이처럼 외부 함수 호출이 종료되더라도 외부 함수의 지역 변수 및 변수 스코프 객체의 체인 관계를 유지할 수 있는 구조를 클로저라고 함. 보다 정확히는 외부 함수에 의해 반환되는 내부 함수를 가리키는 말.
@@ -55,14 +55,14 @@ callFunc();
 
 더 자세히 보자.
 
-> 출처 : https://velog.io/@open_h/closure-and-scope
+> 출처: https://velog.io/@open_h/closure-and-scope
 
 클로저란, **함수와 그 함수가 선언되었을 때의 렉시컬 환경(Lexical Environment)과의 조합이다.**
 
-정의상 개념적으로는 모든 함수를 클로저로 칭하는 것 같다. 하지만 실제로 클로저라는 단어를 사용할 때 자바스크립트에서는 **모든 함수를 전부 클로저라 부르지 않는다.** 위 클로저 정의에서 자바스크립트의 경우 
+정의상 개념적으로는 모든 함수를 클로저로 칭하는 것 같다. 하지만 실제로 클로저라는 단어를 사용할 때 자바스크립트에서는 **모든 함수를 전부 클로저라 부르지 않는다.** 위 클로저 정의에서 자바스크립트의 경우
 
-- 함수 : 반환된 내부함수를 의미
-- 렉시컬 환경 : 내부 함수가 선언되었을 때의 스코프를 뜻한다.
+- 함수: 반환된 내부함수를 의미
+- 렉시컬 환경: 내부 함수가 선언되었을 때의 스코프를 뜻한다.
 
 ```javascript
 function foo() {
@@ -193,7 +193,7 @@ console.log(counter.value());   // 1
 
 `counter` 라는 객체에 private method인 `increment`, `decrement`, `value` 를 사용하는 것처럼 구현되었다. `counter` 내부의 `privateCounter` 라는 변수에는 개발자가 정해준 (가짜)프라이빗 메소드로만 접근할 수 있는 것임.
 
-2. 아래와 같은 생성자 함수로도 위 MDN의 예시 코드와 같은 목적과 기능을 가진 코드를 구현할 수 있다.
+1. 아래와 같은 생성자 함수로도 위 MDN의 예시 코드와 같은 목적과 기능을 가진 코드를 구현할 수 있다.
 
 ```javascript
 function Counter() {

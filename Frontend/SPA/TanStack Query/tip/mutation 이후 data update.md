@@ -1,4 +1,4 @@
-# mutation 이후 data update
+# Mutation 이후 data update
 
 mutation은 query와 다르게 조회(get) 말고, post, delete, update 와 같은 데이터를 변경하는 작업을 할 수 있도록 하는 함수다.
 
@@ -25,7 +25,7 @@ mutationKey를 통해 mutation을 식별할 수 있고, 후에 `useIsMutating` �
 
 ## 서버에서 재조회
 
-서버에서 재조회 하는 방법은, `queryClient.invalidateQueries({ queryKey: [...] });` 를 통해 할 수 있다.
+서버에서 재조회 하는 방법은, `queryClient.invalidateQueries({ queryKey: […] });` 를 통해 할 수 있다.
 
 ```ts
 export const useDeleteDoc = () => {

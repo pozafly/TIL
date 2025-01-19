@@ -2,7 +2,7 @@
 
 JavaScript는 싱글 스레드 언어다. 한 번에 하나의 작업만 실행할 수 있다. JavaScript로 30초가 걸리는 작업을 해야한다고 가정해보자. 이 작업을 시작하면 유저는 30초 동안 ui에서 할 수 있는 일이 없다. 단지 기다려야 할 뿐이다.
 
-> ※ 스레드란, 
+> ※ 스레드란,
 >
 > - 스레드는 어떠한 프로그램이 실행되는 작업을 말한다.
 > - 싱글 스레드는 한 번에 하나의 작업만 수행할 수 있으며, 멀티 스레드는 한 번에 여러 개의 작업을 수행할 수 있다.
@@ -15,8 +15,8 @@ JavaScript 언어 자체에는 Multi Threading을 할 수 없지만, JavaScript�
 
 JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
-- Memory Heap : 데이터를 만들 때(변수선언 및 할당) 저장이 되는 공간.
-- Call Stack : 함수를 실행할 때마다 쌓이는 공간. 함수 실행 순서를 제어한다.
+- Memory Heap: 데이터를 만들 때(변수선언 및 할당) 저장이 되는 공간.
+- Call Stack: 함수를 실행할 때마다 쌓이는 공간. 함수 실행 순서를 제어한다.
 
 비동기 호출을 위해 사용하는 `setTimeout`, `fetch` 같은 함수는 자바스크립트 엔진이 아니라 Web APIs 영역에 따로 정의 되어 있다. 또한 Event Loop나 Task Queue 같은 장치도 자바스크립트 엔진 외부에 구현되어 있다. 아래 사진은 Node.js 환경이다.
 
@@ -30,11 +30,11 @@ JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
 ## Run-to-Completion
 
-자바스크립트 함수의 특징이 있다. 하나의 함수가 실행되면 함수의 실행이 끝날 때까지 다른 작업이 중간에 끼어들지 못한다. 자바스크립트는 하나의 Call  Stack을 사용하기 때문이다.
+자바스크립트 함수의 특징이 있다. 하나의 함수가 실행되면 함수의 실행이 끝날 때까지 다른 작업이 중간에 끼어들지 못한다. 자바스크립트는 하나의 Call Stack을 사용하기 때문이다.
 
 ![images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image](../../images/images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image.png)
 
-위 코드를 실행하면 브라우저 프로세스가 죽어버린다. console 창에 'Will it be print?' 라는 문장은 나타나지 않을 것이다. 다만, 'Running...1234837' 이라는 문구만 console에 나타난다. 그리고 브라우저가 동작하지 않는다는 alert이 뜬다.
+위 코드를 실행하면 브라우저 프로세스가 죽어버린다. console 창에 'Will it be print?' 라는 문장은 나타나지 않을 것이다. 다만, 'Running…1234837' 이라는 문구만 console에 나타난다. 그리고 브라우저가 동작하지 않는다는 alert이 뜬다.
 
 <br/>
 
@@ -299,9 +299,9 @@ console.log('After function!');
 
 Before function!이 실행되었고, myFunc 함수 내부의 In function!이 먼저 찍혔다.
 
- ![9wqej2269vmntfcuxs9t](../../images/9wqej2269vmntfcuxs9t.gif)
+![9wqej2269vmntfcuxs9t](../../images/9wqej2269vmntfcuxs9t.gif)
 
-이제 위 사진처럼 `myFunc`가 실행된다. `myFunc` 첫째줄의 console이 찍힌다. `myFunc`가 Call Stack에 들어갔지만 `one` 함수를 만나 `myFunc`을 제거하기 전에  `one`이 Call Stack에 담겼다.
+이제 위 사진처럼 `myFunc`가 실행된다. `myFunc` 첫째줄의 console이 찍힌다. `myFunc`가 Call Stack에 들어갔지만 `one` 함수를 만나 `myFunc`을 제거하기 전에 `one`이 Call Stack에 담겼다.
 
 ![lch6lutxnl88j0durpyh](../../images/lch6lutxnl88j0durpyh.gif)
 
@@ -353,34 +353,23 @@ a();
 ```
 
 1. a 함수 호출, console.log 실행, 출력 → a1
-
 2. b 함수 호출, console.log 실행, 출력 → b1
-
 3. c 함수 호출, console.log 실행, 출력 → c1
-
 4. setTimeout이 Task Queue에 쌓임.
-
 5. d 함수 호출, 첫 번째 console.log 실행, 출력 → d1 (비동기X)
-
 6. 두 번째 console.log 실행, 출력 → d2 (비동기X)
-
 7. .then 콜백은 백그라운드를 거쳐 마이크로 태스크 큐에 쌓임
-
 8. d 함수 호출 완료 후 await를 만나고 async 함수 c는 중단
 
    async 함수의 나머지는 마이크로 태스크 큐에 쌓임
 
 9. c 함수를 호출한 실행 컨텍스트(b함수)로 돌아가서 console.log 실행, 출력 → b2
-
 10. b 함수를 호출한 실행 컨텍스트(a함수)로 돌아가서 console.log 실행, 출력 → a2
-
-11. Call Stack이 모두 비워지고, Event Loop가 MicroTask Queue를 확인. 
+11. Call Stack이 모두 비워지고, Event Loop가 MicroTask Queue를 확인.
     then 콜백, async 함수가 쌓여있음.
 
 12. .then 콜백 실행, console.log 출력 → then!
-
 13. async 함수 중단된 곳부터 이후로 실행, console.log 출력 → c2
-
 14. 또다시 Event Loop가 Task Queue를 확인, setTimeout의 콜백이 쌓여있음.
     setTimeout의 콜백을 Call Stack으로 옮겨 실행 및 출력 → setTimeout
 

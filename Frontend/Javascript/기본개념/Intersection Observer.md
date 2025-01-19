@@ -1,6 +1,6 @@
 # Intersection Observer
 
-> [출처1](https://heropy.blog/2019/10/27/intersection-observer/), [출처2](https://velog.io/@yejinh/Intersection-Observer%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0), 
+> [출처1](https://heropy.blog/2019/10/27/intersection-observer/), [출처2](https://velog.io/@yejinh/Intersection-Observer%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0),
 
 <br/>
 
@@ -52,7 +52,7 @@
 
 <br/>
 
-### 1. 호출 수 제한 방법 debounce, throttle을 사용하지 않아도 된다.
+### 1. 호출 수 제한 방법 debounce, throttle을 사용하지 않아도 된다
 
 ```js
 window.addEventLinstener('scroll', () => console.log('scroll!'));
@@ -62,7 +62,7 @@ window.addEventLinstener('scroll', () => console.log('scroll!'));
 
 <br/>
 
-### 2. reflow를 하지 않는다.
+### 2. Reflow를 하지 않는다
 
 스크롤 이벤트에서는 현재의 높이 값을 알기 위해 `offsetTop` 을 사용하는데 정확한 값을 가져오기 위해 매번 layout을 새로 그리게 된다.
 
@@ -78,7 +78,7 @@ layout을 새로 그린다는 것은, 렌더 트리를 재생성한다는 뜻인
 
 ![intersection-observer-summary](https://user-images.githubusercontent.com/59427983/117634543-f7d61280-b1b9-11eb-829b-cddae2907622.jpeg)
 
-`new IntersectionObserver()` 를 통해 생성한 인스턴스( `io` )로 관찰자(Observer)를 초기화하고 관찰할 대상(Element)을 지정함. 생성자는 2개의 인수( `callback`, `options` )를 가진다.
+`new IntersectionObserver()` 를 통해 생성한 인스턴스(`io`)로 관찰자(Observer)를 초기화하고 관찰할 대상(Element)을 지정함. 생성자는 2개의 인수(`callback`, `options`)를 가진다.
 
 ```js
 const io = new IntersectionObserver(callback, options);  // 관찰자 초기화
@@ -89,28 +89,28 @@ io.observe(element);  // 관찰할 대상(요소) 등록
 
 <br/>
 
-### callback
+### Callback
 
-관찰할 대상(Target)이 등록되거나 가시성(Visibility, 보이는지 보이지 않는지)에 변화가 생기면 관찰자는 콜백(Callback)을 실행한다. 콜백은 2개의 인수( `entries`, `observer` ) 를 가진다.
+관찰할 대상(Target)이 등록되거나 가시성(Visibility, 보이는지 보이지 않는지)에 변화가 생기면 관찰자는 콜백(Callback)을 실행한다. 콜백은 2개의 인수(`entries`, `observer`) 를 가진다.
 
 ```js
 const io = new IntersectionObserver((entries, observer) => {}, options);
 io.observe(element);
 ```
 
-#### entries
+#### Entries
 
 `entries` 는 IntersectionObserverEntry 인스턴스의 **배열**이다.
 
 IntersectionObserverEntry는 읽기 전용(Read Only)의 다음 속성들을 포함함.
 
-- `boundingClientRect` : 관찰 대상의 사각형 정보(DOMRectReadOnly)
-- `intersectionRect` : 관찰 대상의 교차한 영역 정보(DOMRectReadOnly)
-- `intersectionRatio` : 관찰 대상의 교차한 영역 백분율(`intersectionRect` 영역에서 `boundingClientRect` 영역까지 비율, Number)
-- `isIntersecting` : 관찰 대상의 교차 상태 (Boolean).
-- `rootBounds` : 지정한 루트 요소의 사각형 정보(DOMRectReadOnly)
-- `target` : 관찰 대상 요소(Element)
-- `time` : 변경이 발생한 시간 정보(DOMHighResTimeStamp)
+- `boundingClientRect`: 관찰 대상의 사각형 정보(DOMRectReadOnly)
+- `intersectionRect`: 관찰 대상의 교차한 영역 정보(DOMRectReadOnly)
+- `intersectionRatio`: 관찰 대상의 교차한 영역 백분율(`intersectionRect` 영역에서 `boundingClientRect` 영역까지 비율, Number)
+- `isIntersecting`: 관찰 대상의 교차 상태 (Boolean).
+- `rootBounds`: 지정한 루트 요소의 사각형 정보(DOMRectReadOnly)
+- `target`: 관찰 대상 요소(Element)
+- `time`: 변경이 발생한 시간 정보(DOMHighResTimeStamp)
 
 ```js
 const io = new IntersectionObserver((entries, observer) => {
@@ -158,7 +158,7 @@ DOMRectReadOnly 구조.
 
 ##### isIntersecting
 
-관찰 대상이 루트 요소와 교차 상태로 들어가거나( `true` ), 교차 상태에서 나가는지 ( `false` ) 여부를 나타내는 값(Boolean) 이다.
+관찰 대상이 루트 요소와 교차 상태로 들어가거나(`true`), 교차 상태에서 나가는지 (`false`) 여부를 나타내는 값(Boolean) 이다.
 
 ![intersection-observer-is-intersecting](https://user-images.githubusercontent.com/59427983/117745043-b0e12f00-b244-11eb-8764-8ff15fe9dc5f.jpeg)
 
@@ -166,17 +166,17 @@ DOMRectReadOnly 구조.
 
 ##### rootBounds
 
-루트 요소에 대한 사각형 정보(DOMRectReadOnly)를 반환함. 이는 옵션 `rootMargin` 에 의해 값이 변경되며, 만약 별도의 루트 요소(옵션 `root` ) 를 선언하지 않았을 경우 `null` 을 반환함.
+루트 요소에 대한 사각형 정보(DOMRectReadOnly)를 반환함. 이는 옵션 `rootMargin` 에 의해 값이 변경되며, 만약 별도의 루트 요소(옵션 `root`) 를 선언하지 않았을 경우 `null` 을 반환함.
 
 <br/>
 
-##### target
+##### Target
 
 관찰 대상(Element) 반환.
 
 <br/>
 
-##### time
+##### Time
 
 문서가 작성된 시간을 기준으로 교차 상태 변경이 발생한 시간을 나타내는 DOMHighResTimeStamp 를 반환
 
@@ -204,9 +204,9 @@ IntersectionObserver의 구조.
 
 <br/>
 
-### options
+### Options
 
-#### root
+#### Root
 
 타겟의 가시성을 검사하기 위해 뷰포트 대신 사용할 요소 객체(루트 요소)를 지정한다. 타겟의 조상 요소이어야 하며 지정하지 않거나 null 일 경우 브라우저의 뷰포트가 기본 사용된다. 기본값은 `null` 이다.
 
@@ -243,7 +243,7 @@ const io = new IntersectionObserver(callback, {
 
 <br/>
 
-#### threshold
+#### Threshold
 
 옵저버가 실행되기 위해 타겟의 가시성이 얼마나 필요한지 백분율로 표시함. 기본값은 Array 타입의 `[0]`이지만 Number 타입의 단일 값으로도 작성할 수 있다.
 
@@ -353,4 +353,3 @@ IntersectionObserverEntry 객체의 배열을 반환함. (일반적인 상황에
 ## 예제 코드
 
 [예제](https://codepen.io/heropark/pen/LYYjMQp)
-

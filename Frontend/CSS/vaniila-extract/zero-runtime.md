@@ -1,8 +1,8 @@
-# zero-runtime
+# Zero-runtime
 
 > [출처1](https://velog.io/@jhlee910609/sass-%EA%B1%B0%EB%91%AC%EB%82%B4%EA%B3%A0-css-in-js-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0), [출처2](https://blog.logrocket.com/comparing-the-top-zero-runtime-css-in-js-libraries/)
 
-## sass-loader 단점
+## Sass-loader 단점
 
 - build 속도가 너무 느리다.
 - scope className이 없다.
@@ -31,7 +31,7 @@
 
 몇 가지 라이브러리가 있다.
 
-### linaria
+### Linaria
 
 #### 장점
 
@@ -40,17 +40,16 @@
 - 거의 모든 프레임워크와 호환
 - Linaria는 프로덕션용 빌드를 생성하는 동안 CSS-in-JS를 별도의 `.css` 파일로 변환한다.
   - 따라서 css 파일로 추출되므로, 사용하지 않은 스타일을 자동으로 제거할 수 있고, CSS 파일은 JS 파일과 다른 주기로 변경될 수 있기 때문에 캐싱에 유용하다.
-
 - 📌 개인적으로 마음에 드는 부분은 sass 문법과 같이 nested 문법을 지원한다는 점임.
 - GitHub 등의 문서가 매우 친절함([동작 원리](https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md), [사용 사례](https://medium.com/airbnb-engineering/airbnbs-trip-to-linaria-dc169230bd12) 등)
 
 #### 단점
 
 - 구현의 어려움: Linaria를 올바르게 구현하려면 Babel 설정해야 하므로 혼란스러울 수 있다.
-- 번들러 설정 : JS 파일에서 CSS를 추출하려면 Rollup 또는 Webpack과 같은 번들러를 사용해야 하며 설정이 어려울 수 있다.
-- 플러그인 지원 : Linaria는 Rust에 대한 고품질 플러그인을 지원하지 않는다.
+- 번들러 설정: JS 파일에서 CSS를 추출하려면 Rollup 또는 Webpack과 같은 번들러를 사용해야 하며 설정이 어려울 수 있다.
+- 플러그인 지원: Linaria는 Rust에 대한 고품질 플러그인을 지원하지 않는다.
 
-### vanilla-extract
+### Vanilla-extract
 
 vanilla-extract는 [treat](https://github.com/seek-oss/treat) 라이브러리에서 파생되었다. 즉 treat는 vanilla-extract로 대체되었다. ([출처](https://github.com/andreipfeiffer/css-in-js#treat)) Air-bnb에서 zero-runtime을 고를 때 검토했던 라이브러리로 Emotion, linaria, treat가 있을 정도로 고려되었음. 결국 linaria를 선택했지만.
 

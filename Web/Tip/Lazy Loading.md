@@ -48,17 +48,18 @@ lazy loading에 어떤 이미지가 적합한지, 그리고 페이지 초기 로
 
 2단계로 나눌 수 있음.
 
-#### 1. 이미지 로딩 사전 차단. 
+#### 1. 이미지 로딩 사전 차단
+
 - `<img>`는 일반적으로 `src` 이용. 1000번째 이미지이든, 뷰포트 밖에 있든 상관 없이 무조건 로드함.
 - 따라서, src 속성 대신 다른 속성에다 이미지 URL을 넣는 것이다.
 
-#### 2. data-src의 데이터를 src 속성으로 옮김
+#### 2. Data-src의 데이터를 src 속성으로 옮김
 
 `data-src` 속성에 넣고, 뷰포트에 들어오자마자 로딩할 수 있도록 한다.
 
 #### **자바스크립트 이벤트를 이용하여 image load를 일으키는 방법**
 
-`scroll`, `resize` 그리고 `orientationChange` 이벤트 리스너를 이용한다. scroll 이벤트는 사용자가 스크롤 하는 시점을 확인한다. resize, orientationChange 이벤트는 lazy loading을 위해 함께 사용해야 한다. 
+`scroll`, `resize` 그리고 `orientationChange` 이벤트 리스너를 이용한다. scroll 이벤트는 사용자가 스크롤 하는 시점을 확인한다. resize, orientationChange 이벤트는 lazy loading을 위해 함께 사용해야 한다.
 
 - resize는 윈도우 브라우저 크기 변경 시 트리거.
 - orientationChange 이벤트는 디바이스 화면이 가로에서 세로 모드로(또는 반대로) 바뀔 때 발생. 이 처럼 가로, 세로 모드를 변경하는 것은 화면 내 보여지는 이미지의 수가 바뀔 수 있으므로 이미지들을 로드하는 트리거가 필요할 것.
@@ -187,8 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <iframe src="example.html" loading="lazy"></iframe>
 ```
 
-- lazy : 뷰포트에서 일정한 거리에 닿을 때까지 로딩 지연.
-- eager(default) : 현재 페이지 위치가 위, 아래 어디에 위치하던 상관없이, 페이지가 로딩 되자마자 이미지 로딩.
+- lazy: 뷰포트에서 일정한 거리에 닿을 때까지 로딩 지연.
+- eager(default): 현재 페이지 위치가 위, 아래 어디에 위치하던 상관없이, 페이지가 로딩 되자마자 이미지 로딩.
 
 📌 참고, 로딩 지연된 이미지들이 다운로드 될 때 다른 감싸고 있는 콘텐트 내용이 밀려나는 것을 방지하려면, 반드시 `height`, `width` 속성을 `<img>`에 추가하거나 inline style로 직접 값을 추가해야 한다. (source: [web.dev](https://web.dev/browser-level-image-lazy-loading/#load-in-distance-threshold))
 
@@ -239,7 +240,7 @@ ID bg-image를 lazy 클래스를 제거하면 된다.
 
 <br/>
 
-## lazy loading 기법으로 유저 인터페이스 향상시키는 방법
+## Lazy loading 기법으로 유저 인터페이스 향상시키는 방법
 
 lazy loading은 성능이 뛰어나다. 하지만, 거의 대부분 기업에서는 초기 placeholder가 보기 좋지 않다던가, 로딩 시간이 느리다와 같은 여러 이유로 유저 사용성에 좋지 않다고 판단해 lazy loading을 쓰지 않는다.
 
@@ -307,13 +308,13 @@ Intersection Observer API에서는 'root'파라미터와 'rootMargin'파라미�
 
 <br/>
 
-### 3. lazy loading으로 콘텐트 요소들이 이동하는 것을 방지하는 방법
+### 3. Lazy loading으로 콘텐트 요소들이 이동하는 것을 방지하는 방법
 
 **문제점**
 
 이미지가 없을 때, 브라우저는 보여지고 있는 콘텐트의 공간을 알고있지 않다. 그래서 만약 CSS로 따로 지정해주지 않으면, 콘텐트를 감싸고 있던 컨테이너 부분은 공간을 따로 가지고 있지 않음으로 0x0 픽셀이 됩니다. 따라서 이미지가 로딩되면, 브라우저가 해당 이미지의 크기에 맞게 컨테이너를 다시 리사이징한다.
 
-이러한 갑작스런 변경은 다른 엘리먼트 요소들이 이동되어 밀려나게 되는 원인으로 인해 일어나게 된다. 이 부분은 Smashing 매거진의 [content shifting article & video](https://www.smashingmagazine.com/2016/08/ways-to-reduce-content-shifting-on-page-load/) 에서 정확히 알 수 있으며, 이는 이미지가 로딩될 때 갑작스런 콘텐트 이동으로 인해 꽤나 유저에게 좋지 않은 사용성을 주게 됨. 
+이러한 갑작스런 변경은 다른 엘리먼트 요소들이 이동되어 밀려나게 되는 원인으로 인해 일어나게 된다. 이 부분은 Smashing 매거진의 [content shifting article & video](https://www.smashingmagazine.com/2016/08/ways-to-reduce-content-shifting-on-page-load/) 에서 정확히 알 수 있으며, 이는 이미지가 로딩될 때 갑작스런 콘텐트 이동으로 인해 꽤나 유저에게 좋지 않은 사용성을 주게 됨.
 
 **해결 방법**
 

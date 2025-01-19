@@ -42,7 +42,7 @@ module.exports = nextConfig
 
 ## 지원되는 기능
 
-### server components
+### Server components
 
 `next build` 를 실행해 정적 내보내기를 생성하면 기존 SSG와 유사하게 `app` 디렉토리 내에서 소비되는 server component가 빌드 중 실행된다.
 
@@ -225,4 +225,3 @@ server {
   }
 }
 ```
-

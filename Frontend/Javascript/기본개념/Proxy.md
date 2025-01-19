@@ -15,8 +15,8 @@ var proxy = new Proxy(target, handler);
 
 > Proxy를 생성하는 두 개의 매개변수
 >
-> - target : Proxy할 원본 객체
-> - handler : 가로채는 작업과 가로채는 작업을 재정의하는 방법을 정의한는 객체
+> - target: Proxy할 원본 객체
+> - handler: 가로채는 작업과 가로채는 작업을 재정의하는 방법을 정의한는 객체
 
 proxy 객체는 모든 내부 메서드 호출을 `target` 객체로 전달한다. 즉, `proxy[[Enumerate]]()` 메서드를 직접 호출한다면, `target.[[Eknumerate]]()` 메서드가 그 결과를 반환한다는 것이다.
 
@@ -33,7 +33,7 @@ proxy.color = 'yellow';
 
 target 객체에 color 속성이 들어있다. 나머지 내부 메서드들도 마찬가지로 동작한다. `proxy` 객체는 대부분의 경우에 `target` 객체인 것처럼 동작한다.
 
-하지만 그렇다고 `proxy` 는 `target` 과 같지는 않다. `proxy !== target // true` 그렇기 때문에 `target` 이 성공하는 타임 체크에 `proxy` 는 실패하곤 한다. 예를 들어 `proxy` 의 `target` 이 DOMElement라면, proxy는 사실 Element가 아니다. 그렇기 때문에 `document.body.appendChild(proxy)` 와 같은 코드는 타입에러를 뱉는다.
+하지만 그렇다고 `proxy` 는 `target` 과 같지는 않다. `proxy!== target // true` 그렇기 때문에 `target` 이 성공하는 타임 체크에 `proxy` 는 실패하곤 한다. 예를 들어 `proxy` 의 `target` 이 DOMElement라면, proxy는 사실 Element가 아니다. 그렇기 때문에 `document.body.appendChild(proxy)` 와 같은 코드는 타입에러를 뱉는다.
 
 <br/>
 
@@ -121,7 +121,7 @@ Vue 2.0에 사용된 `Object.defineProperty`도 객체를 추적할 수 있다. 
 
 <br/>
 
-## immer
+## Immer
 
 [도움](https://hmos.dev/deep-dive-to-immer#deep-dive-to-immer)
 
@@ -168,7 +168,7 @@ immer는 아래와 같은 동작을 함.
 - 변경한 객체는 modified flag를 켜서 root tree 에서 leaf tree 까지 순회할 수 있도록 한다.
 - 변경이 완료된 뒤 modified flag를 이용해 새 객체와 기존 객체를 합성하는 과정을 진행한다.
 
-### produce
+### Produce
 
 ```javascript
 const immer = new Immer();
@@ -194,4 +194,3 @@ export class Immer {
   }
 };
 ```
-

@@ -95,7 +95,7 @@ React Element는 실제 DOM 노드가 아님. `React DOM node element` 와 `Reac
 
 - DOM element: 타입이 string일 때.
   - `<div></div>`
-- Component element : 타입이 class 이거나 function일 때.
+- Component element: 타입이 class 이거나 function일 때.
   - `<Component></Component>`
 
 즉, type을 보고 결정한다.
@@ -108,11 +108,11 @@ React Element는 실제 DOM 노드가 아님. `React DOM node element` 와 `Reac
 
 재조정이란, React에서 어떤 부분들이 변해야 하는지 서로 다른 두 개의 트리를 비교하는데 사용하는 알고리즘이다. 렌더링 함수를 호출할 때 가상돔을 생성하고, 이전 가상돔(snapshot)과 비교하여 변경된 부분만 실제 돔에 반영하는데, 이 때 비교하는 과정을 재조정이라고 한다.
 
-### render phase
+### Render phase
 
 가상돔을 재조정하는 단계다.
 
-### commit phase
+### Commit phase
 
 재조정한 DOM을 실제 DOM에 적용하는 단계.
 
@@ -169,7 +169,7 @@ react는 상태 업데이트 처리하기 전 이벤트 핸들러의 모든 코�
 
 setState가 컴포넌트 렌더링을 trigger하고 나면, render phase에서 가상돔을 재조정 한다. 이 때, 큐에 있는 update 함수들을 실행하며 새로운 상태 값을 계산한다.
 
-따라서, 
+따라서,
 
 - setState 호출 -> trigger (리렌더링 예약)
   - setState에서 업데이터 함수라면 큐에 넣음
@@ -190,5 +190,3 @@ setState가 컴포넌트 렌더링을 trigger하고 나면, render phase에서 �
 ```js
 if (fiber.lanes === NoLanes && (alternate === null || alternate.lanes === NoLanes)) {  // The queue is currently empty, which means we can eagerly compute the  // next state before entering the render phase. If the new state is the  // same as the current state, we may be able to bail out entirely.  ...
 ```
-
-

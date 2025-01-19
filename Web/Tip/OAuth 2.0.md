@@ -4,7 +4,7 @@
 
 ## 등장 배경
 
-서비스가 사용자를 대신해 구글의 캘린더에 일정 추가하거나, 페이스북, 트위터에 글을 남기는 기능을 만들 수 있다. 이 때, 가장 쉽게 이 기능을  구현하는 방법은 사용자로부터 구글, 페북, 트위터의 ID, PW를 직접 제공받아 우리의 서비스에 저장하고 활용하는 방법.
+서비스가 사용자를 대신해 구글의 캘린더에 일정 추가하거나, 페이스북, 트위터에 글을 남기는 기능을 만들 수 있다. 이 때, 가장 쉽게 이 기능을 구현하는 방법은 사용자로부터 구글, 페북, 트위터의 ID, PW를 직접 제공받아 우리의 서비스에 저장하고 활용하는 방법.
 
 하지만, ID, PW를 바로 우리 서비스에 받는 방법은 안전한가? 처음보는 우리 서비스를 신뢰하고 자신의 구글 계정 정보를 맡길 수 있는가? 아님.
 
@@ -90,10 +90,10 @@ https://authorization-server.com/auth?response_type=code
 
 이 때 Authorization Server에게 보낼 매개변수는 아래와 같다.
 
-- response_type : 반드시 code로 값을 설정해야 한다.([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1)). 인증이 성공할 경우 클라이언트는 후술할 Authorization Code를 받을 수 있다.
-- client_id : 애플리케이션을 생성했을 때 발급받은 Client ID
-- redirect_uri : 애플리케이션을 생성할 때 등록한 Redirect URI
-- scope : 클라이언트가 부여받은 리소스 접근 권한.
+- response_type: 반드시 code로 값을 설정해야 한다.([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1)). 인증이 성공할 경우 클라이언트는 후술할 Authorization Code를 받을 수 있다.
+- client_id: 애플리케이션을 생성했을 때 발급받은 Client ID
+- redirect_uri: 애플리케이션을 생성할 때 등록한 Redirect URI
+- scope: 클라이언트가 부여받은 리소스 접근 권한.
 
 > 단, Google OAuth의 프론트엔드 어플리케이션에서는 Authorization Code는 없기 때문에 response_type을 token으로 준다.
 
@@ -107,7 +107,7 @@ https://authorization-server.com/auth?response_type=code
 
 Authorization Code란, 클라이언트가 Access Token을 획득하기 위해 사용하는 임시 코드다. 이 코드는 수명이 매우 짧다. (일반적으로 1~10분)
 
-> 단, Google OAuth의 프론트엔드 어플리케이션에서는 Authorization Code는 없으며, 무조건 Access Token을 바로 내려주는 형태로 진행된다. 
+> 단, Google OAuth의 프론트엔드 어플리케이션에서는 Authorization Code는 없으며, 무조건 Access Token을 바로 내려주는 형태로 진행된다.
 >
 > [출처](https://developers.google.com/identity/protocols/oauth2?hl=ko)
 >
@@ -134,11 +134,11 @@ grant_type=authorization_code
 
 필수로 전달해야하는 매개변수를 살펴보자.
 
-- grant_type : 항상 `authorization_code`로 설정되어야 한다. ([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3))
-- code : 발급받은 Authorization Code
-- redirect_uri : Redirect URI
-- `client_id` : Client ID
-- `client_secret` : RFC 표준상 필수는 아니지만, Client Secret이 발급된 경우 포함하여 요청해야한다.
+- grant_type: 항상 `authorization_code`로 설정되어야 한다. ([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3))
+- code: 발급받은 Authorization Code
+- redirect_uri: Redirect URI
+- `client_id`: Client ID
+- `client_secret`: RFC 표준상 필수는 아니지만, Client Secret이 발급된 경우 포함하여 요청해야한다.
 
 ### 9. 로그인 성공
 
@@ -170,7 +170,7 @@ Redirect URI를 통해 Authorization Code 발급 과정이 생략된다면, Auth
 
 Redirect URI를 프론트엔드 주소로 설정해, Authorization code를 프론트엔드로 전달한다. 그리고 이 Authorization Code는 프론트엔드에서 백엔드로 전달된다. 이 코드를 전달받은 백엔드는 비로소 Authorization Server 의 token 엔드포인트로 요청하여 Access Token을 발급한다.
 
-이런 과정을 거치면 Access Token이 항상 우리의 어플리케이션과 OAuth 서비스의 백채널을 통해서만 전송되기 때문에 공격자가 Access Token을 가로챌 수 없게 된다.  ([참고](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type#when-to-use-the-authorization-code-flow))
+이런 과정을 거치면 Access Token이 항상 우리의 어플리케이션과 OAuth 서비스의 백채널을 통해서만 전송되기 때문에 공격자가 Access Token을 가로챌 수 없게 된다. ([참고](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type#when-to-use-the-authorization-code-flow))
 
 <br />
 
@@ -180,7 +180,7 @@ Redirect URI를 프론트엔드 주소로 설정해, Authorization code를 프�
 
 Authorization Server의 로그인 페이지로 이동하기 위한 인증 URL을 생성하는 것은 프론트엔드, 백엔드 어디에서 해도 괜찮다. 단, Client ID나 Scope 같은 정보들의 응집도를 위해 이것도 백엔드에서 생성하고, 프론트엔드는 백엔드로부터 URL을 가져오는 것이 좋다고 생각함. 일단, 백엔드가 URL 생성한다고 가정한다.
 
-### authorization Code와 Access Token 흐름
+### Authorization Code와 Access Token 흐름
 
 프론트엔드는 백엔드가 생성한 인증 URL을 가져오고, 프론트엔드는 사용자를 인증 URL로 리디렉션 시킨다. 그리고 사용자는 로그인을 마치고 Redirect URI로 리디렉션 될 텐데, 이 때 Redirect URI는 프론트엔드로 설정한다.
 

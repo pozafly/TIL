@@ -51,7 +51,7 @@ globalStyle(`${ul} li:not(:first-child)`, {
 
 <img width="395" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/2d7799d4-32ce-4e36-a57c-3a6e3e02e324">
 
-그리고 그 하위에 `li : list-style: none` 에 걸린 것은, 어플리케이션 전체 코드의 globalStyle에 걸린 것이다.
+그리고 그 하위에 `li: list-style: none` 에 걸린 것은, 어플리케이션 전체 코드의 globalStyle에 걸린 것이다.
 
 ```ts
 // global.css.ts
@@ -69,4 +69,3 @@ globalStyle('ul, li', {
 ```css
 ul li:first-child, a > span.
 ```
-

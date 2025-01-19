@@ -18,8 +18,8 @@ concurrent mode는 사용자 경험과 굉장히 밀접한 관계가 있다.
 
 input을 입력할 때마다 `무거운 작업` 을 수행하는 경우 버벅임. 디바운스와 쓰로틀을 사용할 수 있다. 하지만 한계도 있음.
 
-- 디바운스 : 마지막 입력이 끝난 뒤 일정 시간이 지나 수행하는 방법. 무조건 `일정 시간` 을 기다려야 함.
-- 쓰로틀 : 주기적으로 무거운 작업을 수행. 쓰로틀 주기를 짧게 가져갈 수록 성능 좋은 기기에서 버벅임이 심해지기 때문.
+- 디바운스: 마지막 입력이 끝난 뒤 일정 시간이 지나 수행하는 방법. 무조건 `일정 시간` 을 기다려야 함.
+- 쓰로틀: 주기적으로 무거운 작업을 수행. 쓰로틀 주기를 짧게 가져갈 수록 성능 좋은 기기에서 버벅임이 심해지기 때문.
 
 react 동시성 모드는 위 한계를 동시성으로 해결함. 작업 처리 속도는 개발자가 설정한 delay에 의존되는 것이 아니라 사용자의 기기 성능에 좌우된다.
 
@@ -43,13 +43,13 @@ suspense로만 구현된 로딩은 이전 페이지를 유저로부터 `차단(b
 
 Transition, Loading, Done 총 3개의 렌더링 단계가 있다. 일반적으로 UI 업데이트는 state의 변경에 의해 발생하므로 각 단계는 특정 state 변경 관점에서 보는 렌더링 단계다. 오른쪽으로 진행할 수록 더 최신 렌더링 단계다.
 
-1. `Transition` : state 변경 직후에 일어날 수 있는 UI 렌더링 단계.
-   - Pending 상태 : 리액트에서 제공하는 `useTransition` 훅을 사용하면 state 변경 직후에도 UI를 업데이트 하지 않고 현 UI를 잠시 유지할 수 있는데, 이를 Pending 상태라고 한다.
-   - Receded 상태 : useTransition 훅을 사용하지 않은 기본 상태. state 변경 직후 UI가 변경된다. 전체 페이지에 대한 로딩 화면이라고 생각하면 이해가 쉽다. pending 상태에서도 receded 상태로 넘어갈 수 있다.pending 상태의 시간이 useTransition 옵션으로 지정된 timeoutMs를 넘으면 강제로 Receded 상태로 넘어간다.
+1. `Transition`: state 변경 직후에 일어날 수 있는 UI 렌더링 단계.
+   - Pending 상태: 리액트에서 제공하는 `useTransition` 훅을 사용하면 state 변경 직후에도 UI를 업데이트 하지 않고 현 UI를 잠시 유지할 수 있는데, 이를 Pending 상태라고 한다.
+   - Receded 상태: useTransition 훅을 사용하지 않은 기본 상태. state 변경 직후 UI가 변경된다. 전체 페이지에 대한 로딩 화면이라고 생각하면 이해가 쉽다. pending 상태에서도 receded 상태로 넘어갈 수 있다.pending 상태의 시간이 useTransition 옵션으로 지정된 timeoutMs를 넘으면 강제로 Receded 상태로 넘어간다.
 2. Loading 단계
    - Skeleton 상태 페이지의 일부만을 로딩하는 상태. 전체 화면을 모두 로딩으로 대체해버리는 Receded와는 다르다.
 3. Done 단계
-   - Complete 상태 : 로딩 UI 없이 모든 정보가 사용자에게 보이는 상태.
+   - Complete 상태: 로딩 UI 없이 모든 정보가 사용자에게 보이는 상태.
 
 ### 특정 조건
 
@@ -93,4 +93,3 @@ setInput은 startTransition 바깥에서 실행되고, setArray는 내부에서 
 이 차이는 state 우선순위를 결정한다. setArry를 startTransition으로 감싸주는 의지는 'array state' 변화는 지연 시켜도 돼 라고 리액트에게 알려주는 것이기 때문. input state는 array state 보다 높은 우선순위로 결정된다.
 
 이렇게 해주는 이유는 사용자의 입력이 5,000개의 DOM element를 렌더링하는 것보다 우선시 되어야 사용자가 입력할 때의 버벅임을 줄일 수 있기 때문이다. 결과를 확인해보면, 이전 blocking mode로 구현했던 예제보다 훨씬 버벅임이 줄어들었을 것이다.
-

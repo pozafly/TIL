@@ -1,4 +1,4 @@
-# critical-css
+# Critical-css
 
 > [출처](https://web.dev/i18n/ko/extract-critical-css/)
 

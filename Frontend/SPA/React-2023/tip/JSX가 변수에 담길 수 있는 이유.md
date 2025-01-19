@@ -54,7 +54,7 @@ React.createElement(type, props, children);
 
 간단히 말해, JSX를 변수에 할당하면 JSX 코드가 JavaScript 객체로 변환되고, 이후에는 해당 변수를 JSX로 사용할 때 React가 해당 JavaScript 객체를 해석하여 화면에 표시한다.
 
-## react 17 version 이상
+## React 17 version 이상
 
 ```js
 import { jsx as _jsx } from "react/jsx-runtime";

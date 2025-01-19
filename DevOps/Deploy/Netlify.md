@@ -47,7 +47,7 @@ Website Draft URL: https://6039bc3b3794954457798b10--pozafly-habit-tracker.netli
 
 <img width="1904" alt="2" src="https://user-images.githubusercontent.com/59427983/118975407-f32a0f00-b9ae-11eb-8414-bc8bfc2f2e87.png">
 
-이런식으로 
+이런식으로
 
 - Build command => 빌드 명령어(npm run build)
 - Publish directory => 빌드된 파일 위치(dist)
@@ -58,9 +58,9 @@ Website Draft URL: https://6039bc3b3794954457798b10--pozafly-habit-tracker.netli
 
 Production을 눌러보면 빌드 log를 확인할 수 있다.
 
-<img width="704" alt="4" src="https://user-images.githubusercontent.com/59427983/118975556-1654be80-b9af-11eb-82e1-d25e8bd4f288.png"> 
+<img width="704" alt="4" src="https://user-images.githubusercontent.com/59427983/118975556-1654be80-b9af-11eb-82e1-d25e8bd4f288.png">
 
-요런식. 만약 실패했다면, 다시 뒤로가서 
+요런식. 만약 실패했다면, 다시 뒤로가서
 
 <img width="718" alt="5" src="https://user-images.githubusercontent.com/59427983/118975617-28cef800-b9af-11eb-842b-a6ed04098c8e.png">
 
@@ -74,23 +74,19 @@ Production을 눌러보면 빌드 log를 확인할 수 있다.
 
 <img width="941" alt="7" src="https://user-images.githubusercontent.com/59427983/118975754-48662080-b9af-11eb-810d-a3145d103d66.png">
 
- 
-
 이렇게 Base directory 를 지정할 수 있는데, 만약 연동한 github가 상위 디렉토리가 하나 더 있을경우(ex. 본 플젝은 vue-cli라고 한다면 그 상위폴더인 vue-example 이라는 폴더로 감싸져 있는경우) 여기서 내부 폴더인 vue-cli 폴더를 다시 Base directory에서 지정하여 주면 됨.
 
-지정 후 
+지정 후
 
 <img width="1242" alt="8" src="https://user-images.githubusercontent.com/59427983/118975874-5f0c7780-b9af-11eb-925e-2164b72fb5ab.png">
 
 Deploys탭에 다시 돌아가서 오른쪽 Trigger deploy 를 눌러 Clear cache and deploy site를 눌러서 캐시 삭제 후 자동 배포 됨.
 
-배포 후 사이트가 생성되는데, 생성된 후에도 앞 뒤로 왔다갔다 해보면 
+배포 후 사이트가 생성되는데, 생성된 후에도 앞 뒤로 왔다갔다 해보면
 
 <img width="1036" alt="9" src="https://user-images.githubusercontent.com/59427983/118975929-6af83980-b9af-11eb-9380-6e0de0eaa829.png">
 
 이런식의 Page Not Found가 뜰 수 있다. 이때 SPA 호스팅시 서버에 추가해줘야 하는 설정이 있음.
-
- 
 
 https://cli.vuejs.org/guide/deployment.html#netlify
 
@@ -104,19 +100,17 @@ https://cli.vuejs.org/guide/deployment.html#netlify
 
 요렇게 넣어줌. 서버 설정해주지 않으면 서버에서 페이지를 찾을 수 없다고 뜨기 때문에 이걸 설정을 꼭 해줘야 함.
 
-근데 안되넹....
+근데 안되넹….
 
 ### 환경 변수 파일을 이용한 옵션 설정
 
 https://joshua1988.github.io/vue-camp/deploy/env-setup.html
 
-Cli로 생성한 플젝의 설정을 .env 파일에 숨겨서 배포할 수 있다.
+Cli로 생성한 플젝의 설정을.env 파일에 숨겨서 배포할 수 있다.
 
 <img width="297" alt="12" src="https://user-images.githubusercontent.com/59427983/118976073-91b67000-b9af-11eb-9aeb-f326f47c836b.png">
 
- 
-
-가장 상단에 .env 파일을 만들고 이렇게 변수=값 형태로 넣었다. 여기서 만약 APP_TITLE=HELLO 라고 했다면, 원하는대로 출력되지 않는다.
+가장 상단에.env 파일을 만들고 이렇게 변수=값 형태로 넣었다. 여기서 만약 APP_TITLE=HELLO 라고 했다면, 원하는대로 출력되지 않는다.
 
 웹팩 설정을 더 건들여주어야 하는데, 편하게 하고 싶다면 VUE_ 라는 접두사를 붙여주고 작업하면 된다.
 

@@ -1,4 +1,4 @@
-# vite, webpack의 treeShaking
+# Vite, webpack의 treeShaking
 
 > [출처1](https://bepyan.github.io/blog/2023/bundlers), [출처2](https://so-so.dev/web/tree-shaking-module-system/), [출처3](https://ui.toast.com/posts/ko_20220127)
 
@@ -56,12 +56,12 @@ treeShaking 개념은 rollup에서 가장 먼저 나왔다. 정적으로 분석�
 
 webpack과 rollup은 treeShaking 기능을 바라보는 관점이 조금 다르다.
 
-- webpack : 사용하지 않는 코드를 제거하는 관점
-- rollup : 사용하는 코드만 가져오는 관점
+- webpack: 사용하지 않는 코드를 제거하는 관점
+- rollup: 사용하는 코드만 가져오는 관점
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/69fc9c6b-3b4a-4294-aa32-804eaef3e3a4)
 
-왼쪽이 webpack, 오른쪽이 rollup이다. rollup은 live code inclusion(필요한 코드만 쌓아가는 과정). 즉, 어떤 모듈이 필요한지 평가하는 과정이다. 
+왼쪽이 webpack, 오른쪽이 rollup이다. rollup은 live code inclusion(필요한 코드만 쌓아가는 과정). 즉, 어떤 모듈이 필요한지 평가하는 과정이다.
 
 webpack5에서는 terser-webpack-plugin이 기본으로 제공되기 때문에 죽은 코드를 제거하는 과정이 수행된다.
 
@@ -77,17 +77,17 @@ webpack, rollup은 JavaScript로 번들링한다. 하지만, ESBuild는 내부�
 
 <br/>
 
-## vite
+## Vite
 
 - ESM 기반 강력한 개발서버
 - esbuild로 파일을 통합하고, rollup을 통해 번들링
 
 로컬 서버를 구동하는데 vite는 코드를 2가지로 분류 하여 번들링한다.
 
-- Dependencies : node_modules에 있는 종속성이다.
+- Dependencies: node_modules에 있는 종속성이다.
   - node_modules에 있는 파일을 번들링 하려면 시간이 오래걸렸었음.
   - vite는 종속성을 `사전 번들링`을 하는데 ESBuild를 사용한다.
-- Source code : JSX, CSS 등 컴파일이 필요하고, 수정이 잦은 코드다.
+- Source code: JSX, CSS 등 컴파일이 필요하고, 수정이 잦은 코드다.
   - Native ESM을 이용해 코드를 제공한다.
   - 조건부 동적 import 이후 실제 화면에서 사용되는 경우에만 처리한다.
 
@@ -116,4 +116,3 @@ vite도 HMR를 지원하는데, 번들러가 아닌 ESM을 이용한다.
 webpack, rollup, parcel은 소스코드와 node_modules 폴더의 전체 코드 베이스를 번들로 묶고, 빌드 프로세스(babel, ts, postCSS)를 통해 번들된 코드를 브라우저에 전달한다. 하지만, 캐싱 및 최적화 작업을 하더라도 대규모 크롤링을 하는 개발 서버를 느리게 만듦.
 
 Snowpack, vite 및 wmr 개발 서버는 위의 모델을 따르지 않음. 브라우저가 삽입 구문을 찾고 HTTP로 해당 모듈을 요청할 때까지 기다림. http 요청이 오면 로컬 서버는 요청 모듈과 모듈의 가져오기 트리에 있는 모든 잎 노드에 변환을 적용한 후 브라우저에 제공함. 이러면 모든 번들을 새로 평가하지 않기 때문에 작업 속도가 훨씬 빨라디낟.
-

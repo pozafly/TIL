@@ -1,4 +1,4 @@
-# isomorphic
+# Isomorphic
 
 > [출처](https://toss.tech/article/isomorphic-javascript)
 
@@ -27,7 +27,7 @@ function App() {
 
 SSR 환경에서 에러가 발생함.
 
-### 1. 서버가 HTML을 생성한다.
+### 1. 서버가 HTML을 생성한다
 
 ![image](https://github.com/pozafly/TIL/assets/59427983/181c677e-e96a-4ae4-ba9b-e133adbbf45c)
 
@@ -37,7 +37,7 @@ SSR 환경에서 에러가 발생함.
 
 > location은 브라우저 환경에서 제공되는 객체로, URL 관련 속성 및 메소드를 제공한다.
 
-2.  페이지(HTML) 생성이 가능하다. (This error happened while generating the page)
+1. 페이지(HTML) 생성이 가능하다. (This error happened while generating the page)
 
 즉 1) 브라우저가 아니면서 동시에 2) 페이지(HTML) 생성이 가능하다는 사실을 통해 서버에서 발생한 에러임을 추측 해볼 수 있다.
 
@@ -133,8 +133,8 @@ function App() {
 
 `<Suspense />` 는 비동이 요청을 선언적으로 처리할 수 있도록 돕는 컴포넌트.
 
-- Promise가 대기 상태일 때 (Pending) : `<Loading />`
-- Promise가 완료됐을 때 (Resolved) : `<APIRequestComponent />`
+- Promise가 대기 상태일 때 (Pending): `<Loading />`
+- Promise가 완료됐을 때 (Resolved): `<APIRequestComponent />`
 
 ```jsx
 function App() {

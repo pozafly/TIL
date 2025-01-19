@@ -1,6 +1,6 @@
 # JavaScript 프로젝트 시작하기
 
-## fnm (Fast Node Manager)
+## Fnm (Fast Node Manager)
 
 ```
 brew install fnm
@@ -267,7 +267,7 @@ npm i -D husky
 npx hushy install
 ```
 
-`npx hushy install` : husky에 등록된 실제 .git에 적용시키기 위한 스크립트.
+`npx hushy install`: husky에 등록된 실제.git에 적용시키기 위한 스크립트.
 
 그리고, package.json의 "scripts"에 아래를 등록하자. 이후에 clone 받아서 사용하는 사람들은 npm install 후 자동으로 `husky install` 될 수 있도록 하는 설정.
 
@@ -287,8 +287,6 @@ npx husky add .husky/pre-push "npm run lint"
 ```
 
 이제 에러를 만나면 commit, push가 안된다.
-
-
 
 <br/>
 

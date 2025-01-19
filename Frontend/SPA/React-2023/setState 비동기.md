@@ -2,8 +2,7 @@
 
 ## React의 state update는 동기(synchronous) 동작인가요, 비동기(asynchronous) 동작인가? 그렇게 했을 때의 장점은 무엇인가?
 
-
-setState는 비동기 동작이다. setState 함수 자체는 동기 함수이지만, setState가 비동기 적으로 호출된다. 
+setState는 비동기 동작이다. setState 함수 자체는 동기 함수이지만, setState가 비동기 적으로 호출된다.
 
 이유는, 효율성이기 때문이다. 만약, 동기적으로 일어나게 되면, 한 함수에 여러 setState가 있을 때, VDOM의 변화를 계산하는데 매번 다시 계산(즉, re-render) 해야한다. 하지만, 비동기적으로 묶어 계산하게 되면, 변화된 부분을 한 번만 계산해 렌더링 하면 되기 때문이다.
 

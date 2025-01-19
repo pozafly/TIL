@@ -1,12 +1,12 @@
-#   console.log
+# console.log
 
-> 출처 : https://www.youtube.com/watch?v=KxsVV5jbJe4
+> 출처: https://www.youtube.com/watch?v=KxsVV5jbJe4
 
 <br/>
 
 디버깅에 유용하다.
 
-## log level
+## Log level
 
 아래의 4가지로 표현될 수 있다.
 
@@ -72,7 +72,7 @@ console.assert(2 === 2, 'same!');
 // Assertion failed: not same!
 ```
 
-즉, `2 === 2` 는 출력이 되지 않고, `2 === 3` 은 다르니까 not same이 빨간색으로 표시되어 나오게 된다. 
+즉, `2 === 2` 는 출력이 되지 않고, `2 === 3` 은 다르니까 not same이 빨간색으로 표시되어 나오게 된다.
 
 <br/>
 

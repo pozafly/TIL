@@ -1,4 +1,4 @@
-# next 포트 바꾸기
+# Next 포트 바꾸기
 
 package.json 파일에서,
 

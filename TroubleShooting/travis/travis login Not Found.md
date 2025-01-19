@@ -1,6 +1,6 @@
-# travis login Not Found
+# Travis login Not Found
 
-vue 배포 자동화를 위해 travis 설정파일을 만들다가, vue의 .env 파일을 gitignore 시켜놨기때문에 배포가 실패했다. 그러는 도중, env 파일을 암호화 하여 사용하기 위해 travis CI의 CLC(Command Line Client)를 이용하기 위해 터미널에 
+vue 배포 자동화를 위해 travis 설정파일을 만들다가, vue의.env 파일을 gitignore 시켜놨기때문에 배포가 실패했다. 그러는 도중, env 파일을 암호화 하여 사용하기 위해 travis CI의 CLC(Command Line Client)를 이용하기 위해 터미널에
 
 ```bash
 $ travis login --pro

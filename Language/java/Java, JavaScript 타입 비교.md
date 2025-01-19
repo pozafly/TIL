@@ -108,7 +108,7 @@ System.out.println(s2);  // World
 ### 🔸 Java String 생성 동작 방식(메모리 흐름)
 
 1. "Hello"라는 String 객체가 **String Pool**(힙 메모리의 특정 공간)에 저장됨.
-1. s1과 s2는 같은 "Hello" 객체를 참조함.
+2. s1과 s2는 같은 "Hello" 객체를 참조함.
 3. s2 = "World";를 실행하면,
    - **새로운 String 객체 "World"**가 생성됨.
    - s2는 새로운 "World" 객체를 참조하고,
@@ -117,9 +117,9 @@ System.out.println(s2);  // World
 ### 🔸 JavaScript String 생성 동작 방식(메모리 흐름)
 
 1. s1에 "Hello"라는 값이 **스택(Stack) 메모리**에 저장됨.
-1. s2 = s1에서 "Hello"라는 **값 자체가 복사**되어 s2에 저장됨.
-1. s2 = "World"에서 **새로운 값 “World”**가 s2에 저장됨.
-1. s1은 여전히 "Hello" 값을 가지고 있음.
+2. s2 = s1에서 "Hello"라는 **값 자체가 복사**되어 s2에 저장됨.
+3. s2 = "World"에서 **새로운 값 "World"**가 s2에 저장됨.
+4. s1은 여전히 "Hello" 값을 가지고 있음.
 
 <br/>
 

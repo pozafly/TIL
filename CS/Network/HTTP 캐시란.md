@@ -10,7 +10,7 @@ HTTP 에서 **리소스**(resource)란, 웹 브라우저가 HTTP 요청으로 �
 
 서버의 Cache-Control 헤더의 값으로 `max-age=<seconds>` 값을 지정하면, 이 리소스의 캐시가 유효한 시간은 `<seconds>` 초가 된다.
 
-#### 캐시의 유효 기간이 지나기 전:
+#### 캐시의 유효 기간이 지나기 전
 
 한번 받아온 리소스의 유효 기간이 지나기 전이라면, 브라우저는 서버에 요청을 보내지 않고 디스크 또는 메모리에서만 캐시를 읽어와 계속 사용한다.
 
@@ -20,11 +20,11 @@ HTTP 에서 **리소스**(resource)란, 웹 브라우저가 HTTP 요청으로 �
 
 사진은 유효한 캐시가 메모리에 남아있기 때문에 (from memory cache)라고 표기된 것을 확인할 수 있다.
 
-“서버에 요청을 보내지 않고” 라고 하는 말에 주의해야 한다. 한번 브라우저에 캐시가 저장되면 만료될 때까지 캐시는 계속 브라우저에 남아 있게 된다. 때문에 CDN Invalidation을 포함한 서버의 어떤 작업이 있어도 브라우저의 유효한 캐시를 지우기는 어렵다.
+"서버에 요청을 보내지 않고" 라고 하는 말에 주의해야 한다. 한번 브라우저에 캐시가 저장되면 만료될 때까지 캐시는 계속 브라우저에 남아 있게 된다. 때문에 CDN Invalidation을 포함한 서버의 어떤 작업이 있어도 브라우저의 유효한 캐시를 지우기는 어렵다.
 
 > ※ Cache-Control max-age 값 대신 Expires 헤더로 캐시 만료 시간을 정확히 지정할 수도 있다.
 
-#### 캐시의 유효 기간이 지난 이후 : 재검증
+#### 캐시의 유효 기간이 지난 이후: 재검증
 
 그렇다면 캐시의 유효 기간이 지나면 캐시가 완전히 사라지나? 그렇지 않다. 대신 브라우저는 서버에 [조건부 요청(Conditional request)](https://developer.mozilla.org/ko/docs/Web/HTTP/Conditional_requests)을 통해 캐시가 유효한지 재검증(Revalidation)을 수행한다.
 
@@ -39,13 +39,13 @@ HTTP 에서 **리소스**(resource)란, 웹 브라우저가 HTTP 요청으로 �
 1. If-None-Match: 캐시된 리소스의 `ETag` 값과 현재 서버 리소스의 `ETag` 값이 같은지 확인한다.
 2. If-Modified-Since: 캐시된 리소스의 `Last-Modified` 값 이후에 서버 리소스가 수정되었는지 확인한다.
 
-위 `ETag`와 `Last-Modified` 값은 기존에 받았던 리소스 응답 헤더에 있는 값을 사용한다. 재검증 결과 캐시가 유효하지 않으면, 서버는 **[200 OK]** 또는 적합한 상태 코드를 본문과 함께 내려준다. 추가로 HTTP 요청을 보낼 필요 없이 바로 최신 값을 내려받을 수 있기 때문에 매우 효율적이다. 
+위 `ETag`와 `Last-Modified` 값은 기존에 받았던 리소스 응답 헤더에 있는 값을 사용한다. 재검증 결과 캐시가 유효하지 않으면, 서버는 **[200 OK]** 또는 적합한 상태 코드를 본문과 함께 내려준다. 추가로 HTTP 요청을 보낼 필요 없이 바로 최신 값을 내려받을 수 있기 때문에 매우 효율적이다.
 
 > max-age=0 주의보 정의 대로라면 max-age=0 값이 Cache-Control 헤더로 설정되었을 때, 매번 리소스를 요청할 때마다 서버에 재검증 요청을 보내야할 것이다. 그렇지만 일부 모바일 브라우저의 경우 웹 브라우저를 껐다 켜기 전까지 리소스가 만료되지 않도록 하는 경우가 있다. 네트워크 요청을 라끼고 사용자에게 빠른 웹 경험을 제공하기 위해서라고 한다.
 >
 > 이 경우 웹 브라우저를 껐다 켜거나, 아래에서 소개할 no-store 값을 사용하면 된다.
 
-### no-cache와 no-store
+### No-cache와 no-store
 
 Cache-Control에서 가장 헷갈리는 두 가지 값이 있다면 바로 `no-cache`와 `no-store`다. 동작은 매우 다르다.
 
@@ -81,7 +81,7 @@ public은 모든 사람과 중간 서버가 캐시를 저장할 수 있음을 �
 
 기존과 max-age 값과 조합하려면 `Cache-Control: public, max-age=86400` 과 같이 콤마로 연결할 수 있다.
 
-### s-maxage
+### S-maxage
 
 중간 서버에서만 적용되는 max-age 값을 설정하기 위해 s-maxage 값을 사용할 수 있다.
 
@@ -113,11 +113,9 @@ JavaScript나 CSS 파일은 프론트엔드 웹 서비스를 빌드할 때마다
 
 캐시 설정을 섬세히 제어함으로써 사용자는 더 빠르게 HTTP 리소스를 로드할 수 있고, 개발자는 트래픽 비용을 절감할 수 있다. Cache-Control, ETag 헤더를 리소스의 성격에 따라 잘 설정하는 것만으로 캐시를 정확하게 설정할 수 있다는 것을 살펴봤다.
 
-> 출처 : https://toss.tech/article/smart-web-service-cache
+> 출처: https://toss.tech/article/smart-web-service-cache
 >
-> 참고 : 
+> 참고:
 >
 > - https://www.youtube.com/watch?v=UxNz_08oS4E
 > - https://web.dev/i18n/ko/http-cache/
-
-

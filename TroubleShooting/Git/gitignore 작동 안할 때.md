@@ -1,6 +1,4 @@
-# gitignore 작동 안할 때
-
-
+# Gitignore 작동 안할 때
 
 .gitignore가 제대로 작동되지 않아서 ignore처리된 파일이 자꾸 changes에 나올때가 있다.
 
@@ -11,4 +9,3 @@ $ git rm -r --cached .
 $ git add .
 $ git commit -m "fixed untracked files"
 ```
-

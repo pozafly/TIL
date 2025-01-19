@@ -1,11 +1,11 @@
-# import & require
+# Import & require
 
-> 출처 : https://www.daleseo.com/js-module-require/
+> 출처: https://www.daleseo.com/js-module-require/
 
 차이점에 대해 알아보자.
 
-- require : node.js에서 사용되고 있는 CommonJS 키워드.
-- import : ES6에서 새롭게 도입된 키워드.
+- require: node.js에서 사용되고 있는 CommonJS 키워드.
+- import: ES6에서 새롭게 도입된 키워드.
 
 둘 다 모두 하나의 파일에서 다른 파일의 코드를 불러온다는 동일한 목적을 가짐.
 
@@ -18,7 +18,7 @@ import moment from 'moment';
 
 <br/>
 
-## require
+## Require
 
 ### CommonJS 모듈 시스템의 필요성
 
@@ -123,7 +123,7 @@ console.log(a.usToCanadian(30)); // 32.97
 
 <br/>
 
-## import
+## Import
 
 ### ES6 모듈 시스템의 이점
 
@@ -219,4 +219,4 @@ console.log(currency.usToCanadian(30)); // 32.97
 
 <br/>
 
-한 가지 주의할 점은 `Babel` 없이 순수하게 Node.js  최신 버전으로 ES 모듈을 사용한다면 `import` 를 사용할 때, `.js` 확장자를 붙여주어야 함.
+한 가지 주의할 점은 `Babel` 없이 순수하게 Node.js 최신 버전으로 ES 모듈을 사용한다면 `import` 를 사용할 때, `.js` 확장자를 붙여주어야 함.

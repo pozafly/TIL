@@ -1,4 +1,4 @@
-# slot
+# Slot
 
 ```
 //sectionWrapComp.vue
@@ -57,4 +57,3 @@ componets: {
 	</div>
 </div>
 ```
-

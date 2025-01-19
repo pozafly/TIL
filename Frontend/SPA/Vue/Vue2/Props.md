@@ -1,6 +1,6 @@
 # Props
 
-> 출처 : https://kr.vuejs.org/v2/guide/components-props.html
+> 출처: https://kr.vuejs.org/v2/guide/components-props.html
 
 <br/>
 
@@ -146,7 +146,7 @@ post: {
 
 아래 두 경우가 주로 prop을 직접 변경하고 싶을 수 있는 상황의 예시임.
 
-### 1. prop은 초기값만 전달하고, 자식 컴포넌트는 그 초기 값을 로컬 데이터 속성으로 활용하고 싶은 경우
+### 1. Prop은 초기값만 전달하고, 자식 컴포넌트는 그 초기 값을 로컬 데이터 속성으로 활용하고 싶은 경우
 
 해당 경우에는 로컬 데이터 속성을 따로 선언하고 그 속성의 초깃값으로 prop을 사용하는 것이 가장 바람직 함.
 
@@ -287,8 +287,8 @@ Prop이 아닌 속성은 컴포넌트에 전달되긴 하지만 대응되는 pro
 
 이 경우 두 개의 각각 다른 값이 `class` 에 선언됨.
 
-- `form-control` : 컴포넌트 템플릿으로부터 부여됨
-- `date-picker-theme-dark` : 컴포넌트의 부모로부터 전달받아 부여됨
+- `form-control`: 컴포넌트 템플릿으로부터 부여됨
+- `date-picker-theme-dark`: 컴포넌트의 부모로부터 전달받아 부여됨
 
 대부분 속성의 경우, 전달받은 속성이 기존에 선언된 속성을 대체 한다. 예를 들어, `type="text"` 를 `type="date"` 가 선언된 컴포넌트에 전달하는 경우에는 속성이 대체되고 문제를 일으키게 될 가능성이 생긴다. 하지만 다행히도 `class` 와 `style` 속성의 경우에는 조금 더 똑똑하게 반응함. 즉, 앞의 `form-control` 과 `date-picker-theme-dark` 의 예제와 같이 두 개의 값이 합쳐져서 적용된다.
 
@@ -342,4 +342,3 @@ Vue.component('base-input', {
   placeholder="Enter your username"
 ></base-input>
 ```
-

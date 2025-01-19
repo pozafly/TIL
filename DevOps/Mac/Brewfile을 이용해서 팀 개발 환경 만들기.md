@@ -22,17 +22,17 @@ cat 해서 보면 설치 명령어들이 주욱 나옴. 그리고 Brewfile이 pa
 
 이렇게 설치되는 구조다.
 
-### tap
+### Tap
 
 - homebrew내의 기본저장소(Formulae) 외의 서드 파티 저장소다.
 - brew tap 명령어를 입력하면 내 맥북에 추가된 탭 목록을 확인할 수 있음.
 - brew tap `<user/repo>`를 입력하면 탭을 추가할 수 있고, brew install을 통해 설치할 때 해당 저장소를 사용할 수 있음.
 - 입력할 때 `<user/repo>`는 기본적으로 GitHub 저장소를 가정하고 추가되며, repo 이름은 homebrew-*로 시작하는 저장소여야 하지만 실제로 추가할 때에는 homebrew-* 접두사를 생략해도 됩니다. 실제로 homebrew/bundle라는 탭은 https://github.com/homebrew/homebrew-bundle 에서 내용을 확인할 수 있음.
 
-### cask
+### Cask
 
 - homebrew로 설치하지 않는 외부 GUI를 가진 어플리케이션을 설치할 수 있음.
 
-### mas
+### Mas
 
 - mas는 App Store에서 설치할 수 있는 애플리케이션을 명령어로 설치할 수 있다.

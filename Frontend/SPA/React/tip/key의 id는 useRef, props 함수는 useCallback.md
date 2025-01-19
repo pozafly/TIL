@@ -1,8 +1,8 @@
-# key의 id는 useRef, props 함수는 useCallback
+# Key의 id는 useRef, props 함수는 useCallback
 
 <br/>
 
-## key의 id는 useRef
+## Key의 id는 useRef
 
 useRef는 key의 id 값으로도 많이 사용된다. useState로 key의 id 값을 하면 props, state가 변할 때마다 렌더링 되는데, useRef를 사용해서 만들면 랜더링이 안됨.
 
@@ -10,6 +10,6 @@ useRef는 key의 id 값으로도 많이 사용된다. useState로 key의 id 값�
 
 <br/>
 
-## props 함수는 useCallback
+## Props 함수는 useCallback
 
 습관을 들여야 함. props로 전달해야 할 함수를 만들 때는 useCallback을 사용하여 함수를 감싸는 것을 습관화 하자.

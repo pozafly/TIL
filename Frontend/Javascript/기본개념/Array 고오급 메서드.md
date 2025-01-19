@@ -1,6 +1,6 @@
 # Array 고오급 메서드
 
-> 출처 : https://velog.io/@nayeon/Array%EC%9D%98-map-filter-reduce-forEach-%EB%A9%94%EC%86%8C%EB%93%9C, https://daesuni.github.io/Loop-performance/, https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d
+> 출처: https://velog.io/@nayeon/Array%EC%9D%98-map-filter-reduce-forEach-%EB%A9%94%EC%86%8C%EB%93%9C, https://daesuni.github.io/Loop-performance/, https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d
 
 종류
 
@@ -11,10 +11,10 @@
 
 ## 간단 비교
 
-- forEach : 한개씩 돌면서 무언가 하기. return value 없음.
-- filter : 조건에 맞는 것만 새로운 배열로. return value는 새 배열
-- map : 한 개씩 돌면서 연산한 결과를 새로운 배열로. return value는 새 배열
-- reduce : 한 개씩 돌면서 이전 연산한 결과를 조합하여 사용. return value는 reduce 함수 안에서 설정한대로.
+- forEach: 한개씩 돌면서 무언가 하기. return value 없음.
+- filter: 조건에 맞는 것만 새로운 배열로. return value는 새 배열
+- map: 한 개씩 돌면서 연산한 결과를 새로운 배열로. return value는 새 배열
+- reduce: 한 개씩 돌면서 이전 연산한 결과를 조합하여 사용. return value는 reduce 함수 안에서 설정한대로.
 
 ## 공통점
 
@@ -22,7 +22,7 @@
 
 <br/>
 
-## map
+## Map
 
 배열 내의 모든 요소 각각에 대해 주어진 함수를 호출한 결과를 가진 `새로운 배열`을 만들어낸다. 반복문을 돌면서 배열 안의 요소들을 1:1로 짝지어 주는 것. 매핑한다고 생각해라.
 
@@ -47,7 +47,7 @@ console.log(newArr);    // 1, 4, 9
 
 <br/>
 
-## filter
+## Filter
 
 주어진 function 에 속한 조건을 통과한 요소들을 `새로운 배열` 로 반환.
 
@@ -87,7 +87,7 @@ arr.forEach(callback(현재값 [, index [, array]]) {
 - for 문 보다 가독성이 좋다.
 - 복잡한 객체를 처리하는데 있어 유리함.
 - return 값을 받지 못한다. return 한다면 undefined를 받게 됨.
-- for 문과 다르게 중간에 끊을 방법이 없다. ( return으로 skip은 가능함. )
+- for 문과 다르게 중간에 끊을 방법이 없다. (return으로 skip은 가능함.)
 
 ```javascript
 let array1 = ['a', 'b', 'c'];
@@ -100,7 +100,7 @@ array1.forEach(element => console.log(element));
 
 <br/>
 
-## reduce
+## Reduce
 
 배열의 각 요소에 대해 주어진 reducer 함수를 실행하고, 하나의 결과값을 반환한다. **배열 축소** 의 원리로 작용함. 즉 여러개의 값이 담긴 배열이 줄어 최종적으로 하나의 값으로 만드는 과정.
 
@@ -182,7 +182,7 @@ let result = oneTwoThree.reduce((acc, cur) => {
 console.log(result);   // (2) [1, 3]
 ```
 
-이와 같이 sort, every, some, find, findIndex, includes도 모두 reduce로 구현 가능함. 
+이와 같이 sort, every, some, find, findIndex, includes도 모두 reduce로 구현 가능함.
 
 reduce는 비동기 프로그래밍을 할 때도 유용함.
 
@@ -204,8 +204,8 @@ const promiseFactory = (time) => {
 // 3초 후 4000
 ```
 
-1. 초깃값은 Promise.resolve() 로 한 후에, 
-2. return된 프로미스에  then을 붙여 다음 누적 값으로 넘기면 된다.
+1. 초깃값은 Promise.resolve() 로 한 후에,
+2. return된 프로미스에 then을 붙여 다음 누적 값으로 넘기면 된다.
 3. 프로미스가 순차적으로 실행을 보장됨.
 
-반복되는 모든 것에 reduce를 쓸 수 있다. 
+반복되는 모든 것에 reduce를 쓸 수 있다.

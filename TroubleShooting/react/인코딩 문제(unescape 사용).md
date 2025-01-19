@@ -1,7 +1,5 @@
 # 인코딩 문제(unescape 사용)
 
-
-
 <img width="278" alt="스크린샷 2021-02-27 오후 10 16 09" src="https://user-images.githubusercontent.com/59427983/109389019-dc46c400-794d-11eb-96ec-72901820bbb5.png">
 
 유튜브 api를 사용하다가 이런 문제를 만났다. return 되는 api에 특수문자가 포함 된 것이다.

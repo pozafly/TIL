@@ -6,7 +6,7 @@
 
 먼저 [flat](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)을 보자.
 
-## flat
+## Flat
 
 [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/flat), 모든 하위 배열 요소를 지정한 깊이까지 재귀적으로 이어붙인 **새로운 배열**을 생성한다.
 
@@ -54,7 +54,7 @@ console.log(flat5); // [ 1, 2, 4, 5 ]
 arr.flatMap(callback(currentValue[, index[, array]])[, thisArg])
 ```
 
-- callback : map 함수에 들어갈 콜백 함수임.
+- callback: map 함수에 들어갈 콜백 함수임.
 
 ```js
 const arr1 = [1, 2, 3, 4];
@@ -101,4 +101,4 @@ a.flatMap(n =>
 // [4, 1, 4, 20, 16, 1, 18]
 ```
 
-여기에 `[...new Set(result)]` 이렇게 해주면 중복 제거까지.
+여기에 `[…new Set(result)]` 이렇게 해주면 중복 제거까지.
