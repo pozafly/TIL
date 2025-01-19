@@ -1,5 +1,9 @@
 {
-  "theme": "system",
-  "cssTheme": "Things",
-  "translucency": false
+  "theme": "obsidian",
+  "cssTheme": "AnuPpuccin",
+  "translucency": true,
+  "enabledCssSnippets": [
+    "color-extends",
+    "custom-background"
+  ]
 }
