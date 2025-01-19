@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.3 JPQL.md",
+                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.3 JPQL"
+              "title": "0.4 영속성 컨텍스트"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.3 JPQL.md",
+                "file": "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "0.3 JPQL의 백링크"
+              "title": "0.4 영속성 컨텍스트의 백링크"
             }
           },
           {
@@ -193,14 +193,15 @@
   },
   "active": "f47a42025edd3be9",
   "lastOpenFiles": [
-    "Backend/Spring/핵심원리/0.8 싱글톤 컨테이너.md",
+    "Backend/Spring/jpa/기본/0.3 JPQL.md",
+    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
+    "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
     "Backend/Spring/핵심원리/0.7 BeanFactory와 ApplicationContext.md",
+    "Backend/Spring/핵심원리/0.8 싱글톤 컨테이너.md",
     "Backend/Spring/핵심원리/0.6 스프링 컨테이너와 스프링 빈.md",
     "Backend/Spring/핵심원리/0.1 SOLID 원칙.md",
     "Backend/Spring/핵심원리/0.4 객체지향 원리 적용.md",
-    "Backend/Spring/jpa/기본/0.3 JPQL.md",
     "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
-    "Backend/Spring/jpa/기본/0.2 구동 방식.md",
     "Backend/Spring/tip/템플릿(단축어) 사용.md",
     "Clean Code/JS 클린코드/0.6 배열 다루기.md",
     "Clean Code/JS 클린코드/0.1 고민하기.md",
@@ -220,7 +221,6 @@
     "Lecture/Testing/유닛 테스트와 TDD/0.1 테스트란?.md",
     "Lecture/Testing/유닛 테스트와 TDD/0.2 Jest 알아보기.md",
     "Backend/Spring/simple-basic/0.5 AOP.md",
-    "README.md",
-    "Frontend/SPA/React/고급 안내서-공식/코드 분할.md"
+    "README.md"
   ]
 }

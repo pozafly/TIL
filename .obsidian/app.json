@@ -1,4 +1,8 @@
 {
   "readableLineLength": false,
-  "showLineNumber": false
+  "showLineNumber": false,
+  "strictLineBreaks": false,
+  "foldHeading": false,
+  "foldIndent": false,
+  "spellcheck": false
 }
