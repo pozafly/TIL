@@ -4,5 +4,6 @@
   "strictLineBreaks": false,
   "foldHeading": false,
   "foldIndent": false,
-  "spellcheck": false
+  "spellcheck": false,
+  "propertiesInDocument": "visible"
 }

@@ -8,5 +8,6 @@
   "obsidian-image-toolkit",
   "obsidian-linter",
   "obsidian-style-settings",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-version-history-diff"
 ]

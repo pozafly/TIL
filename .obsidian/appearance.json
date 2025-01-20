@@ -1,10 +1,11 @@
 {
-  "theme": "obsidian",
+  "theme": "system",
   "cssTheme": "AnuPpuccin",
-  "translucency": true,
+  "translucency": false,
   "enabledCssSnippets": [
     "color-extends",
     "custom-background",
-    "image-align"
+    "image-align",
+    "strong-font-weight"
   ]
 }
