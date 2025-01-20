@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Backend/Spring/jpa/기본/0.5 엔티티 매핑.md",
+                "file": "Backend/Spring/jpa/기본/0.3 JPQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.5 엔티티 매핑"
+              "title": "0.3 JPQL"
             }
           }
         ]
@@ -152,8 +152,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화되지 않음"
             }
           }
         ],
@@ -170,8 +170,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화되지 않음"
             }
           }
         ]
@@ -194,6 +194,12 @@
   },
   "active": "f47a42025edd3be9",
   "lastOpenFiles": [
+    "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
+    "Backend/Spring/jpa/기본/0.5 엔티티 매핑.md",
+    "DevOps/Docker/입문/0.0 개념.md",
+    "DevOps/Docker/입문/0.3 웹서버(아파치).md",
+    "DevOps/Docker/입문/0.4 배포 과정.md",
+    "DevOps/Docker/입문/0.5 Dockerfile.md",
     "Frontend/SPA/React/Suspense.md",
     "Frontend/SPA/React/Splitting/2. React.lazy & Suspense.md",
     "Frontend/SPA/React/Splitting/1. 자바스크립트 함수 비동기 로딩.md",
@@ -203,8 +209,6 @@
     "Frontend/Javascript/기본개념/이터레이션.md",
     "Frontend/Javascript/기본개념/다시쓰는 Event Loop.md",
     "Frontend/Javascript/고급/setTimeout으로 코드 성능 최적화하기.md",
-    "Backend/Spring/jpa/기본/0.5 엔티티 매핑.md",
-    "Backend/Spring/jpa/기본/0.4 영속성 컨텍스트.md",
     "Backend/Spring/jpa/실습1/0.1 application_yml 설정.md",
     "Backend/Spring/jpa/기본/0.3 JPQL.md",
     "README.md",
@@ -216,10 +220,6 @@
     "Book/자바스크립트+리액트 디자인패턴/0.4 생성 패턴 - JS 디자인 패턴/0.1 생성자 패턴.md",
     "Book/이펙티브 타입스크립트/0.7. 타입이 값들의 집합이라고 생각하기.md",
     "Book/이펙티브 타입스크립트/5.4 객체를 순회하는 노하우.md",
-    "Book/육각형 개발자/9~11장.md",
-    "Book/육각형 개발자/7~8장.md",
-    "Book/육각형 개발자/1~3장.md",
-    "Book/그림으로 배우는 알고리즘/0.1 자료구조.md",
     "무제 파일.canvas",
     "Tags",
     "daliy-note"

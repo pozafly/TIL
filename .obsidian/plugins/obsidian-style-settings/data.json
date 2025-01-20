@@ -41,5 +41,7 @@
   "anuppuccin-theme-settings@@anp-hide-external-link-icon": true,
   "anuppuccin-theme-settings@@list-indent": 1,
   "anuppuccin-theme-settings@@list-spacing": 0.2,
-  "anuppuccin-theme-settings@@h2-line-height": 1.4
+  "anuppuccin-theme-settings@@h2-line-height": 1.4,
+  "anuppuccin-custom-background@@anp-custom-bg-blur-light": 5,
+  "anuppuccin-theme-settings@@anuppuccin-theme-light": "ctp-latte"
 }

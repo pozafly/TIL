@@ -4,6 +4,7 @@
   "translucency": true,
   "enabledCssSnippets": [
     "color-extends",
-    "custom-background"
+    "custom-background",
+    "image-align"
   ]
 }
