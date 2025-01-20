@@ -3,6 +3,7 @@ img {
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+  opacity: 1 !important;
 }
 
 .markdown-source-view.mod-cm6 .cm-content .cm-html-embed {

@@ -427,7 +427,7 @@
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
-          "defaultColour": "--text-highlight-bg",
+          "defaultColour": "#0000005E",
           "alternativeHighlights": {}
         },
         "inline": {

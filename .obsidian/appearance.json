@@ -1,11 +1,11 @@
 {
   "theme": "system",
-  "cssTheme": "AnuPpuccin",
-  "translucency": false,
+  "cssTheme": "Minimal",
+  "translucency": true,
   "enabledCssSnippets": [
-    "color-extends",
-    "custom-background",
     "image-align",
-    "strong-font-weight"
-  ]
+    "strong-font-weight",
+    "code-block"
+  ],
+  "accentColor": "#4c8ce6"
 }
