@@ -3,3 +3,7 @@ body .markdown-source-view.mod-cm6 .cm-content,
 body.fancy-cursor .mod-cm6 .cm-line {
   caret-color: var(--text-accent);
 }
+
+.cm-content {
+  padding-bottom: calc(100vh - 320px) !important;
+}

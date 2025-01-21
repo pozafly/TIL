@@ -321,7 +321,7 @@
           "textItalic": false
         },
         "languageIcon": {
-          "display": "none",
+          "display": "always",
           "displayColour": true
         },
         "externalReference": {
@@ -341,17 +341,17 @@
         "style": true,
         "fontWeight": 4,
         "curvature": 6,
-        "paddingVertical": 5,
+        "paddingVertical": 3,
         "paddingHorizontal": 5,
         "marginHorizontal": 0,
         "titleFontWeight": 8
       },
       "advanced": {
-        "gradientHighlights": false,
+        "gradientHighlights": true,
         "gradientHighlightsColourStop": "70%",
         "languageBorderColour": false,
         "languageBorderWidth": 5,
-        "iconSize": 28
+        "iconSize": 22
       }
     },
     "colours": {
@@ -384,7 +384,7 @@
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
-          "defaultColour": "--text-highlight-bg",
+          "defaultColour": "#4A424280",
           "alternativeHighlights": {}
         },
         "inline": {
@@ -427,7 +427,7 @@
         "highlights": {
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
-          "defaultColour": "#0000005E",
+          "defaultColour": "--text-highlight-bg",
           "alternativeHighlights": {}
         },
         "inline": {
