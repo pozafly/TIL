@@ -5,7 +5,11 @@
   "enabledCssSnippets": [
     "image-align",
     "strong-font-weight",
-    "code-block"
+    "code-block",
+    "mermaid-svg",
+    "caret"
   ],
-  "accentColor": "#4c8ce6"
+  "accentColor": "#4c8ce6",
+  "showViewHeader": true,
+  "nativeMenus": true
 }

@@ -1,9 +1,14 @@
 {
-  "readableLineLength": false,
+  "readableLineLength": true,
   "showLineNumber": false,
   "strictLineBreaks": false,
   "foldHeading": false,
   "foldIndent": false,
   "spellcheck": false,
-  "propertiesInDocument": "visible"
+  "propertiesInDocument": "visible",
+  "alwaysUpdateLinks": true,
+  "showRibbon": false,
+  "showInlineTitle": false,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./"
 }

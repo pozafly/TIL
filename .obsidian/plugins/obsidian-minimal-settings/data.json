@@ -20,7 +20,7 @@
   "colorfulFrame": false,
   "colorfulActiveStates": true,
   "trimNames": true,
-  "labeledNav": false,
+  "labeledNav": true,
   "fullWidthMedia": true,
   "bordersToggle": false,
   "minimalStatus": true,
@@ -29,6 +29,6 @@
   "underlineExternal": true,
   "folding": false,
   "lineNumbers": false,
-  "readableLineLength": false,
+  "readableLineLength": true,
   "devBlockWidth": false
 }

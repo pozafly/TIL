@@ -10,5 +10,7 @@
   "obsidian-style-settings",
   "obsidian-git",
   "obsidian-version-history-diff",
-  "obsidian-minimal-settings"
+  "obsidian-minimal-settings",
+  "meld-encrypt",
+  "obsidian-tasks-plugin"
 ]
