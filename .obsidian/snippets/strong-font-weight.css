@@ -1,4 +1,5 @@
-.theme-dark .cm-strong {
+.theme-dark .cm-strong,
+.theme-dark .markdown-preview-section strong {
   font-weight: 400;
   color: var(--text-accent);
 }
