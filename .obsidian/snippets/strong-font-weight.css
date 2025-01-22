@@ -1,4 +1,4 @@
-.theme-dark.cm-strong {
-  font-weight: 800;
-  /* color: var(--bold-color); */
+.theme-dark .cm-strong {
+  font-weight: 400;
+  color: var(--text-accent);
 }
