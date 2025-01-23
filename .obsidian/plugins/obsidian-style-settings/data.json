@@ -55,7 +55,6 @@
   "minimal-style@@minimal-code-scroll": false,
   "minimal-advanced@@hide-markdown": false,
   "minimal-style@@code-comment@@dark": "#8B949E",
-  "minimal-style@@code-function@@dark": "#D2A8FF",
   "minimal-style@@code-keyword@@dark": "#A5D6FF",
   "minimal-style@@code-important@@dark": "#A8DAFF",
   "minimal-style@@code-operator@@dark": "#A5D6FF",
@@ -101,5 +100,10 @@
   "minimal-style@@blockquote-border-color@@light": "#5C8ADF",
   "minimal-style@@blockquote-background-color@@dark": "#282828",
   "minimal-style@@blockquote-background-color@@light": "#F0F0F0",
-  "minimal-style@@blockquote-size": "14px"
+  "minimal-style@@blockquote-size": "14px",
+  "minimal-style@@file-header-visibility": "minimal-tab-title-visible",
+  "minimal-style@@file-header-justify": "center",
+  "minimal-style@@inline-title-weight": 600,
+  "minimal-style@@bold-modifier": 200,
+  "minimal-style@@code-function@@dark": "#D2A8FF"
 }

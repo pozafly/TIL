@@ -4,7 +4,6 @@
   "table-editor-obsidian",
   "tag-wrangler",
   "file-explorer-note-count",
-  "code-styler",
   "obsidian-image-toolkit",
   "obsidian-linter",
   "obsidian-style-settings",
@@ -12,5 +11,6 @@
   "obsidian-version-history-diff",
   "obsidian-minimal-settings",
   "meld-encrypt",
-  "obsidian-tasks-plugin"
+  "obsidian-tasks-plugin",
+  "code-styler"
 ]
