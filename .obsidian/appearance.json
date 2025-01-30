@@ -7,7 +7,8 @@
     "strong-font-weight",
     "code-block",
     "mermaid-svg",
-    "caret"
+    "caret",
+    "heading"
   ],
   "accentColor": "#4c8ce6",
   "showViewHeader": true,

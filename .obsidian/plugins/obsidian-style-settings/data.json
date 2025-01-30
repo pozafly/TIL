@@ -105,5 +105,6 @@
   "minimal-style@@file-header-justify": "center",
   "minimal-style@@inline-title-weight": 600,
   "minimal-style@@bold-modifier": 200,
-  "minimal-style@@code-function@@dark": "#D2A8FF"
+  "minimal-style@@code-function@@dark": "#D2A8FF",
+  "minimal-style@@h2-l": false
 }
