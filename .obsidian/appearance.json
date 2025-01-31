@@ -6,9 +6,9 @@
     "image-align",
     "strong-font-weight",
     "code-block",
-    "mermaid-svg",
     "caret",
-    "heading"
+    "heading",
+    "mermaid-svg"
   ],
   "accentColor": "#4c8ce6",
   "showViewHeader": true,

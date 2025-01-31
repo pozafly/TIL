@@ -3,10 +3,15 @@
   width: 100%;
 }
 
-/* 
+.theme-dark .entityBox {
+  fill: rgb(239, 239, 239) !important;
+  stroke: rgb(243, 243, 243) !important;
+}
 .theme-dark .attributeBoxOdd {
-  fill: #000 !important;
+  fill: rgb(226, 226, 226) !important;
+  stroke: rgb(243, 243, 243) !important;
 }
 .theme-dark .attributeBoxEven {
-  fill: #1d1d1d !important;
-} */
+  fill: rgb(239, 239, 239) !important;
+  stroke: rgb(243, 243, 243) !important;
+}
