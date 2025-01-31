@@ -7,7 +7,6 @@
   "spellcheck": false,
   "propertiesInDocument": "visible",
   "alwaysUpdateLinks": true,
-  "showRibbon": false,
   "showInlineTitle": false,
   "newFileLocation": "current",
   "attachmentFolderPath": "./"
