@@ -160,3 +160,63 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
 ```
 
 참고: 쿼리 파라미터를 로그로 남기는 외부 라이브러리는 시스템 자원을 사용하므로, 개발 단계에서는 편하게 사용해도 된다. 하지만 운영시스템에 적용하려면 꼭 성능테스트를 하고 사용하는 것이 좋다.
+
+---
+
+## 테스트 케이스를 위한 설정
+
+테스트는 격리된 환경에서 실행하고, 끝나면 데이터를 초기화 하는것이 좋음 따라서 메모리 DB를 사용하는 것이 가장 이상적임.
+추가로 테스트를 위한 스프링 환경과, 일반적으로 어플리케이션을 실행하는 환경은 보통 다르므로 설정 파일을 다르게 사용하자.
+
+`test/resources/application.yml` 생성한다.
+
+```yml
+spring:  
+  # ...
+  datasource:  
+    url: jdbc:h2:mem:test
+    username: sa  
+    password:  
+    driver-class-name: org.h2.Driver  
+  # ...
+```
+
+url이 기존에는 실물이 있었음. 하지만, 테스트 환경에서 새롭게 h2 DB를 생성해야 하는데, h2는 JVM 환경에서 돌아가기 때문에 어플리케이션 내부에서 띄울 수 있음.
+
+원래 주소는 `url: jdbc:h2:tcp://localhost/~/Documents/dev/backend/jpashop` 이렇지만, 인메모리 버전으로 하려면,
+
+```
+url: jdbc:h2:mem:test
+```
+
+로 넣어주면 된다.
+
+```yml
+spring:  
+#  output:  
+#    ansi:  
+#      enabled: ALWAYS  
+#  datasource:  
+#    url: jdbc:h2:mem:test  
+#    username: sa  
+#    password:  
+#    # DB 연결을 위해 JDBC 드라이버의 클래스 이름을 지정함.  
+#    driver-class-name: org.h2.Driver  
+#  
+#  jpa:  
+#    hibernate:  
+#      # 자동으로 table을 만들어주는 모드  
+#      ddl-auto: create  
+#    properties:  
+#      hibernate:  
+#        # show_sql: true -> system.out으로 로그를 찍음  
+#        format_sql: true  
+  
+logging:  
+  level:  
+    # 하이버네이트가 생성하는 SQL을 디버그 모드로 콘솔에 출력해줌 (Logger를 통해 찍어줌)  
+    org.hibernate.SQL: debug  
+    org.hibernate.orm.jdbc.bind: trace
+```
+
+그리고 다른거도 이렇게 없어도 된다. SpringBoot 에서 h2 기준으로 알아서 돌려줌.
