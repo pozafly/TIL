@@ -16,5 +16,14 @@
       "key": "/"
     }
   ],
-  "editor:toggle-comments": []
+  "editor:toggle-comments": [],
+  "obsidian-git:push": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ]
 }
