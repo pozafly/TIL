@@ -162,3 +162,62 @@ insert
 ```
 
 이렇게 이쁘게 잘 뜬다.
+
+## 멀티모듈(MSA)일 경우 설정
+
+```
+├── common
+│   ├── logging
+│   │   ├── build.gradle
+│   │   └── src
+│   │       └── main
+│   │           ├── generated
+│   │           └── java
+│   │               └── kuke
+│   │                   └── board
+│   │                       └── common
+│   │                           └── p6spy
+│   │                               ├── P6spyConfig.java
+│   │                               └── P6spyPrettySqlFormatter.java
+├── service
+│   ├── article
+│   │   ├── build.gradle
+│   │   └── src
+│   │       ├── main
+│   │       │   ├── generated
+│   │       │   ├── java
+│   │       │   │   └── kuke
+│   │       │   │       └── board
+│   │       │   │           └── article
+│   │       │   │               ├── ArticleApplication.java
+│   │       │   │               ├── controller
+│   │       │   │               │   └── ArticleController.java
+│   │       │   │               ├── entity
+│   │       │   │               │   └── Article.java
+│   │       │   │               ├── repository
+│   │       │   │               │   └── ArticleRepository.java
+│   │       │   │               └── service
+│   │       │   │                   ├── ArticleService.java
+│   │       │   │                   ├── request
+│   │       │   │                   │   ├── ArticleCreateRequest.java
+│   │       │   │                   │   └── ArticleUpdateRequest.java
+│   │       │   │                   └── response
+│   │       │   │                       └── ArticleResponse.java
+│   │       │   └── resources
+│   │       │       └── application.yml
+├── build.gradle
+└── settings.gradle
+```
+
+이런 구조라 가정하자.
+1. 먼저 root의 build.gradle에 디펜던시를 설치
+2. common 경로 잡기
+	- common/loggin/build.gradle에 JPA 디펜던시 추가 -> formatter에서 jpa 디펜던시 사용함
+3. common에 P6spyConfig.java, formatter.java 를 넣는다.
+4. settings.gradle
+	- `include 'common:logging'` 추가
+5. 사용처(service/article)의 build.gradle에 `implementation project(':common:logging')` 추가
+6. 사용처(service/article)에서 application.yml에 p6spy 설정 코드 추가(decorator…)
+7. 사용처(service/article)의 xxxApplication.java에 `@SpringBootApplication(scanBasePackages = "[패키지]")` 등록
+	- P6spyConfig.java에는 `@Configuration` 어노테이션 사용중인데, 이게 각 패키지마다 컴포넌트 스캔이 안되므로 넣어줌.
+	- 따라서 common이 포함되는 패키지 명을 넣어주어야 함.
