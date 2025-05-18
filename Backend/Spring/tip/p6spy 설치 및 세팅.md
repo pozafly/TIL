@@ -48,12 +48,23 @@ insert
 
 ## 3. spy.properties
 
-src/main/resources에 spy.properties 파일 생성
+~~src/main/resources에 spy.properties 파일 생성~~
 
 ```properties
 logMessageFormat=com.p6spy.engine.spy.appender.MultiLineFormat  
 appender=com.p6spy.engine.spy.appender.Slf4JLogger  
 multiline=true
+```
+
+properties 파일을 만들지 않고 application.yml에 아래와 같이 넣으면 된다.
+
+```yml
+decorator:  
+  datasource:  
+    p6spy:  
+      enable-logging: true      # JDBC 로그 활성화  
+      multiline: true           # MultiLineFormat 자동 적용  
+      logging: slf4j            # Slf4JLogger 사용
 ```
 
 이렇게만 넣어두어도 p6spy 동작 잘함. 하지만,
@@ -68,11 +79,21 @@ insert into member (username,id) values ('memberA',default);
 ## 4. config, formatter class 생성
 
 ```java
+import com.p6spy.engine.logging.Category;  
+import com.p6spy.engine.spy.P6SpyOptions;  
+import com.p6spy.engine.spy.appender.MessageFormattingStrategy;  
+import jakarta.annotation.PostConstruct;  
+import org.hibernate.engine.jdbc.internal.FormatStyle;  
+  
+import java.util.Locale;  
+  
+import static org.springframework.util.StringUtils.hasText;  
+  
 public class P6spyPrettySqlFormatter implements MessageFormattingStrategy {  
   
     private static boolean isDdl(String trimmedSQL) {  
         return trimmedSQL.startsWith("create") || trimmedSQL.startsWith("alter")  
-            || trimmedSQL.startsWith("comment");  
+                || trimmedSQL.startsWith("comment");  
     }  
   
     private static String trim(String sql) {  
@@ -90,7 +111,7 @@ public class P6spyPrettySqlFormatter implements MessageFormattingStrategy {
   
     @Override  
     public String formatMessage(int connectionId, String now, long elapsed, String category,  
-        String prepared, String sql, String url) {  
+                                String prepared, String sql, String url) {  
         String formattedSql = formatSql(category, sql);  
         return formatLog(elapsed, category, formattedSql);  
     }  
@@ -108,19 +129,23 @@ public class P6spyPrettySqlFormatter implements MessageFormattingStrategy {
   
     private String formatLog(long elapsed, String category, String formattedSql) {  
         return String.format("[%s] | %d ms | %s", category, elapsed,  
-            formatSql(category, formattedSql));  
+                formatSql(category, formattedSql));  
     }  
 }
 ```
 
 ```java
+import com.p6spy.engine.spy.P6SpyOptions;  
+import jakarta.annotation.PostConstruct;  
+import org.springframework.context.annotation.Configuration;  
+  
 @Configuration  
 public class P6spyConfig {  
   
     @PostConstruct  
     public void setLogMessageFormat() {  
         P6SpyOptions.getActiveInstance()  
-            .setLogMessageFormat(P6spyPrettySqlFormatter.class.getName());  
+                .setLogMessageFormat(P6spyPrettySqlFormatter.class.getName());  
     }  
 }
 ```
