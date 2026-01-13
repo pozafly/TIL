@@ -9,5 +9,5 @@
   "alwaysUpdateLinks": true,
   "showInlineTitle": false,
   "newFileLocation": "current",
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "assets/images"
 }
