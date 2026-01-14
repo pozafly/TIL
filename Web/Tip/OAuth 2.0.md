@@ -71,7 +71,7 @@ Redirect URI는 기본적으로 보안을 위해 https만 허용된다. 단 루�
 
 ## OAuth 2.0의 동작 메커니즘
 
-![image](https://github.com/pozafly/TIL/assets/59427983/e1c0035f-2dc5-46e1-b255-e758db56150b)
+![[assets/images/c84eb9aceb8a8aa175eed83308341eff_MD5.png]]
 
 ### 1~2 로그인 요청
 
@@ -80,14 +80,12 @@ Resource Owner가 우리 서비스의 '구글로 로그인 하기' 등의 버튼
 클라이언트는 이 때 Authorization Server가 제공하는 Authorization URI에 `response_type`, `client_id`, `redirect_uri`, `scope` 등의 매개변수를 쿼리 스트링으로 포함하여 보낸다.
 
 예를 들어 어떤 OAuth 2.0 서비스의 Authorization URL이 `https://authorization-server.com/auth` 라면, 결과적으로 Client는 아래와 같은 URL을 빌드할 것 이다.
-
 ```
 https://authorization-server.com/auth?response_type=code
 &client_id=29352735982374239857
 &redirect_uri=https://example-app.com/callback
 &scope=create+delete
 ```
-
 이 때 Authorization Server에게 보낼 매개변수는 아래와 같다.
 
 - response_type: 반드시 code로 값을 설정해야 한다.([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1)). 인증이 성공할 경우 클라이언트는 후술할 Authorization Code를 받을 수 있다.
@@ -111,7 +109,7 @@ Authorization Code란, 클라이언트가 Access Token을 획득하기 위해 �
 >
 > [출처](https://developers.google.com/identity/protocols/oauth2?hl=ko)
 >
-> <img width="885" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/64f3f878-6e79-4a26-8af3-b082f6c99d3a">
+> ![[assets/images/8d02149cbb81934c54e28e97d766952f_MD5.png]]
 
 ### 7~8. Authorization Code와 Access Token 교환
 
@@ -120,7 +118,6 @@ Client는 Authorization Server에 Authorization Code를 전달하고, Access Tok
 Access Token은 유출되어서는 안된다. 따라서 제 3자가 가로채지 못하도록 HTTPS 연결을 통해서만 사용될 수 있다.
 
 Authorization Code와 Access Toekn 교환은 `token` 앤드포인트에서 이루어진다. 아래는 token 엔드포인트에서 Access Toekn을 발급받기 위한 HTTP 요청의 예시다. 이 요청은 `application/x-www-form-urlencoded` 의 형식에 맞춰 전달해야한다.
-
 ```
 POST /oauth/token HTTP/1.1
 Host: authorization-server.com
@@ -131,7 +128,6 @@ grant_type=authorization_code
 &client_id=xxxxxxxxxx
 &client_secret=xxxxxxxxxx
 ```
-
 필수로 전달해야하는 매개변수를 살펴보자.
 
 - grant_type: 항상 `authorization_code`로 설정되어야 한다. ([참고](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.3))

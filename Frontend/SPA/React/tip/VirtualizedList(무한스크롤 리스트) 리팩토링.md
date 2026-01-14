@@ -2,11 +2,11 @@
 
 > [출처](https://www.bucketplace.com/post/2024-09-11-virtualizedlist-%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0/)
 
-![Group_12 (1) (1) (1)](https://github.com/user-attachments/assets/7c7809fd-7784-405c-b2ae-4bca8db7b79a)
+![[assets/images/3080a4e85e819fa0038f857506802d9e_MD5.gif]]
 
 VirtualizedList(가상 리스트)는 나열된 리스트의 아이템 중 화면에 실제로 보이는 아이템만 렌더링하는 기술이다. 유저가 스크롤을 내리면 화면에 보이는 아이템의 범위가 바뀌고, 그에 따라 렌더링 되는 아이템도 바뀌게 된다.
 
-![image](https://github.com/user-attachments/assets/ddeaef1d-7398-40ed-9476-73767b569816)
+![[assets/images/814b7ff4acb836beb3184a65cf066d6a_MD5.png]]
 
 그림에서 Item1, 2, 99, 100은 화면을 벗어난 곳에 위치해 있기 때문에 현재 시점에서는 렌더링 되지 않지만, 유저가 스크롤을 내리거나 올려 위치를 변경하면 렌더링 될 수 있다. 이로 인해 유저는 마치 리스트가 처음부터 끝까지 차례로 구성된 것처럼 느끼게 된다. 바로 이 점 때문에 Virtualized List (가상 리스트)라는 이름이 붙게 되었다. 화면에 없는 아이템을 실제로 존재하는 것처럼 생각하게 만드는 것이다.
 
@@ -26,7 +26,7 @@ VirtualizedList(가상 리스트)는 나열된 리스트의 아이템 중 화면
 
 다운수, 업뎃 시점, 원하는 기능 커버 3가지 조건을 고려해 [virtuoso](https://virtuoso.dev/) 라이브러리 선택
 
-![image](https://github.com/user-attachments/assets/2707cd92-c0c3-456b-9e40-e8a239177f03)
+![[assets/images/bcf5970010c7f26ef3676a3c4fe56a11_MD5.png]]
 
 현재 시점은 virtuoso 대비 tanstack의 virtual-core의 점유율 상승. tanstack-query의 사용이 많아지면서 덩달아 점유율이 올라감.
 
@@ -51,7 +51,7 @@ VirtualizedList(가상 리스트)는 나열된 리스트의 아이템 중 화면
 
 결국 '새로 고침'이나 '뒤로가기'와 같이 A 페이지를 보고 있다 되돌아왔다는 것이 보장된 상황에서만 '저장된 스크롤 위치를 받아와 이동'하는 스크롤 복귀를 수행해야 함. 이 기술 구현은 history API와 연관이 있다.
 
-![gif첨부 (1)](https://github.com/user-attachments/assets/54d64a68-fba5-47e4-9e45-0a93f12f1cc2)
+![[assets/images/5ad3c2798edb0e7c8d8369708b188774_MD5.gif]]
 
 1)state 넣기 2) 새로고침 / 뒤로가기 시 3) 페이지 재 진입 시
 
@@ -93,7 +93,7 @@ cursor 방식은 (token, per) ⇒ (items, nextToken) 구조를 가지고 있다.
 
  아이템과 다른 UI를 중간에 삽입하는 기능도 추가함. 예를 들어 배너와 같은 컴포넌트.
 
-![image](https://github.com/user-attachments/assets/3851f6e6-fcf8-4279-911b-f265bc01d94b)
+![[assets/images/3b6d337cbaeeed0b412869c08eedfcf8_MD5.png]]
 
 중간에 주입할 item은 InsertedItem의 배열 형태로 받으며, 내부에는 주입할 행을 나타내는 rowIndex 와 주입할 아이템인 component 가 있다.
 
@@ -101,7 +101,7 @@ cursor 방식은 (token, per) ⇒ (items, nextToken) 구조를 가지고 있다.
 
 이를 간단히 코드를 표현해 보자면 다음과 같음.
 
-![image](https://github.com/user-attachments/assets/41ba30af-5ae4-4bc9-ba5c-86103c1f0514)
+![[assets/images/3b73073385c8758bdd4bb25a4ef03393_MD5.png]]
 
 - [추천 콘텐츠 페이지](https://contents.ohou.se/topics/recommend)
 - [쇼핑홈 페이지](https://store.ohou.se/)

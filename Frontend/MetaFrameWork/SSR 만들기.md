@@ -3,7 +3,6 @@
 > https://github.com/pozafly/render-route
 
 node express server를 먼저 만든다.
-
 ```js
 import express from 'express';
 import cors from 'cors';
@@ -31,13 +30,11 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 ```
-
 `app.use(express.static('dist'));` 이 부분은 dist 디렉토리 내부에 있는 static 파일을 웹 서버로 서빙하겠다는 뜻이다.
 
 vite로 프로젝트를 만들고 build를 돌린다. 그럼 dist 디렉토리에 index.html 파일이 생성될 것이다.
 
 express server를 `nodemon` 에 연결한다. 그리고 localhost:port 로 접속하면 `app.get('/')` 이 녀석 때문에 경로가 겹치므로 index.html을 main.html로 바꿔 localhost:port/main.html 이 메인 페이지가 되도록 변경한다.
-
 ```json
 {
   "scripts": {
@@ -46,19 +43,15 @@ express server를 `nodemon` 에 연결한다. 그리고 localhost:port 로 접�
   }
 }
 ```
-
 그리고 요청하면 정상적으로 html 파일을 서빙하게 된다. 하지만, network tab에 docs를 보면 여전히 `<div id="app"><div>` 밖에 없을 것이다.
 
 이 때 dist로 빌드된 html 파일에
-
 ```html
 <body>
   <div id="app"><!--app--></div>
 </body>
 ```
-
 이런 식으로 주석을 넣고, server.js에
-
 ```js
 app.get('/', (req, res) => {
   fs.readFile('dist/main.html', (err, file) => {
@@ -66,15 +59,13 @@ app.get('/', (req, res) => {
   });
 });
 ```
-
 이런식으로 파일을 읽어와 replace로 교체하면
 
-<img width="552" alt="스크린샷 2024-08-03 오후 6 44 44" src="https://github.com/user-attachments/assets/bb57659e-88f1-4dc2-aa40-41a25c102f1c">
+![[assets/images/3a9277088b567603afe1c4e6f0deda4e_MD5.png]]
 
 이렇게 SSR 되어 떨어지는 것을 볼 수 있다.
 
 이제, 함수로 이 작업을 해보자.
-
 ```js
 // index.js
 export function renderIndex() {
@@ -92,9 +83,7 @@ export function renderIndex() {
   });
 }
 ```
-
 이 파일은 client side rendering 할 수 있는 코드다.
-
 ```js
 import { goto } from '../router';
 
@@ -117,7 +106,6 @@ export function renderIndex() {
   });
 }
 ```
-
 이렇게 `getInitialHTML` 함수를 만들어 넣는다.
 
 그러면 getInitialHTML 함수를 server.js에서 import 해서 html을 내려주는 부분에 replace 하면 되지 않을까? 하지만 불가능 하다.
@@ -139,7 +127,6 @@ export function renderIndex() {
 ---
 
 이 상황에서 할 수 있는 것은, vite의 library mode를 사용하는 것이다.
-
 ```js
 // vite.config.js
 import { resolve } from 'path';
@@ -154,11 +141,9 @@ export default {
   },
 };
 ```
-
 이렇게 vite.config.js에 lib를 넣어주자. 빌드 실패나면
 
 package.json에 mv로 index.html을 main.html로 변경했던 것을 지워주자. lib 모드를 사용하니, treeshaking이 되지 않는 것을 볼 수 있다.
-
 ```js
 // routes.js
 import { renderIndex, getInitialHTML as getInitialHTMLForIndex } from './pages/index';
@@ -174,9 +159,7 @@ export const getInitialHTML = {
   '/search': getInitialHTMLForSearch,
 };
 ```
-
 이제, 이렇게 만들어줄 수 있다. 이 때 search 같은 경우는
-
 ```js
 export async function renderSearch({ searchParams }) {
   document.querySelector('#app').innerHTML = `
@@ -186,9 +169,7 @@ export async function renderSearch({ searchParams }) {
   ...
 }
 ```
-
 이런 형태였지만,
-
 ```js
 export const getInitialHTML = () => {
   return `
@@ -197,9 +178,7 @@ export const getInitialHTML = () => {
   `;
 };
 ```
-
 이런 형태로 `searchParams.query` 부분을 없애고 넣었다. getInitialHTML을 export 했으니 build의 진입점인 main.js에서 export 하자.
-
 ```js
 // main.js
 import { start } from './src/router';
@@ -209,13 +188,11 @@ export { getInitialHTML };
 
 start({ routes });
 ```
-
 빌드 결과를 보면
 
-<img width="285" alt="image" src="https://github.com/user-attachments/assets/9ca83b8b-650c-471b-848d-dab7b54d0a97">
+![[assets/images/69cc741a126ea91ad2f56a66736bd440_MD5.png]]
 
 위와 같음. dist/index.js에서 잘 export 되었다.
-
 ```js
 // server.js
 import { getInitialHTML } from './dist/index.js';
@@ -226,15 +203,13 @@ app.get('/', (req, res) => {
   });
 });
 ```
-
-<img width="533" alt="image" src="https://github.com/user-attachments/assets/7602e6bf-c403-4184-b471-d148755a24e8">
+![[assets/images/e51a348177f6eb6988b38bcc570c2bae_MD5.png]]
 
 자 이렇게 첫 렌더링 시 HTML이 잘 입혀서 들어온 것을 볼 수 있다.
 
 <br/>
 
 ## Data fetch for SSR
-
 ```js
 app.get('/api/search', (req, res) => {
   const filteredMovies = movies.filter((movie) =>
@@ -249,9 +224,7 @@ app.get('/search', (req, res) => {
   });
 });
 ```
-
 기존 /search를 /api/search 로 바꾸어주고, getInitialHTML을 넣어주면
-
 ```html
 <body>
   <div id="app">
@@ -261,9 +234,7 @@ app.get('/search', (req, res) => {
 	<script type="module" src="/index.js"></script>
 </body>
 ```
-
 이렇게 SSR 잘 되는 것을 볼 수 있다. 하지만, fetching 된 데이터는 브라우저에서 페칭된 것이다. 서버에서 이걸 불러서 사용할 수는 없을까?
-
 ```js
 const getFiltedMovies = (query) => {
   return movies.filter((movie) =>
@@ -289,11 +260,9 @@ app.get('/search', (req, res) => {
   });
 });
 ```
-
 `getFiltedMovies()` 함수를 만들어 페이지와 api 모두에 적용했다. 그리고, getInitialHTML 함수에 이를 넣어주었다. 즉, 페이지 요청이 있을 때, fetch 하여 내용을 담아 getIntialHTML로 넘겼다.
 
 그럼 search.js에는
-
 ```js
 // search.js
 export const getInitialHTML = ({ movies } = {}) => {
@@ -312,17 +281,15 @@ export const getInitialHTML = ({ movies } = {}) => {
   }
 };
 ```
-
 이와 같이 template literal로 html을 만들고, 다시 server.js로 넘어와 html을 생성 후 뿌리게 되는 것이다.
 
-<img width="561" alt="image" src="https://github.com/user-attachments/assets/8a4105e2-a3da-4fec-9974-d6b8d40bbc5e">
+![[assets/images/b52c86987f52af29051b32585b4c6f72_MD5.png]]
 
 하지만, 여전히 브라우저에서는 fetch가 일어나고 있다.
 
 <br/>
 
 ## Hydration
-
 ```js
 export const getInitialHTML = ({ movies } = {}) => {
   if (movies) {
@@ -368,13 +335,11 @@ export async function renderSearch({ searchParams }) {
   );
 }
 ```
-
 이렇게 버튼을 넣고, 각 button에 addEventListener를 달아주었다.
 
 하지만, 명심해야할 것은 브라우저는 모든 데이터가 입혀진 채 HTML을 받았지만, 다시 fetch 하고 있다.
 
 server.js에 initial data를 script 태그로 넣어줘보자.
-
 ```js
 app.get('/search', (req, res) => {
   const filteredMovies = getFiltedMovies(req.query.query);
@@ -396,30 +361,24 @@ app.get('/search', (req, res) => {
   });
 });
 ```
-
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/568dd4ce-4027-49fd-949b-ede728a307c4">
+![[assets/images/eb82f86275bfe18701fba1b9588e8e27_MD5.png]]
 
 이 작업은 브라우저에서 뭔가를 사용할 수 있게끔 뭔가늘 넣어준 것이다.
 
 main.js에서 이걸찍어보면
-
 ```js
 if (typeof window !== 'undefined') {
   console.log('initial data', window.__INITIAL_DATA__);
   start({ routes });
 }
 ```
-
 정상적으로 들어오는 것을 확인할 수 있음. 전역적으로 사용할 수 있으니,
-
 ```js
 goto(location.pathname + location.search, {
   initialData: window.__initial_DATA__,
 });
 ```
-
 goto 함수에서 받아, routes로 넘겨주고, search.js로 넘겨주면,
-
 ```js
 export async function renderSearch({ searchParams, initialData }) {
   if (!initialData) {
@@ -445,10 +404,9 @@ export async function renderSearch({ searchParams, initialData }) {
   );
 }
 ```
-
 initialData가 없을 경우는 fetch 해서 rendering 하도록 하고, `addEventListener` 는 어떤 경우라도 실행되도록 하는 것이다.
 
-<img width="182" alt="image" src="https://github.com/user-attachments/assets/21ce19b5-86f8-4cca-8d95-61100707f2df">
+![[assets/images/33cb3b444224362300faab9764dd8585_MD5.png]]
 
 이제 network로 initialData가 존재하니 다시 fetch 하지 않는다. 단지 index.js 파일을 불러오고, `addEventListener` 가 실행되면서 Hydration이 되는 것이다.
 

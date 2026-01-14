@@ -23,7 +23,7 @@ Next.js 13 이상 부터는 app route가 있다. app route를 사용하면, 모�
 - 즉, Next.js가 초기 상태 값을 가진 상태로 초기 HTML을 그려주며 JavaScript 번들링 코드가 로드되면 hydration이 일어나, interaction이 가능해진다.
 - 따라서 무조건 HTML이 그려지지 않은 형태는 아니라는 것이다.
 
-<img width="893" alt="image" src="https://user-images.githubusercontent.com/59427983/244051212-ec72bc27-6a26-47cc-93f7-6b062afbf121.png">
+![[assets/images/123fd8ccaa1c6f72af47be01a2ad918a_MD5.png]]
 
 <br/>
 
@@ -31,7 +31,7 @@ Next.js 13 이상 부터는 app route가 있다. app route를 사용하면, 모�
 
 ## Server comopnents
 
-![image](https://github.com/pozafly/TIL/assets/59427983/cc890658-5478-49b0-b45f-8136b9ffe9d0)
+![[assets/images/e5c2ebaf289be9b096ed34fbe2f3d35b_MD5.png]]
 
 server component를 통해 전체 어플을 클라에서 렌더링 하는 것이 아닌 의도에 따라 어디에서 컴포넌트를 렌더링 할 지 정할 수 있음.
 
@@ -51,7 +51,7 @@ next에서 클라 컴포넌트를 먼저 서버에서 `pre-render` 된 후 클�
 
 Client component를 쓰려면 컴포넌트 파일 가장 상단에 (import 문 위) `use client` 를 선언한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/f33d6980-def1-4236-ac80-6c934b7edbf8)
+![[assets/images/7a0822188db40424cc05389c68672e16_MD5.png]]
 
 `use client` 를 선언하면 해당 파일 안에서 의존하고 있는 다른 모듈과 child components는 client bundle에 포함된다. 기본적으로 server component가 default 이기 때문에 module 그래프의 모든 컴포넌트는 `use client` 선언문이 없다면 server component다.
 
@@ -91,7 +91,6 @@ server, client 컴포넌트는 동일 컴포넌트 트리 상에서 결합될 �
 > next에서는 초기 페이지 로드 시 위 단계의 서버 컴포넌트와 클라 컴포넌트의 렌더링 결과가 모두 **서버에서 HTML로 미리 렌더링** 되어 초기 페이지 로딩 속도가 빨라짐.
 
 ### Server 컴포넌트를 client 컴포넌트안에 중첩 시키기
-
 ```jsx
 'use client';
  
@@ -115,13 +114,11 @@ export default function ExampleClientComponent({
   );
 }
 ```
-
 서버 컴포넌트를 클라 컴포넌트로 import 불가능하다.
 
 따라서 server 컴포넌트를 client 컴포넌트의 props로 전달하는 방법. 이렇게 하면 server 컴포넌트는 서버에서 렌더링 되고 client 컴포넌트가 클라에서 렌더링 되었을 때 props로 전달된 server 컴포넌트가 server 컴포넌트의 렌더링 된 결과로 표시된다.
 
 일반적으로 `children` 을 통해 내려준다.
-
 ```jsx
 'use client';
 
@@ -142,9 +139,7 @@ export default function ExampleClientComponent({
   );
 }
 ```
-
 이렇게 하면 `ExampleClientCompont` 는 children이 무엇인지 모른다. 자식이 결국 서버 컴포넌트의 결과에 의해 채워질 것이라는 사실조차 알지 못한다.
-
 ```jsx
 // 이 패턴은 작동합니다:
 // 서버 컴포넌트를 클라이언트 컴포넌트의 자식이나 소품으로 전달할 수 있습니다.
@@ -161,7 +156,6 @@ export default function Page() {
   );
 }
 ```
-
 > 정보
 >
 > - 이 패턴은 layout.tsx, page.tsx에 children 프로퍼티로 이미 적용되어 있어 별도의 래퍼 컴포넌트를 만들 필요가 없음.

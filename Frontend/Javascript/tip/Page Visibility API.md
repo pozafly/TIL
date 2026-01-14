@@ -29,7 +29,7 @@ document.addEventListener('visibilitychange', () => {
 
 다른 탭을 보고 왔을 때 상태 변경이 일어나 `document.hidden`이 `false` 로 출력된다.
 
-![image](https://blog.kakaocdn.net/dn/GvMRU/btsoGfr0NX6/zYAshNvRNCYxqrFoTKy6TK/img.gif)
+![[assets/images/b7240fb326644eb25e023b768c3aca91_MD5.gif]]
 
 단, 사전 렌더링(`prerendering`)일 때는 사용자에게 페이지가 보여지더라도 `document.hidden`이 `true`일 수 있다.(ex. 새 브라우저 탭을 열고 url을 붙여넣어 해당 url로 이동할 때)
 
@@ -50,7 +50,7 @@ document.addEventListener("visibilitychange", () => {
 
 다른 탭을 보고 왔을 때, 상태 변경이 일어나 `document.visibilityState`가 `visible`로 출력된 모습
 
-![image](https://blog.kakaocdn.net/dn/dqMEWw/btsoxwPHSpe/XRSJ5X2X7kQrGzJGnSePk1/img.gif)
+![[assets/images/a72dc470698d4329b247ea931db0ab2a_MD5.gif]]
 
 <br/>
 
@@ -82,7 +82,7 @@ document.addEventListener("visibilitychange", () => {
 
 gif에서 보다 시피 탭을 전환하거나 페이지를 최소화 했을 때 오디오가 중단되고 다시 페이지가 보여질 때 오디오가 재생된다.
 
-![image](https://blog.kakaocdn.net/dn/c3Hp7V/btsoz8mUMlR/qgayUG2asctazJjxnfgUak/img.gif)
+![[assets/images/853091973d891907bbb7613fcdc043b1_MD5.gif]]
 
 ([예시 코드 보기](https://codepen.io/kumjungmin/pen/mdQjKKz))
 

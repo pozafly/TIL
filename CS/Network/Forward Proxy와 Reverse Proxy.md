@@ -22,7 +22,7 @@
 
 사전적 의미로 대리, 대리인이라는 의미를 가지고 있다. 프록시 서버는 사전적 의미 그대로 대리로 통신을 하는 `서버` 다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/e3aa01e7-4955-4312-9443-5154cf916dc6)
+![[assets/images/f0d927fcd4a5db6d3f2f726438bc4330_MD5.png]]
 
 - 브라우저에 웹 사이트 주소를 입력함
 - 프록시 서버가 사용자의 요청을 수신 받음
@@ -42,7 +42,7 @@
 
 앞쪽에 있는 클라에 대한 Proxy로 클라 뒤에 위치하는 프록시다. 클라이언트의 요청을 받아 인터넷을 통해 서버에서 데이터를 가져와 클라에게 응답해준다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/fc2627b0-1992-44b3-8100-739012af2fad)
+![[assets/images/2af4a79721f0dc91a36c193ef2eebb2d_MD5.png]]
 
 ### 장점
 
@@ -66,7 +66,7 @@ apache, nginx와 같은 웹 서버가 Reverse Proxy다. 역방향 프록시.
 
 뒤쪽에 있는 서버에 대한 Proxy로 서버 앞에 위치함. 인터넷을 통해 전달받은 요청을 서버에 전달하고, 서버의 응답을 인터넷으로 전달해줌.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6dea0e7d-f08b-4d78-8d44-031a6ba3c6f8)
+![[assets/images/abc3d433ab2d79b178f68cd03b84572f_MD5.png]]
 
 ### 장점
 

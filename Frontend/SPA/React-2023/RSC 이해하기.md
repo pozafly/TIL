@@ -5,7 +5,6 @@
 ## SSR에 대한 빠른 입문서
 
 서버 컴포넌트를 맥락에 맞게 배치하려면 SSR이 작동하는 방식을 알아야 함. 2015년 React 설정은 'client side' 렌더링 전략을 사용했다. 사용자는 div 태그 하나만 있는 html 을 받음
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -15,7 +14,6 @@
   </body>
 </html>
 ```
-
 스크립트 태그의 `bundle.js` 는 React 및 다른 종속성 및 개발자가 작성한 모든 코드를 포함해 어플을 마운트하고 실행하는데 필요한 모든 것이 포함되어 있음.
 
 js가 다운로드되고 구문 분석되면 React가 실행되어 전체 어플에 대한 모든 DOM 노드를 생성하고 빈 태그에 붙인다.
@@ -61,7 +59,7 @@ React 데이터 페칭에 대해 알아보자. 네트워크를 통해 통신하�
 
 React Query, SWR 또는 Apllo와 같은 것을 사용해 클라는 백엔드에 네트워크 요청 후 DB 데이터를 가져와 네트워크를 통해 다시 보낸다.
 
-<img width="737" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/733bc43e-7d6b-4df3-a1a6-7432c369de52">
+![[assets/images/17ff7a7ee7d0bf280a3ce1df339b48db_MD5.png]]
 
 > 그래프 참고사항
 >
@@ -71,13 +69,13 @@ React Query, SWR 또는 Apllo와 같은 것을 사용해 클라는 백엔드에 
 
 아래는 CSR 화면이다.
 
-<img width="695" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/36bd3eca-9b47-434d-ae79-edc7646a3e86">
+![[assets/images/3ed71b9f8522996dd7cd77238ccbc6cd_MD5.png]]
 
 사용자는 네트워크 요청이 해결되고 React가 다시 렌더링 되어 로딩 UI를 실제 콘텐츠로 대체할 때까지 이 로딩 상태를 보게 된다.
 
 이를 설계할 수 있는 다른 방법이 있다. 다음 그래프는 동일한 일반 데이터 fetching 패턴을 유지하지만 클라 측 렌더링 대신 서버 측 렌더링을 사용한다.
 
-<img width="708" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/2107d169-0bc9-41ea-b656-10d49d33251f">
+![[assets/images/b13a0f03a728033427d612d4f52031ba_MD5.png]]
 
 서버에서 첫 번재 렌더링을 수행한다. 이는 사용자가 완전히 비어 있지 않은 HTML 파일을 수신한다는 의미다.
 
@@ -85,9 +83,9 @@ React Query, SWR 또는 Apllo와 같은 것을 사용해 클라는 백엔드에 
 
 UX 차이를 실제 파악하기 위해 그래프에 몇 가지 웹 성능 지표를 추가해 보자.
 
-<img width="723" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/7bef8701-45b4-422c-8c87-6d8f6933ca57">
+![[assets/images/4a5b8d76713980e4ff99ae56386bb78b_MD5.png]]
 
-<img width="721" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/488cec3d-752d-4672-b086-4729658485f3">
+![[assets/images/61383e50a6893d198ad28f6c53bbe7bb_MD5.png]]
 
 1. **First Paint** - 사용자는 더 이상 빈 흰색 화면을 응시하지 않는다. 일반 레이아웃이 렌더링 되었지만 콘텐츠가 여전히 누락되었다. 이를 FCP(First Contentful Paint)라고도 함.
 2. **Page Interactive** - react가 다운로드 되었고 어플이 렌더링/수화 되었다. 이제 대화형 컴포넌트가 완벽하게 반응함. 이를 TTI(Time To Interactive)라고도 함.
@@ -95,7 +93,7 @@ UX 차이를 실제 파악하기 위해 그래프에 몇 가지 웹 성능 지�
 
 서버에서 초기 렌더링을 수행함으로써 초기 'shell'을 더 빠르게 그릴 수 있다. 진행되고 있다는 느낌을 주기 때문에 로딩 경험이 좀 더 빠르게 느껴질 수 있다. **근데 이 흐름이 좀 엉뚱한 느낌이든다.** SSR은 서버에서 요청이 시작된다는 것을 알 수 밖에 없다. 두 번째 왕복 네트워크 요청을 요구하는 대신 초기 요청 중 DB 작업을 수행하면 어떤가?
 
-<img width="711" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/9174e8fd-cd43-411b-adde-608de334bcbd">
+![[assets/images/f95e8456c1f3abc332f93cfe7e7e8faf_MD5.png]]
 
 클라와 서버 사이를 오가는 대신 초기 요청의 일부로 DB 쿼리를 수행해 완전히 채워진 UI를 사용자에게 직접 보낸다.
 
@@ -104,7 +102,6 @@ UX 차이를 실제 파악하기 위해 그래프에 몇 가지 웹 성능 지�
 **생태계는 이 문제에 대해 많은 해결책을 제시했다.** Next.js 및 Gatsby와 같이 서버에서만 코드를 실행하는 자체 방법을 만들었다.
 
 예를 들어 Next.js page router는 다음과 같다.
-
 ```jsx
 import db from 'imaginary-db';
 
@@ -132,7 +129,6 @@ export default function Homepage({ data }) {
   );
 }
 ```
-
 서버가 요청 받으면 `getServerSideProps` 함수 호출, `props` 객체를 반환함. 그리고 component로 유입되어 서버에서 먼저 렌더링 된 다음 클라에서 수화된다.
 
 영리한 점은 `getServerSideProps` 가 클라에서 실행되지 않는 것임. JavaScript 번들에 포함되어 있지 않다.
@@ -152,7 +148,6 @@ React 팀은 이문제를 해결하기 위해 노력함. 솔루션을 **React Se
 새로운 패러다임임. <u>서버에서만</u> 실행되는 컴포넌트를 만들 수 있음. 이를 통해 component 내에서 바로 DB 쿼리 작성과 같은 작업을 수행할 수 있음.
 
 예시
-
 ```jsx
 import db from 'imaginary-db';
 
@@ -175,7 +170,6 @@ async function Homepage() {
 
 export default Homepage;
 ```
-
 수 년동안 react를 사용했다면 이렇게 생각할 수 있다. -> **함수 컴포넌트는 비동기실일 수 없음!** 그리고 render에서 side effect를 가질 수 없음!
 
 **이해해야 할 핵심 사항은** 서버 컴포넌트가 다시 렌더링되지 않는다는 것이다. UI를 생성하기 위해 서버에서 `한 번` 실행된다. 렌더링 된 값은 클라로 전송되어 제자리에 고정된다. React에 관한 한 이 출력은 불변이며 결코 변경되지 않는다.
@@ -188,7 +182,7 @@ export default Homepage;
 
 새로운 패러다임에서는 우리에게 익숙한 '전통적인' React component를 `client component` 라고 함. 컴포넌트가 클라에서만 렌더링 된다는 것을 의미하지만, 실제로는 그렇지는 않음. 클라 컴포넌트는 `클라와 서버 모두`에서 렌더링 된다!
 
-<img width="661" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/8a1d75fe-ed81-4f01-b4cc-572bbaf86de9">
+![[assets/images/c84e200e88ffca694106b0815df00942_MD5.png]]
 
 이 용어가 매우 혼란스러울 수 있지만 다음과 같이 요약할 수 있음.
 
@@ -215,7 +209,6 @@ React 최신 버전을 설치한다고 RSC를 바로 사용할 수 없다. 유�
 <br/>
 
 ## Client Components 지정
-
 ```jsx
 'use client'; // here
 
@@ -232,7 +225,6 @@ function Counter() {
 
 export default Counter;
 ```
-
 `'use client'` 지시어를 사용하면 클라에서 다시 렌더링할 수 있도록 JS 번들에 포함되어야 함을 React에 알리는 방법이다. `'use server'` 는 지정하지 않는다.
 
 > 어떤 component가 client component가 되어야 하나?
@@ -248,7 +240,6 @@ export default Counter;
 ## 경계
 
 RSC에 익숙해졌을 때 `props` 가 변경되면 어떻게 되나?
-
 ```jsx
 function HitCounter({ hits }) {
   return (
@@ -258,32 +249,29 @@ function HitCounter({ hits }) {
   );
 }
 ```
-
 초기 server side render에서 `hits` 가 `0` 과 같다고 해보자. HTML을 이렇게 생성한다.
-
 ```html
 <div>
   Number of hits: 0
 </div>
 ```
-
 하지만, `hits` 가 변하면 어떻게 될까? 0 -> 1로 변경되었다 해보자. `HitCounter` 는 다시 렌더링 되어야 하지만, server components이기 때문에 다시 렌더링 할 수 없다!
 
 **문제는 서버 컴포넌트를 단독으로 분리하면 실제로 의미가 없다는 것이다.** 우리는 어플 구조를 고려하기 위해 좀 더 전체적 관점을 취하기 위해 축소해야 한다.
 
-<img width="584" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/fa321b8c-ba61-4848-9e86-232d6d609325">
+![[assets/images/142f41cffcf784eb7b04819a261390e5_MD5.png]]
 
 이런 컴포넌트가 모두 서버 컴포넌트라면 의미가 있음. 어떤 컴포넌트도 다시 렌더링 되지 않으므로 props 중 어떤 것도 변경되지 않는다.
 
 `Article` 컴포넌트가 클라 컴포넌트라 해보자. 상태를 사용하려면 이를 클라 구성요소로 변환해야 한다.
 
-<img width="573" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/cde1a224-71c4-4989-bcac-2d1117f10996">
+![[assets/images/6241f9ed87b3e8859cac5d2a3e2cd95f_MD5.png]]
 
 `Article` 컴포넌트가 리렌더링 될 때 하위 컴포넌트 모두 다시 리렌더링 된다. 그러나 서버 컴포넌트는 다시 렌더링 할 수 없음.
 
 이런 불가능한 상황을 방지하기 위해 규칙이 있음. `클라 컴포넌트는 다른 클라 컴포넌트만 가져올 수 있다.` 'use client' 지시어는 이런 인스턴스가 클라이언트 구성 요소가 되어야 함을 의미한다.
 
-<img width="553" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/41a45774-07af-40b7-a44e-5d1a3afba7fd">
+![[assets/images/61f815e30ec7a96179cf562c5ca04eed_MD5.png]]
 
 컴포넌트에 `'use client'` 지시어를 포함하면 `Article` 에 **컴포넌트 경계**가 생성된다. 이 경계 내 모든 컴포넌트는 암시적으로 클라이언트 컴포넌트가 된다. `HitCounter` 컴포넌트에 'use client' 지시어가 없더라도 클라이언트에 수화/렌더링 된다.
 
@@ -296,7 +284,6 @@ function HitCounter({ hits }) {
 클라 컴포넌트는 서버 컴포넌트를 렌더링할 수 없다는 사실을 알았을 때, 제한적이라고 느낀다. 어플에서 상태를 끌어올려 사용해야 하는 경우는 어떻게 해야하나? 모든 것이 클라 컴포넌트가 되어야 한다는 뜻인가?
 
 소유자가 변경 되도록 어플을 재구성 해 이 제한을 해결할 수 있는 것으로 나타났음.
-
 ```jsx
 'use client';
 
@@ -320,11 +307,9 @@ function Homepage() {
   );
 }
 ```
-
 다크 모드와 라이트 모드 전환하도록 state를 사용해야 함. 어플 트리 상 `<body>` 에서 실행해야 함.
 
 이 문제를 해결하려면 색상 관리 항목을 자체 컴포넌트에 집어 넣고 자체 파일로 이동해보자.
-
 ```jsx
 // /components/ColorProvider.js
 'use client';
@@ -345,9 +330,7 @@ function ColorProvider({ children }) {
   );
 }
 ```
-
 `Homepage` 에 입혀보자.
-
 ```tsx
 // /components/Homepage.js
 
@@ -364,7 +347,6 @@ function Homepage() {
   );
 }
 ```
-
 더 이상 상태를 사용하지 않기 때문에 `'use client'` 를 사용하지 않아도 된다. `Header`, `MainContent` 컴포넌트는 더 이상 클라이언트 컴포넌트로 암시적으로 변환되지 않는다는 뜻이다.
 
 하지만, `ColorProvider` 컴포넌트는 클라이언트 컴포넌트고, `Header`, `MainContent` 컴포넌트는 하위다. 하지만, 클라이언트 경계에 있어서는 부모/자식 관계가 중요하지 않음. Header와 MainContent를 가져오고 렌더링 하는 것은 `HomePage` 임. 즉, 컴포넌트의 props를 결정하는 것은 HomePage임.
@@ -384,7 +366,6 @@ function Homepage() {
 ## Hood 아래 엿보기
 
 낮은 수준에서 보자. 서버 컴포넌트는 어떤 모습인가? 실제로 무엇이 생성되나?
-
 ```jsx
 function Homepage() {
   return (
@@ -394,9 +375,7 @@ function Homepage() {
   );
 }
 ```
-
 서버 컴포넌트다.
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -414,7 +393,6 @@ function Homepage() {
   </body>
 </html>
 ```
-
 브라우저에서는 이런 모습을 갖고 있다.
 
 > html 코드는 약간의 생략 코드다.
@@ -426,7 +404,6 @@ HTML 문서에 react 앱에서 생성된 UI인, `Hello world!` 단락이 포함�
 그 아래에 JS 번들 로드하는 스크립트 태그가 있다. 이 번들에는 어플에서 사용되는 클라 컴포넌트 뿐 아니라 react와 같은 의존성이 포함되어 있다. 그리고 홈페이지 컴포넌트는 서버 컴포넌트이기 때문에 해당 컴포넌트의 코드는 이 번들에 포함되지 않는다.
 
 마지막으로 인라인 JS 가 포함된 두 번째 `<script>` 태그가 있다.
-
 ```javascript
 self.__next['$Homepage-1'] = {
   type: 'p',
@@ -434,7 +411,6 @@ self.__next['$Homepage-1'] = {
   children: "Hello world!",
 };
 ```
-
 흥미로운 부분이다. React에게 '`HomePage` 컴포넌트 코드가 누락되었단 것을 알지만 걱정 마라. 렌더링 된 내용은 다음과 같다' 라고 말하는 것이다.
 
 일반적으로 React는 클라에서 수화할 때 모든 컴포넌트를 빠르게 렌더링해 어플의 가상 표현을 구축한다. 서버 컴포넌트의 경우 코드가 JS 번들에 포함되어 있지 않기 때문에 그렇게 할 수 없다.
@@ -470,9 +446,9 @@ self.__next['$Homepage-1'] = {
 
 ## 장점
 
-<img width="734" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/87821c25-de8f-464d-a1ab-0fc7aadee07b">
+![[assets/images/805399b02096a72bceb3b774c5516633_MD5.png]]
 
-<img width="733" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/fef99dd1-9827-4eef-82c5-b2f41daa5ed6">
+![[assets/images/dd22cbc84a0e6c439a2647eb370105ce_MD5.png]]
 
 Download JavaScript, Hydration 부분이 after에서 더 줄어듦.
 
@@ -486,7 +462,7 @@ Download JavaScript, Hydration 부분이 after에서 더 줄어듦.
 
 이것이 바로 RSC와 함께 작동하도록 설계된 최신 구문 강조 패키지인 Bright의 핵심 아이디어다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/18683b01-0538-41e8-87fa-48b3449ed171)
+![[assets/images/a8a16d782830d948408d28c1ffd0d0bc_MD5.png]]
 
 이게 좋은 점이다. JS 번들에 넣기에 너무 큰 것이다. JS 번들에 포함하기에 비용이 너무 많이 들기 때문에 서버에서 무료로 실행할 수 있고, 번들어 0kB를 추가하고 더 나은 UX를 제공하는 것.
 
@@ -500,6 +476,6 @@ RSC는 모던 리액트라는 퍼즐의 한 부분이다.
 
 RSC와 suspense 및 새로운 스트리밍 SSR 아키텍쳐를 결합하면 상황이 정말 흥미로워 짐. 아래와 같은 것을 할 수 있음.
 
-<img width="715" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/a65b0b63-8c39-42c2-b401-229e0a9b0cdd">
+![[assets/images/e756ed27482036083c6293ca59d88833_MD5.png]]
 
 [Github](https://github.com/reactwg/react-18/discussions/37) 에서 확인할 수 있음.

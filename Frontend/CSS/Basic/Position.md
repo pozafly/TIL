@@ -40,7 +40,7 @@ position은 이름 그대로 위치를 결정하는 속성. 요소의 위치를 
 }
 ```
 
-![position relative](https://user-images.githubusercontent.com/59427983/119773194-3a5a5780-befb-11eb-84fa-10b55250e09d.png)
+![[assets/images/b0f5465cc3fa81faf697d6711b9e6cb4_MD5.png]]
 
 > 특징 정리
 >
@@ -67,7 +67,7 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 }
 ```
 
-![position absolute](https://user-images.githubusercontent.com/59427983/119773675-f1ef6980-befb-11eb-86f8-604f703e3bae.png)
+![[assets/images/2cc4f88aa6310cbbeacc91a0a6bd1218_MD5.png]]
 
 > 특징 정리
 >
@@ -91,7 +91,7 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 }
 ```
 
-![스크린샷 2021-05-27 오후 3 00 49](https://user-images.githubusercontent.com/59427983/119773932-55799700-befc-11eb-84e4-55ac5e496b16.png)
+![[assets/images/04098aa42c41d85a21307c93bbd388fc_MD5.png]]
 
 화살표는 스크롤 해봐도 고정되어 있다. fixed는 브라우저 화면이 기준점이 된다. 이렇게 탑 이동 버튼 뿐 아니라 header를 페이지 상단에 고정시킬 때도 빈번하게 사용된다.
 
@@ -124,7 +124,7 @@ absolute는 relative나 fixed가 지정된 부모 위치를 기준으로 자신�
 }
 ```
 
-![스크린샷 2021-05-27 오후 3 04 41](https://user-images.githubusercontent.com/59427983/119774268-e05a9180-befc-11eb-8a27-53fbbff740a4.png)
+![[assets/images/0e373bf8c7b6865a44f54bb6cb6bdf20_MD5.png]]
 
 기준점은 `top: 0` 이다. 브라우저(윈도우)의 최상단 지점이다. 즉, menu가 top: 0 이 되면 거기서 멈춰있다.
 

@@ -14,7 +14,7 @@ const domRect = element.getBoundingClientReat();
 
 `left`, `top`, `right`, `bottom`, `x`, `y`, `width`, `height` 프로퍼티는 전반적인 사각형의 위치와 크기를 픽셀 단위로 나타낸다. width, height가 아닌 다른 프로퍼티는 뷰포트의 top-left에 상대적이다.
 
-![element-box-diagram](https://developer.mozilla.org/ko/docs/Web/API/Element/getBoundingClientRect/element-box-diagram.png)
+![[assets/images/4b1de5bf35e0da7d4e1f76faac759268_MD5.png]]
 
 메서드가 반환하는 DOMReact 객체의 width, height 프로퍼니틑 콘텐츠의 width/height 뿐 아니라 padding과 border-width도 포함한다. 표준 박스 모델에서, 이는 엘리먼트 + padding + border-width의 width 또는 height 프로퍼티와 동일하다. 하지만, `box-sizing: border-box` 가 새당 엘리먼트에 설정되어 있으면, 이는 width, height와 직접적으로 동일하다.
 

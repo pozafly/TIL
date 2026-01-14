@@ -110,7 +110,7 @@ const App = () => {
 export default App;
 ```
 
-![portal](https://user-images.githubusercontent.com/59427983/112404647-10968000-8d54-11eb-917e-440072fc7571.png)
+![[assets/images/2cf2ea55d0e743171671f5f369ffccfe_MD5.png]]
 
 이렇게 됨. useState를 사용해서 정말 잘 되는가 알아보자.
 

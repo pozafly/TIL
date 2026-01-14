@@ -53,11 +53,9 @@
 <br/>
 
 ### 1. 호출 수 제한 방법 debounce, throttle을 사용하지 않아도 된다
-
 ```js
 window.addEventLinstener('scroll', () => console.log('scroll!'));
 ```
-
 스크롤을 해보면 바로 console이 찍힌다. 위로 혹은 아래로 스크롤 할 때마다 해당 함수가 수도 없이 호출됨. 따라서 걷잡을 수 없이 호출되는 함수를 `debounce` 와 `throttle` 을 사용해 컨트롤 하게 된다.
 
 <br/>
@@ -76,15 +74,13 @@ layout을 새로 그린다는 것은, 렌더 트리를 재생성한다는 뜻인
 
 ### 초기화
 
-![intersection-observer-summary](https://user-images.githubusercontent.com/59427983/117634543-f7d61280-b1b9-11eb-829b-cddae2907622.jpeg)
+![[assets/images/17686bc6691063f1c89ac2e7997d075d_MD5.jpg]]
 
 `new IntersectionObserver()` 를 통해 생성한 인스턴스(`io`)로 관찰자(Observer)를 초기화하고 관찰할 대상(Element)을 지정함. 생성자는 2개의 인수(`callback`, `options`)를 가진다.
-
 ```js
 const io = new IntersectionObserver(callback, options);  // 관찰자 초기화
 io.observe(element);  // 관찰할 대상(요소) 등록
 ```
-
 <br/>
 
 <br/>
@@ -92,12 +88,10 @@ io.observe(element);  // 관찰할 대상(요소) 등록
 ### Callback
 
 관찰할 대상(Target)이 등록되거나 가시성(Visibility, 보이는지 보이지 않는지)에 변화가 생기면 관찰자는 콜백(Callback)을 실행한다. 콜백은 2개의 인수(`entries`, `observer`) 를 가진다.
-
 ```js
 const io = new IntersectionObserver((entries, observer) => {}, options);
 io.observe(element);
 ```
-
 #### Entries
 
 `entries` 는 IntersectionObserverEntry 인스턴스의 **배열**이다.
@@ -111,7 +105,6 @@ IntersectionObserverEntry는 읽기 전용(Read Only)의 다음 속성들을 포
 - `rootBounds`: 지정한 루트 요소의 사각형 정보(DOMRectReadOnly)
 - `target`: 관찰 대상 요소(Element)
 - `time`: 변경이 발생한 시간 정보(DOMHighResTimeStamp)
-
 ```js
 const io = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -121,8 +114,7 @@ const io = new IntersectionObserver((entries, observer) => {
 
 io.observe(element);
 ```
-
-<img width="779" alt="스크린샷 2021-05-11 오전 10 26 54" src="https://user-images.githubusercontent.com/59427983/117744358-7b881180-b243-11eb-9eb0-a5d3d7a484a6.png">
+![[assets/images/408703636649dcfaae050d3e3aaaf314_MD5.png]]
 
 entry(IntersectionObserverEntry) 구조.
 
@@ -132,11 +124,11 @@ entry(IntersectionObserverEntry) 구조.
 
 관찰 대사의 사각형 정보(DOMRectReadOnly)를 반환한다. 이 값은, `Element.getBoundingClientRect()` 을 사용해 동일하게 얻을 수 있다. (getBoundingClientRect 호출에서 `reflow` 현상이 발생한다.)
 
-![intersection-observer-bounding-client-rect](https://user-images.githubusercontent.com/59427983/117744656-154fbe80-b244-11eb-9077-e7aab8591f31.jpeg)
+![[assets/images/8705a80a56422f1ca3dfe6e72f5d5889_MD5.jpg]]
 
-<img width="252" alt="스크린샷 2021-05-11 오전 10 33 35" src="https://user-images.githubusercontent.com/59427983/117744842-5b0c8700-b244-11eb-9c25-a4017a839555.png">
+![[assets/images/0c81ebbda74af1af01847cd7c53f96d3_MD5.png]]
 
-![intersection-observer-dom-rect](https://user-images.githubusercontent.com/59427983/117744702-27c9f800-b244-11eb-81e3-1a1ce8e857ba.jpeg)
+![[assets/images/21f8134a1e40bea0117f33050677e79e_MD5.jpg]]
 
 DOMRectReadOnly 구조.
 
@@ -146,7 +138,7 @@ DOMRectReadOnly 구조.
 
 관찰 대상과 루트 요소와의 교차하는(겹치는) 영역에 대한 사각 정보
 
-![intersection-observer-intersection-rect](https://user-images.githubusercontent.com/59427983/117744984-a32ba980-b244-11eb-87ee-cbfb9c18bdd2.jpeg)
+![[assets/images/88375ea862f37aa742801358da615e8c_MD5.jpg]]
 
 <br/>
 
@@ -160,7 +152,7 @@ DOMRectReadOnly 구조.
 
 관찰 대상이 루트 요소와 교차 상태로 들어가거나(`true`), 교차 상태에서 나가는지 (`false`) 여부를 나타내는 값(Boolean) 이다.
 
-![intersection-observer-is-intersecting](https://user-images.githubusercontent.com/59427983/117745043-b0e12f00-b244-11eb-8764-8ff15fe9dc5f.jpeg)
+![[assets/images/8b57898bf9c15ed803b9f5386199892e_MD5.jpg]]
 
 <br/>
 
@@ -187,7 +179,6 @@ DOMRectReadOnly 구조.
 ### Observer
 
 콜백이 실생되는 해당 인스턴스를 참조함.
-
 ```js
 const io = new IntersectionObserver((entries, observer) => {
   console.log(observer);
@@ -195,8 +186,7 @@ const io = new IntersectionObserver((entries, observer) => {
 
 io.observe(element);
 ```
-
-<img width="378" alt="스크린샷 2021-05-11 오전 10 40 24" src="https://user-images.githubusercontent.com/59427983/117745370-4f6d9000-b245-11eb-86ca-28e2eb33d077.png">
+![[assets/images/7ace8f811bcf67845b2d5418ce4ab390_MD5.png]]
 
 IntersectionObserver의 구조.
 
@@ -209,14 +199,12 @@ IntersectionObserver의 구조.
 #### Root
 
 타겟의 가시성을 검사하기 위해 뷰포트 대신 사용할 요소 객체(루트 요소)를 지정한다. 타겟의 조상 요소이어야 하며 지정하지 않거나 null 일 경우 브라우저의 뷰포트가 기본 사용된다. 기본값은 `null` 이다.
-
 ```js
 const io = new IntersectionObserver(callback, {
   root: document.getElementById('my-viewport'),
 });
 ```
-
-![intersection-observer-root](https://user-images.githubusercontent.com/59427983/117745616-c9057e00-b245-11eb-8020-858d21b78c1e.jpeg)
+![[assets/images/ce90d2a004a47fdda2a246b00dfd8106_MD5.jpg]]
 
 <br/>
 
@@ -228,18 +216,16 @@ const io = new IntersectionObserver(callback, {
 - TOP, (LEFT, RIGHT), BOTTOM / e.g. `10px 0px 30px`
 - (TOP, BOTTOM), (LEFT, RIGHT) / e.g. `30px 0px`
 - (TOP, BOTTOM, LEFT, RIGHT) / e.g. `30px`
-
 ```js
 const io = new IntersectionObserver(callback, {
   rootMargin: '200px 0px';
 })
 ```
+![[assets/images/63f40cb13d66d7d3947ee0cc3a15f6f9_MD5.jpg]]
 
-![intersection-observer-root-margin-0](https://user-images.githubusercontent.com/59427983/117745830-3f09e500-b246-11eb-9f9a-a24be6bfd153.jpeg)
+![[assets/images/5b8084c8be0b5c10aec30eb0d374e95d_MD5.jpg]]
 
-![intersection-observer-root-margin+100](https://user-images.githubusercontent.com/59427983/117745842-45985c80-b246-11eb-8978-025db5adbc35.jpeg)
-
-![intersection-observer-root-margin-100](https://user-images.githubusercontent.com/59427983/117745848-4b8e3d80-b246-11eb-90ff-2254bbcea7b6.jpeg)
+![[assets/images/9fcebdde7028d15bdfaea76ef2f7f640_MD5.jpg]]
 
 <br/>
 
@@ -250,18 +236,16 @@ const io = new IntersectionObserver(callback, {
 - `0`: 타겟의 가장자리 픽셀이 Root 범위를 교차하는 순간(타겟의 가시성이 0%일 때) 옵저버가 실행된다.
 - `0.3`: 타겟의 가시성 30%일 때 옵저버가 실행된다.
 - `[0, 0.3, 1]`: 타겟의 가시성이 0%, 30%, 100%일 때 모두 옵저버가 실행된다.
-
 ```js
 const io = new IntersectionObserver(callback, {
   threshold: 0.3 // or `threshold: [0.3]`
 })
 ```
+![[assets/images/f122c9f04915fbbd87d6acb93f6e6977_MD5.jpg]]
 
-![intersection-observer-threshold-0](https://user-images.githubusercontent.com/59427983/117745959-79738200-b246-11eb-8cc6-30f47f79d3a1.jpeg)
+![[assets/images/20b92d4a530df36283cd1f3be51a3944_MD5.jpg]]
 
-![intersection-observer-threshold-0 3](https://user-images.githubusercontent.com/59427983/117745968-7e383600-b246-11eb-9ab0-15d099aa6a8c.jpg)
-
-![intersection-observer-threshold-1](https://user-images.githubusercontent.com/59427983/117745982-87290780-b246-11eb-9dbd-c807ebdb0c5c.jpeg)
+![[assets/images/c5a6262d73d838689b34532af2324e5c_MD5.jpg]]
 
 <br/>
 
@@ -270,7 +254,6 @@ const io = new IntersectionObserver(callback, {
 #### observe()
 
 대상 요소의 관찰을 시작함.
-
 ```js
 const io1 = new IntersectionObserver(callback, options)
 const io2 = new IntersectionObserver(callback, options)
@@ -283,13 +266,11 @@ io1.observe(div) // div 요소 관찰
 io2.observe(li) // lI 요소 관찰
 io2.observe(h2) // h2 요소 관찰
 ```
-
 <br/>
 
 #### unobserve()
 
 대상 요소의 관찰을 중지함. 관찰을 중지할 하나의 대상 요소를 인수로 지정해야 함. 단, IntersectionObserver 인스턴스가 관찰하고 있지 않은 대상 요소가 인수로 지정된 경우 아무런 동작도 하지 않는다.
-
 ```js
 const io1 = new IntersectionObserver(callback, options)
 const io2 = new IntersectionObserver(callback, options)
@@ -303,9 +284,7 @@ io2.observe(h2)
 io1.unobserve(h2) // nothing..
 io2.unobserve(h2) // H2 요소 관찰 중지
 ```
-
 콜백의 두 번째 인수 `observer`가 해당 인스턴스를 참조하므로, 다음과 같이 작성할 수도 있다.
-
 ```js
 const io1 = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -322,13 +301,11 @@ const io1 = new IntersectionObserver((entries, observer) => {
   })
 }, options)
 ```
-
 <br/>
 
 #### disconnect()
 
 IntersectionObserver 인스턴스가 관찰하는 모든 요소의 관찰을 중지.
-
 ```js
 const io1 = new IntersectionObserver(callback, options)
 const io2 = new IntersectionObserver(callback, options)
@@ -341,7 +318,6 @@ io2.observe(h2)
 
 io2.disconnect() // io2가 관찰하는 모든 요소(LI, H2) 관찰 중지
 ```
-
 <br/>
 
 #### takeRecords

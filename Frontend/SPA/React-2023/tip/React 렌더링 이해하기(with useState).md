@@ -19,7 +19,6 @@
   - 브라우저가 DOM을 paint한다.
 
 <br />
-
 ```jsx
 import { useState } from 'react';
 
@@ -45,25 +44,20 @@ function Counter() {
   return <button onClick={handleClick}>count is {count}</button>;
 }
 ```
-
 클릭하면 2씩 올라감. 업데이터 함수를 사용했기 때문에.
 
 **예상 동작**
-
 ```
 mount: app render → init → return
 click: click → add 0 → add 1 → app render → return
 ```
-
 **실제 동작**
-
 ```
 mount: app render → init → return
 1st click: click → add 0 → app render → add 1 → return
 2nd click after : click → app render → add 2 → add 3 → return
 ```
-
-<img width="91" alt="스크린샷 2023-05-31 오후 5 42 14" src="https://github.com/pozafly/TIL/assets/59427983/1022857e-ecac-4458-ae0c-e49a22a561ee">
+![[assets/images/bfe42b5ded84cacd9e286d337e074dfd_MD5.png]]
 
 <br />
 
@@ -181,12 +175,11 @@ setState가 컴포넌트 렌더링을 trigger하고 나면, render phase에서 �
 
 아래 사진을 봐라.
 
-<img width="108" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/aaba118d-a724-49c5-8fe0-5afdccad19af">
+![[assets/images/b86a866f3051d8f9af68e1b7289b517a_MD5.png]]
 
 사실은 처음에만 Render가 한번 실행되고 나머지는 재조정 중 큐에서 실행된다.
 
 아래 코드는 setState를 실행했을 때 실행되는 dispatchSetState함수의 일부분임. 최초 렌더링(mount) 이후 큐는 비어있기 때문에 전체 render phase 전에 다음 상태를 열심히(eagerly) 계산한다고 한다. ([소스 코드](https://github.com/facebook/react/blob/v18.0.0/packages/react-reconciler/src/ReactFiberHooks.new.js#L2234-L2259))
-
 ```js
 if (fiber.lanes === NoLanes && (alternate === null || alternate.lanes === NoLanes)) {  // The queue is currently empty, which means we can eagerly compute the  // next state before entering the render phase. If the new state is the  // same as the current state, we may be able to bail out entirely.  ...
 ```

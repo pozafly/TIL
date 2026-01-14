@@ -11,16 +11,13 @@ webpack과 rollup에 대한 차이점을 공부하며 느꼈던 부분을 작성
 webpack은, commonJS를 사용하고, rollup은 ESM을 사용한다. commonjs는 treeshaking에 불리하고, ESM은 treeshaking에 유리하다. 이유는 정적 분석에 유리한지 어려운지의 여부에 따라 달라짐.
 
 CJS는 동적으로 모듈을 해석할 수 있다.
-
 ```js
 // CJS
 var foo = 'foo';
 var lib = require(`lib/${foo}`);
 lib.someFunc(); // property lookup
 ```
-
 require 문에 foo라는 변수를 대입함으로서 어떤 모듈을 가져올지 **동적**으로 판단이 가능하기 때문이다. 반면, ESM은 정적으로 모듈을 해석하는 방법을 사용한다. 즉, 동적으로 어떤 모듈을 가져올지 할당이 불가능하다.
-
 ```js
 // ESM
 import foo from `lib/${foo}`;  // SyntaxError
@@ -30,14 +27,11 @@ function foo () {
 }
 foo()
 ```
-
 이렇게 최상위에만, import, export가 가능하며, if 문 내부에 모듈을 가져올 수 없다. 따라서, 정적인 모듈만 가져올 수 있는데, 아래와 같이 동적 import는 또다른 의미를 가진다.
-
 ```js
 // ESM
 let {hi, bye} = await import('./say.js');
 ```
-
 위 구조는 **비동기**로 모듈을 가져오기 때문에 코드 스플리팅이 가능하다. 어쨌든 위의 동적, 정적의 의미와는 조금 다른 것임.
 
 CJS는 위와 같이 동적으로 가져오기 때문에, CJS를 사용하는 webpack에서 번들링을 진행할 시, 사용하지 않는 코드도 모두 번들에 포함된다. 왜냐하면 언제든 런타임에서 모듈을 가져올 가능성이 있기 때문이다. 즉, treeshaking이 되지 않는다. (어렵다)
@@ -59,7 +53,7 @@ webpack과 rollup은 treeShaking 기능을 바라보는 관점이 조금 다르�
 - webpack: 사용하지 않는 코드를 제거하는 관점
 - rollup: 사용하는 코드만 가져오는 관점
 
-![image](https://github.com/pozafly/TIL/assets/59427983/69fc9c6b-3b4a-4294-aa32-804eaef3e3a4)
+![[assets/images/fcd04eac30341147ac2e9ae23bb3ad38_MD5.png]]
 
 왼쪽이 webpack, 오른쪽이 rollup이다. rollup은 live code inclusion(필요한 코드만 쌓아가는 과정). 즉, 어떤 모듈이 필요한지 평가하는 과정이다.
 
@@ -97,7 +91,7 @@ webpack, rollup은 JavaScript로 번들링한다. 하지만, ESBuild는 내부�
 >
 > 종속성은 변하지 않는다. vite 는 모든 파일을 ESM으로 제공하기 때문에 CJS, UMD로 제공되는 종속성을 ESM으로 변환해야 한다. esbuild를 통해 변하지 않는 종속성을 빠르게 제공하기 위해 빌드 후 로컬 파일에 저장해 두고, 이를 적시에 서빙함.
 >
-> <img width="324" alt="스크린샷 2023-11-04 오후 1 08 45" src="https://github.com/pozafly/TIL/assets/59427983/8c47a6a7-934d-4727-a7d5-55712b34187b">
+> ![[assets/images/474e4654f3b6cfe203c2657fd81e4724_MD5.png]]
 >
 > 이미지와 같이, node_modules 폴더에 `.vite` 폴더 하위에 종속성이 사전 번들링 된 결과다. 단, 프로덕션 빌드를 할 경우 rollup/plugin-commonjs가 사용된다.
 

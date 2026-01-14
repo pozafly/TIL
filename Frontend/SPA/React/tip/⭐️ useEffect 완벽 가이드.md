@@ -891,7 +891,7 @@ function Counter() {
 
 이렇게 하면 [문제를 해결하겠지만](https://codesandbox.io/s/0x0mnlyq8l) `count` 값이 바뀔 때마다 인터벌은 해제되고 다시 설정될 것. 원하지 않던 동작이다.
 
-![스크린샷 2021-03-10 오후 3 33 26](https://user-images.githubusercontent.com/59427983/110586756-0140ff80-81b6-11eb-9f9e-54bbe3d39c9e.png)
+![[assets/images/1e8c16b7ce7fa2262d993d6368498385_MD5.png]]
 
 이렇게.
 
@@ -1193,7 +1193,7 @@ function SearchResults() {
 
 `eslint-plugin-react-hooks` 플러그인의 `exhaustive-deps` 린트 룰 덕분에, [에디터에서 코드를 작성하면서 이펙트를 분석하고](https://github.com/facebook/react/issues/14920) 어떤 의존성이 빠져 있는지 제안을 받을 수 있게 되었음. 다르게 이야기하자면 컴포넌트 안에서 어떤 데이터 흐름의 변화가 제대로 처리되지 않고 있는지 컴퓨터가 알려줄 수 있다는 것.
 
-![exhaustive-deps](https://user-images.githubusercontent.com/59427983/110596613-d7420a00-81c2-11eb-93b5-526a60144251.gif)
+![[assets/images/08c358198ac82327a9c293cbd4f6f043_MD5.gif]]
 
 <br/>
 

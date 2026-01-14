@@ -38,14 +38,14 @@ Multipart/form-data 특징은 웹 클라이언트가 요청을 보낼 때 폼 �
 
 ### application/x-www-urlencoded
 
-![image](https://github.com/pozafly/TIL/assets/59427983/3c4acdcd-8f38-414d-9346-280e19863533)
+![[assets/images/503b239a7deba41db10bb29cccbc2ff8_MD5.png]]
 
 ### multipart/form-data
 
-![image](https://github.com/pozafly/TIL/assets/59427983/dda0090d-33f9-4597-941c-6e7205ef92c0)
+![[assets/images/35aca6fb6ce2e1aaa7bf484a6f9a608e_MD5.png]]
 
 ### application/json
 
-![image](https://github.com/pozafly/TIL/assets/59427983/f14da251-4a15-4d0e-8d98-78775001d355)
+![[assets/images/fca14ad509d6f137a74f2c40af528301_MD5.png]]
 
 결론적으로 단순 텍스트를 POST 메서드로 전송할 때는 `application/x-www-form-urlencoded` 를 선택하는게 더 효율적이다.

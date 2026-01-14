@@ -6,7 +6,7 @@
 
 **검색 엔진에서 상위권에 노출될 수 있도록 웹 사이트를 최적화 하는 작업**.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/cb5b6e16-1343-4650-8f5b-3cc9c9b52dd6)
+![[assets/images/b396e46df9032dcfbe505333041c2d86_MD5.png]]
 
 한마디로 긁어와서 확인하고 점수를 매겨 잘 보여주는 것이 SEO다.
 
@@ -20,7 +20,7 @@
 
 ## 세 가지 SEO 전략
 
-![image](https://github.com/pozafly/TIL/assets/59427983/792cf122-6bc0-42c1-a272-bc98fc85469a)
+![[assets/images/02895121b02e0935bae12c068ebd2745_MD5.png]]
 
 그렇다면 SEO 작업은 어떻게 시작할 수 있을까? 3가지로 나눠볼 수 있다.
 
@@ -36,7 +36,7 @@
 
 당연하게도 웹페이지의 콘텐츠 품질이 우수해야 한다. 구글에서는 품질 평가 기준은 다음과 같다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/82a97f5d-044a-484d-8e71-021a93b84277)
+![[assets/images/6579ec8826705d9cf2e00370131f1673_MD5.png]]
 
 - 경험(Experience): 콘텐츠 제작자가 해당 주제에 대해 얼마나 직접적인 경험을 가지고 있는지
 - 전문성(Expertise): 콘텐츠 제작자가 해당 주제를 이해하는데 필요한 지식이나 기술을 가지고 있는지
@@ -45,7 +45,7 @@
 
 또한 [구글 검색 센터에서는 사용자 중심 콘텐츠 제작 가이드](https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=ko#self-assess)도 제공하고 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/32c4d5bf-b99a-4de7-bf76-be2568e8b5ca)
+![[assets/images/68a06de71e40d13221456f6b59a2e536_MD5.png]]
 
 하나씩 읽다보면 너무 당연한 내용. 하지만, 여러 항목에 거쳐 등장하는 개념인 **경험**, **고유함**, **독창성**, **충분한 가치** 단어에 주목할 필요가 있다.
 
@@ -65,7 +65,7 @@
 - 특정 기술을 다른 기술과 비교해 보기
 - 책이나 강의를 정리한다면 비판적 관점에서 접근하고, 내가 이해한 내용을 다른 사람에게 설명해 준다는 느낌으로 써보기
 
-![image](https://github.com/pozafly/TIL/assets/59427983/589f5f8f-7c49-4f8a-bc10-88b170305329)
+![[assets/images/af8034224066d4f701d363c89aa434d4_MD5.png]]
 
 포스트의 분량에 대해서도 걱정을 할 수 있는데, 구글 검색 관계자에 따르면 [텍스트의 분량 자체는 SEO에 영향을 주지 않는다](https://www.searchenginejournal.com/word-count-not-a-quality-factor/397288/)고 함.
 
@@ -77,7 +77,7 @@
 
 title은 웹 페이지의 제목을 나타낸다. 브라우저 탭에도 나타나지만 검색 엔진은 이 태그를 통해 웹 페이지의 주제를 파악하기도 함. 또한 검색 결과에 표시되는 타이틀로도 사용될 수 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5215efc1-a58e-4287-8dad-2990da9caabb)
+![[assets/images/c72f89b34c80a56bd1260896f156e1d6_MD5.png]]
 
 *타이틀과 디스크립션이 검색 결과에 표시되는 모습. [다만 항상 내가 설정한 대로 노출되는 건 아니다](https://developers.google.com/search/docs/appearance/title-link?hl=ko)…!*
 
@@ -144,11 +144,11 @@ title은 웹 페이지의 제목을 나타낸다. 브라우저 탭에도 나타�
 
 OG(Open Graph) 태그도 메타 태그의 일종이다. 보통 **SNS나 메신저에서 웹 페이지 링크가 공유될 때 나타낼 정보를 표현하는데 사용**된다. 일반적으로 링크 공유 시 나타나는 미리보기 정보가 여기 속한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/701cb5bb-df43-49c8-a002-7c7ec4a37c15)
+![[assets/images/0b3b924af2a3ba27df976915c67755ea_MD5.png]]
 
 보통 이런 플랫폼에서 사용자가 입력한 콘텐츠에서 링크를 발견하면 플랫폼에서 해당 링크의 정보를 직접 크롤링하여 메타 데이터를 읽어온 후 미리보기를 보여준다. 따라서 넓은 의미의 SEO에는 포함이 될 수 있을 것 같다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c8c2224a-05f2-4d61-b6d9-bae951f6fde4)
+![[assets/images/be482f3bf46887f7771088b690055553_MD5.png]]
 
 개인적으로 중요한 태그라 생각된다. **미리보기 유무가 링크 클릭률에 매우 직접적인 영향을 주기 때문**이다. 미리보기가 있다면 사용자가 링크에 직접 들어가 보지 않고도 어떤 내용인지 대략적으로 알 수 있고 추가적인 호기심을 이끌 수 있다.
 
@@ -185,7 +185,7 @@ OG(Open Graph) 태그도 메타 태그의 일종이다. 보통 **SNS나 메신�
 
 ### 사이트맵과 RSS 제공
 
-![image](https://github.com/pozafly/TIL/assets/59427983/9bf6a0e4-29f0-4cb8-b4ff-80ca7afd8f62)
+![[assets/images/509aa3d7a17d2f382458be5ef363aed0_MD5.png]]
 
 블로그 사이트맵. 말 그대로 웹 사이트(site)의 지도(map)다.
 
@@ -195,7 +195,7 @@ OG(Open Graph) 태그도 메타 태그의 일종이다. 보통 **SNS나 메신�
 
 티스토리 경우 사이트맵을 기본적으로 제공해주는 것 같고, SSG를 쓴다면 프레임워크에 맞는 사이트맵 빌드 방법을 찾아야 함.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/52def0f6-9856-4ce0-accc-d5aba8a54681)
+![[assets/images/1cca8d2c39ce2982731c3b36cfc31a40_MD5.png]]
 
 블로그의 RSS, XML 파일이라 사이트맵과 비슷하게 생겼지만, 목적은 다르다.
 
@@ -207,7 +207,7 @@ Gatsby에서는 [RSS 플러그인](https://www.gatsbyjs.com/plugins/gatsby-plugi
 
 ### robots.txt 제공
 
-![image](https://github.com/pozafly/TIL/assets/59427983/7ea644ae-c7f6-4cfc-8e9e-98540f05c2b4)
+![[assets/images/addba452722cc0ed3fba7001be079ec4_MD5.png]]
 
 **현재 웹 사이트에서 크롤링을 허용 또는 허용하지 않을 페이지들을 크롤러에게 알려주는 역할을 하는 텍스트 파일**.
 
@@ -223,7 +223,7 @@ robots.txt 파일을 두고자 한다면, 도메인 루트에서 접속이 가�
 
 이런 요소들을 일컬어 **코어 웹 바이탈(Core Web Vitals)** 이라고 한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/87090916-bc77-492d-a347-b7329b0bc39e)
+![[assets/images/f474703e9a8211f5932b071f74d20869_MD5.png]]
 
 - LCP(Large Contentful Paint): 페이지에서 가장 큰 영역을 차지하는 콘텐츠가 로드되는 데 걸리는 시간
 - FID(First Input Delay): 페이지가 로드된 후 사용자가 페이지와 상호작용 가능하기까지 걸리는 시간
@@ -237,7 +237,7 @@ robots.txt 파일을 두고자 한다면, 도메인 루트에서 접속이 가�
 
 구글의 검색 결과에 내 콘텐츠를 노출시킬 수 있도록 해주고 검색 결과와 관련된 통계 정보를 확인할 수 있게 해주는 서비스.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/10073c03-ef8f-4cfb-9271-3bee021a52b2)
+![[assets/images/a2a3e8d4d69be2e3cb47c9a11438789b_MD5.png]]
 
 며칠이 걸리기도 한다.
 
@@ -249,7 +249,7 @@ robots.txt 파일을 두고자 한다면, 도메인 루트에서 접속이 가�
 
 ### 네이버 서치 어드바이저 등록
 
-![image](https://github.com/pozafly/TIL/assets/59427983/26d1628b-92e0-49eb-985a-15e40ac66541)
+![[assets/images/b7521be27350a9d4be89f8e6b3edcb01_MD5.png]]
 
 한국 검색 시장 점유율은 네이버가 우위이기 때문에, 네이버에서도 검색 결과에 노출될 수 있도록 [네이버 서치 어드바이저](https://searchadvisor.naver.com/)에도 등록을 해준다.
 
@@ -261,7 +261,7 @@ robots.txt 파일을 두고자 한다면, 도메인 루트에서 접속이 가�
 
 ### 다양한 플랫폼에서의 백링크 확보
 
-![image](https://github.com/pozafly/TIL/assets/59427983/a61f5da0-e616-4ebd-8038-ebbd9be11e5a)
+![[assets/images/9801cdf70410a95ca8e2f9e8b47ea12b_MD5.png]]
 
 백링크(back-link)는 다른 사이트에서 내 사이트를 하이퍼링크로 연결한 것을 의미 한다. 다른 사이트라는 것이 말 그대로 다른 기술 블로그가 될 수도 있고, SNS가 될 수도 있다. 검색 엔진은 이 백링크의 수를 통해 해당 웹페이지의 평판을 판단하고, 이를 통해 검색 결과에 노출될 수 있는 순위를 결정한다.
 
@@ -279,11 +279,11 @@ robots.txt 파일을 두고자 한다면, 도메인 루트에서 접속이 가�
 
 알고리즘을 잘 타는 포스트가 되려면 이런 요소들의 특성을 적극 활용해야 한다. SNS 게시글을 작성할 때에도 요일과 시간대를 적절히 선택해야 한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c4f77e29-1f60-4922-83eb-72c971bfa3df)
+![[assets/images/a745642f78a25ab7f885e2e08258b2bd_MD5.png]]
 
 주말과 공휴일에는 방문자 수가 현저하게 떨어지고, 월요일에 굉장한 상승폭. 즉 새 포스트를 홍보할 때에는 월요일이 가장 좋은 시기라고 할 수 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/1fc295ab-0adb-4f4a-b6f2-18fac27b72ab)
+![[assets/images/079fe1b644d0233b8fb7aa167c85ffc2_MD5.png]]
 
 업무 시간대에 트래픽이 보통 가장 높다.
 

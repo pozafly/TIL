@@ -20,15 +20,15 @@ IME는 한글을 입력할 때, **컴포징** 이라는 단계를 거친다. 예
 
 아래는 textarea에서 한글 "ㅁ" 을 입력했을 때, keydown, keyup 이벤트를 console에 찍은 것임. (input text 에서도 같은 결과임.)
 
-![1](https://user-images.githubusercontent.com/59427983/129680878-f2f496ca-1b4c-4dbb-bbfa-b96b1e0c7193.png)
+![[assets/images/fdee14497c37ca2d7455b98482cc8a97_MD5.png]]
 
-![2](https://user-images.githubusercontent.com/59427983/129680901-4205127f-7541-46b3-9615-114d58a9eccd.png)
+![[assets/images/fb3ef360ccd00310ccf64c633e953f06_MD5.png]]
 
 위에서, `keyCode: 229` 가 나온 것을 알 수 있음. 그리고, `key: "Process"` 를 통해 IME의 프로세스로 들어간다는 것을 확인할 수 있음.
 
 하지만 특이하게 keydown 이벤트에는 `isComposing: false` 인데 반해 keyup 이벤트에서는 `isComposing: true` 라는 것을 확인할 수 있음. 이것은 keydown에서는 아직 컴포징이 시작되지 않았기 때문임. 이 때, "ㅏ" 를 연달아 치면 "마" 가 되면서 keydown 이벤트 역시 `isComposing: true` 가 되는 것을 확인할 수 있다.
 
-![3](https://user-images.githubusercontent.com/59427983/129681550-b9f51f9e-966f-4536-bf41-74580bb96bd2.png)
+![[assets/images/914241b5624491caee6cc0ddfa388a23_MD5.png]]
 
 그래서 한글 입력인지 알고 싶다면 아래와 같은 로직을 통해 이벤트 로직을 짤 수 있다.
 

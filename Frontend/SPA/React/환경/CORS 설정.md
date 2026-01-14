@@ -10,7 +10,7 @@ json-server로 만든 서버의 경우에는 모든 도메인을 허용해주는
 
 ## Proxy 설정하기
 
-![스크린샷 2021-03-09 오전 11 27 49](https://user-images.githubusercontent.com/59427983/110409380-864eea80-80ca-11eb-98c2-2a59ad07bc96.png)
+![[assets/images/9925a28e3923bb7fb96815eb62e64320_MD5.png]]
 
 웹팩 개발서버의 프록시를 사용하게 되면, 브라우저 API를 요청할 때 백엔드 서버에 직접적으로 요청을 하지 않고, 현재 개발서버의 주소로 요청하게 됨. 그러면 웹팩 개발 서버에서 해당 요청을 받아 그대로 백엔드 서버로 전달하고, 백엔드 서버에서 응답한 내용을 다시 브라우저쪽으로 반환한다. 웹팩 개발서버의 proxy 설정은 원래 웹팩 설정을 통해 적용하지만, CRA를 통해 만든 리액트 프로젝트에서는 package.json 에서 `"proxy"` 값을 설정해 쉽게 적용할 수 있다. ([참고](https://create-react-app.dev/docs/proxying-api-requests-in-development/))
 

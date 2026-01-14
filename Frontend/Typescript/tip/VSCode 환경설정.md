@@ -59,7 +59,7 @@ node_modules
 2. VSCode에서 `ctrl` + `shift` + `p` / `cmd` + `shift` + `p` 키를 이용하여 명령어 실행 창 표시
 3. 명령어 실행 창에 `open settings (json)` 입력 후 선택
 
-![command-palette](https://user-images.githubusercontent.com/59427983/233016612-5ed38e11-e6a0-4827-be03-0687d2041095.png)
+![[assets/images/4db37d801819ad980b0ebcf164c8aead_MD5.png]]
 
 1. VSCode 사용자 정의 파일인 `settings.json` 파일의 내용에 아래와 같이 ESLint 플러그인 관련 설정 추가.
 
@@ -82,4 +82,4 @@ node_modules
 
 1. `ctrl` + `,` 또는 `cmd` + `,` 눌러서 VSCode 설정 파일(Settings)에 들어간 후 `format on save` 검색. 아래와 같이 체크가 안되어 있는지 확인.
 
-![format-on-save-off](https://user-images.githubusercontent.com/59427983/233016540-0e36e377-7272-42d1-84ab-ec2a97e8ee40.png)
+![[assets/images/95c39e839fe11897df9ecebc19cc81bb_MD5.png]]

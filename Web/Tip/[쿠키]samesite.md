@@ -135,7 +135,7 @@ Top Level Navigation에는 유저가 링크(`<a>`)를 클릭하거나, `window.l
 
 `SameSite` 속성으로 `None`을 사용하려면 반드시 해당 쿠키는 `Secure` 쿠키여야 한다. `Secure` 쿠키는 HTTPS가 적용된(암호화된) 요청에만 전송되는 쿠키다. 이 정책을 구현하는 브라우저도 현재로 크롬밖에 없음. 크롬에는 `SameSite=None`으로 `Set-Cookie`를 사용하면 다음과 같이 쿠키 자체가 제대로 설정되지 않는다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5e0c04c7-0dcf-43eb-a3e9-a8fc3948074d)
+![[assets/images/0333ac725160bf9f383f71e7585a2ead_MD5.png]]
 
 <br/>
 

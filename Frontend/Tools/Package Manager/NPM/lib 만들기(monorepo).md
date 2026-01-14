@@ -3,7 +3,6 @@
 ## 배포 환경 잡기
 
 root에 `$ npm init` 으로 package.json을 만들고 아래를 넣자.
-
 ```json
 // package.json
 {
@@ -15,17 +14,15 @@ root에 `$ npm init` 으로 package.json을 만들고 아래를 넣자.
   ...
 }
 ```
-
 workspaces는 packages로 실제 라이브러리가 들어갈 것이고, root 프로젝트이기 때문에 private true를 넣어준다.
 
 packages 디렉토리를 만들고 터미널로 packages 폴더로 이동 후
 
 `$ yarn create vite` 로 프로젝트를 만든다. project name은 `library` 다.
 
-<img width="234" alt="image" src="https://github.com/user-attachments/assets/8af6bbf1-055e-4979-8d9f-12a406869eef">
+![[assets/images/82dd173b42f78ec25aa01ce582914bfc_MD5.png]]
 
 이런 구조가 되었을 것이다. library의 package.json 파일은 아래와 같다.
-
 ```json
 {
   "name": "@pozafly/mini-query",
@@ -42,7 +39,6 @@ packages 디렉토리를 만들고 터미널로 packages 폴더로 이동 후
   }
 }
 ```
-
 `"name": "@pozafly/mini-query",` 이렇게 넣어주자. `@pozafly/` 는 `scoped name` 이라고 이야기 한다.
 
 📌 scope 된 라이브러리는 private 하게 배포되는 것이 default다.
@@ -50,15 +46,12 @@ packages 디렉토리를 만들고 터미널로 packages 폴더로 이동 후
 예를 들어 회사에서 사용하는 npm에 publish 된 라이브러리 `@equal/` 같은 경우 외부에 노출이 되면 안되기 때문이다.
 
 하지만, 우리는 이걸 public 하게 배포하고 싶으니
-
 ```sh
 $ npm publish --access public
 ```
-
 이라고 배포해주어야 한다.
 
 [vite - library-mode](https://vitejs.dev/guide/build#library-mode) 를 보고 vite.config.js을 만들어 넣어주자.
-
 ```js
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
@@ -73,31 +66,25 @@ export default defineConfig({
   },
 });
 ```
-
 rollupOptions는 필요 없으니 지워주자.
 
 라이브러리를 작성 (src/main.ts 파일 작성) 후
-
 ```js
 // src/main.ts
 export const name = 'pozafly';
 ```
-
 터미널이 root로 오게 한 후 `$ yarn workspace @pozafly/mini-query build` 로 빌드를 한 번 해보자. yarn install도 하고.
 
 만약 에러가 난다면 yarn install을 하지 않아서 임. 근데 root에서 매번 이 명령어를 치기 귀찮으니 package.json에 build 스크립트를 넣어두자.
-
 ```json
 "scripts": {
   "build": "yarn workspace @pozafly/mini-query build",
   ...
 },
 ```
-
-<img width="256" alt="image" src="https://github.com/user-attachments/assets/e5aedcb9-ce7f-4828-ad18-200068b7c51d">
+![[assets/images/5bf135b0101198e03db171bc110f5638_MD5.png]]
 
 이렇게 dist 폴더가 생성되었다.
-
 ```js
 // mini-query.js
 
@@ -106,9 +93,7 @@ export {
   o as name
 };
 ```
-
 생성된 mini-query.js는 이렇게 생겼음.
-
 ```json
 // packages/package.json
 {
@@ -125,7 +110,6 @@ export {
   ...
 }
 ```
-
 이제, packages 안의 package.json 파일에 `files` 옵션을 넣어주어야 함. files 배열 안에 들어가는 폴더가 npm에 배포 될 것이기 때문임.
 
 그리고, main, module, exports 등을 통해 진입점을 잡아주도록 하자.
@@ -133,13 +117,10 @@ export {
 <br/>
 
 ## Test
-
 ```sh
 $ yarn workspace @pozafly/mini-query add vitest -D
 ```
-
 min-query repo에 vitest를 install 해준다. `src/__test__/main.test.ts` 를 만들고,
-
 ```ts
 import { describe, expect, it } from 'vitest';
 import { $ } from '../main';
@@ -162,11 +143,9 @@ describe('MiniQuery', () => {
   });
 });
 ```
-
 이렇게 넣어주자. 그런데, 처음엔 실패할 것이다. node 환경은 `document` 를 모르기 때문이다.
 
 vitest에 jsdom을 넣어주어야 한다. node 환경에서 가상 DOM을 넣는 과정임.
-
 ```js
 import { resolve } from 'path';
 import { defineConfig } from 'vitest/config';
@@ -180,7 +159,6 @@ export default defineConfig({
   },
 });
 ```
-
 이렇게 넣어주고, `$ yarn workspace @pozafly/mini-query add json -D` 로 jsdom을 설치해주자. 잘 된다.
 
 <br/>
@@ -194,7 +172,6 @@ root에 apps 폴더를 만들고 yarn create vite로 example을 만들자. root�
 ### 라이브러리 dependency 추가
 
 apps/example/package.json에 `dependency` 를 추가해주자.
-
 ```json
 // apps/example/package.json
 {
@@ -204,7 +181,6 @@ apps/example/package.json에 `dependency` 를 추가해주자.
   },
 }
 ```
-
 yarn workspace를 사용할 때, root 레벨에서 `yarn install` 하면, 하위에 있는 모든 패키지의 디펜던시들을 모두 한번에 설치하게 된다. 즉, 각 패키지 내에 node_modules에 깔리는게 아니라 📌 root에 패키지들을 설치하게 된다.
 
 example에서 패키지를 사용할 수 있었던 이유는, `yarn workspace` 가 가져와주기 때문이다.
@@ -212,23 +188,20 @@ example에서 패키지를 사용할 수 있었던 이유는, `yarn workspace` �
 테스트 해보자.
 
 apps/example/src/main.js에
-
 ```js
 import { $ } from '@pozafly/mini-query';
 
 console.log('Hello', $);
 ```
-
 이렇게 넣고 `yarn workspace example dev` 명령어로 실행시켜보자.
 
-<img width="1330" alt="image" src="https://github.com/user-attachments/assets/faf36605-fc40-4d9c-9a9e-32a7cdcefe23">
+![[assets/images/be6119fe35f006de273da86a331cd1cf_MD5.png]]
 
 에러가 남. 이건 library를 빌드하지 않아서 그렇슴.
 
 `yarn workspace @pozafly/mini-query build` 명령어로 빌드하면 잘 나오는 걸 볼 수 있음.
 
 click메서드를 만들고 다시 실행해보자.
-
 ```js
 // packages/library/src/__test__/main.test.ts
 
@@ -250,7 +223,6 @@ describe('click()', () => {
   });
 });
 ```
-
 이렇게 했다. 실패임. 왜?
 
 > ⭐️ 실수 하지 않도록 하는 법

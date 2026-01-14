@@ -13,15 +13,15 @@
 
 ### FOUC
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c2f7af5a-8cb0-4304-ace6-26dbe9770920)
+![[assets/images/df195569b12c6b563ff5443bf0654f18_MD5.png]]
 
 브라우저가 HTML 문서를 파싱하고 DOM 트리를 구성하는 동안, 외부 CSS 파일이 아직 로드되지 않았을 때 발생한다. 이로 인해 브라우저는 초기에 스타일이 적용되지 않은 콘텐츠를 화면에 표시하게 된다. 외부 CSS 파일이 로드되고 파싱되어 CSSOM 트리가 만들어지만, 렌더 트리가 업데이트 되고 스타일이 적용된 콘텐츠가 표시된다. 이과전에서 사용자는 잠시 스타일이 적용되지 ㅇ낳은 콘텐츠를 볼 수 있게 된다.
 
-![img](https://github.com/pozafly/TIL/assets/59427983/e2da72c2-c24f-40e7-9867-c29994960193)
+![[assets/images/ee2f71f0fdd2ea7b856cfaabe8c5c193_MD5.gif]]
 
 ### FOUT
 
-![img (1)](https://github.com/pozafly/TIL/assets/59427983/5eeeedc6-a61c-4349-a94b-3f11bf5f6f37)
+![[assets/images/d0e269c7d3e9a97cbaf5a998acb9b441_MD5.gif]]
 
 웹 폰트를 사용하는 경우, 브라우저가 웹 폰트 파일을 다운로드하고 파싱하는데 시간이 걸릴 수 있음. 웹 폰트가 아직 로드되지 않았을 때, 브라우저는 시스템 기본 폰트를 사용하여 텍스트를 먼저 렌더링한다. 웹 폰트가 로드되면, 브라우저는 렌더 트리를 업뎃 해 웹 폰트를 적용한 텍스트를 표시하게 된다. 이 과정에서 사용자는 잠시 웹 폰트가 적용되지 않은 텍스트를 볼 수 있게된다.
 
@@ -37,7 +37,7 @@ CSS 파싱: 브라우저는 CSS 파일을 파싱하여 CSSOM(CSS Object Model) �
 페인팅: 최종적으로 스타일과 레이아웃 정보를 바탕으로 화면에 요소를 그립니다.
 ```
 
-![image](https://github.com/pozafly/TIL/assets/59427983/0553adb4-bbd9-4223-a778-8519525c853e)
+![[assets/images/9c06a8c9a3a50150565343ac8934b8e8_MD5.png]]
 
 FOUC, FOUT 현상은 주로 렌더 트리 생성 및 레이아웃 단계에서 발생한다. 스타일 정보가 늦게 도착하거나, 웹 폰트가 로드되는 동안 브라우저가 기본 폰트로 렌더링 하기 때문이다.
 

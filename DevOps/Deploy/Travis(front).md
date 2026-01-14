@@ -18,7 +18,7 @@ endpoint를 잘 설정해주어야지 오류가 나지 않는다. springboot를 
 
 https://travis-ci.com/ 이곳에 먼저 들어가서 github ID로 로그인을 해주자. 우측 상단에 내 아이콘을 선택하고 Setting -> Repositories에 가면 무슨 프로젝트를 설정할 것인지 페이지가 나온다. 여기서 어떤 프로젝트를 CI 할 것인지 설정해줄 수 있다. Manage repositories on GitHub 을 클릭하고, github 페이지에 들어가면,
 
-![스크린샷 2021-04-06 오전 11 33 19](https://user-images.githubusercontent.com/59427983/113650888-f3ef3600-96cb-11eb-83a3-fe7d8b9849ad.png)
+![[assets/images/1b5d598d78d79a41407b95423daa7bd1_MD5.png]]
 
 이곳에서 자신의 프로젝트를 선택해서 연동시킬 수 있다.
 
@@ -101,7 +101,7 @@ $ travis encrypt-file --pro [파일명]
 
 --pro를 붙여주자. 붙여주지 않으면,
 
-![스크린샷 2021-04-06 오전 11 55 25](https://user-images.githubusercontent.com/59427983/113652592-04ed7680-96cf-11eb-9b43-f67b49341adc.png)
+![[assets/images/81e882c4743b0268dcc39d1d5d5edd43_MD5.png]]
 
 push후 build 때, `iv undefined` 오류가 계속 뜰 것임.
 
@@ -140,7 +140,7 @@ traivs 상에서 내 파일이 build 까지 완료되었다면, 이제 호스팅
 
 aws s3에 접근할 수 있는 엑세스키와 비밀키는 절대절대절대절대 github 에 올라가서는 안된다. 따라서 travis 상에 키를 등록해놓고.traivs.yml에서 불러다 쓰는 형태로 진행해야한다. travis.com에 가서, Settings 화면에 가자. 해당 프로젝트 우측에 Settings 를 눌러서 key를 등록할 수 있다.
 
-![스크린샷 2021-04-06 오후 2 29 49](https://user-images.githubusercontent.com/59427983/113663278-b6e36d80-96e4-11eb-9379-723b135ce55a.png)
+![[assets/images/849c50d20ae2c2cb18684e6517430fec_MD5.png]]
 
 - name: AWS_ACCESS_KEY, AWS_SECRET_KEY 두개
 - value: IAM에서 받은 엑세스키와 시크릿키
@@ -213,7 +213,7 @@ $AWS_ACCESS_KEY, $AWS_SECRET_KEY는 기존 travis에 설정된 대로 들어갈 
 
 이제 git push 해주면,
 
-![스크린샷 2021-04-06 오후 5 41 15](https://user-images.githubusercontent.com/59427983/113683817-94128280-96ff-11eb-9a7c-e45173c60c60.png)
+![[assets/images/df4e04c25c2d290775cd25c1af3228e4_MD5.png]]
 
 요런식으로 도는걸 볼 수 있다. 완료!!
 

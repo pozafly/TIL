@@ -2,7 +2,7 @@
 
 > [웹 성능 최적화를 위한 Image Lazy Loading 기법](https://helloinyong.tistory.com/297)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/d93f773a-a714-447f-bc06-6ce03190058a)
+![[assets/images/614f64ea27bf11be9f4f037ef080cc28_MD5.png]]
 
 이미지는 모든 웹 사이트와 어플리케이션에서 매우 중요한 요소다. 마케팅 배너 혹은 상품 이미지, 로고 등 웹 사이트 내에서 이미지가 없다는 것은 상상할 수 없음. 하지만, 이미지는 페이지 성능에 가장 많이 영향을 주고 있다.
 
@@ -254,7 +254,7 @@ placeholder는 이미지가 로딩될 때까지 해당 이미지 자리에 대�
 
 아래는 [Manu.ninja](https://manu.ninja/dominant-colors-for-lazy-loading-images/)에서 소개하고 있는 예시다.
 
-![image](https://ik.imagekit.io/demo/img/pinterest-placeholders.gif)
+![[assets/images/8d9fc05deef31eaba8e65691be3cf4b2_MD5.gif]]
 
 이미지의 첫 `1x1` 픽셀로 스케일을 감소 시키고 해당 픽셀 요소로 placeholder를 채우는 아주 간단한 방식이다.
 

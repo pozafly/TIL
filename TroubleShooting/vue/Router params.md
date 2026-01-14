@@ -6,17 +6,14 @@
 2. params
 
 query는 url이 찍히기 때문에 개인 정보 노출 때문에 params를 사용하고 싶었다. 처음 코드는,
-
 ```js
 this.$router.push({ name: 'auth', params: { id } });
 ```
-
 이렇게 해주었다.
 
-<img width="1040" alt="스크린샷 2021-04-10 오후 3 02 39" src="https://user-images.githubusercontent.com/59427983/114260431-ce399800-9a0f-11eb-9d7d-6c61c0b2b26b.png">
+![[assets/images/20f04775a3df76b6c34ca2a8a623447a_MD5.png]]
 
 `[vue-router] Route with name 'auth' dose not exist` 라고 뜨는 것이다. 하지만, routes/index.js에는
-
 ```js
 path: '/auth',
 redirect: '/auth/login',
@@ -28,15 +25,11 @@ component: () => import('@/views/AuthPage.vue'),
     },
     (...)
 ```
-
 이렇게 `path` 가 존재했다. 중요한 것은, params를 넘길 때는 `this.$router.push({ path: 'auth', params: { id } });` 이 부분에서 path를 넘기는 것이 아니라, 반드시 `name` 을 넘겨야 한다. 즉,
-
 ```js
 this.$router.push({ name: 'auth', params: { id } });
 ```
-
 이렇게 name 값을 넘겨주어야 함. 그리고, routes/index.js에서는 name 속성을 적어주어야 제대로 path를 찾아간다.
-
 ```js
 path: '/auth',
 redirect: '/auth/login',
@@ -49,9 +42,7 @@ component: () => import('@/views/AuthPage.vue'),
     },
     (...)
 ```
-
 - 🌈: 이 부분이 필요한 것이다. 그러면 제대로 params이 도착한다.
-
 ```js
 mounted() {
   if (this.$route.params) {
@@ -59,5 +50,4 @@ mounted() {
   }
 },
 ```
-
 이런 식으로 해줄 수 있겠다.

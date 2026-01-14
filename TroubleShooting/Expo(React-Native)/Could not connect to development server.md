@@ -2,7 +2,7 @@
 
 아래와 같은 오류를 만날 수 있다.
 
-![스크린샷 2021-05-12 오후 6 06 45](https://user-images.githubusercontent.com/59427983/117949336-fc7f0000-b34c-11eb-8381-811415da1c75.png)
+![[assets/images/f881829b4e00e837bfeee2e9bfe828fd_MD5.png]]
 
 expo에서 에러가 발생했을 때 나는 것. connection이 리셋된 것이다. 매우 종종 발생한다.
 

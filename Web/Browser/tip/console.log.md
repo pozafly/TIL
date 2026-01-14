@@ -42,7 +42,7 @@ console.info(dog);
 console.warn(dog);
 ```
 
-![스크린샷 2021-06-18 오후 10 35 05](https://user-images.githubusercontent.com/59427983/122569266-86756380-d085-11eb-995d-871ee640e768.png)
+![[assets/images/8b2cd830c0a01b68f709d77c0e31c3f1_MD5.png]]
 
 이런식으로 노란색으로 표시된다.
 
@@ -52,7 +52,7 @@ console.warn(dog);
 
 에러! 예상하지 못한 에러. 시스템 에러.
 
-![image](https://user-images.githubusercontent.com/59427983/122569444-b6246b80-d085-11eb-9800-b8ba75b85b34.png)
+![[assets/images/6d4b85bf17a7b67d5c74f11546811aa3_MD5.png]]
 
 log, info는 배포 시 표현되지 않도록 하고, warn, error만 어떤 특별한 동작을 할 수 있게 한다. 따라서 level에 따라서 잘 작성해주는 것이 좋다.
 
@@ -82,7 +82,7 @@ console.assert(2 === 2, 'same!');
 console.table(dog);
 ```
 
-![스크린샷 2021-06-18 오후 10 42 43](https://user-images.githubusercontent.com/59427983/122570224-8164e400-d086-11eb-8570-b26974ebde6c.png)
+![[assets/images/2069717b6af9aa9b50d01e27c59d38a6_MD5.png]]
 
 이런 식으로 가독성 좋게 표시해준다.
 
@@ -182,6 +182,6 @@ function f3() {
 f1();
 ```
 
-![스크린샷 2021-06-18 오후 10 53 57](https://user-images.githubusercontent.com/59427983/122571801-13b9b780-d088-11eb-875c-bc1cf399f78f.png)
+![[assets/images/3719f4682aea9ef92e1b8082160cdc19_MD5.png]]
 
 이런 식으로 어떤 함수에서 어떻게 부르는지, 또 몇번째 줄에서 코드가 적혀있는지 추적해준다. **비동기** 코드를 추적하기 쉬워진다. 매우 유용하겠지?

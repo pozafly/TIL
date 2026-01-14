@@ -31,7 +31,7 @@ function Bookmarks({ category }) {
 
 effect는 `category` 가 변경될 때마다 다시 fetch 하도록 한다. 하지만 네트워크 응답은 요청 순서와 다르게 도착할 수 있음. `category`를 `books`에서 `movies`로 변경했는데 `movies`의 응답이 `books`의 응답보다 먼저 도착하면 컴포넌트에 잘못된 데이터가 존재하게 된다.
 
-![image](https://github.com/user-attachments/assets/67350c0a-8f94-4d0c-bd3f-17650baff9f1)
+![[assets/images/fdac6816f63ce97031c7ed386d730382_MD5.png]]
 
 결국 `category` 의 상태는 `movies` 인데 실제 렌더링 하는 데이터는 `books` 인, 일관되지 않은 상태와 함께 하게 된다.
 

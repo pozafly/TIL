@@ -20,7 +20,7 @@ Bootstrap, Sass, BEM 혹은 CSS-in-JS 와는 달리 비주류이고, TailwindCSS
 
 문제점은 중복 서식을 표현할 때 코드가 너무 비대해지면서 가독성 저하, 유지 보수 어려워짐.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/f557da4b-d9ac-4917-be1f-a9b835134162)
+![[assets/images/23fa716a784e9d8bb0b2110ded3c6179_MD5.png]]
 
 따라서 inline-style은 나쁘다는 원칙이 만들어짐.
 
@@ -76,7 +76,7 @@ strong { color: blue; font-weight:bold }
 
 스타일을 하나하나 원하는 엘리먼트를 선택, 스타일을 적용하는 것이 쉬운일은 아니다. 복잡한 Selector를 써야 했고, Selector도 세분화가 필요했다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5017e36f-951c-4711-914a-8a7ed9103474)
+![[assets/images/f0c3e2acb4b7d64c83a659353f3b51db_MD5.png]]
 
 Sass의 등장.
 
@@ -142,7 +142,7 @@ JS는 Component와 Frammework 기반 개발방식으로 변해가고 있었음. 
 
 처음부터 CSS를 작성하는 규칙을 잘 짜면 문제 해결 가능하다는 것이 CSS 방법론이다. SMACSS, OOCSS, BEM, ITCSS, ATOMIC CSS 등
 
-![image](https://github.com/pozafly/TIL/assets/59427983/934886d6-3772-4b50-b1ae-a82027f8c94f)
+![[assets/images/592e49f8d9aad7843d01e4da4816dfbd_MD5.png]]
 
 BEM이 이겼음. 이런 방법론으로 복잡성을 줄이거나 생산성을 가져오는 것은 아니었고, CSS의 본질적 문제를 해결해주지 않았다.
 
@@ -154,7 +154,7 @@ BEM이 이겼음. 이런 방법론으로 복잡성을 줄이거나 생산성을 
 
 Global Scope 문제의 해결책.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2eb307a5-e51e-4545-abd4-e552ae2c50b1)
+![[assets/images/3564f9ef892e1a32c7b13e5dce444611_MD5.png]]
 
 CSS 문제인 Global Scope를 막기 위해 Component 단위에서 사용하는 CSS에 hash를 추가해 CSS가 더이상 Global 하지 않도록 하는 방식을 통해 해결하고자 하는 방법이 만들어짐.
 
@@ -168,15 +168,15 @@ React가 대세가 되면서 React에서 Style을 다루는 불편함을 해소�
 
 CSS는 Global Scope, Specificity 말고도 사실 문제가 많다. JS에서 CSS를 해보면 어떨까?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/203638a8-10c0-4341-b216-2326bfc9caae)
+![[assets/images/02698dfb99fb0ae57afd4d909685f03d_MD5.png]]
 
 ### CSS-in-JS Styled-Components, 2016
 
-![image](https://github.com/pozafly/TIL/assets/59427983/35d418ac-b024-42b8-95cc-9346643e990f)
+![[assets/images/24854da9f0652289a442398ad2c064df_MD5.png]]
 
 Styled-Components 탄생.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/aab9c704-d068-42d6-86fd-da37df1ce506)
+![[assets/images/13dd9595db862346d5d02338236f3d3c_MD5.png]]
 
 <br/>
 
@@ -217,13 +217,13 @@ CSS가 만들어지고, `.bold`. `.hidden`, `.text-right`, `.mt10`, `.red` 과 �
 
 이 방식이 편리한 방식이라면 일부만 하는게 아니라 전부 다 이런 방식으로 만들어 보는 것은 어떤가?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/bee031ff-e25a-4b59-aa3b-2fb946158852)
+![[assets/images/bcfb79ca3bab229258fd821c3c950e9c_MD5.png]]
 
 Atomic CSS. 의미 기반이 아닌 시각적 기능에 기반한 이름을 지은 변하지 않는 단일 클래스를 이용하자. 변하지 않는 CSS를 만들어두고 HTML에서 필요한 스타일을 적용하는 방식으로 개발하는 것이 Atomic CSS다.
 
 ### 왜 이렇게 작성하는가?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5ed6e3b7-75bd-4054-97ca-d628ab2e38b4)
+![[assets/images/a670a5d026ccc0e406d7675ad056eec5_MD5.png]]
 
 의미론적 이름 짓기가 어렵기 때문임.
 
@@ -247,7 +247,7 @@ Atomic CSS. 의미 기반이 아닌 시각적 기능에 기반한 이름을 지�
 
 시각적 기능 기반 쉬운 이름으ㅡㄹ 가지며 미리 만들어두기 때문에 외워두면 계속 재사용이 가능, 일정 크기 이상 파일이 커지지 않는다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/1d61cfa0-42cd-4d83-8c04-5d057584aa2c)
+![[assets/images/c0f83e312e070ee16a87b8d252f7b0cf_MD5.png]]
 
 무엇보다 필요없는 이름 짓기에서 해방된다.
 

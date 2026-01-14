@@ -6,7 +6,7 @@
 
 그럼에도 미래 지향적 차세대 런타임인 Bun이 CommonJS 지원 개선에 그토록 많은 노력을 기울인 이유는?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/b9686f9c-60c8-42d0-a5f5-7c0a7c056ace)
+![[assets/images/b1e1947d84e8de20cb7269ea33ef7870_MD5.png]]
 
 CommonJS는 계속 사용될 것이다. CJS, ESM 간 상호 운용성에 대한 개발자 경험 문제를 해결할 수 있다고 생각한다.
 
@@ -92,7 +92,7 @@ import "@babel/core";
 
 바벨은 수많은 파일로 구성된 패키지이므로, 이 두 파일의 런타임을 비교함으로써 모듈 해석과 관련된 성능 비용을 적절하게 평가할 수 있다. 결과는 다음과 같다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/9f627367-5ce8-4b36-8bc9-d52c6f365c0d)
+![[assets/images/707b71f67125149e252361f5a3e1fa72_MD5.png]]
 
 > Bun을 사용하면 CommonJS로 Babel을 로드하는 속도가 ES Module을 사용하는 것보다 약 2.4배 빠르다.
 

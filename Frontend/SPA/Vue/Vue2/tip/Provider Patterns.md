@@ -35,7 +35,7 @@
 - vue에서 제공하는 `provide`, `inject` 를 사용하는 방법
 - 이 패턴의 핵심은 바로 상위 컴포넌트에서 `provide`로 값을 전달하고, 이 값을 필요로 하는 하위 컴포넌트에서 `inject` 를 사용해 값에 접근하는 것이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/9528a892-f801-488e-a665-07103a9aa272)
+![[assets/images/6de7df51a1f49ec3b829ca800c471b6e_MD5.png]]
 
 #### Provide: 값을 전달한다
 

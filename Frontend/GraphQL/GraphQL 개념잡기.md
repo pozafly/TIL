@@ -30,7 +30,7 @@ SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
 필요에 따라 얼마든지 L4 TCP/UDP를 활용하거나 심지어 L2 형식의 이더넷 프레임을 활용할 수 있음.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/a83bbced-bbc7-479d-84ad-4f3cad99fa13)
+![[assets/images/d8306a2a1d798e7a3fa383b44b8e82f9_MD5.png]]
 
 파이프라인이다.
 
@@ -40,9 +40,9 @@ SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
 REST API는 URL, METHOD등을 조합하기 때문에 다양한 Endpoint가 존재한다. 반면, gql은 단 하나의 EndPoint가 존재함. gql API에서는 불러오는 데이터의 종류를 쿼리 조합을 통해 결정 한다. 예를 들면 REST API 에서는 각 EndPoint 마다 DB SQL 쿼리가 달라지는 반면, gql API는 gql 스키마의 타입마다 DB SQL 쿼리가 달라진다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/0c849874-784a-43d4-84f8-57ca50c6f4ad)
+![[assets/images/6506add9a177b9ac1b7ba64d3abf097e_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/389d337b-9a80-4a15-9c53-c03e08d4c117)
+![[assets/images/8e3c3db6e77a80d70f766bb3b2c59c0d_MD5.png]]
 
 위 그림처럼, gql API를 사용하면 여러 번 네트워크 호출을 할 필요 없이, 한 번의 네트워크 호출로 처리할 수 있다.
 
@@ -54,7 +54,7 @@ REST API는 URL, METHOD등을 조합하기 때문에 다양한 Endpoint가 존�
 
 쿼리와 뮤테이션 그리고 응답 내용의 구조는 상당히 직관적이다. 요청하는 쿼리 문의 구조와 응답 내용의 구조는 거의 일치한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/83958702-491f-483c-87e2-b0becf829514)
+![[assets/images/c623f1469047dc0305c7fd594b1913ab_MD5.png]]
 
 gql에서 굳이 쿼리와 뮤테이션을 나누는데 내부적으로 들어가면 사실상 별 차이가 없음. 쿼리는 데이터를 읽는데(R) 사용하고, 뮤테이션은 데이터를 변조(CUD) 하는데 사용한다는 개념 적인 규약을 정해 둔 것임.
 

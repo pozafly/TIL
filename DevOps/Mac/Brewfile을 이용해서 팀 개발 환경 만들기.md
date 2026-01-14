@@ -7,18 +7,16 @@
 Homebrew의 bundle 기능을 이용하고, 쉘 스크립트를 사용해 만들 수 있다. bundle은, `npm` 과 같은 녀석(번들러)이고, `Brewfile` 은 package.json 파일과 같은 종속성을 관리하는 녀석임.
 
 ### Brewfile
-
 ```sh
 $ brew bundle dump
 ```
-
 하면 Brewfile 이 생성된다.
 
-<img width="252" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/10c28269-15f6-4964-8327-a3acf64e024e">
+![[assets/images/78515739b96b814966a1aa32aa449863_MD5.png]]
 
 cat 해서 보면 설치 명령어들이 주욱 나옴. 그리고 Brewfile이 path에 있는 상태에서 `brew bundle` 명령어를 치면,
 
-<img width="246" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/6479d154-0db0-46a0-975d-b1284ab73734">
+![[assets/images/8d8e76c8ae66d0d5c025ecb5e36ece86_MD5.png]]
 
 이렇게 설치되는 구조다.
 

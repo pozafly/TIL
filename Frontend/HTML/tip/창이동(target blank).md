@@ -8,24 +8,20 @@
 
 target="_black" 만 사용했을때.
 
-<img width="651" alt="스크린샷 2021-03-19 오전 10 11 06" src="https://user-images.githubusercontent.com/59427983/111717486-776ef180-889b-11eb-8a69-f246ecfa4b70.png">
+![[assets/images/de1c6346ea3b29d90ba19cc8a010aecb_MD5.png]]
 
 `window.opener` 객체를 사용할 수 있다. 연결중인 페이지는 연결 페이지에 부분적으로 액세스 할 수 있는 것. 이전 페이지를 제어할 수 있는 권한이 있다는 것. 악의적인 동작을 일으킬 수 있음.
-
 ```html
 <a href="https://naver.com" target="_blank" rel="noopener">새창열기</a>
 ```
-
 하지만, noopener 값을 rel 속성으로 사용하면 새로 열린 페이지에서 window.opener 객체가 존재하지 않는 것을 확인할 수 있다.
 
 <br/>
 
 ## Noreferrer
-
 ```html
 <a href="https://naver.com" target="_blank" rel="noreferrer">새창열기</a>
 ```
-
 noopener 와 유사한 기능으로, noreferrer는 새로 열린 사이트가 window.opener 객체를 조작하지 못하게 함. 그러나 noreferrer 는 다른 페이지를 탐색할 때 브라우저가 참조 웹 페이지의 주소를 보내지 못하게 함.
 
 쉽게 말해 noreferrer 값은 링크를 클릭할 때 참조자 정보를 숨긴다. 예를 들어, 누군가 자신의 웹 페이지에 링크를 게시하고 noreferrer 값이 포함된 링크를 클릭하면 해당 사용자가 어디에서 왔는지 알 수 있는 방법이 없음.

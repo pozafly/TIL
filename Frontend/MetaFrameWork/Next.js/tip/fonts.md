@@ -63,11 +63,11 @@ export default function Home() {
 
 font-size를 동일하게 맞춰도, 각각의 폰트가 기본적으로 가지고 있는 크기가 조금씩 다르기 때문에 서로 다른 폰트를 교체하는 과정에서 Layout Shift가 발생한다. 이를 ([FOUT, Flash Of Unstyled Text](https://fonts.google.com/knowledge/glossary/fout)) 라고 한다. Next12 에서는 이에 대해 별다른 처리를 하고 있지 않기 때문에 첫 번째 그림처럼, Homemade Apple 폰트가 로드 되기 전에 기본적으로 보여주는 Font와 로드된 폰트의 크기가 달라 폰트가 로드된 이후에 image가 아래로 밀려나는 Layout Shift가 발생하고 있다.
 
-![0_pk8S_LzPiteXJC30](https://github.com/pozafly/TIL/assets/59427983/5270e927-9dd7-445f-83b3-d03959f48106)
+![[assets/images/ad43d01950bef2c7da0f8aa75d009351_MD5.gif]]
 
 반면 Next13 에서는 이를 adjustFallbackFont 라는 기능을 통해 기존 Fallback Font의 size-adjust 속성을 조정하기 때문에 Fallback Font와 Homemade Apple 폰트 사이의 크기 차이가 발생하지 않고, 이에 따라 Layout Shift가 발생하지 않고 있음을 확인할 수 있다.
 
-![0_nYvksJpChrkld9k7](https://github.com/pozafly/TIL/assets/59427983/26a6ef47-9ed6-4ec4-8f75-981ae4d5bd6c)
+![[assets/images/2d0d35c3ae270c0d9cef90b0bac4ecf6_MD5.gif]]
 
 <br>
 
@@ -75,17 +75,17 @@ font-size를 동일하게 맞춰도, 각각의 폰트가 기본적으로 가지�
 
 두 번재로는 google font를 다운로드 하는 시점에 대한 것이다. next12를 보면 html을 다운로드 한 후, 이 파일이 link 하고 있는 font.googleapis.com에서 폰트를 다운로드 하고 있음을 확인할 수 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/ce0e89eb-916c-41ce-b3a2-89ab931dce77)
+![[assets/images/39cf0af6e623e8e070a177a7d6caf31a_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/17506697-1371-4492-9679-9ffb823a1f93)
+![[assets/images/df05264d63f9c3b42285e335e8db87de_MD5.png]]
 
 반면, Next13 에서는 build 타임에 미리 google font를 다운로드 해서 로컬 디렉토리에 저장해두고, html 파일이 이 로컬 파일을 link 하도록 구현되어 있다. 이렇게 하면 서로 다른 도메인 간 Connection 연결을 위한 handshaking 과정 없이, 이미 HTML 파일을 다운로드 하기 위해 생성했던 Connection을 그대로 사용할 수 있기 때문에 전자보다 비교적 빠른 속도로 파일을 다운로드할 수 있다. (물론 Next.js 서버를 운영하는 쪽에서 적절하게 CDN을 사용해 캐시 정책을 설정해주어야 할 것이다.)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/3246aa85-5662-4899-b3f6-9d01ada8466a)
+![[assets/images/c6cc3b5419de1e5e64f6bbd097ee1e2f_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/ef14b293-a6e0-4059-b085-b02b3acb126b)
+![[assets/images/cf28772790deeff85ad548bae9be0265_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/392a882a-f783-431e-a003-c6156e1f3d86)
+![[assets/images/a60b436e8b0a4204796266faba70c899_MD5.png]]
 
 <br/>
 
@@ -141,17 +141,17 @@ return alias
 
 next-font-loader는 다음과 같이 2개의 구성 요소로 구성되어 있다. 실제로 webpack loader가 참조하는 index.ts와 이 index.ts 파일에서 참조하는 postcss-next-font.ts다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c47e4164-bae5-4075-90d6-5b97a23c4310)
+![[assets/images/2dbb4eae981e01b3acab3c51290f70c8_MD5.png]]
 
 ### nextFontLoader
 
 next-font-loader는 크게 2가지로 구성되어 있음. `packages/font/src/google/loader.ts`의 downloadGoogleFonts 함수를 호출해 빌드 타임에 (애초에 webpack loader가 실행되는 시점은 빌드 타임이기 때문) googleFont를 다운 받고 zero-layout-shift를 위한 size-adjust를 진행하는 부분과 이 결과를 바탕으로 className을 만들고, 여기에 font-family, font-weight, font-style css를 적용하는 부분이다. 실제로 위의 Next13 예제에서 Homemade Apple 폰트를 적용한 main tag에는 다음과 같은 className이 적용되어 있는 것을 확인할 수 있고, 이 className은 아래와 같은 css가 적용된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c0da45a0-676b-4dff-b4f4-d953d9f47368)
+![[assets/images/77e04a1310d3c83401bf7ba1ace4c59b_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6447a501-357d-4251-8719-b1241657588c)
+![[assets/images/10510c65eec4609066c9776693a61b92_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/4c652b37-8742-46da-8656-f9a3dc10f39a)
+![[assets/images/bb144f15ba40279e8c662d92fa6ae2ac_MD5.png]]
 
 우선 googleFont를 다운로드 받고, fallback font를 처리하는 단계부터 살펴보자. nextFontLoader라는 함수에서 fontLoader라는 async 함수를 호출함으로써 이 단계를 수행하는 데, fontLoader라는 함수는 googleFont의 경우 packages/font/google/loader.js를 의미하게 되며, 이는 packages/font/src/google/loader.ts를 빌드한 결과물이 된다. 즉, nextFontLoader에서 호출하는 fontLoader라는 함수는 packages/font/src/google/loader.ts의 downloadGoogleFonts 라는 함수를 의미하는 것이다.
 
@@ -195,7 +195,7 @@ https://github.com/vercel/next.js/blob/canary/packages/font/src/google/loader.ts
 
 이 부분은 next/font가 zero-layout-shift를 구현하기 위한 핵심 로직으로, Homemade Apple 폰트를 사용하기로 했다고 하면, 이 폰트에 대한 fallback font를 결정한 뒤 (serif or sans-serif), Homemade Apple 폰트와 fallback 폰트와의 layout shift를 발생시킬 수 있는 size 차이를 비교해 size-adjust 속성을 조정하는 방식으로 동작한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/258069f9-8ed8-4caa-b2c6-6fb5cffbd3e0)
+![[assets/images/e931012b006f65a58747ca04e7100d64_MD5.png]]
 
 > *The size-adjust CSS descriptor defines a multiplier for glyph outlines and metrics associated with this font. This makes it easier to harmonize the designs of various fonts when rendered at the same font size.*
 
@@ -235,7 +235,7 @@ const result = {
 }
 ```
 
-![image](https://github.com/pozafly/TIL/assets/59427983/402585d4-2db8-42d1-9c54-ba833eb779ad)
+![[assets/images/c9b27bf42b2df7ba7ea9622172c540d1_MD5.png]]
 
 위에서 호출하는 calculateSizeAdjustValues 라는 함수는 다음과 같이 생겼는데, 넘겨준 fontMetrics의 category값이 "serif"이면, Times New Roman을, "sans serif"이거나 "serif"가 아니면 Arial을 fallback으로 설정한다.
 
@@ -445,11 +445,11 @@ downloadGoogleFonts 함수의 역할을 봤다. 정리해보자 (아래의 모�
 
 postcssNextFontPlugin함수가 하는 일은 결국 아래의 css파일을 생성하는 것이다. 위의 Next13 예제에서 생성된. next/static/css 디렉터리 안에 들어있는 파일을 의미하며 이 파일은 아래와 같이 html의 head에 link 형태로 들어가게 된다. 즉, html 파일에 link로 들어가 있는 @font-face css 파일은 postcssNextFontPlugin에 의해 생성된 것이며, 이 css 파일 안에는 미리 계산된 size-adjust 와 같은 값들이 들어 있어 zero-layout-shift를 가능하게 만드는 것이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/7f85346a-1a08-48aa-8f55-ffaa61f15fa0)
+![[assets/images/424f124670436eb9ed021bf67d437529_MD5.png]]
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2ed00824-16d8-4f39-810c-a903a3b06505)
+![[assets/images/869edd5c17f73ecf2f6083502d1c77c2_MD5.png]]
 
-![img](https://miro.medium.com/v2/resize:fit:1400/0*vRHIc8RWM0dd4nId.png)
+![[assets/images/398f5c0f13124a60c86abd6f83d794ee_MD5.png]]
 
 postcss-next-font안에 있는 postcssNextFontPlugin 함수는 downloadGoogleFonts의 결과로부터 실행된다. 함수를 실행하기 전에 nextFontLoader에서 fontFamilyHash 값을 생성하는데, 이 값이 위의 예시에서 보았던 className의 hash값이 된다.
 
@@ -479,7 +479,7 @@ const result = await postcss(
 
 postcssNextFontPlugin은 fontFamilyHash와 fontFamily Name으로부터 가공된 이름을 생성한다. (아래 그림에서 __Homemade_Apple_bd05f8), 이 값은 css font-family 값으로 들어가게 된다. 이렇게 formatFamily를 거쳐 사용될 이름의 hash 값을 생성한 뒤에는, 이전 downloadGoogleFonts에서 처리한 size-adjust와 같은 값들을 css에 반영하는 단계를 거치게 되고, font-family, font-weight, font-style 값까지 모두 css 파일에 반영한 뒤에 리턴하게 된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2f62981d-b47c-44f6-b0ec-c5ce72319ef8)
+![[assets/images/a134a4bd6161dfa113d6ffe0102fdf36_MD5.png]]
 
 ```js
 const formatFamily = (family: string) => {

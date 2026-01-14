@@ -212,7 +212,7 @@ const user = new Login('a', 'b');
 
 이때, user를 찍어보면 다음과 같이 나온다.
 
-![image-20230215182624111](https://raw.githubusercontent.com/pozafly/blog-images/master/images/image-20230215182624111.png)
+![[assets/images/fa32ebe2590f239a1eafb7dd56fc26b7_MD5.png]]
 
 즉, password가 가려져서 나오지 않는다. 이제 password 멤버변수는 외부로 노출되지 않는다.
 
@@ -236,7 +236,7 @@ const user = new Login('a', 'b');
 
 다시 user를 찍어보자.
 
-![image-20230215182812318](https://raw.githubusercontent.com/pozafly/blog-images/master/images/image-20230215182812318.png)
+![[assets/images/75b502ee2ba3fadfdbf77da9aaa432d8_MD5.png]]
 
 이번엔 Symbol이 나타났다. 외부에 노출이 되었다는 뜻이다. 즉, WeakMap은 내부 구현을 다른 개발자에게 숨길 때 유용하다. 절대적인 private이 되었다. Symbol 같은 경우 형태는 존재하나, 어떤 것으로 Symbol이 되었는지 알기 어렵다. 그리고 'password' 라는 key 이름은 이제 충돌하지 않을(덮어써지지 않을) 것이다.
 
@@ -404,7 +404,7 @@ console.log(sym.toString()); // 'Symbol(My symbol)'
 
 Symbol() 함수를 브라우저에서 실행보자.
 
-![image-20230215203739381](https://raw.githubusercontent.com/pozafly/blog-images/master/images/image-20230215203739381.png)
+![[assets/images/34f96cfce236e5aa69b9a2d5e2e29afc_MD5.png]]
 
 위의 프로퍼티들은 `length` 프로퍼티를 제외하면 모두 Well-Known Symbol이라고 부른다. 의미는 **자바스크립트가 기본 제공하는 빌트인 심볼**을 말한다. 위 심볼은, 자바스크립트 엔진의 내부 알고리즘에 사용된다.
 
@@ -429,7 +429,7 @@ console.log(jsxMaker);
 
 react에서 위 코드를 실행해보자.
 
-![스크린샷 2023-02-15 오후 9.44.51](https://raw.githubusercontent.com/pozafly/blog-images/master/images/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202023-02-15%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%209.44.51.png)
+![[assets/images/96f3f7e95e080e0a68b0cc260ef9fca2_MD5.png]]
 
 이 객체를 React Element라고 부른다. 이 객체는 react에게 무엇을 렌더링 할지 알려준다. 여기에는 `$$typeof` 라는 값이 있다. 그리고 `Symbol(react.element)` 라는 Symbol 값이 사용되었다.
 

@@ -24,11 +24,11 @@
 
 환경 변수 및 프로젝트 설정을 로컬 캐시(`.vercel/.env.$target.local.`)에 저장하는데 사용한다.
 
-<img width="258" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/a716ff43-a6bc-46f9-a826-888ca55f0272">
+![[assets/images/b2e2a43b0fee3fa0379b6df0814fdb5e_MD5.png]]
 
 이렇게 `npm i -g vercel` 후, `vercel pull`을 받으면 환경 변수를 가져온다.
 
-<img width="875" alt="스크린샷 2023-08-27 오후 6 05 36" src="https://github.com/pozafly/TIL/assets/59427983/fafe7379-c369-4661-9e76-c4d3df09df4b">
+![[assets/images/0dd2bb2f2279f5dd80413fb1d27ddd46_MD5.png]]
 
 이런 명령을 사용하지 않는 경우 vercel pull을 실행할 필요가 없다. -> GitHub Actions에서는 매번 환경변수가 필요하기 때문에 가져와 주어야 한다.
 
@@ -42,11 +42,11 @@
 
 > 여기서 `Artifacts` 라는 용어가 등장하는데, 이는 `환경 변수` + `컴파일된 코드` 를 빌드 해 탄생하는 자료들을 뜻한다고 한다. 즉, Artifacts 라는 용어는 빌드 결과물인 것이다. `output` 아래 생성되는 모든 파일들을 뜻하는 단어임.
 
-<img width="244" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/ee94fc4f-5b12-456c-a1c8-92eb073b38d5">
+![[assets/images/e3cf934a0363123dfbbb2c6d09e7f30d_MD5.png]]
 
 생성되는 파일은, Next.js 소스 코드가 전부 빌드된 모습을 볼 수 있다. 그렇다면 `vercel build` 명령어는 내부적으로 또 어떤 빌드 명령어를 수행하나?
 
-<img width="439" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/dd68dde9-d272-487c-b319-5e9fb9403e36">
+![[assets/images/96f9f95d49f1c5fc8bd0c6580d8b1175_MD5.png]]
 
 `husky` 를 실행하는 것을 보아, git hook이 실행 되었는데, 패키지를 다운 받는다. 위 사진을 보면, package-lock.json 파일을 기준으로 패키지를 다운 받고 있는 것을 볼 수 있음.
 

@@ -46,11 +46,11 @@ jobs:
 
 `workflow_call` 에서는 호출할 때 값을 전달할 수 있도록 `inputs`, `secrets` [링크](https://docs.github.com/en/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow)를 지정할 수 있다. 이는 그 아래에서 사용한 것처럼 `inputs.username`과 `secrets.SECRET_SEED`를 지정할 수 있다. 마지막 `echo ${{ secrets.SECRET_SEED }} | sed 's/./& /g' ` 부분은 워크플로우 실행 로그에서 시크릿은 `***` 로 출력되기 때문에 이후 의도대로 값이 달라지는지 테스트하기 윟해 시크릿 값이 출력되도록 GitHub의 검사를 우회한 것이다. (당연히 여기서는 테스트라서 그렇고 실제로 시크릿을 출력하는 것은 아주 위험하다.)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/a5aab580-b45a-483e-a101-3bc02700f944)
+![[assets/images/9f10278d103c749ebea272c23a8872d8_MD5.png]]
 
 이 저장소의 시크릿에 `SECRET_SEED`를 저장해두고 워크플로우를 푸시해서 실행해보자. `push` 이벤트가 있으므로 코드 푸시만 해도 이 저장소가 실행되고 이는 `workflow_call`로 실행된 것이 아니라 그냥 실행된 것이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/ca8a758b-c078-4cd9-9030-d5110f82b58c)
+![[assets/images/7c6ce091fe827e245bc975eaf1a0776c_MD5.png]]
 
 `inputs`는 당연히 전달하지 않으므로 아무것도 출력되지 않고 시크릿으로 저장했던 `hello`가 출력되었다. 그냥 출력했을 때는 `***`로 출력된 것이고 마스킹 처리를 우회하기 위해 각 글자 사이에 공백이 들어가 `h e l l o`가 출력되었다.
 
@@ -92,11 +92,11 @@ Caller에서는 `uses` 키워드를 이용해 지정하는데 위처럼 `jobs.<j
 
 첫번째 잡 실행결과
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6ed50aba-66fb-4e38-9fc3-658ebd9a2221)
+![[assets/images/fef6a670b71536738bc5fcf2da6e91fc_MD5.png]]
 
 두번째 잡 실행결과
 
-![image](https://github.com/pozafly/TIL/assets/59427983/b0f0ee1a-3c23-4275-8ff9-db59898d1f7e)
+![[assets/images/a1e3bf8585dafb2bd68d2d5e97d539c7_MD5.png]]
 
 같은 저장소에 이미 `SECRET_SEED`가 시크릿으로 저장되어 있음에도 `push` 때와는 달리 전달한 입력값과 시크릿이 출력된 것을 확인할 수 있다.
 
@@ -119,7 +119,7 @@ jobs:
 
 이를 실행하면 아까와 동일하게 워크플로우를 재사용할 수 있는 것을 볼 수 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/24f519ae-dd2f-41b7-b8ad-84af0a697409)
+![[assets/images/b43ca24c532b569c082a546d37d10d33_MD5.png]]
 
 # 제약사항
 

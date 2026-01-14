@@ -12,13 +12,13 @@
 
 Time To Interactive는 lighthouse10 버전에서 제거되었다. TTI 특정 시점을 잡아내는게 네트워크 요청과 작업 단위에 너무 의존적이기 때문에 제거 되었음. 차라리 LCP(Largest Contentful Paint) 지수를 보는게 더 낫다. 또한, TTI 지표 가중치는 CLS로 이전되었음. ([출처](https://stackoverflow.com/questions/75774948/time-to-interactive-parameter-is-not-showing-anymore-in-google-pagespeed-insig))
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6c10f433-4421-43ba-914f-4b15c9cf622b)
+![[assets/images/f08ae6f3def1b942295084ec60488957_MD5.png]]
 
 Lighthouse 6 지표 가중치. LCP, TBT이 가장 중요해보인다.
 
 또한, 아래는 Lighthouse 10의 가중치이다.
 
-<img width="581" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/ee1f6e02-37a5-42ce-b402-bb0abecdcff8">
+![[assets/images/ceee696607c5378f12a7aa012e867244_MD5.png]]
 
 TBT가 가장 높으며, CLS가 증가했고, 동급으로 LCP 순이다.
 

@@ -27,7 +27,7 @@ Javascript를 해석하는 **Javascript Engine**과 웹 브라우저에 화면�
 
 그리고 추가적으로 `Event loop` 가 존재하며 Task queue에 들어가는 task들을 관리하게 됨.
 
-![스크린샷 2021-02-19 오후 2 08 09](https://user-images.githubusercontent.com/59427983/108460650-7195e880-72bc-11eb-8fc3-664b70dceb71.png)
+![[assets/images/5399614bd13cb4d69b3fa694a56c77da_MD5.png]]
 
 <br/>
 
@@ -56,7 +56,7 @@ console.log(bar(1));
 
 즉 아래 그림과 같이 Stack에 task가 쌓이는 구조.
 
-![스크린샷 2021-02-19 오후 2 46 02](https://user-images.githubusercontent.com/59427983/108463147-3518bb80-72c1-11eb-9edf-c28ff6766c9d.png)
+![[assets/images/c4cae824d925822c20f478097020c21c_MD5.png]]
 
 <br/>
 

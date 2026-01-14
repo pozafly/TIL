@@ -53,7 +53,7 @@ const _ = require('ladash');
 
 yarn을 실행해보자.
 
-![image](https://github.com/user-attachments/assets/29336338-aba2-42bc-b552-f0bca049fb1b)
+![[assets/images/023080947ff846434ee16eac569f6699_MD5.png]]
 
 이렇게 `Resolution`, `Fetch`, `Link` 세 단계로 나누어 실행된다.
 
@@ -114,7 +114,7 @@ my-service/
 
 이런 단점 때문에 pnpm이 만들어짐. pnpm 문서에 'fast, disk space efficient' 한 패키지 매니저라고 써있다. 즉, 퍼포먼스가 향상된(performant) npm 이라고 함.
 
-![image](https://github.com/user-attachments/assets/73c769bc-186f-48a7-8ac0-3d4fd7204fcd)
+![[assets/images/f54c5fc882981bc886bde2893a2f9eb3_MD5.png]]
 
 npm에서 문제였던 `node_modules` 를 하나씩 쓰는 것 때문에 느리고 용량도 많이 차지하는 것을 개선한 것이다.
 

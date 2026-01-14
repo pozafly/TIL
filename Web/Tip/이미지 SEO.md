@@ -26,7 +26,7 @@
 
 충분히 적은 설명이지만 이해하기 쉬워야 한다. 즉, 눈을 감고 누군가에게 대체 텍스트를 읽게하고 합리적으로 정확한 이미지 버전을 상상할 수 있다면 올바르게 작성한 것임.
 
-![alt-tag-image-3](https://user-images.githubusercontent.com/59427983/120089954-ceb1fd80-c139-11eb-9611-d7fee8b5d5ad.png)
+![[assets/images/c16ac07277240be174533f22f6ffdc0a_MD5.png]]
 
 - **Okay**
 

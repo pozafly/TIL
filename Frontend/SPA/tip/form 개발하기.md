@@ -73,7 +73,7 @@ form의 onSubmit에서는 데이터 유효성 체크 로직도 추가해보고 �
 
 이렇게 해도 form 제출가지 별 문제는 없지만, React Dev Tools를 활용해 성능을 보면 문제가 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2e1f6fa4-79d5-494b-aeee-157765828579)
+![[assets/images/5565417cb7d1b01c7576309fb44b5ccb_MD5.png]]
 
 전체적으로 리랜더링이 발생하고 있다. 나머지 영역의 상태 관리까지 추가되면 복잡도가 많이 올라갈 것임.
 

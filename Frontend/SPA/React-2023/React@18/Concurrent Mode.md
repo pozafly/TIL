@@ -39,7 +39,7 @@ suspense로만 구현된 로딩은 이전 페이지를 유저로부터 `차단(b
 
 현 UI 상태를 유지한다는 것은 크게 어렵지 않으리라 생각함. 그럼 렌더링 단계와 특정 조건은?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/ef1c585e-c6de-4c1f-8b89-8bdb8272b74a)
+![[assets/images/1b1a3f0842e0c587f2d5e974b3cea34f_MD5.png]]
 
 Transition, Loading, Done 총 3개의 렌더링 단계가 있다. 일반적으로 UI 업데이트는 state의 변경에 의해 발생하므로 각 단계는 특정 state 변경 관점에서 보는 렌더링 단계다. 오른쪽으로 진행할 수록 더 최신 렌더링 단계다.
 

@@ -6,16 +6,12 @@
 
 https://github.com/vuejs/vue-test-utils/issues/999#issuecomment-850273753 이 부분을 참고 했다.
 
-<img width="863" alt="스크린샷 2021-07-08 오후 7 52 36" src="https://user-images.githubusercontent.com/59427983/124912410-e168fd80-e028-11eb-8d34-0c42eecd2239.png">
-
+![[assets/images/51550513079698dd1202dd54c096c717_MD5.png]]
 ```shell
 $ npm i -D jsdom
 ```
-
 후에, jest.config.js 에,
-
 ```
 "testEnvironment": "jsdom"
 ```
-
 이렇게 넣어주고 npm t 해보자. 됨.

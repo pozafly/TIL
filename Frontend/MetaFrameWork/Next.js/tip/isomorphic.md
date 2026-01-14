@@ -29,7 +29,7 @@ SSR 환경에서 에러가 발생함.
 
 ### 1. 서버가 HTML을 생성한다
 
-![image](https://github.com/pozafly/TIL/assets/59427983/181c677e-e96a-4ae4-ba9b-e133adbbf45c)
+![[assets/images/fe942c8d7180f00ad2df92b77019d30e_MD5.png]]
 
 환경은 다음과 같은 특징을 가지고 있음
 
@@ -61,7 +61,7 @@ function App() {
 
 서버 환경에서 브라우저 객체에 접근할 수 없도록 수정한 후, 새로운 에러가 발생함.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/3bb7b055-5613-4460-ad11-f4a460ba97ad)
+![[assets/images/096f0d9293e1773a6e362773e74f941c_MD5.png]]
 
 위 에러를 해결하기 위해서는 `Hydration`에 대한 이해가 필요함
 

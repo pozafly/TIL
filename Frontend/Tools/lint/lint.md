@@ -462,7 +462,7 @@ package.json:
 
 먼저 [ESLint 익스텐션](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 부터 설치해 보자.
 
-[![eslint 익스텐션 설치](https://jeonghwan-kim.github.io/static/a3c1eb59d1ab4df5020111f7c7347017/41099/eslint-extention.jpg)](https://jeonghwan-kim.github.io/static/a3c1eb59d1ab4df5020111f7c7347017/41099/eslint-extention.jpg)eslint 익스텐션 설치
+[![[assets/images/1c8b5b4e3763b1eba4d02493066d20c6_MD5.jpg]]](https://jeonghwan-kim.github.io/static/a3c1eb59d1ab4df5020111f7c7347017/41099/eslint-extention.jpg)eslint 익스텐션 설치
 
 설치를 마친 뒤 eslint를 활성화 설정을 추가한다.
 
@@ -476,7 +476,7 @@ package.json:
 
 설치하면 자동으로 ESLint 설정파일을 읽고 파일을 검사한다.
 
-[![eslint 익스텐션 동작](https://jeonghwan-kim.github.io/static/85d33795b92ff1840fc8456ef184d2d4/b4294/eslint-extention-result.jpg)](https://jeonghwan-kim.github.io/static/85d33795b92ff1840fc8456ef184d2d4/b4294/eslint-extention-result.jpg)eslint 익스텐션 동작
+[![[assets/images/8b9fcd0894a711e42de12c8c7312425d_MD5.jpg]]](https://jeonghwan-kim.github.io/static/85d33795b92ff1840fc8456ef184d2d4/b4294/eslint-extention-result.jpg)eslint 익스텐션 동작
 
 툴팁 메뉴를 클릭해서 문제를 수정한다.
 

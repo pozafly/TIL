@@ -10,7 +10,7 @@
 
 기존 SSR에서 사용자 검색 쿼리를 URL [(https://www.google.com/search?q=your+query+here)](https://www.google.com/search?q=your+query+here)에서 서버로 요청을 보내는 구글이 있음. 이 모델의 좋은 점은 지난주 결과를 기준으로 필터링하면 URL [(https://www.google.com/search?q=react+js&tbs=qdr:w)](https://www.google.com/search?q=react+js&tbs=qdr:w)만 공유해도 동일한 검색 쿼리를 공유할 수 있다는 것.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/b2893dcf-e2b8-4111-ab7c-d53ee21684bd)
+![[assets/images/3f4931b694430df65afcfc12c82a0421_MD5.png]]
 
 SPA에서는 화면 표시 내용을 위해 서버에 요청할 필요 없었기 때문에 URL에 저장할 이유가 없었음. 하지만 웹의 고유한 경험인 공유 가능 링크를 잃어버렸음.
 
@@ -20,7 +20,7 @@ SPA에서는 화면 표시 내용을 위해 서버에 요청할 필요 없었기
 
 웹앱을 빌드할 때 최소한 `/login` 및 `/home` 과 같이 다른 페이지가 표시될 때는 URL을 변경해야 함. React 생태계에서 `React Router` 라는 클라측 라우팅에 이상적이며, Next.js는 서버측 렌더링도 지원하는 모든 기능을 갖춘 뛰어난 리액트 프레임워크임.
 
-![1_trWHeF3QtAypmyogD7lgLQ@2x](https://github.com/pozafly/TIL/assets/59427983/bf9e292d-3767-4146-846b-4460fd9897b7)
+![[assets/images/fa6335988c76c32fd35af106775e0ddb_MD5.gif]]
 
 [query-string](https://www.npmjs.com/package/query-string)과 같은 npm 패키지를 사용하고 기본 React Hook을 작성하며 URL 쿼리 파라미터를 상태에 동기화 할 수 있으며, 이에 대한 많은 튜토리얼([1](https://medium.com/swlh/using-react-hooks-to-sync-your-component-state-with-the-url-query-string-81ccdfcb174f), [2](https://www.npmjs.com/package/use-query-params), [3](https://dev.to/gaels/an-alternative-to-handle-global-state-in-react-the-url--3753))이 많이 있지만, 더 간단한 솔루션이 있다.
 

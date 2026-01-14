@@ -4,7 +4,7 @@
 
 데스크탑은 생기지 않는다. 하지만 모바일 사파리에서 사진과 같이 클릭했을 때, 배경에 색상이 들어가는 경우가 생긴다. 이는 css의 -webkit-tap-highlight-color 때문에 생기는 문제다. 여기 색상을 지정해주면 클릭했을 때 색상이 생기지 않는다.
 
-<img width="662" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/d7d941a1-6d2d-4d5d-ba1e-9254949801d9">
+![[assets/images/e10b701c2c7aa1f1572c3f7ff758c284_MD5.png]]
 
 이런 식으로 클릭하면 영역에 background 표시가 들어온다.
 

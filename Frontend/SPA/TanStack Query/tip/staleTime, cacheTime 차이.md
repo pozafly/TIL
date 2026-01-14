@@ -53,11 +53,11 @@
 
 ### 기본 설정일 경우(staleTime = 0, cacheTime = 5m)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/8234c529-fa58-492b-b2b9-6b5b0315416a)
+![[assets/images/3677971fa253abea2e1e69142d1cc5b4_MD5.png]]
 
 처음으로 쿼리가 호출되었을 때, API 요청을 하고 데이터를 캐싱한다. 지정된 staleTime에 따라 해당 데이터는 페치와 동시에 stale 상태로 변경된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/7bac9aa9-49d3-4e8f-b2bc-2a52918a9b45)
+![[assets/images/fd6873e31f0d78c8fbf5cb0ed9204cc4_MD5.png]]
 
 1분 뒤 같은 쿼리를 호출한다. 우선 캐시가 유효한지 확인한다. 캐시는 5분동안 유효하기 때문에 사용할 수 있다. 하지만 쿼리의 staleTime이 0이기 때문에 데이터는 신선하지 않고, 데이터 페치를 요청한다. 반환된 데이터가 캐시된 데이터와 다른 경우 캐시를 업데이트하고, 해당 데이터를 사용한다.
 
@@ -65,13 +65,13 @@
 
 ### staleTime이 5분, cacheTime이 5분일 때
 
-![image](https://github.com/pozafly/TIL/assets/59427983/72c8a92e-c444-49f2-a65e-0a555fedd9ae)
+![[assets/images/8ff6223e026449c6b3ff6a18696287cb_MD5.png]]
 
 처음 쿼리가 호출되면 위와 동일함. 1분 뒤 같은 쿼리를 호출한다. 캐시는 5분 동안 유효하기 때문에 사용 가능. staleTime도 동일하게 5분이므로, 아직 신선 데이터를 가지고 있다. 따라서 캐시된 데이터를 사용하고, API 요청은 하지 않는다. 30분 뒤 같은 쿼리를 호출한다. 5분이 지났기 때문에 캐시도 유효하지 않고 데이터도 stale 상태. API 요청을 통해 다시 데이터를 요청해 캐싱하고 전달 후 사용.
 
 ### staleTime 5분, cacheTime 0분일 때
 
-![image](https://github.com/pozafly/TIL/assets/59427983/dc98d1c0-a2f2-470a-a04c-44c9117dde59)
+![[assets/images/f185bb998877f4626f4bcbc8dcc878d3_MD5.png]]
 
 처음은 동일. 1분뒤 같은 쿼리를 호출한다. 데이터는 신선한 상태. API 요청을 하지 않고 1에서 반환된 데이터를 그대로 사용함. 30분 뒤 같은 쿼리를 호출하면, 데이터는 stale 상태로 변질되었기 때문에 새로운 데이터를 페칭함.
 

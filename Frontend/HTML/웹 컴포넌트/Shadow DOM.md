@@ -27,7 +27,7 @@ document.body.appendChild(document.createElement('span'))
 
 이번엔 `attachShadow({ mode: 'open' });` 을 넣어주었다.
 
-![image](https://github.com/user-attachments/assets/d034d251-37a8-4c2f-94b9-36c4a7d53a82)
+![[assets/images/72daa70d42f2c2ff8ad9560d021db151_MD5.png]]
 
 개발자 도구에 `#shadow-root` 라는게 생겼고, 그 밑에 있는 `style` 은 밖으로 새어나가지 않는다. 반대로 글로벌에 존재하는 스타일 역시 `#shadow-root (open)` 안에 있는 엘리먼트에는 영향을 주지 않는다.
 
@@ -41,7 +41,7 @@ document.body.appendChild(document.createElement('span'))
 
 이렇게 넣어주면 가장 위에 있는 shadow-root style에 있는 div 녹색은 아래의 shadow-root에 영향을 주지 않는다.
 
-![image](https://github.com/user-attachments/assets/ea924bcd-025d-40d0-9f17-665fc66980a3)
+![[assets/images/d69b0a9d9a6fabed7a836588433b3c42_MD5.png]]
 
 글로벌 스타일이 적용되지 않는것이다. 쉐도우 돔은 돔 자체의 분리 역할을 함. 루트를 기준으로 `id` 를 중복으로 써도 되고, 루트 안팎의 동일 이름의 `class` 역시 전혀 다른 클래스의 역할을 수행한다. 쉐도우 루트 밖에서 쉐도우 돔의 엘리먼트를 셀렉트할 수도 없음.
 
@@ -100,7 +100,7 @@ document.querySelector('#slot-test')
   `;
 ```
 
-![image](https://github.com/user-attachments/assets/d3fbd57a-5001-44c7-bd1e-53fd6376f5e2)
+![[assets/images/b9405affe413c695ef5664f14490b2c9_MD5.png]]
 
 슬롯의 이름에 맞는 라이트 돔이 자리를 찾아간다.
 
@@ -182,7 +182,7 @@ class MyElement extends HTMLElement {
 
 아래 그림과 위 코드를 서로 대입해보기로 하자. 아래 그림은 커스텀 엘리먼트, 그리고 쉐도우 돔을 OOP 오브젝트 개념도와 비슷하게 그려놓은 것임. 커스텀 엘리먼트는 HTML 엘리먼트를 확장해 오브젝트로 만들어주고, 쉐도우 돔은 그 오브젝트에 스코프를 제공해준다. 다시 이야기하면 **커스텀 엘리먼트와 쉐도우 돔은 DOM을 OOP의 대상으로 바라볼 수 있게 해준다**.
 
-![image](https://github.com/user-attachments/assets/6d40c047-f892-43ad-98d0-ada8eafacf9b)
+![[assets/images/d2b7e733c8161272b33e702fe03e96b9_MD5.png]]
 
 커스텀 엘리먼트가 가지고 있는 쉐도우 돔 트리의 엘리먼트들은 OOP 내부 구현에 해당함. 외부에서 어떤 오브젝트의 private 속성을 변경하고 싶다면 그것은 어떤 상황인가? private을 수정한다는 시도가 먼저 잘못되었고, 오브젝트의 정체성에 맞게 필요하다면 메서드를 새로 추가해야 한다.
 

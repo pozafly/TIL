@@ -10,23 +10,23 @@ critical css 기술로 렌더링 시간을 개선하는 방법.
 
 > Critical CSS는 사용자에게 가능한 한 빨리 콘텐츠를 렌더링하기 위해 스크롤 없이 볼 수 있는 콘텐츠에 대한 CSS를 추출하는 기술이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c414fd2a-1854-41f5-80f6-148b7e3c72ae)
+![[assets/images/78eb7c6cfa8453c45fc8a20fcc5b909b_MD5.png]]
 
 > 스크롤 없이 볼 수 있는 부분은 스크롤 하기 전 페이지 로드 시 뷰어가 보는 모든 콘텐츠다. 무수히 많은 장치와 화면 크기가 있기 때문에 스크롤 없이 볼 수 있는 콘텐츠 이상으로 간주되는 보편적으로 정의된 픽셀 높이는 없다.
 
 `<Head>`에서 추출된 스타일을 인라인하면 이런 스타일을 가져오기 위해 추가로 요청할 필요가 없다. CSS 나머지 부분은 비동기식으로 로드할 수 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/f352bf39-70b1-4ede-8b5e-92b0e5958586)
+![[assets/images/156cc6500e21cf507bb498575c7fd358_MD5.png]]
 
 렌더링 시간을 개선하면 특히 열악한 네트워크 조건에서 [인지된 성능](https://web.dev/rail/#focus-on-the-user)에 큰 차이를 만들 수 있다. 모바일 네트워크에서는 대역폭에 관계없이 높은 대기 시간이 문제다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2fc89f5a-076c-4bdb-8ea9-7b02a943abe3)
+![[assets/images/a838c848cb70640d512a83eb57ed3f5f_MD5.png]]
 
 -> 3G 연결에서 렌더링 차단 CSS가 있는 페이지(상단)와 인라인 중요 CSS가 있는 동일한 페이지(하단) 로드 비교
 
 [FCP(First Contentful Paint)](https://web.dev/fcp/)가 불량하고 Lighthouse 감사에서 "렌더링 차단 리소스 제거" 기회가 표시되는 경우 중요 CSS를 사용하는 것이 좋다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/25863a05-5ab7-46a5-a4f8-a338cfbcd578)
+![[assets/images/87c7872bb7cdb5e4e9d51a6c0bea9dd1_MD5.png]]
 
 > 갓차
 >

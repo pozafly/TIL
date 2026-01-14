@@ -6,7 +6,6 @@ event.target과 event.currentTarget의 차이점에 대해 알아보자.
 
 - currentTarget: 이벤트 핸들러가 부착된 것을 가리킨다. 이벤트가 부착된 `부모` 의 위치를 반환.
 - target: 부모로부터 이벤트가 위임되어 발생하는 자식의 위치, 내가 클릭한 `자식 요소` 를 반환한다.
-
 ```jsx
 const App = () => {
   const onClick = (event) => {
@@ -24,10 +23,9 @@ const App = () => {
   );
 };
 ```
-
 이렇다고 해보자. 클릭했을 때는 이렇게 나온다.
 
-<img width="141" alt="스크린샷 2021-03-25 오후 2 34 04" src="https://user-images.githubusercontent.com/59427983/112424123-35501f00-8d77-11eb-96d4-a30336a1426b.png">
+![[assets/images/151dcf97227b5ee86dc2efb3c6c10b3e_MD5.png]]
 
 - `<span>무야호</span>` 는 event.target 이다.
 - `<button><span>무야호</span></button>` 은 event.currentTarget 이다.

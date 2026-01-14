@@ -8,7 +8,7 @@
 
 ## 문제
 
-![1_1h6w52_v9rflIGJ9WlDPGw](https://github.com/pozafly/TIL/assets/59427983/2e21a035-7ccd-4a28-b8bd-3bf17e5bdb80)
+![[assets/images/2b25347af54c1adcafda707fcc054845_MD5.gif]]
 
 기본 테이블 위로 미끄러지는 단일 행 편집하는 양식과 유사한 UI인 측면 서랍 UI 이다.
 
@@ -24,7 +24,7 @@
 
 문제는 Context API를 통해 상태를 관리하면 업데이트로 인해 전체 앱이 리렌더링 된다는 점이다. 한 번에 수십 개의 셀이 표시될 수 있고, 각 셀에는 자체 편집기 컴포넌트가 있다. 이로 인해 약 650ms 렌더링 시간이 발생하고, 애니메이션에서 지연이 발생한다.
 
-![1_DPrtPDYRTq3IBR9_Hsh6dQ](https://github.com/pozafly/TIL/assets/59427983/9f55ad6b-1caa-4fc5-ba6f-917ad15ef96a)
+![[assets/images/fb6f563991df1d6291b0e87b0c95e910_MD5.gif]]
 
 <br/>
 
@@ -46,7 +46,7 @@
 2. 해당 상태에 대한 참조를 생성하고 컨텍스트에 저장한다.
 3. 사용자가 셀을 클릭하면 테이블의 참조를 사용하여 상태 설정 함수(사이드 서랍 내부)를 호출한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/62103538-b926-46e7-ae00-199431075e5b)
+![[assets/images/6d03ea36e2499c27cb12c39c5fcab0b3_MD5.png]]
 
 ```jsx
 import { SideDrawerRef } from 'SideDrawer'

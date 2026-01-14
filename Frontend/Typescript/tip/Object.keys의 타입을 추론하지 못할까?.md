@@ -2,7 +2,7 @@
 
 > [출처](https://medium.com/@yujso66/%EB%B2%88%EC%97%AD-%EC%99%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-object-keys%EC%9D%98-%ED%83%80%EC%9E%85%EC%9D%84-%EC%A0%81%EC%A0%88%ED%95%98%EA%B2%8C-%EC%B6%94%EB%A1%A0%ED%95%98%EC%A7%80-%EB%AA%BB%ED%95%A0%EA%B9%8C%EC%9A%94-477253b1aafa)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/df226129-283b-446f-a2a5-af12523b7a59)
+![[assets/images/3920974cb228fa453b921862b2165c84_MD5.png]]
 
 `options` 키를 사용해 `options`에 접근하려 하는데, 왜 타입스트립트는 자동으로 알아채지 못할까?
 
@@ -46,7 +46,7 @@ class Object {
 
 프로퍼티가 누락되었거나 잘못된 타입일 때 에러를 표시한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/99628e21-5a95-4e45-a5b8-e44d9d3e3ab6)
+![[assets/images/f74c6ebe2bb579c67d17cfd8c2160db1_MD5.png]]
 
 그러나 타입스크립트는 추가 프로퍼티가 포함되어 있어도 에러를 표시하지 않는다.
 
@@ -66,7 +66,7 @@ saveUser(user); // 타입 에러가 아님
 
 > 참고: 프로퍼티 측면에서 슈퍼셋이어야 하는 것 외에도 프로퍼티의 타입도 중요하다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/bcd328ae-0b04-44c2-a28d-e052391e6dd6)
+![[assets/images/188733562582b278b3e3d59833633989_MD5.png]]
 
 핵심 요점은 `T` 타입 객체가 있을 때, 해당 객체에 대해 아는 것은 `T`의 프로퍼티를 적어도 하나 포함하고 있다는 것 뿐이다.
 
@@ -145,11 +145,11 @@ validateUser(user); // OK!
 
 런 타임에 `email` 프로퍼티로 인해 `valiator`가 `undefined`가 될 것이고 호출될 때 오류가 발생하게 된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c4217d76-2fcc-493e-9446-b9e1e6b7832b)
+![[assets/images/f30b54b651b4487aa2782f398b157510_MD5.png]]
 
 다행히도 이 코드가 실행되기 전 TypeScript 에러가 발생함.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/dabc32b6-26a7-4c70-852b-54e17fd2f113)
+![[assets/images/c1c5836e8c1742b0b664b991d8df34b5_MD5.png]]
 
 이제 `Object.keys` 가 현재의 타입으로 정의된 이유에 대한 답을 얻었다. 타입 시슽템이 인식하지 못하는 프로퍼티를 객체에 포함할 수 있다는 점을 받아들어야 한다.
 
@@ -183,7 +183,7 @@ expect(getKeyboardShortcut({ key: 's', metaKey: false })).toEqual(null);
 
 괜찮아보이지만 타입 에러가 발생한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6b1cd7ec-97e3-4286-a52c-36627f4722db)
+![[assets/images/8f2a4bcb9ed9c5902232978bfe9a2a91_MD5.png]]
 
 37개의 추가 프로퍼티를 모두 지정하는 것은 매우 번거롭기 때문에 불가능하다.
 

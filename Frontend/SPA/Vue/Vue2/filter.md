@@ -7,21 +7,16 @@ vue에서 filter는 텍스트 형식화를 적용할 수 있게 해준다.
 ## 필터 문법
 
 - 머스테치
-
   ```js
   {{ 데이터 | 필터함수 }}
   ```
-
 - v-bind
-
   ```html
   <div v-bind:id="데이터 | 필터함수"></div>
   ```
-
 <br/>
 
 ## 지역 필터
-
 ```jsx
 // template 선언문에,
 {{ postItem.createdAt | formatDate }}
@@ -33,10 +28,9 @@ filters: {
   },
 },
 ```
-
 이렇게 넣었을 때,
 
-<img width="408" alt="제목 없는 그림" src="https://user-images.githubusercontent.com/59427983/111904305-93d08100-8a89-11eb-9607-9f21979391ae.png">
+![[assets/images/c2aadab355db48cfd7f43a55ddd911dc_MD5.png]]
 
 이런 식으로 나오게 된다.
 
@@ -45,7 +39,6 @@ filters: {
 ## 전역 필터
 
 ### filter.js
-
 ```js
 // 필터 관련 함수가 존재하는 파일
 export function formatDate(value) {
@@ -62,9 +55,7 @@ export function formatDate(value) {
   return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 ```
-
 ### main.js
-
 ```js
 import Vue from 'vue';
 import App from './App.vue';
@@ -81,9 +72,7 @@ new Vue({
   store,
 }).$mount('#app');
 ```
-
 ### 사용할.vue 파일
-
 ```js
 // template 선언문에,
 {{ postItem.createdAt | formatDate }}
@@ -95,5 +84,4 @@ filters: {
   },
 },
 ```
-
 이렇게 전역 필터를 선언해서 사용하고 싶은 곳에서 사용할 수 있다.

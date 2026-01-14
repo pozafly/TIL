@@ -5,12 +5,10 @@
 ES6에서 정의한 글로벌 생성자. Proxy 뜻은 '대리인'이라는 뜻.
 
 > `Proxy` 객체를 사용하면 원래 Object 대신 사용할 수 있는 객체를 만들지만, 이 객체의 속성 가져오기, 설정 및 정의와 같은 기본 객체 작업을 재정의할 수 있다. 프록시 객체는 일반적으로 속성 액세스를 기록하고, 입력의 유효성을 검사하고, 형식을 지정하거나, 삭제하는 데 사용된다.
-
 ```js
 var target = {}, handler = {};
 var proxy = new Proxy(target, handler);
 ```
-
 이 생성자는 `target` 객체와 `handler` 객체의 인자를 받고, 위와 같은 모습을 가지게 된다.
 
 > Proxy를 생성하는 두 개의 매개변수
@@ -19,17 +17,15 @@ var proxy = new Proxy(target, handler);
 > - handler: 가로채는 작업과 가로채는 작업을 재정의하는 방법을 정의한는 객체
 
 proxy 객체는 모든 내부 메서드 호출을 `target` 객체로 전달한다. 즉, `proxy[[Enumerate]]()` 메서드를 직접 호출한다면, `target.[[Eknumerate]]()` 메서드가 그 결과를 반환한다는 것이다.
-
 ```javascript
 var target = {}, handler = {};
 var proxy = new Proxy(target, handler);
 
 proxy.color = 'yellow';
 ```
-
 위와 같이 `proxy.[[Set]]()` 메서드가 호출될 코드를 아래와 같이 실행시켰을 때 자동적으로 `target.[[Set]]()` 메서드가 호출된다. 그래서 `target` 객체에 새로운 속성이 만들어진다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/da713fb8-8094-464d-9438-d0e97b0f13c0)
+![[assets/images/f4e727d9f3750b0b086d8d79dfc8adca_MD5.png]]
 
 target 객체에 color 속성이 들어있다. 나머지 내부 메서드들도 마찬가지로 동작한다. `proxy` 객체는 대부분의 경우에 `target` 객체인 것처럼 동작한다.
 
@@ -42,7 +38,6 @@ target 객체에 color 속성이 들어있다. 나머지 내부 메서드들도 
 proxy와 target을 연결 시켰으니, handler 객체를 살펴보자. handler 객체는 이것의 메서스들을 통해 proxy 객체의 모든 내부 메서드들을 오버라이드 할 수 있다.
 
 예를 들면, 객체의 속성에 값을 할당시키는 모든 시도를 가로채고 싶을 때, `handler.set()` 메서드를 정의하면 된다.
-
 ```js
 var target = {};
 var handler = {
@@ -53,10 +48,9 @@ var handler = {
 
 var proxy = new Proxy(target, handler);
 ```
-
 위 예시를 보면, `handler` 객체에 `set` 메서드를 정의했다. 그럼 객체의 속성에 값을 할당시켜보면?
 
-<img width="483" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/0e8b419a-5ee6-4de9-b916-8b2df31de497">
+![[assets/images/df3a164f655f791f32392dc0aaa9f6f3_MD5.png]]
 
 set 메서드가 시도를 가로채고 실행되었다.
 
@@ -69,7 +63,6 @@ set 메서드가 시도를 가로채고 실행되었다.
 <br/>
 
 ## 예제
-
 ```js
 const target = {};
 const proxy = new Proxy(target, {
@@ -85,9 +78,7 @@ const proxy = new Proxy(target, {
 
 proxy.color = 'red';
 ```
-
 아래 코드처럼 작성할 수 있다. `proxy.test` 에 무언가 할당하는 코드들을 작성했는데 이 때 할당하려고 하면 인터셉트가 되고, 할당하려고 했던 값들을 `set` 의 `value` 로 전달되어 활용된다.
-
 ```js
 const target = {};
 const proxy = new Proxy(target, {
@@ -108,7 +99,6 @@ proxy.color = 35; // Error:: 문자열을 입력해주세요.
 proxy.color = 'dd'; // Error:: 3자 이상 입력해주세요.
 proxy.color = 'abcdef'; // key: color, value: abcdef
 ```
-
 <br/>
 
 ## Object.defineProperty와 차이점
@@ -124,7 +114,6 @@ Vue 2.0에 사용된 `Object.defineProperty`도 객체를 추적할 수 있다. 
 ## Immer
 
 [도움](https://hmos.dev/deep-dive-to-immer#deep-dive-to-immer)
-
 ```js
 const baseState = [
   {
@@ -137,9 +126,7 @@ const baseState = [
   },
 ];
 ```
-
 baseState를 immutable 하게 변경하는 법을 작성해보면 아래와 같다. 복사를 우선적으로 하고 업데이트 하는 과정을 진행하는 식.
-
 ```js
 const nextState = baseState.slice();
 
@@ -150,9 +137,7 @@ nextState[1] = {
 
 nextState.push({ name: 'gg' });
 ```
-
 만약 immer를 사용하면 불변성이 자동으로 보장된다.
-
 ```js
 import produce from 'immer';
 
@@ -161,7 +146,6 @@ const nextState = produce(baseState, draft => {
   draft.push({ name: 'qr', age: 12 });
 });
 ```
-
 immer는 아래와 같은 동작을 함.
 
 - original data와 copy data 2가지 객체를 관리해 원본을 보존하고 copy data만 변경한다.
@@ -169,15 +153,12 @@ immer는 아래와 같은 동작을 함.
 - 변경이 완료된 뒤 modified flag를 이용해 새 객체와 기존 객체를 합성하는 과정을 진행한다.
 
 ### Produce
-
 ```javascript
 const immer = new Immer();
 export const produce = immer.produce;
 export default produce;
 ```
-
 `produce` 함수는 `Immer` 클래스의 메서드다. 클래스를 보자.
-
 ```javascript
 export class Immer {
   /**

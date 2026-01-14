@@ -9,11 +9,9 @@ Vue.js를 사용한 프로젝트에서 성능 관련 이슈에 대해 설명하�
 <br/>
 
 이전에 여러 포스팅을 보던 중 아래와 같은 문법을 만난 적이 있다.
-
 ```js
 JSON.parse(JSON.stringify(this.items));
 ```
-
 도대체 왜 vue 안에서 data에 있는 `items` 라는 객체를 문자열로 바꾸고, 다시 객체화 하는지 모르겠더라.
 
 <br/>
@@ -36,38 +34,34 @@ Vue에서 관리하는 객체는 Observer라는 객체 감지 기능이 함께 �
 
 ## Object.freeze() 사용하지 않음 - 1288ms
 
-<img width="1330" alt="nofreeze2" src="https://user-images.githubusercontent.com/59427983/132081449-76af9dad-1044-4bbf-b0fb-e214b548967e.png">
+![[assets/images/c2ad060e922e535c53814cb3e513c58a_MD5.png]]
 
 ## Object.freeze() 사용 - 1186ms
 
-<img width="1374" alt="freeze2" src="https://user-images.githubusercontent.com/59427983/132081465-03e66c8d-6f90-46b5-9c1c-9bdc067608e6.png">
+![[assets/images/cefe24d6087e602805ba40cf75abc54e_MD5.png]]
 
 어쨌든 이번 실험에서는 성능이 약간 좋아졌다는 것을 알 수 있다. console을 찍어 봤을 때도 freeze를 사용한 객체는 Observer가 붙어있지 않다.
 
 ## Object.freeze() 사용하지 않음 - 1288ms
 
-<img width="446" alt="스크린샷 2021-09-04 오후 1 02 55" src="https://user-images.githubusercontent.com/59427983/132081781-31576446-dc3e-46b9-aced-81338a7808b7.png">
+![[assets/images/59659135114c1d793282f818a0838ed7_MD5.png]]
 
 ## Object.freeze() 사용 - 1186ms
 
-<img width="140" alt="스크린샷 2021-09-04 오후 1 02 47" src="https://user-images.githubusercontent.com/59427983/132081789-c32c8fa6-474a-4835-85f2-6ff51cdb6f65.png">
+![[assets/images/593b9f7cf6c7fcbbddbbeb2889365eb1_MD5.png]]
 
 <br/>
 
 [Vue의 객체를 일반 객체로 변환하는 방법 - Vue.js 이슈](https://github.com/vuejs/Discussion/issues/292)에 따르면, 창시자인 에반유가 답하기를
-
 ```js
 JSON.parse(JSON.stringify(obj));
 ```
-
 문법을 사용하면 Observer를 객체에서 제거할 수 있다고 한다. 다른 답변으로는
-
 ```js
 [...this.items]
 { ...this.items }
 Object.assign([], this.items)
 ```
-
 이런 녀석들이 있을 수 있는데, 껍데기만 Observer가 없을 수 있지만 객체 내부에는 Observer가 붙어 있다.
 
 위 이슈에서는 Observer가 붙지 않은 일반 객체를 만드는 이유가 `console.log()` 를 찍어볼 때, 직접 클릭해서 까보고 싶지 않을 때 사용했던 것 같다.

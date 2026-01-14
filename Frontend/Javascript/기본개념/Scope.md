@@ -132,7 +132,7 @@ foo();   // a in global
 
 렉시컬 스코프와 마찬가지로 `bar()` 를 호출하였을 때는 바로 'a in global'이 출력되는데 이는 `Global` 스택 위 `bar` 스택이 전부이기에 `Global` 다음 스택의 전역 변수 `a`에 접근하기 때문임. 실제로 동적 스코프 방식은 Perl 과 같은 언어에서 나타는 결과임.
 
-![스크린샷 2021-02-20 오전 10 39 31](https://user-images.githubusercontent.com/59427983/108578932-f722a280-7367-11eb-91e9-fb0d2137139b.png)
+![[assets/images/2e6d2616e4281906a461f9511fb218f9_MD5.png]]
 
 <br/>
 
@@ -142,7 +142,7 @@ foo();   // a in global
 
 현재 환경 레코드에서 변수를 찾아보고 없다면 바깥 렉시컬 환경을 참조하는 식의 스코프 체인 방식이 가능해지며 이름을 찾는데 성공하거나 바깥 렉시컬 환경 참조가 `null` 이 되었을 때 (실패했을 때) 탐색을 멈춘다.
 
-![스크린샷 2021-02-20 오전 10 44 20](https://user-images.githubusercontent.com/59427983/108579062-9a73b780-7368-11eb-862e-4954c9375d43.png)
+![[assets/images/90b561a4a11c1718c7153fa4a4461fe8_MD5.png]]
 
 > `정리`
 >

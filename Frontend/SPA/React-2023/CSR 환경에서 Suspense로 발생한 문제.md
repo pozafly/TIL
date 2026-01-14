@@ -74,7 +74,7 @@ function Home() {
 
 네트워크 탭을 보면 API 요청이 순차적으로 발생하고 있음.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c3e90c13-cbdc-4d93-a7f9-e5652a8fe2b9)
+![[assets/images/ecf0a2dc606120ed6e31600f5a130947_MD5.png]]
 
 ### Suspnse 옵션을 사용하지 않는 컴포넌트
 
@@ -100,7 +100,7 @@ function Home() {
 
 suspense 옵션을 비활성화하면 순차적 API 호출은 제거할 수 있지만 기존 선언적 컴포넌트 구성에 대한 장점은 이용할 수 없게 되었다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/92191fdd-990d-4b73-ae43-646628badd86)
+![[assets/images/1a56667c662cc8c0791c7cdd56f9f38a_MD5.png]]
 
 <br/>
 
@@ -108,7 +108,7 @@ suspense 옵션을 비활성화하면 순차적 API 호출은 제거할 수 있�
 
 예시처럼 적은 수의 API 호출할 때는 큰 문제 없더라도, 호출하는 API의 수가 많을 경우 순차 호출로 비효율이 증가할 것이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/df0e3dd1-3c91-4e2b-92de-d58f2baaa1ac)
+![[assets/images/af9cfad446c98796bfc8bcef54cee6a4_MD5.png]]
 
 suspense를 사용하고 있으므로 화면 전체 렌더링이 끝나는 시점은 순차적으로 호출된 API 중 마지막 호출된 API 응답이 오는 시점 이후가 될 것이다.
 
@@ -134,7 +134,7 @@ function Home() {
 
 useQuery 훅에 전달하던 매개 변수들을 `queries` 인자에 배열 형태로 전달하면 `useQueries` 훅을 이용할 수 있음.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/d147d6f8-8f84-45ec-bc0a-e70eaa9ca924)
+![[assets/images/7de8b92ec10cc2828062de8118c0a09b_MD5.png]]
 
 ### 2. React-router-dom의 loader
 

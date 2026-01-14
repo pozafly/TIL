@@ -39,7 +39,7 @@
 
 CSR, SSR 에도 런타임 코드가 필요하다는 점을 기억하자.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/d7943bfb-4ad3-4462-af92-d2e2f3bd2870)
+![[assets/images/09b5d9b5666aaab7f44d2229947a51b6_MD5.png]]
 
 ### ⛔️ SSR을 사용한 중복된 스타일
 
@@ -58,7 +58,7 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 
 주의할 점은 Critical CSS 스타일이 브라우저에 **두 번 전달된다**는 것이다. 첫 번째는 HTML 파일이고, 두 번째는 re-hydration되는 JS 번들이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/16940d2d-4aee-4ada-a828-71b29036cb5f)
+![[assets/images/0787301ed05a30bf65c9d3eb24eb72a4_MD5.png]]
 
 <br/>
 
@@ -79,7 +79,7 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 
 추가 최적화 기술로 정적 CSS 추출과 함께 Critical CSS를 사용할 수도 있다. [Critters는](https://github.com/GoogleChromeLabs/critters) 런타임 스타일시트가 있는 CSS-in-JS 라이브러리와 유사하게 중요한 CSS를 추출하는 반면 [Critical은](https://github.com/addyosmani/critical) 중요한 경로(above-the-fold) CSS를 추출한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/1feb032b-de30-4f48-af34-1dc469b1dcca)
+![[assets/images/f02193a9562677f8d88b9ed93a0dc098_MD5.png]]
 
 정적 CSS 추출은 동적 스타일을 처리하기 위해 일부 런타임 코드가 필요하지 않는 한 일반적으로 **런타임 비용이 전혀 들지 않는다**. 최종 결과는 CSS 스타일 시트의 모든 장점과 단점을 공유하는 일반 CSS, 전처리기 또는 CSS 모듈과 같은 비 CSS-in-JS 솔루션을 사용하는 것과 유사하다.
 
@@ -96,17 +96,17 @@ SSR에서 CSS-in-JS는 렌더링 된 HTML 콘텐츠와 함께 소위 [Critical C
 1. 네트워킹 조건(DNS, TCP, SSL), 대기 시간 및 서버 응답에 따라 달라지는[**TTFB(Time to First Byte)**](https://developer.mozilla.org/en-US/docs/Glossary/time_to_first_byte)
 2. **콘텐츠 다운로드** 시간은 리소스 크기와 인터넷 연결 대역폭에 따라 달라진다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/859527b6-614c-4470-92d3-219f4dd903db)
+![[assets/images/9f2eb7c8fac015b5727b39cd4f95b480_MD5.png]]
 
 개발자로서 통제할 수 없는 요소 중 하나는 사용자의 대역폭이다. 그들 중 일부는 빠른 Wi-Fi를 통해 페이지를 방문할 수 있고, 다른 일부는 느린 3G 모바일 연결을 사용할 수도 있다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/fb242665-653b-42bc-81b5-ba1163986419)
+![[assets/images/fbf37ee6f563c7445fa9312f2e7818f9_MD5.png]]
 
 ---
 
 이제 위에서 언급한 두 가지 방법을 사용해 로딩 폭포 차트가 웹페이지를 찾는 방법을 살펴보자. 일반적으로 정적 리소스에 대한 HTTP 요청은 비슷한 TTFB를 가지며 파일 크기에 따라 콘텐츠 다운로드 단계에 큰 차이가 반영된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/a600cb70-a35d-40b7-a879-ae5b7e633c10)
+![[assets/images/ab783941fc6caa2a8aa8e5773d45cbee_MD5.png]]
 
 런타임 스타일 시트는 일반적으로 파일크기가 더 크지만, 정적 CSS 추출보다 더 빠른 First Paint 측정 항목을 제공할 수 있다.
 

@@ -22,7 +22,7 @@ Type을 크게 두 가지 카테고리로 나누어 관리하도록 작성 되�
 
 컴포넌트 props 및 컴포넌트에 종속되어 있는 types는 각 컴포넌트 디렉토리 안에 위치하여 local types로 관리하고, 그 외 Router, API fetcher, React Query, utils, 3rd party 등에 필요한 types는 types 디렉토리 안에 위치하여 global types로 관리하도록 작성되었다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5ef68cce-5683-4344-9f13-2d52c0633a91)
+![[assets/images/4d4f2041dd10dad9a0ff38ab40c05a3a_MD5.png]]
 
 좌: Badge 컴포넌트 디렉토리, 우: types 디렉토리
 
@@ -101,7 +101,7 @@ TS를 도입하게 되면 type 정의하느라 더 많은 키보드 타이핑을
 
 다만, 어려운 것은 외부 라이브러리 사용할 때다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/0fcefa3e-55b2-4f0c-99cd-0928dd26f9db)
+![[assets/images/7b964db6745ccd8952a80e25c4cb1211_MD5.png]]
 
 타입을 정의해 가는 중, 처음에는 어마무시한 양으로 느껴지는 오류 메시지.
 
@@ -119,7 +119,7 @@ React Query를 사용하며 Custom hook을 만들어 적용할 때 요구되는 
 
 컴포넌트 가져다 쓰려면 필수 props가 문지 확인하기 위해 한쪽에 컴포넌트 코드를 열어두거나 storybook을 띄워두고 찾아다니거나 해야 했지만, TS도입 이후로 IDE 인텔리센스로 손 쉽게 처리할 수 있게 되었음.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/2ca8a3b0-90af-4993-bc23-ba857125b5ed)
+![[assets/images/d47e37b78c3ebcf4ee709f132535bfdc_MD5.png]]
 
 - 가독성이 좋아짐.
 
@@ -167,7 +167,7 @@ function isSameDay(
 
 API 모킹. service worker가 HTTP 요청을 가로채 등록해둔 모의 응답을 전달해주는 기능을 함.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/7bdf5972-db70-40fd-9312-61ae566fa910)
+![[assets/images/4204c07a0a4b3450d71e63e1056d7c0f_MD5.png]]
 
 Storybook과도 통합 가능하고, request에 따라 응답을 변경할 수도 있기 때문에 FE 개발에서는 좋음.
 

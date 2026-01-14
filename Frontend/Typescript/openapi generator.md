@@ -22,12 +22,11 @@
 - [swagger-typescript-api](https://www.npmjs.com/package/swagger-typescript-api)
 - [@openapitools/openapi-generator-cli](https://www.npmjs.com/package/@openapitools/openapi-generator-cli)
 
-<img width="1317" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/676bbd31-7995-41bf-a7e1-7d95b9184a30">
+![[assets/images/f5c63d25209337ebf171696c41bb22c3_MD5.png]]
 
 타입 추출 옵션, 그리고 단순히 API 메서드들만 정의되는 것이 아니라, 가능하면 API 호출을 수행할 HTTP 클라이언트 인스턴스도 자동 생성 조건이다. 그리고 fetch 대신 axios를 주로 사용하기에 axios 인스턴스와의 호환성도 좋아야 함.
 
 이 지점에서 swagger-typescript-api가 좋다. ts에 최적화 되어있는 이 제너레이터는 모든 기능을 갖고 있다. 옵션을 조함해 작성한 스크립트는 아래와 같음.swagger-typescript-api
-
 ```js
 // api generator using swagger-typescript-api
 
@@ -53,7 +52,6 @@ async function generateApi() {
 
 generateApi();
 ```
-
 <br/>
 
 ## Swagger-typescript-api가 편한 이유

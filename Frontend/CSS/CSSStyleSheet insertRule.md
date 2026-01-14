@@ -9,20 +9,17 @@ CSSStyleSheet에서 insertRule() 메서드가 존재한다.
 처음 생각했을 때는 style 태그를 `docuement.creatElement` 로 만들어서 그냥 스타일 태그를 넣어주면 되는 게 아닌가 생각했다.
 
 따라서 아래와 같은 코드가 나오게 된다.
-
 ```js
 const styleTag = document.createElement('style');
 styleTag.type = 'text/css';
 styleTag.textContent = 'body { border: 20px solid red }';
 document.head.appendChild(styleTag);
 ```
-
 이 코드를 실행하면, HTML 상에 새로운 style 태그가 삽입된다. 그리고 CSS도 정상적으로 동작하는 것을 볼 수 있다.
 
-<img width="528" alt="스크린샷 2023-09-23 오후 5 48 19" src="https://github.com/pozafly/TIL/assets/59427983/26f2c433-889a-4811-9b9f-be7fecca90a2">
+![[assets/images/3d043253af06ca087a4d3c236158e4a6_MD5.png]]
 
 잘 동작한다. 하지만, CSSStyleSheet insertRule() 메서드를 사용하면, style 태그를 새로 생성하는 것이 아니라, CSSOM에 바로 넣을 수 있다.
-
 ```js
 const sheet = document.styleSheets[0];
 sheet.insertRule(
@@ -30,7 +27,6 @@ sheet.insertRule(
   0
 );
 ```
-
 그러면 style 태그에 따로 추가되지는 않지만, CSS가 적용되는 것을 볼 수 있다. 즉, CSSOM 트리에 해당 규칙을 새로 생성하여 넣어준 것이다.
 
 이는 **stitches.js** 와 같은 zero-runtime라이브러리에서 동적으로 스타일 규칙을 삽입할 때 사용하는 방법이다. ([링크](https://so-so.dev/web/css-in-js-whats-the-defference/))

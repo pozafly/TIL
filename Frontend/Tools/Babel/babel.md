@@ -357,7 +357,7 @@ new Promise();
 
 env 프리셋으로 변환을 시도했지만 Promise 그대로 변함이 없다. target에 ie 11을 설정하고 빌드한 것인데 인터넷 익스플로러는 여전히 프라미스를 해석하지 못하고 에러를 던진다.
 
-![promise-error-in-ie](https://jeonghwan-kim.github.io/assets/imgs/2019/12/22/ie-promise-error.jpg)
+![[assets/images/ca473eecb5c90e30b831fd6501e3bdd2_MD5.jpg]]
 
 브라우져는 현재 스코프부터 시작해 전역까지 Promise라는 이름을 찾으려고 시도할 것이다. 그러나 스코프 어디에도 Promise란 이름이 없기 때문에 레퍼런스 에러를 발생하고 프로그램이 죽은 것이다.
 

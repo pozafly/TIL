@@ -12,7 +12,7 @@ react 18 핵심은 동시성(Concurrency)이다.
 
 동시성 그 자체로는 기능이 아니고, React에서 여러 버전의 UI를 동시에 준비할 수 있도록 하는 매커니즘이라는 것이다. 그렇다면 Parallelism(병렬성)과 무슨 차이가 있나?
 
-![image](https://github.com/pozafly/TIL/assets/59427983/031c3cf9-998b-4e3b-9e28-8ac480f84d8a)
+![[assets/images/9f62c0f40b6f3374a7256a75e74cd0f0_MD5.png]]
 
 | concurrency                 | parallelism           |
 | --------------------------- | --------------------- |
@@ -55,11 +55,11 @@ const App = () => {
 
 따라서 입력 값이 바뀔 때마다 리스트도 업데이트 되어야 하기 때문에 새로 렌더링 해야 한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/09409f9e-a8d8-4ee6-8252-9b8af973c57e)
+![[assets/images/46951a737245fe7ebed057b7d69ae2de_MD5.png]]
 
 차이점을 확인하기 위해 크롬 개발자 도구로 CPU 성능 제한을 걸고 테스트해봤다.
 
-![blocking-rendering](https://github.com/pozafly/TIL/assets/59427983/f3eca1cf-365a-42a6-9fef-20407dc35ebd)
+![[assets/images/85a7074cecfc066b4e48891d2d86951f_MD5.gif]]
 
 숫자를 입력하면 잇풋 창은 매우 느리게 응답한다. 이런 문제를 해결하기 위해 추가된 기능이 `useTransition` 이다.
 
@@ -101,7 +101,7 @@ const App = () => {
 
 `startTransition`으로 `setText`를 래핑하여 상태 업데이트를 낮은 우선순위로 설정한다. 그러면 더 우선순위가 높은 이벤트(input 값 변경)가 있는 경우 `setText`는 지연 시키고 이전 값을 보여주게 된다. 또한 `isPending` 을 이용하여 형재 지연된 상태라는 것도 보여주고 있다.
 
-![use-transition](https://github.com/pozafly/TIL/assets/59427983/2f87061c-652a-4263-a4e9-f98b7a65adab)
+![[assets/images/4980265e15d96ee433549b8bfb62513e_MD5.gif]]
 
 `useTransition`을 적용하니 리스트 렌더링과는 별개로, 인풋 창 반응이 빨라졌다.
 

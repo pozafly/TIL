@@ -75,7 +75,7 @@ cacheGroups: {
 
 위 규칙에 따라 나눠진 bundle이다. framework, commons 그리고 lib에서 정의한 [hash] 이름으로 분리된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/27eaf213-18bf-45a1-9678-0cb13da42f6e)
+![[assets/images/d615b65f09eff00a65f0b8598537cf0f_MD5.png]]
 
 이제 각 규칙을 이루고 있는 속성들에 대해 알아보자.
 

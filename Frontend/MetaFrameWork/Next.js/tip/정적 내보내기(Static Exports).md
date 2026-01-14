@@ -11,7 +11,6 @@ Next.js는 정적 내보내기를 지원하므로 HTML / CSS / JS 정적 자산�
 ## 설정
 
 `next.config.js` 파일에 설정한다.
-
 ```js
 /**
  * @type {import('next').NextConfig}
@@ -31,10 +30,9 @@ const nextConfig = {
  
 module.exports = nextConfig
 ```
-
 `next build` 를 실행하면 Next.js가 애플리케이션의 HTML/CSS/JS 에셋이 포함된 `out` 폴더를 생성함.
 
-<img width="178" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/7534ee10-1182-43ce-9940-922282ca105d">
+![[assets/images/eeb673a5e75baf8066091101d2689a25_MD5.png]]
 
 여기서 `npx serve@latest out` 명령어를 치면, out 폴더 기준으로 static 파일을 보여준다.
 
@@ -45,7 +43,6 @@ module.exports = nextConfig
 ### Server components
 
 `next build` 를 실행해 정적 내보내기를 생성하면 기존 SSG와 유사하게 `app` 디렉토리 내에서 소비되는 server component가 빌드 중 실행된다.
-
 ```tsx
 // app/page.tsx
 
@@ -57,11 +54,9 @@ export default async function Page() {
   return <main>...</main>
 }
 ```
-
 ### Client Components
 
 클라에서 데이터 패킹을 하려는 경우 SWR이 포함된 클라 컴포넌트를 사용해 요청을 메모화할 수 있다.
-
 ```tsx
 // app/other/page.tsx
 
@@ -82,9 +77,7 @@ export default function Page() {
   return data.title
 }
 ```
-
 경로 전환은 클라 측에서 이루어지므로 기존 SPA 처럼 동작함. 예를 들어 다음 인덱스 경로를 사용하면 클라의 다른 게시물로 이동할 수 있다.
-
 ```tsx
 // app/page.tsx
 
@@ -107,11 +100,9 @@ export default function Page() {
   )
 }
 ```
-
 ### Image Optimization
 
 `next/image` 를 통한 이미지 최적화는 next.config.js에서 사용자 정의 이미지 로더를 정의해 정적 내보내기와 함께 사용 가능.
-
 ```js
 // next.config.js
 
@@ -126,11 +117,9 @@ const nextConfig = {
  
 module.exports = nextConfig
 ```
-
 ### Route Handlers
 
 route handlers는 `next build` 를 실행할 때 정적 응답을 렌더링 한다. `GET` HTTP 동사만 지원된다. 이 동사는 캐시된 데이터 또는 캐시되지 ㅇ낳은 데이터에서 정적 HTML, JSON, TXT 또는 기타 파일을 생성하는데 사용할 수 있다.
-
 ```javascript
 // app/data.json/route.ts
 
@@ -138,7 +127,6 @@ export async function GET() {
   return Response.json({ name: 'Lee' })
 }
 ```
-
 위의 `app/data.json/route.ts` 파일은 `next build` 중 정적 파일로 렌더링 되어 `{ name: 'Lee' }` 가 포함된 data.json을 생성한다.
 
 들어오는 요청에서 동적 값을 읽어야 하는 경우 정적 내보내기를 사용할 수 없다.
@@ -146,7 +134,6 @@ export async function GET() {
 ### Browser APIs
 
 클라이언트 컴포넌트는 `next build` 시 HTML로 미리 렌더링됨. window, 로컬 스토리지, navigator와 같은 웹 API는 서버에서 사용할 수 없으므로 브라우저에서 실행할 때만 안전하게 액세스해야 함.
-
 ```tsx
 'use client';
  
@@ -161,7 +148,6 @@ export default function ClientComponent() {
   return ...;
 }
 ```
-
 <br/>
 
 ## 지원하지 않는 기능
@@ -201,7 +187,6 @@ export default function ClientComponent() {
 - `/out/blog/post-2.html`
 
 Nginx와 같은 정적 호스트를 사용하는 경우 들어오는 요청을 올바른 파일로 다시 쓰도록 구성할 수 있다.
-
 ```
 server {
   listen 80;

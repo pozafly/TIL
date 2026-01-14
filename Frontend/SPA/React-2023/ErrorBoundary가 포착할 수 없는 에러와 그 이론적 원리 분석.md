@@ -4,12 +4,11 @@
 
 ErrorBoundary는 모든 에러를 잡아주는 것이 아니다. JavaScript와 React를 잘 이해하고 있다면 당연한 현상이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/47cef267-bfcc-4b5d-b754-5fc3d6cd2ae5)
+![[assets/images/f0c7e0f676f28d3d71fe9edfc76bb5f2_MD5.png]]
 
 <br/>
 
 ## [사전지식] 실행 컨텍스트와 예외처리
-
 ```javascript
 try {
   function throwErrorFn() {
@@ -20,13 +19,11 @@ try {
   console.log(e);
 }
 ```
-
 setTimeout에서 Error를 throw 하고, 저렇게 try / catch를 감싸면 과연 catch 문에 잡힐까?
 
 정답은 아니다. **실행 컨텍스트 때문**이다.
 
 실행 컨텍스트란, 소스코드 평가 및 실행을 통해 발생하는 환경을 관리하는 객체를 말한다. 쉽게 말하면, 함수 실행에 필요한 변수(Context)를 관리하는 역할을 한다.
-
 ```javascript
 function foo(a) {
   const x = 10;
@@ -41,21 +38,19 @@ function foo(a) {
 
 foo(100);
 ```
-
 foo 코드가 실행되면, foo 실행컨텍스트가 만들어지고, 실행 컨텍스트에는 내부 변수인 x,y,a,bar 라는 변수를 관리한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/b1f91fec-2d26-4387-8f7c-a930f49a5cd5)
+![[assets/images/edcce87893503e61d2a08564f6e7116d_MD5.png]]
 
 추가로 실행 컨텍스트는 **call stack** 이라고 하는 곳에 순차적으로 쌓이고 pop된다. foo 위에 bar가 쌓이고, bar가 실행되고 나면, bar가 pop되고 foo만 남게 된다. foo까지 실행되고 나면 foo도 pop되고, 콜스택은 비게 된다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/6233c2f3-cdac-44bf-b339-76ea3539a780)
+![[assets/images/5feffe59f49b21c4ef121b3b6e87c7ba_MD5.png]]
 
 이때 하나의 context에서 에러가 발생되면 **에러는 상위 컨텍스트로 전파**된다. bar에서 에러가 발생한다하면, bar에서 에러가 throw 되는데, bar에서 처리되지 않으면 foo 까지로 전파된다. foo에서도 처리되지 않으면, **최상위 실행 컨텍스트로 전파되고 crash**가 일어난다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/54dfc85a-73b0-47eb-a2e7-10b838901abf)
+![[assets/images/a9503f5efe3b28043fe2c226b11e4fa3_MD5.png]]
 
 이 배경지식을 기반으로 setTimeout 예제를 다시 보자.
-
 ```javascript
 try {
   function throwErrorFn() {
@@ -66,10 +61,9 @@ try {
   console.log(e);
 }
 ```
-
 setTimeout 내 callback은 1초 후 실행 컨텍스트에서 실행된다. 이미 try / catch 문이 있던 컨텍스트가 pop된 이후의 상황이기 때문에 catch가 잡을 수 없고, 최상단에 에러가 던져지게 된다. (main 함수는 최상위 컨텍스트 함수를 의미한다.)
 
-![image](https://github.com/pozafly/TIL/assets/59427983/ab694899-edc3-4893-be6a-9b61dded10b3)
+![[assets/images/d7f0eac619833a91b5e9c2e514f5229f_MD5.png]]
 
 즉, `try / catch 문 컨텍스트 내 throwErrrorFn이 싱행되지 않기 때문에 에러를 포착할 수 없`다.
 
@@ -86,7 +80,6 @@ setTimeout 내 callback은 1초 후 실행 컨텍스트에서 실행된다. 이�
 ## Case1. 이벤트 핸들러
 
 이벤트 핸들러 내 발생 에러는 ErrorBoundary에 잡히지 않는다.
-
 ```jsx
 export default function App() {
   return (
@@ -108,23 +101,19 @@ function Button() {
   );
 }
 ```
-
 React의 이벤트 핸들러 바인딩 과정을 이해할 필요가 있음. React 17의 Relase note에 React 이벤트 위임 방식 변화를 알 수 있다. [React v17.0 Release Candidate: No New Features – React Blog](https://ko.legacy.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation)
 
 JavaScript에서는 DOM node에 직접 이벤트를 등록한다.
-
 ```javascript
 document.getElementById("home_button").addEventListener("click", (e) => {
   // callback
 });
 ```
-
 하지만 React에서 모든 이벤트가 root element에서 핸들링한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/9e00fa04-0f6b-43a7-9e49-0f6b593e04dc)
+![[assets/images/f6b6853aeb959a77909bf3c1ae43fada_MD5.png]]
 
 아래초럼 console을 찍어보면 root에서 이벤트가 다뤄지고 있음을 알 수 있다.
-
 ```jsx
 <button
   onClick={(e) => {
@@ -134,16 +123,13 @@ document.getElementById("home_button").addEventListener("click", (e) => {
   click
 </button>
 ```
-
-<img width="146" alt="image" src="https://github.com/pozafly/TIL/assets/59427983/a442ed7a-31c5-42c7-b2ad-a4b409f302f3">
+![[assets/images/c8a180bda877087ba2169d943b085ae8_MD5.png]]
 
 또한 root에 등록된 eventListeners들을 한 번에 조회해볼 수 있다.
-
 ```javascript
 getEventListeners(document.getElementById('root'))
 ```
-
-![image](https://github.com/pozafly/TIL/assets/59427983/1a818207-ec9f-4ea3-a61e-90187c778d9f)
+![[assets/images/fe0a72861712bd9c82adc4eb49199893_MD5.png]]
 
 이처럼 모든 이벤트가 사전에 root에 등록되어 있는 것을 볼 수 있다.
 
@@ -156,7 +142,6 @@ root는 최상위 tag이고 이곳에서 이벤트 핸들링이 이루어진다.
 <br/>
 
 ## 비동기적 코드
-
 ```jsx
 export default function App() {
   return (
@@ -174,15 +159,13 @@ function Children() {
   return <div></div>;
 }
 ```
-
 위에서 확인한 try / catch 예시와 완전히 동일 케이스다.
 
 setTimeout의 callback은 1초 후, 실행 컨텍슽트에 들어와 실행되고, 이는 ErrorBoundary의 컨텍스트가 끝난 시점이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/c30b2d76-a40f-4ff0-81fc-fb05b80703f5)
+![[assets/images/74b1059534908a29ef1a081bf05f8804_MD5.png]]
 
 axios 비동기 통신을 보자.
-
 ```jsx
 export default function App() {
   return (
@@ -210,11 +193,9 @@ function Children() {
   return <button>click</button>;
 }
 ```
-
 여기서도 에러가 잡히지 않는다. ErrorBoudnary가 잡을 수 있도록 하려면 어떻게 해야 하나?
 
 위에서 도출한 원리를 그대로 활용하자면, **ErrorBoundary 내 컨텍스트 내에서 throw를 일으켜야 한다.** 그러므로 error 상태를 별도로 분리, 에러가 있으면 실행 컨텍스트 내 동기적으로 직접 던져버리면 된다.
-
 ```jsx
 function Children() {
   const [todos, setTodos] = useState([]);
@@ -240,7 +221,6 @@ function Children() {
   return click;
 }
 ```
-
 react-query 비동기 통신 라이브러리에서 useErrorBoundary(v5에서는 thorwOnError)라는 옵션을 true로 설정해주면 위 기능을 대신해준다.
 
 <br/>
@@ -254,7 +234,6 @@ getDerivedStateFromError는 상태 변화가 존재하는 브라우저 환경에
 <br/>
 
 ## Case4. 자식에서가 아닌 에러 경계 자체에서 발생하는 에러
-
 ```javascript
 try {
   throw new Error("Error");
@@ -262,9 +241,7 @@ try {
   throw e;
 }
 ```
-
 try에서 에러 발생, catch에서 잡혔는데 이것을 다시 던진다면 catch에서 잡을 수 없다. 이것을 잡기 위한 다른 try/catch가 필요하다.
-
 ```javascript
 try {
   try {
@@ -276,7 +253,6 @@ try {
   console.log(e);
 }
 ```
-
 ErrorBoundary에서 다시 error가 throw 된다면 에러를 다시 상위 컴포넌트로 던지는 것이다. 상위 ErrorBoundary가 있어야만 포착될 것이고, 그렇지 않다면 최상위에 Error가 도달할 것이다.
 
 <br/>

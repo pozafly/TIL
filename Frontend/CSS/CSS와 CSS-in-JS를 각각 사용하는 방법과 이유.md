@@ -16,7 +16,7 @@
 
 HTTP/2 기반 앱을 사용하면 여러 HTML, CSS, JS 파일을 병렬로 로드할 수 있다. 이 기능은 HTTP/1.1로 제한되어있었지만, 최신 브라우저는 HTTP/2를 지원하므로 다른 파일이 로드되기를 기다리면서 발생하는 렌더링 블록을 최소화 한다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/82a07566-71cd-4bf7-923c-9723d28c7d50)
+![[assets/images/dc362d879d7cdea7fe2d267ff41bc8e4_MD5.png]]
 
 그러나, 렌더링 차단에는 파일 로딩 속도 외 다른 요소도 포함된다.
 
@@ -30,7 +30,7 @@ CSS가 많을 수록 브라우저에서 CSSOM을 구성하는데 시간이 더 �
 
 이에 대응하려면 CSS를 작은 덩어리로 나누는 것이 매우 유용하다. 즉, 전역 스타일과 Critical CSS를 하나의 범용 CSS 파일에 유지한 다음, 다른 모든 항목을 구성요소화 한다. 이러면 합리적이다.
 
-![image](https://github.com/pozafly/TIL/assets/59427983/5c0d29c3-31f4-4ce5-8035-3a17730a5a3c)
+![[assets/images/722ca490975e43b0d0b61871f449a6f7_MD5.png]]
 
 위 그림은 React에서 구성 요소에 대해 별도의 CSS 파일을 만들고 관리하는 전통적인 방법을 보여준다. 각 CSS 파일은 해당 element에 직접 첨부되므로 해당 element를 가져올 때만 가져오고 element가 사라질 때 제거된다.
 

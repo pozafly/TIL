@@ -61,7 +61,7 @@ const Colors = {
 };
 ```
 
-![image](https://github.com/pozafly/TIL/assets/59427983/05fa5450-5a40-488c-a112-28bd559fcea6)
+![[assets/images/aa5d84a2170fdd2b33280a4fb8ad3e33_MD5.png]]
 
 Colors 변수 내부에 추론된 값을 보면 각 속성 별 리터럴 타입이 아닌 primitive type(string) 으로 추론된 것을 볼 수 있다. 이유는 `const` 변수로 `object`를 선언했지만 객체 내부의 값은 언제든 바뀔 수 있기 때문임. 이때 const assertion을 활용해 Colors 내부 값의 type을 리터럴 타입으로 변경해보자.
 
@@ -73,7 +73,7 @@ const Colors = {
 } as const;
 ```
 
-![image](https://github.com/pozafly/TIL/assets/59427983/84f34a02-53c8-4a30-afe6-ca42b852cd83)
+![[assets/images/3fc40bd42e2f53d9df28c088c5ba0be1_MD5.png]]
 
 Colors 내부의 속성들의 타입이 러터럴 타입으로 추론 된 것을 볼 수 있다. 이렇데 단언된 객체를 외부에서 import 해 사용하면 key를 자동으로 추론할 수 있게 되고, 편리하게 상수를 관리할 수 있다.
 

@@ -1,6 +1,6 @@
 # BoxModel
 
-![image](https://user-images.githubusercontent.com/59427983/136687634-04be9df1-d00d-4800-917a-05901ef99662.png)
+![[assets/images/b2c4e66ad6b62da2ec07628f3088f216_MD5.png]]
 
 이렇게 생긴 녀석이 박스 모델이다. content, padding, border, margin 4가지 영역으로 나누어져 있음.
 
@@ -47,7 +47,7 @@ div {
 
 마진 병합은 **수직 방향**으로만 이루어짐. 좌우에 대해서는 일어나지 않음. 마진 병합은 마진이 맞닿아야 발생하기 때문에 2,3의 경우 패딩 및 보더가 없어야 함.
 
-![image](https://user-images.githubusercontent.com/59427983/136686862-ed86d5ac-4e0c-49a5-91d7-e44cfa5ba3a9.png)
+![[assets/images/7ad6828aab95fc158417b1c0972d1f72_MD5.png]]
 
 <br/>
 
@@ -70,7 +70,7 @@ div {
 
 width 속성은 가로 크기를 정의함. 단, 📌 **content 영역**의 너비를 지정한다. 기본 값은 auto 임.
 
-![image](https://user-images.githubusercontent.com/59427983/136687268-81a29ac6-fdc7-4d80-8ea8-8848762fc6fd.png)
+![[assets/images/325d0f81a5f5426ad110ae0df37dfcd9_MD5.png]]
 
 여기를 잘 보면, `width: 300px` 으로 선언했지만 실 값은 10px 이 두번 즉, 320px로 정의 되었다. 왜?
 
