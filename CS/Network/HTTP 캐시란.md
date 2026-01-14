@@ -28,11 +28,11 @@ HTTP 에서 **리소스**(resource)란, 웹 브라우저가 HTTP 요청으로 �
 
 그렇다면 캐시의 유효 기간이 지나면 캐시가 완전히 사라지나? 그렇지 않다. 대신 브라우저는 서버에 [조건부 요청(Conditional request)](https://developer.mozilla.org/ko/docs/Web/HTTP/Conditional_requests)을 통해 캐시가 유효한지 재검증(Revalidation)을 수행한다.
 
-![smart-web-service-cache-2](../../images/smart-web-service-cache-2.png)
+![smart-web-service-cache-2](smart-web-service-cache-2.png)
 
 재검증 결과 브라우저가 가지고 있는 캐시가 유효하다면, 서버는 **[304 Not Modified]** 요청을 내려준다. 304는 캐시가 만료되어 서버에 재요청을 보내고, 서버는 변경된 것이 없다고 판단해 304를 내려주는 것이다. **[304 Not Modified]** 응답은 HTTP 본문을 포함하지 않기 때문에 매우 빠르게 내려받을 수 있다. 예를 들어, 위 사진을 보면 59.1KB 리소스의 캐시 검증을 위해 324B 만의 네트워크 송수신만을 주고 받았음을 볼 수 있다.
 
-![smart-web-service-cache-3](../../images/smart-web-service-cache-3.png)
+![smart-web-service-cache-3](smart-web-service-cache-3.png)
 
 대표적인 재검증 요청 헤더들로는 아래와 같은 헤더가 있다.
 
@@ -56,7 +56,7 @@ Cache-Control에서 가장 헷갈리는 두 가지 값이 있다면 바로 `no-c
 
 ## 캐시의 위치
 
-![smart-web-service-cache-4](../../images/smart-web-service-cache-4.png)
+![smart-web-service-cache-4](smart-web-service-cache-4.png)
 
 CDN과 같은 중간 서버를 사용할 때, 캐시는 여러 곳에 생길 수 있다. 서버가 가지고 있는 원래 응답을 CDN이 캐시한다. CDN의 캐시된 응답은 사용자 브라우저가 다시 가져와서 캐시한다. 이처럼 HTTP 캐시는 여러 레이어에 저장될 수 있기 때문에 세심히 다루어야 한다.
 
@@ -95,7 +95,7 @@ public은 모든 사람과 중간 서버가 캐시를 저장할 수 있음을 �
 
 일반적으로 랜딩 페이지 같은 HTML 리소스는 새로 배포가 이루어질 때마다 값이 바뀔 수 있다. 때문에 브라우저는 항상 HTML 파일을 불러올 때 새로운 배포가 있는지 확인해야 한다.
 
-![smart-web-service-cache-5](../../images/smart-web-service-cache-5.png)
+![smart-web-service-cache-5](smart-web-service-cache-5.png)
 
 이런 리소스에 대해 토스는 Cache-Control 값으로 **max-age=0, s-maxage=31536000** 을 설정했다. 이로써 브라우저는 HTML 파일을 가져올 때마다 서버에 재검증 요청을 보내고, 그 사이에 배포가 있었다면 새로운 HTML 파일을 내려받는다.
 
@@ -105,7 +105,7 @@ CDN은 계속해서 HTML 파일에 대한 캐시를 가지고 있도록 했다. 
 
 JavaScript나 CSS 파일은 프론트엔드 웹 서비스를 빌드할 때마다 새로 생긴다. 토스는 임의의 버전 번호를 URL 앞부분에 붙여 빌드 결과물마다 고유한 URL을 가지도록 설정하고 있다.
 
-![smart-web-service-cache-6](../../images/smart-web-service-cache-6.png)
+![smart-web-service-cache-6](smart-web-service-cache-6.png)
 
 이렇게 JS, CSS 파일을 관리했을 때, 같은 URL에 대해 내용이 바뀔 수 있는 경우는 없다. 내용이 바뀔 여지가 없으므로 리소스의 캐시가 만료될 일도 없다.
 

@@ -11,7 +11,7 @@ JavaScript는 싱글 스레드 언어다. 한 번에 하나의 작업만 실행�
 
 JavaScript 언어 자체에는 Multi Threading을 할 수 없지만, JavaScript가 동작하고 있는 '**브라우저**'(브라우저라는 프로그램)에서는 여러 스레드를 활용할 수 있다. 브라우저에서 지원하는 Web API를 사용하는 것이다. Web API는 JavaScript엔진 자체가 제공하지 않는, 브라우저에서 제공하는 API다. DOM API, `setTimeout`, HTTP 요청 등이 여기에 포함된다. JavaScript Runtime Environment(브라우저 or Node.js)에는 Event Loop가 있다. 이 Event Loop를 통해 여러 처리를 동시에 할 수 있는 것이다. 브라우저 환경을 그림으로 표현하면 다음과 같다.
 
-![b1493856379d11e69c16a9a4cf841567](../../images/b1493856379d11e69c16a9a4cf841567.png)
+![b1493856379d11e69c16a9a4cf841567](b1493856379d11e69c16a9a4cf841567.png)
 
 JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
@@ -20,7 +20,7 @@ JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
 비동기 호출을 위해 사용하는 `setTimeout`, `fetch` 같은 함수는 자바스크립트 엔진이 아니라 Web APIs 영역에 따로 정의 되어 있다. 또한 Event Loop나 Task Queue 같은 장치도 자바스크립트 엔진 외부에 구현되어 있다. 아래 사진은 Node.js 환경이다.
 
-![02](../../images/02.png)
+![02](02.png)
 
 이 그림에서도 브라우저 환경과 비슷하다. Node.js는 비동기 IO를 지원하기 위해 `libuv` 라이브러리를 사용하고, libuv에서 Event Loop를 제공한다. 자바스크립트 엔진은 비동기 작업을 위해 Node.js API를 호출하고, 이때 넘겨진 콜백은 libuv의 Event Loop를 통해 스케줄되고 실행된다.
 
@@ -32,7 +32,7 @@ JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
 자바스크립트 함수의 특징이 있다. 하나의 함수가 실행되면 함수의 실행이 끝날 때까지 다른 작업이 중간에 끼어들지 못한다. 자바스크립트는 하나의 Call Stack을 사용하기 때문이다.
 
-![images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image](../../images/images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image.png)
+![images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image](images_soom_post_16b11267-f798-48cb-8c22-bb6d91d6fa0e_image.png)
 
 위 코드를 실행하면 브라우저 프로세스가 죽어버린다. console 창에 'Will it be print?' 라는 문장은 나타나지 않을 것이다. 다만, 'Running…1234837' 이라는 문구만 console에 나타난다. 그리고 브라우저가 동작하지 않는다는 alert이 뜬다.
 
@@ -42,30 +42,30 @@ JavaScript 엔진에는 **Memory Heap**과 **Call Stack**이 있다.
 
 함수를 호출하면 Call Stack에 함수가 추가된다. Call Stack은 '자바스크립트 엔진' 안에 있다. Stack 구조로 되어있는데 가장 나중에 들어간 것이 가장 먼저 나오는 자료구조다. 이것을 LIFO(Last In First Out)이라고 한다. FILO라고도 한다. 함수가 값을 return하면 Call Stack에서 제거된다. 아래 그림을 보자.
 
-![gid1.6](../../images/gid1.6.gif)
+![gid1.6](gid1.6.gif)
 
 greet 함수가 먼저 쌓였고 실행되어 Call Stack에서 제거되었다. 그리고 response 함수가 차례로 Call Stack에 쌓인 후 실행이 완료되어 Call Stack에서 제거 되었다. 하지만 respond 함수 내부에 `setTimeout` 이라는 Web API가 있다. 이를 통해 메인 스레드를 차단하지 않고 작업을 지연시킬 수 있다. setTimeout에 전달한 콜백함수가 Web API에 추가된다. 그 동안 setTimeout 함수와 respond 함수는 Stack에서 제거된 것이다.
 
-![gif2.1](../../images/gif2.1.gif)
+![gif2.1](gif2.1.gif)
 
 Web API에서 1000ms 동안 타이머가 돌고, 후에 setTimout에 전달한 콜백 함수는 Call Stack으로 다시 들어가는 것이 아니라 `Task Queue` 라는 곳으로 전달된다. ※사진에서는 Queue라고 표기되어 있다.
 
-![gif3.1](../../images/gif3.1.gif)
+![gif3.1](gif3.1.gif)
 
 Call Stack으로 들어간 것이 아니라 **Task Queue**로 들어간 것이다! Event Loop가 이제 Task Queue에 있는 함수를 다시 Call Stack으로 옮길 것이다. 단, 이 경우에는 Call Stack이 비어있는 경우만 해당한다. 즉, Call Stack에서 실행중인 코드가 있다면 Event Loop는 Task Queue의 함수를 Call Stack으로 옮기지 않는다.
 
 ※ Queue란, 자료구조의 한 종류로 FIFO(First In First Out)의 특성을 가지고 있다. 아래와 같이 먼저 들어온 녀석이 먼저 나가는 구조이다.
 
-![gif4](../../images/gif4.gif)
+![gif4](gif4.gif)
 
 콜백 함수가 Call Stack에 추가되고, 호출되고, 값을 반환하고 Call Stack에서 제거된다.
 
-![gif5](../../images/gif5.gif)
+![gif5](gif5.gif)
 
 ```js
-const foo = () => console.log("First");
-const bar = () => setTimeout(() => console.log("Second"), 500);
-const baz = () => console.log("Third");
+const foo = () => console.log('First');
+const bar = () => setTimeout(() => console.log('Second'), 500);
+const baz = () => console.log('Third');
 
 bar();
 foo();
@@ -74,7 +74,7 @@ baz();
 
 이 코드의 실행결가는 어떻게 될까? First -> Third -> Second 순서대로 출력된다.
 
-![gif14.1](../../images/gif14.1.gif)
+![gif14.1](gif14.1.gif)
 
 1. bar 함수를 Call Stack에 넣었다.
 2. setTimeout이 있으므로 Web API에 집어넣고 bar 함수는 Call Stack에서 제거된다.
@@ -87,19 +87,19 @@ baz();
 
 ```js
 function delay() {
-    for (var i = 0; i < 100000; i++);
+  for (var i = 0; i < 100000; i++);
 }
 function foo() {
-    delay();
-    bar();
-    console.log('foo!'); // (3)
+  delay();
+  bar();
+  console.log('foo!'); // (3)
 }
 function bar() {
-    delay();
-    console.log('bar!'); // (2)
+  delay();
+  console.log('bar!'); // (2)
 }
 function baz() {
-    console.log('baz!'); // (4)
+  console.log('baz!'); // (4)
 }
 
 setTimeout(baz, 10); // (1)
@@ -130,7 +130,7 @@ console.log('B');
 
 ```js
 const button = document.querySelector('button');
-button.addEventListener(function() {
+button.addEventListener(function () {
   showWaitingMessage();
   longTakingProcess();
   hideWaitingMessage();
@@ -144,12 +144,12 @@ addEventListener 함수도 마찬가지로 Web API이며 비동기로 동작한�
 
 ```js
 const button = document.querySelector('button');
-button.addEventListener(function() {
+button.addEventListener(function () {
   showWaitingMessage();
   setTimeout(() => {
     longTakingProcess();
     hideWaitingMessage();
-    showResult();    
+    showResult();
   }, 0);
 });
 ```
@@ -164,7 +164,7 @@ button.addEventListener(function() {
 
 Promise 객체는 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타낸다([mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)). 이는 **콜백 지옥**(Callback Hell)을 피하기 위해 만들어졌다. Promise를 만들어 console에 찍어보자.
 
-![스크린샷 2023-02-16 오후 7.39.34](../../images/스크린샷 2023-02-16 오후 7.39.34.png)
+![스크린샷 2023-02-16 오후 7.39.34](스크린샷 2023-02-16 오후 7.39.34.png)
 
 내부에는 `[[PromiseState]]`와 `[[PromiseResult]]` 라는것이 있다. PromiseState는 상태값을 나타낸다. 아래의 3가지 상태가 있다.
 
@@ -174,14 +174,14 @@ Promise 객체는 비동기 작업이 맞이할 미래의 완료 또는 실패�
 
 Promise는 콜백함수를 받는데, 콜백 함수의 첫번째 인자로 `resolve`, 두번째 인자로 `reject`를 받는다. 그 콜백 안에서 성공적으로 작업이 이행되었다면 `resolve()` 함수를 호출하면 되고, 문제(error)가 생겼다면 `reject()` 를 호출해주면 된다. resolve 인자로 데이터를 넘겨줄 수 있으며, reject에는 주로 error객체를 넘긴다.
 
-![image-20230216194109627](../../images/image-20230216194109627.png)
+![image-20230216194109627](image-20230216194109627.png)
 
 만약, resolve 되었다면, Promise는 `.then()` 구문을 사용해 이어서 다른 작업을 할 수 있다. `.then()` 인자로 다시 콜백 함수를 받고, 콜백 함수의 인자는 resolve에 매개변수로 넘겨주었던 데이터가 넘어온다.
 
 ```js
 function getImage(file) {
   return new Promise((resolve, reject) => {
-		try {
+    try {
       const data = readFile(file);
       resolve(data);
     } catch {
@@ -195,9 +195,9 @@ function getImage(file) {
 
 ```js
 getImage(file)
-	.then(data => console.log(data))
-	.catch(error => console.log(error))
-	.finally(() => console.log('Done!'));
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error))
+  .finally(() => console.log('Done!'));
 ```
 
 이렇게 처리해줄 수 있다.
@@ -209,14 +209,19 @@ getImage(file)
 아래 코드를 실행해보면 어떤 순서로 찍힐까?
 
 ```js
-setTimeout(function() { // (A)
-    console.log('A');
+setTimeout(function () {
+  // (A)
+  console.log('A');
 }, 0);
-Promise.resolve().then(function() { // (B)
+Promise.resolve()
+  .then(function () {
+    // (B)
     console.log('B');
-}).then(function() { // (C)
+  })
+  .then(function () {
+    // (C)
     console.log('C');
-});
+  });
 ```
 
 Promise도 비동기로 실행되니까 Task Queue에 추가되어 순서대로 A -> B -> C로 찍힐까? 아니다 답은, B -> C -> A다. 이유는 바로 Promise가 MicroTask Queue를 사용하기 때문이다.
@@ -227,7 +232,7 @@ MicroTask Queue는 일반 Task Queue보다 더 높은 우선순위를 갖는 태
 
 MicroTask Queue에는 Promise뿐 아니라, Observer API, Node.js의 process.nextTick 등이 그 대상이 된다.
 
-![42eatw03fcha0e1qcrf0](../../images/42eatw03fcha0e1qcrf0.gif)
+![42eatw03fcha0e1qcrf0](42eatw03fcha0e1qcrf0.gif)
 
 위 사진과 같이 실행이 되는데 사진의 MacroTask Queue는 Task Queue라고 생각하자.
 
@@ -238,25 +243,24 @@ setTimeout(() => {
   console.log('Timeout!');
 }, 0);
 
-Promise.resolve('Promise!')
-	.then(res => console.log(res));
+Promise.resolve('Promise!').then((res) => console.log(res));
 
 console.log('End!');
 ```
 
 이 코드를 시각화 하면 아래와 같다.
 
-![6cbjuexvy6z9ltk0bi18](../../images/6cbjuexvy6z9ltk0bi18.gif)
+![6cbjuexvy6z9ltk0bi18](6cbjuexvy6z9ltk0bi18.gif)
 
-![yqoemb6f32lvovge8yrp](../../images/yqoemb6f32lvovge8yrp.gif)
+![yqoemb6f32lvovge8yrp](yqoemb6f32lvovge8yrp.gif)
 
-![6wxjxduh62fqt531e2rc](../../images/6wxjxduh62fqt531e2rc.gif)
+![6wxjxduh62fqt531e2rc](6wxjxduh62fqt531e2rc.gif)
 
-![a6jk0exl137yka3oq9k4](../../images/a6jk0exl137yka3oq9k4.gif)
+![a6jk0exl137yka3oq9k4](a6jk0exl137yka3oq9k4.gif)
 
-![lczn4fca41is4vpicr6w](../../images/lczn4fca41is4vpicr6w.gif)
+![lczn4fca41is4vpicr6w](lczn4fca41is4vpicr6w.gif)
 
-![p54casaaz9oq0g8ztpi5](../../images/p54casaaz9oq0g8ztpi5.gif)
+![p54casaaz9oq0g8ztpi5](p54casaaz9oq0g8ztpi5.gif)
 
 시각화 자료에서 보듯, MicroTask Queue는 MicroTask Queue를 하나 하나 Call Stack으로 이동하지만, 모든 MicroTask Queue에 있는 작업들이 Call Stack에서 지워져야 Task Queue 차례로 넘어가는 것을 볼 수있다.
 
@@ -272,7 +276,7 @@ Promise.resolve('Hello!');
 // 위 코드는 아래 코드와 같다.
 
 async function greet() {
-	return 'Hello!'
+  return 'Hello!';
 }
 ```
 
@@ -299,19 +303,19 @@ console.log('After function!');
 
 Before function!이 실행되었고, myFunc 함수 내부의 In function!이 먼저 찍혔다.
 
-![9wqej2269vmntfcuxs9t](../../images/9wqej2269vmntfcuxs9t.gif)
+![9wqej2269vmntfcuxs9t](9wqej2269vmntfcuxs9t.gif)
 
 이제 위 사진처럼 `myFunc`가 실행된다. `myFunc` 첫째줄의 console이 찍힌다. `myFunc`가 Call Stack에 들어갔지만 `one` 함수를 만나 `myFunc`을 제거하기 전에 `one`이 Call Stack에 담겼다.
 
-![lch6lutxnl88j0durpyh](../../images/lch6lutxnl88j0durpyh.gif)
+![lch6lutxnl88j0durpyh](lch6lutxnl88j0durpyh.gif)
 
 `one`은 Promise를 리턴하기 이전에 함수다. Call Stack에 담긴 one을 실행하면서 Call Stack에서 제거되었다. 하지만 `one`함수는 `await` 키워드가 앞에 붙어있다. await 키워드를 만나면, `async` 가 붙어있는 함수 자체가 기능이 일시 중지 된다. 즉, async가 붙어있는 `myFunc` 함수 자체는 Call Stack에서 MicroTask Queue로 이동한다.
 
-![b6l3psgewvtrtmrr60tg](../../images/b6l3psgewvtrtmrr60tg.gif)
+![b6l3psgewvtrtmrr60tg](b6l3psgewvtrtmrr60tg.gif)
 
 그리고 async가 붙어있는 함수에서 벗어나 아래의 코드를 실행한다(After function!). 이제 Event Loop가 CallStack MicroTask Queue에 있는 `myFunc`를 다시 Call Stack으로 옮긴다. `console(res)` 를 실행하고 myFunc는 종료된다.
 
-![hlhrtuspjyrstifubdhs](../../images/hlhrtuspjyrstifubdhs.gif)
+![hlhrtuspjyrstifubdhs](hlhrtuspjyrstifubdhs.gif)
 
 이 과정으로 `Promise.then` 과 `async` 함수의 차이점을 알 수 있다.
 
@@ -322,31 +326,30 @@ Before function!이 실행되었고, myFunc 함수 내부의 In function!이 먼
 
 ```js
 function a() {
-    console.log('a1');
-    b();
-    console.log('a2');
+  console.log('a1');
+  b();
+  console.log('a2');
 }
 
 function b() {
-    console.log('b1');
-    c();
-    console.log('b2');
+  console.log('b1');
+  c();
+  console.log('b2');
 }
-  
+
 async function c() {
-    console.log('c1');
-    setTimeout(() => console.log('setTimeout'), 0);
-    await d();
-    console.log('c2');
+  console.log('c1');
+  setTimeout(() => console.log('setTimeout'), 0);
+  await d();
+  console.log('c2');
 }
 
 function d() {
-    return new Promise(resolve => {
-      console.log('d1');
-      resolve();
-      console.log('d2');
-    })
-    .then(() => console.log('then!'));
+  return new Promise((resolve) => {
+    console.log('d1');
+    resolve();
+    console.log('d2');
+  }).then(() => console.log('then!'));
 }
 
 a();
