@@ -11,6 +11,7 @@ Intellij에서 템플릿 기능을 사용하면 snippets를 사용할 수 있음
 템플릿 그룹을 먼저 하나 만들어주고, 이름(약어)을 만들어준다.
 
 그리고 거기에 라이브 템플릿을 다시 하나 만든다.
+
 ```java
 @Test
 @DisplayName("$NAME$")
@@ -23,6 +24,7 @@ void $NAME2$() {
     
 }
 ```
+
 이런식으로 코드를 넣어준다.
 
 ![[assets/images/ee3c4d7846ac7eb384feb026e8e752a1_MD5.png]]
